@@ -375,7 +375,7 @@ library(tidyverse)
 ```
 
 ```
-## -- Attaching packages ---------------
+## -- Attaching packages --------------------
 ```
 
 ```
@@ -418,7 +418,7 @@ library(tidyverse)
 ```
 
 ```
-## -- Conflicts ------------------------
+## -- Conflicts ---- tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
 ```
