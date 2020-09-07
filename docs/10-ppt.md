@@ -123,7 +123,7 @@ s
 ```
 
 ```
-## [1] 1690  312  532
+## [1] 1289 1329  395
 ```
 
 ```r
@@ -134,10 +134,10 @@ tabela
 ```
 ##      fazenda area acum linf lsup sel
 ## [1,]       1   50   50    1   50   0
-## [2,]       2 1000 1050   51 1050   2
+## [2,]       2 1000 1050   51 1050   1
 ## [3,]       3  125 1175 1051 1175   0
-## [4,]       4  300 1475 1176 1475   0
-## [5,]       5  500 1975 1476 1975   1
+## [4,]       4  300 1475 1176 1475   2
+## [5,]       5  500 1975 1476 1975   0
 ## [6,]       6   25 2000 1976 2000   0
 ```
 
@@ -159,7 +159,7 @@ fazendas_sel
 ```
 
 ```
-## [1] 4 4 2
+## [1] 2 2 2
 ```
 
 Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados número pseudoaleatórios distintos nas duas soluções.
@@ -244,13 +244,13 @@ tabela
 ```
 
 ```
-##      fazenda area           A  pii sel
-## [1,]       1   50 0.008805188 0.10   2
-## [2,]       2 1000 0.000000000 1.50   1
-## [3,]       3  125 0.109784084 0.25   2
-## [4,]       4  300 0.279025052 0.60   2
-## [5,]       5  500 0.000000000 1.00   1
-## [6,]       6   25 0.542810600 0.05   0
+##      fazenda area          A  pii sel
+## [1,]       1   50 0.04417475 0.10   2
+## [2,]       2 1000 0.00000000 1.50   1
+## [3,]       3  125 0.56894467 0.25   0
+## [4,]       4  300 0.04439644 0.60   2
+## [5,]       5  500 0.00000000 1.00   1
+## [6,]       6   25 0.30828779 0.05   0
 ```
 
 A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981. 
