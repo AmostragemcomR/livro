@@ -123,7 +123,7 @@ s
 ```
 
 ```
-## [1] 1289 1329  395
+## [1] 1696  721 1660
 ```
 
 ```r
@@ -136,8 +136,8 @@ tabela
 ## [1,]       1   50   50    1   50   0
 ## [2,]       2 1000 1050   51 1050   1
 ## [3,]       3  125 1175 1051 1175   0
-## [4,]       4  300 1475 1176 1475   2
-## [5,]       5  500 1975 1476 1975   0
+## [4,]       4  300 1475 1176 1475   0
+## [5,]       5  500 1975 1476 1975   2
 ## [6,]       6   25 2000 1976 2000   0
 ```
 
@@ -159,7 +159,7 @@ fazendas_sel
 ```
 
 ```
-## [1] 2 2 2
+## [1] 2 2 5
 ```
 
 Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados número pseudoaleatórios distintos nas duas soluções.
@@ -245,12 +245,12 @@ tabela
 
 ```
 ##      fazenda area          A  pii sel
-## [1,]       1   50 0.04417475 0.10   2
+## [1,]       1   50 0.52106420 0.10   0
 ## [2,]       2 1000 0.00000000 1.50   1
-## [3,]       3  125 0.56894467 0.25   0
-## [4,]       4  300 0.04439644 0.60   2
+## [3,]       3  125 0.18816465 0.25   2
+## [4,]       4  300 0.66903923 0.60   0
 ## [5,]       5  500 0.00000000 1.00   1
-## [6,]       6   25 0.30828779 0.05   0
+## [6,]       6   25 0.09802113 0.05   0
 ```
 
 A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981. 
@@ -348,6 +348,103 @@ A seleção com amostragem PPT sistemática com ordenação segue os seguintes p
 
 1. Faça uma ordenação das unidades da população segundo uma (ou mais) variável(is) de interesse.
 2. Selecione uma amostra sistemática com PPT seguindo o algoritmo anterior.
+
+Apresentamos uma implementação simples de algiritmo para seleção Sistemática com PPT, considerando a inclusão na amostra como certas as unidades em que o valor da variável tamanho é maior que $K$. Dessa maneira a seleção é sem reposição.
+
+
+```r
+# Seleção Sistemática com PPT e seleção das unidades certas se for o caso
+# Inicializando variáveis
+N=7
+n=4
+certas=aleat=tamanho=sel=selc=r=NULL
+tamanho=as.integer(rep(runif(N,0,1)*10000))  # Gerando vetor de tamanhos
+tamanho=tamanho[order(tamanho,decreasing=T)] # Ordenação dos tamanhos em ordem decescente
+tamanho
+```
+
+```
+## [1] 8240 7239 6568 5494 5456 2309 1362
+```
+
+```r
+sel=rep(0,N)
+#Determinado tamanho mínimo das unidades certas
+n_aux=n
+tamtot_aux=tam_certo=sum(tamanho)
+for (i in 1:N){
+  p=n_aux*tamanho[i]/tamtot_aux
+  if (p>=1){
+    tam_certo=tamanho[i]
+    p=1
+    n_aux=n_aux-1
+    tamtot_aux=tamtot_aux-tamanho[i]
+    sel[i]=1
+  }
+}
+sel
+```
+
+```
+## [1] 0 0 0 0 0 0 0
+```
+
+```r
+aleat=tamanho
+if (sum(sel)>0){
+  certas=tamanho[tamanho>=tam_certo]
+  aleat=tamanho[tamanho<tam_certo]
+  selc=sel[sel>0]
+} 
+# Seleção aleatória sistemática PPT
+acum=linf=lsup=sel=NULL
+acum[1]=lsup[1]=aleat[1]
+linf[1]=1
+N=length(aleat)
+sel=rep(0,N)
+# Criando intervalos de seleção PPT
+for (i in 2:N){
+  acum[i]=acum[i-1]+aleat[i]
+  linf[i]=acum[i-1]+1
+  lsup[i]=acum[i]
+}
+K=lsup[N]/n_aux                     # Salto de seleção
+r[1]=runif(1,0,K)                   # Partida aleatória
+if (n_aux>1){for (i in 2:n_aux){r[i]=r[i-1]+K}} 
+# Marcando fazendas selecionadas aleatoriamente
+for (i in 1:n_aux){
+  for (j in 1:N){
+    if((linf[j] < r[i]) & (r[i]<=lsup[j])){
+      sel[j]=2           #Seleção aleatória: sel=2
+    }
+  }
+}
+sel
+```
+
+```
+## [1] 2 2 0 2 2 0 0
+```
+
+```r
+# Juntando as informações numa tabela
+tabela=cbind(c(certas,aleat),c(selc,sel))
+
+# Tabela com marcação da unidades selecionadas certas(sel=1) e aleatórias(sel=2)
+colnames(tabela)=c('Tamanho','Seleção')
+tabela
+```
+
+```
+##      Tamanho Seleção
+## [1,]    8240       2
+## [2,]    7239       2
+## [3,]    6568       0
+## [4,]    5494       2
+## [5,]    5456       2
+## [6,]    2309       0
+## [7,]    1362       0
+```
 
 Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação. 
 
