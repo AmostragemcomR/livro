@@ -317,7 +317,6 @@ n=4
 certas=aleat=tamanho=sel=selc=r=NULL
 tamanho=as.integer(rep(runif(N,0,1)*10000))  # Gerando vetor de tamanhos
 tamanho=tamanho[order(tamanho,decreasing=T)] # Ordenação dos tamanhos em ordem decescente
-tamanho
 sel=rep(0,N)
 #Determinado tamanho mínimo das unidades certas
 n_aux=n
@@ -332,7 +331,6 @@ for (i in 1:N){
     sel[i]=1
   }
 }
-sel
 aleat=tamanho
 if (sum(sel)>0){
   certas=tamanho[tamanho>=tam_certo]

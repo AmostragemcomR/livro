@@ -607,26 +607,26 @@ s=<span class="kw">data.frame</span>(<span class="kw">as.vector</span>(s[<span c
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i
-## 1    4
-## 2  548
-## 3  582
-## 4  466
-## 5  958
-## 6  277
-## 7  984
-## 8  692
-## 9  766
-## 10 556
-## 11 426
-## 12 842
-## 13 438
-## 14 910
-## 15 218
-## 16 752
-## 17 653
-## 18 225
-## 19 299
-## 20 678</code></pre>
+## 1  675
+## 2   28
+## 3  941
+## 4  953
+## 5   16
+## 6  490
+## 7  571
+## 8  857
+## 9  727
+## 10 650
+## 11 897
+## 12 954
+## 13 759
+## 14 181
+## 15 503
+## 16 704
+## 17 550
+## 18 860
+## 19 336
+## 20 850</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Algoritmo de Fan, Muller e Rezucha para seleção de uma amostra </span>
 <span class="co"># de n unidades de uma população de tamanho N</span>
 
@@ -653,26 +653,26 @@ s=<span class="kw">data.frame</span>(s)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i
-## 1   31
-## 2  136
-## 3  171
-## 4  219
+## 1   59
+## 2   68
+## 3  126
+## 4  220
 ## 5  230
-## 6  254
-## 7  265
-## 8  273
-## 9  282
-## 10 284
-## 11 541
-## 12 650
-## 13 677
-## 14 773
-## 15 793
-## 16 801
-## 17 833
-## 18 842
-## 19 869
-## 20 896</code></pre>
+## 6  247
+## 7  301
+## 8  322
+## 9  344
+## 10 411
+## 11 445
+## 12 587
+## 13 749
+## 14 761
+## 15 768
+## 16 784
+## 17 810
+## 18 825
+## 19 958
+## 20 979</code></pre>
 </div>
 <div id="probabilidades-de-inclusão-sob-aas" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Probabilidades de inclusão sob AAS</h3>
@@ -935,25 +935,25 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 
 <span class="co"># a. Média amostral</span>
 (med_amo &lt;-<span class="st"> </span><span class="kw">mean</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 1540.536</code></pre>
+<pre><code>## [1] 1638.027</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># b. Estimativas da dispersão do estimador de média sob AAS</span>
 (var_med_amo &lt;-<span class="st"> </span>((<span class="dv">1</span><span class="op">/</span>n) <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>N)) <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 134532.4</code></pre>
+<pre><code>## [1] 120189.9</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(dp_med_amo &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VAR_med_amo))</code></pre></div>
 <pre><code>## [1] 389.4654</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cv_med_amo &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>DP_med_amo <span class="op">/</span><span class="st"> </span>med_amo)</code></pre></div>
-<pre><code>## [1] 25.28115</code></pre>
+<pre><code>## [1] 23.77649</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># c. Margem de erro relativo do estimador de média sob AAS</span>
 (me_med_amo &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>cv_med_amo)</code></pre></div>
-<pre><code>## [1] 49.55015</code></pre>
+<pre><code>## [1] 46.60107</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%</span>
 (D &lt;-<span class="st"> </span><span class="dv">150</span>)</code></pre></div>
 <pre><code>## [1] 150</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span>(N <span class="op">*</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)) <span class="op">/</span>
 <span class="st">              </span>(N <span class="op">*</span><span class="st"> </span>D<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)))</code></pre></div>
-<pre><code>## [1] 2568.038</code></pre>
+<pre><code>## [1] 2412.857</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span><span class="kw">ceiling</span>(n_amo_est))</code></pre></div>
-<pre><code>## [1] 2569</code></pre>
+<pre><code>## [1] 2413</code></pre>
 </div>
 </div>
 <div id="exerc4" class="section level2">

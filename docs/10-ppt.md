@@ -123,7 +123,7 @@ s
 ```
 
 ```
-## [1] 1696  721 1660
+## [1]  327  320 1444
 ```
 
 ```r
@@ -134,10 +134,10 @@ tabela
 ```
 ##      fazenda area acum linf lsup sel
 ## [1,]       1   50   50    1   50   0
-## [2,]       2 1000 1050   51 1050   1
+## [2,]       2 1000 1050   51 1050   2
 ## [3,]       3  125 1175 1051 1175   0
-## [4,]       4  300 1475 1176 1475   0
-## [5,]       5  500 1975 1476 1975   2
+## [4,]       4  300 1475 1176 1475   1
+## [5,]       5  500 1975 1476 1975   0
 ## [6,]       6   25 2000 1976 2000   0
 ```
 
@@ -159,7 +159,7 @@ fazendas_sel
 ```
 
 ```
-## [1] 2 2 5
+## [1] 4 3 2
 ```
 
 Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados número pseudoaleatórios distintos nas duas soluções.
@@ -244,13 +244,13 @@ tabela
 ```
 
 ```
-##      fazenda area          A  pii sel
-## [1,]       1   50 0.52106420 0.10   0
-## [2,]       2 1000 0.00000000 1.50   1
-## [3,]       3  125 0.18816465 0.25   2
-## [4,]       4  300 0.66903923 0.60   0
-## [5,]       5  500 0.00000000 1.00   1
-## [6,]       6   25 0.09802113 0.05   0
+##      fazenda area           A  pii sel
+## [1,]       1   50 0.878278318 0.10   0
+## [2,]       2 1000 0.000000000 1.50   1
+## [3,]       3  125 0.005341744 0.25   2
+## [4,]       4  300 0.238825197 0.60   2
+## [5,]       5  500 0.000000000 1.00   1
+## [6,]       6   25 0.127815553 0.05   0
 ```
 
 A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981. 
@@ -360,14 +360,6 @@ n=4
 certas=aleat=tamanho=sel=selc=r=NULL
 tamanho=as.integer(rep(runif(N,0,1)*10000))  # Gerando vetor de tamanhos
 tamanho=tamanho[order(tamanho,decreasing=T)] # Ordenação dos tamanhos em ordem decescente
-tamanho
-```
-
-```
-## [1] 8240 7239 6568 5494 5456 2309 1362
-```
-
-```r
 sel=rep(0,N)
 #Determinado tamanho mínimo das unidades certas
 n_aux=n
@@ -382,14 +374,6 @@ for (i in 1:N){
     sel[i]=1
   }
 }
-sel
-```
-
-```
-## [1] 0 0 0 0 0 0 0
-```
-
-```r
 aleat=tamanho
 if (sum(sel)>0){
   certas=tamanho[tamanho>=tam_certo]
@@ -423,7 +407,7 @@ sel
 ```
 
 ```
-## [1] 2 2 0 2 2 0 0
+## [1] 2 2 0 2 0 0
 ```
 
 ```r
@@ -437,13 +421,13 @@ tabela
 
 ```
 ##      Tamanho Seleção
-## [1,]    8240       2
-## [2,]    7239       2
-## [3,]    6568       0
-## [4,]    5494       2
-## [5,]    5456       2
-## [6,]    2309       0
-## [7,]    1362       0
+## [1,]    8427       1
+## [2,]    4461       2
+## [3,]    3985       2
+## [4,]    2444       0
+## [5,]    2331       2
+## [6,]     921       0
+## [7,]      22       0
 ```
 
 Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação. 
