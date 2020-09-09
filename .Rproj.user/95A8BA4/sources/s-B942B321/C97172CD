@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3238851953",
+    "hash" : "2010171970",
     "id" : "C97172CD",
-    "lastKnownWriteTime" : 1599600880,
-    "last_content_update" : 1599600880978,
+    "lastKnownWriteTime" : 1599657869,
+    "last_content_update" : 1599657869548,
     "path" : "~/GitHub/amostragem/10-ppt.Rmd",
     "project_path" : "10-ppt.Rmd",
     "properties" : {
-        "cursorPosition" : "332,1",
-        "scrollLine" : "311"
+        "cursorPosition" : "317,22",
+        "scrollLine" : "300"
     },
     "relative_order" : 3,
     "source_on_save" : false,

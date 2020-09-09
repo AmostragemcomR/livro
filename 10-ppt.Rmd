@@ -312,11 +312,12 @@ Apresentamos uma implementação simples de algiritmo para seleção Sistemátic
 ```{r,echo=T}
 # Seleção Sistemática com PPT e seleção das unidades certas se for o caso
 # Inicializando variáveis
-N=7
-n=4
-certas=aleat=tamanho=sel=selc=r=NULL
-tamanho=as.integer(rep(runif(N,0,1)*10000))  # Gerando vetor de tamanhos
+tamanho <- readRDS(file="Dados/MunicBR_dat.rds")[1:52,]$Pop # Lendo as populações dos municípios de Rondonia
+N=length(tamanho)
+n=10
+certas=aleat=sel=selc=r=NULL
 tamanho=tamanho[order(tamanho,decreasing=T)] # Ordenação dos tamanhos em ordem decescente
+tamanho
 sel=rep(0,N)
 #Determinado tamanho mínimo das unidades certas
 n_aux=n
@@ -331,6 +332,7 @@ for (i in 1:N){
     sel[i]=1
   }
 }
+sel
 aleat=tamanho
 if (sum(sel)>0){
   certas=tamanho[tamanho>=tam_certo]
@@ -362,11 +364,12 @@ for (i in 1:n_aux){
 }
 sel
 # Juntando as informações numa tabela
-tabela=cbind(c(certas,aleat),c(selc,sel))
+tabela=data.frame(cbind(c(certas,aleat),c(selc,sel)))
 
-# Tabela com marcação da unidades selecionadas certas(sel=1) e aleatórias(sel=2)
+# Amostra com marcação da unidades selecionadas certas(sel=1) e aleatórias(sel=2)
 colnames(tabela)=c('Tamanho','Seleção')
-tabela
+tabela[tabela[,2]>0,]
+
 ```
 
 Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação. 

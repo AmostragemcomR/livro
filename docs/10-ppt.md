@@ -123,7 +123,7 @@ s
 ```
 
 ```
-## [1]  327  320 1444
+## [1]  923 1562  803
 ```
 
 ```r
@@ -136,8 +136,8 @@ tabela
 ## [1,]       1   50   50    1   50   0
 ## [2,]       2 1000 1050   51 1050   2
 ## [3,]       3  125 1175 1051 1175   0
-## [4,]       4  300 1475 1176 1475   1
-## [5,]       5  500 1975 1476 1975   0
+## [4,]       4  300 1475 1176 1475   0
+## [5,]       5  500 1975 1476 1975   1
 ## [6,]       6   25 2000 1976 2000   0
 ```
 
@@ -159,7 +159,7 @@ fazendas_sel
 ```
 
 ```
-## [1] 4 3 2
+## [1] 2 2 2
 ```
 
 Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados número pseudoaleatórios distintos nas duas soluções.
@@ -244,13 +244,13 @@ tabela
 ```
 
 ```
-##      fazenda area           A  pii sel
-## [1,]       1   50 0.878278318 0.10   0
-## [2,]       2 1000 0.000000000 1.50   1
-## [3,]       3  125 0.005341744 0.25   2
-## [4,]       4  300 0.238825197 0.60   2
-## [5,]       5  500 0.000000000 1.00   1
-## [6,]       6   25 0.127815553 0.05   0
+##      fazenda area          A  pii sel
+## [1,]       1   50 0.08113453 0.10   2
+## [2,]       2 1000 0.00000000 1.50   1
+## [3,]       3  125 0.64321000 0.25   0
+## [4,]       4  300 0.13157666 0.60   2
+## [5,]       5  500 0.00000000 1.00   1
+## [6,]       6   25 0.98042975 0.05   0
 ```
 
 A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981. 
@@ -355,11 +355,24 @@ Apresentamos uma implementação simples de algiritmo para seleção Sistemátic
 ```r
 # Seleção Sistemática com PPT e seleção das unidades certas se for o caso
 # Inicializando variáveis
-N=7
-n=4
-certas=aleat=tamanho=sel=selc=r=NULL
-tamanho=as.integer(rep(runif(N,0,1)*10000))  # Gerando vetor de tamanhos
+tamanho <- readRDS(file="Dados/MunicBR_dat.rds")[1:52,]$Pop # Lendo as populações dos municípios de Rondonia
+N=length(tamanho)
+n=10
+certas=aleat=sel=selc=r=NULL
 tamanho=tamanho[order(tamanho,decreasing=T)] # Ordenação dos tamanhos em ordem decescente
+tamanho
+```
+
+```
+##  [1] 484992 128026 101269  87727  85863  55597  55357  45761  40099  36939
+## [11]  36555  35633  31699  26227  25728  23668  23017  22973  21427  19459
+## [21]  19410  19190  18265  18041  17399  15853  15541  13939  13827  13491
+## [31]  12505  12469  11343  10899  10534  10518  10515   9661   9636   9036
+## [41]   8887   8425   7883   6495   6268   6219   5477   5080   3689   3666
+## [51]   3597   2440
+```
+
+```r
 sel=rep(0,N)
 #Determinado tamanho mínimo das unidades certas
 n_aux=n
@@ -374,6 +387,15 @@ for (i in 1:N){
     sel[i]=1
   }
 }
+sel
+```
+
+```
+##  [1] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [36] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+```
+
+```r
 aleat=tamanho
 if (sum(sel)>0){
   certas=tamanho[tamanho>=tam_certo]
@@ -407,27 +429,31 @@ sel
 ```
 
 ```
-## [1] 2 2 0 2 0 0
+##  [1] 2 2 2 0 2 0 2 0 0 0 2 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 2 0 0
+## [36] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ```
 
 ```r
 # Juntando as informações numa tabela
-tabela=cbind(c(certas,aleat),c(selc,sel))
+tabela=data.frame(cbind(c(certas,aleat),c(selc,sel)))
 
-# Tabela com marcação da unidades selecionadas certas(sel=1) e aleatórias(sel=2)
+# Amostra com marcação da unidades selecionadas certas(sel=1) e aleatórias(sel=2)
 colnames(tabela)=c('Tamanho','Seleção')
-tabela
+tabela[tabela[,2]>0,]
 ```
 
 ```
-##      Tamanho Seleção
-## [1,]    8427       1
-## [2,]    4461       2
-## [3,]    3985       2
-## [4,]    2444       0
-## [5,]    2331       2
-## [6,]     921       0
-## [7,]      22       0
+##    Tamanho Seleção
+## 1   484992       1
+## 2   128026       2
+## 3   101269       2
+## 4    87727       2
+## 6    55597       2
+## 8    45761       2
+## 12   35633       2
+## 17   23017       2
+## 24   18041       2
+## 34   10899       2
 ```
 
 Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação. 

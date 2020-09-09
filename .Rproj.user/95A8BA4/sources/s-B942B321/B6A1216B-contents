@@ -33,9 +33,9 @@ AASC é raramente usada na prática, pois é ineficiente em comparação com a a
 
 Considere os dados amostrais para a variável $y$ sob AASC, representados por $\{y_{i_1}, y_{i_2},\dots, y_{i_k},\dots, y_{i_n}\}$. Tais valores são observações de variáveis aleatórias $Y_1, Y_2, ..., Y_k, ..., Y_n$ *independentes e identicamente distribuídas - IID*, com distribuição comum dada conforme descrito na Tabela \@ref(tab:tabaas1).
 
-<table>
-<caption>(#tab:tabaas1)Valores das variáveis aleatórias e probabilidades por unidade populacional</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabaas1)", "Valores das variáveis aleatórias e probabilidades por unidade populacional", "</caption>"),"</table>", sep ="\n")
+```
 <center>
 ---------
 Unidade populacional $(i)$                 1          2      $\dots$   $N$     Soma na linha
@@ -91,9 +91,9 @@ A variância e estimador de variância correspondentes são também facilmente o
 A Tabela \@ref(tab:tabaas2) apresenta um resumo dos estimadores do total, média e respectivas variâncias sob AASC.
 
 <center>
-<table>
-<caption>(#tab:tabaas2)Estimadores do total, média e respectivas variâncias sob AASC</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabaas2)", "Estimadores do total, média e respectivas variâncias sob AASC", "</caption>"),"</table>", sep ="\n")
+```
 ----------
 Estimador
 ---------------------------------------
@@ -144,9 +144,9 @@ Este algoritmo foi proposto por @Hajek1960 e consiste nos seguintes passos:
 
 *Passo 1:* Para cada $i\in U$, associe um *número pseudoaleatório* $a_i$, onde os $a_i$ são determinações de variáveis aleatórias IID $A_1, A_2, ..., A_N$, todas com distribuição $U(0;1)$, conforme apresentado na Tabela \@ref(tab:tabaas3).
 
-<table>
-<caption>(#tab:tabaas3)Número pseudoaleatório associado a cada unidade da população</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabaas3)", "Número pseudoaleatório associado a cada unidade da população", "</caption>"),"</table>", sep ="\n")
+```
 <center>
 ---------
 Rótulo da unidade $(i)$              1       2     $\dots$    $N$
@@ -159,9 +159,9 @@ Número pseudoaleatório $(a_i)$   $a_1$   $a_2$   $\dots$   $a_N$
 Tabela \@ref(tab:tabaas4).
 
 <center>
-<table>
-<caption>(#tab:tabaas4)Número pseudoaleatório ordenado associado ao rótulo permutado de cada unidade</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabaas4)", "Número pseudoaleatório ordenado associado ao rótulo permutado de cada unidade", "</caption>"),"</table>", sep ="\n")
+```
 ---------
 Rótulo permutado da unidade $(i)$              $i_1$       $i_2$     $\dots$    $i_N$
 ----------------------------------------- ----------- ----------- --------- -----------
@@ -204,8 +204,8 @@ O algoritmo de Fan, Muller e Rezucha, para selecionar uma *AAS* de tamanho $n$ d
 Este algoritmo é muito eficiente em comparação com os anteriores, porque requer processar a lista no máximo uma vez, e pode nem mesmo requerer chegar ao fim da lista: a amostra pode ser selecionada por completo bem antes de chegar ao final da lista. Apesar de sua simplicidade e eficiência, há alternativas ainda mais eficientes, que entretanto não serão discutidas aqui. Caso o leitor necessite implementar um algoritmo para seleção de uma AAS, recomendamos o emprego deste algoritmo. Será suficientemente bom para a maioria das aplicações práticas.
 
 Tanto o algoritmo de Hàjek como o de Fan, Muller e Rezucha podem ser facilmente implementados no R.
+```{r}
 
-```r
 # Algoritmo de Hàjek
 
 # Gerando os índices da população e os correspondentes pseudoaleatórios 
@@ -216,33 +216,8 @@ s=data.frame(as.vector(s[1:20,1]))
 names(s)=c("i")
 # A amostra será formada pelas unidades seguintes
 s
-```
 
-```
-##      i
-## 1  537
-## 2  383
-## 3  429
-## 4  271
-## 5  824
-## 6   31
-## 7  791
-## 8  398
-## 9  931
-## 10 511
-## 11 993
-## 12 612
-## 13 370
-## 14  89
-## 15 384
-## 16 360
-## 17 813
-## 18 141
-## 19 561
-## 20 610
-```
 
-```r
 # Algoritmo de Fan, Muller e Rezucha para seleção de uma amostra 
 # de n unidades de uma população de tamanho N
 
@@ -268,30 +243,6 @@ s=data.frame(s)
 names(s)=c("i")
 # A amostra será formada pelas unidades seguintes
 s
-```
-
-```
-##      i
-## 1   17
-## 2  164
-## 3  248
-## 4  297
-## 5  396
-## 6  431
-## 7  449
-## 8  504
-## 9  565
-## 10 604
-## 11 621
-## 12 634
-## 13 753
-## 14 800
-## 15 825
-## 16 844
-## 17 879
-## 18 899
-## 19 908
-## 20 920
 ```
 ### Probabilidades de inclusão sob AAS
 
@@ -357,9 +308,9 @@ $$
 A Tabela \@ref(tab:tabaas5) apresenta um resumo dos estimadores do total, média e respectivas variâncias sob AAS.
 
 <center>
-<table>
-<caption>(#tab:tabaas5)Estimadores do total, média e respectivas variâncias sob AAS</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabaas5)", "Estimadores do total, média e respectivas variâncias sob AAS", "</caption>"),"</table>", sep ="\n")
+```
 -----------
 Estimador
 -----------------------------------------
@@ -531,8 +482,7 @@ $$
 
 Solução do (#exm:exmaas2) usando R
 
-
-```r
+```{r,echo=TRUE}
 # Limpa área de trabalho
 rm(list = ls())
 
@@ -542,178 +492,51 @@ library(sampling)
 # Leitura dos dados
 MunicBR_dat <- readRDS(file="Dados/MunicBR_dat.rds")
 str(MunicBR_dat)
-```
 
-```
-## Classes 'tbl_df', 'tbl' and 'data.frame':	5570 obs. of  6 variables:
-##  $ CodMunic : chr  "1100015" "1100023" "1100031" "1100049" ...
-##  $ SiglaUF  : chr  "RO" "RO" "RO" "RO" ...
-##  $ CodUF    : chr  "11" "11" "11" "11" ...
-##  $ Pop      : num  25728 101269 6495 85863 18041 ...
-##  $ Area     : num  7067 4427 1314 3793 2783 ...
-##  $ Densidade: num  3.64 22.88 4.94 22.64 6.48 ...
-```
-
-```r
 # Item 1
 # Tamanho da população
 (N = nrow(MunicBR_dat))
-```
-
-```
-## [1] 5570
-```
-
-```r
 # Tamanho inicial da amostra
 (n <- 200)
-```
 
-```
-## [1] 200
-```
-
-```r
 # Soluções para item 1
 # a. Média populacional
 (med_pop <- mean(MunicBR_dat$Area))
-```
 
-```
-## [1] 1526.536
-```
-
-```r
 # b. Dispersão do estimador de média sob AAS
 (VAR_med_amo <- ((1/n) - (1/N)) * var(MunicBR_dat$Area))
-```
-
-```
-## [1] 151683.3
-```
-
-```r
 (DP_med_amo <- sqrt(VAR_med_amo))
-```
-
-```
-## [1] 389.4654
-```
-
-```r
 (CV_med_amo <- 100 * DP_med_amo / med_pop)
-```
 
-```
-## [1] 25.51302
-```
-
-```r
 # c. Margem de erro relativo do estimador de média sob AAS
 (ME_med_amo <- qnorm(0.975)*CV_med_amo)
-```
 
-```
-## [1] 50.00461
-```
-
-```r
 # d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%
 (D <- 150)
-```
-
-```
-## [1] 150
-```
-
-```r
 (n_amo <- (N * qnorm(0.975)^2 * var(MunicBR_dat$Area)) /
           (N * D^2 + qnorm(0.975)^2 * var(MunicBR_dat$Area)))
-```
-
-```
-## [1] 2734.689
-```
-
-```r
 (n_amo <- ceiling(n_amo))
-```
 
-```
-## [1] 2735
-```
-
-```r
 # Soluções para item 2
 # Seleciona amostra
 munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 
 # a. Média amostral
 (med_amo <- mean(munic_amo$Area))
-```
 
-```
-## [1] 1112.917
-```
-
-```r
 # b. Estimativas da dispersão do estimador de média sob AAS
 (var_med_amo <- ((1/n) - (1/N)) * var(munic_amo$Area))
-```
-
-```
-## [1] 23129.31
-```
-
-```r
 (dp_med_amo <- sqrt(VAR_med_amo))
-```
-
-```
-## [1] 389.4654
-```
-
-```r
 (cv_med_amo <- 100 * DP_med_amo / med_amo)
-```
 
-```
-## [1] 34.99502
-```
-
-```r
 # c. Margem de erro relativo do estimador de média sob AAS
 (me_med_amo <- qnorm(0.975)*cv_med_amo)
-```
 
-```
-## [1] 68.58898
-```
-
-```r
 # d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%
 (D <- 150)
-```
-
-```
-## [1] 150
-```
-
-```r
 (n_amo_est <- (N * qnorm(0.975)^2 * var(munic_amo$Area)) /
               (N * D^2 + qnorm(0.975)^2 * var(munic_amo$Area)))
-```
-
-```
-## [1] 714.1613
-```
-
-```r
 (n_amo_est <- ceiling(n_amo_est))
-```
-
-```
-## [1] 715
 ```
 
 
@@ -743,9 +566,9 @@ g.  Mostre numericamente que $E_{AASC}(s^2_y)=\sigma^2_y$.
 **(#exr:exraas4)** A administração de um parque florestal deseja estimar a população de coelhos e veados no parque nos meses de inverno. Para isso a área da floresta foi dividida, através de um levantamento aerofotométrico, em 10.000 pequenas áreas de aproximadamente 10 m<sup>2</sup>. Uma AAS de $n = 500$ dessas pequenas áreas foi selecionada e foram observados os números de coelhos e veados em cada uma delas, resultando na Tabela \@ref(tab:tabaas6):
 
 <center>
-<table>
-<caption>(#tab:tabaas6)Estatísticas obtidas a partir da amostra</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabaas6)", "Estatísticas obtidas a partir da amostra", "</caption>"),"</table>", sep ="\n")
+```
 ----------
 Estatísticas         Veados  Coelhos 
 ------------------- ------- --------
@@ -762,9 +585,9 @@ c.  Observando os CVs estimados, compare e comente sobre a precisão das estimat
 **(#exr:exraas5)** Uma grande empresa de construção tem 120 obras em andamento em diversos estágios. Para estimar o total de dinheiro já investido no conjunto das obras, para um relatório gerencial, foram selecionadas 12 delas, por AAS, e verificados os gastos acumulados até aquele momento. Os resultados estão na Tabela \@ref(tab:tabaas7):
 
 <center>
-<table>
-<caption>(#tab:tabaas7)Gastos apurados nas obras da amostra</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabaas7)", "Gastos apurados nas obras da amostra", "</caption>"),"</table>", sep ="\n")
+```
 ----------
  Obra   Gasto  Obra   Gasto 
 ------ ------ ------ ------
@@ -789,9 +612,9 @@ c. Compare as estimativas de precisão obtidas nos itens a e b.
 **(#exr:exraas6)** Considere os dados, apresentados na Tabela \@ref(tab:tabaas8), de salários (em 1.000 Reais) pagos no ano de 1997 pelas 5 (cinco) empresas de uma amostra que foi pesquisada de uma população com 250 empresas, onde o plano amostral foi amostragem aleatória simples sem reposição.
 
 <center>
-<table>
-<caption>(#tab:tabaas8)Salários pagos pelas empresas da amostra</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabaas8)", "Salários pagos pelas empresas da amostra", "</caption>"),"</table>", sep ="\n")
+```
 ----------
 Empresa            1    2    3   4   5
 ----------------- --- ---- ---- --- ---
@@ -805,9 +628,9 @@ b)  Usando a amostra observada como amostra piloto, calcule o tamanho de amostra
 **(#exr:exraas7)**  A Tabela \@ref(tab:tabaas9) mostra os dados amostrais de uma pesquisa feita por uma AAS numa população de 500 unidades. 
 
 <center>
-<table>
-<caption>(#tab:tabaas9)Frequências das respostas obtidas na amostra</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabaas9)", "Frequências das respostas obtidas na amostra", "</caption>"),"</table>", sep ="\n")
+```
 ----------
  Frequência $(f_i)$   $y_i$
 -------------------- ------
@@ -851,10 +674,9 @@ e)  A média populacional pertence ao intervalo de confiança construído? O que
 **(#exr:exraas10)**  Um biólogo deseja estimar o total populacional de determinado animal numa reserva florestal. Para isso ele dividiu a floresta em lotes de tamanhos aproximadamente iguais e selecionou uma amostra desses lotes, contando os animais encontrados. A Figura \@ref(fig:figAAS1) mostra, esquematicamente, o mapa da reserva com a divisão feita. A amostra é formada pelos lotes onde aparecem os números de animais encontrados, que foram selecionados usando um processo de AAS. 
 
 <center>
-<div class="figure">
-<img src="Figuras/Fig41.png" alt="Mapa esquemático da reserva com o número de animais encontrados nos lotes selecionados" width="60%" />
-<p class="caption">(\#fig:figAAS1)Mapa esquemático da reserva com o número de animais encontrados nos lotes selecionados</p>
-</div>
+```{r,figAAS1,echo=F,fig.cap="Mapa esquemático da reserva com o número de animais encontrados nos lotes selecionados",out.width = '60%'}
+knitr::include_graphics("Figuras/Fig41.png") 
+```
 </center>
 
   a) Faça uma tabela com os dados amostrais. 
