@@ -117,13 +117,13 @@ for (i in 1:n){
   }
 }
 # Juntando as informações numa tabela
-tabela=cbind(fazenda,area,acum,linf,lsup,sel)
+tabela=data.frame(cbind(fazenda,area,acum,linf,lsup,sel))
 # Aleatórios selecionados
 s
 ```
 
 ```
-## [1]  923 1562  803
+## [1] 1211  535 1007
 ```
 
 ```r
@@ -132,13 +132,13 @@ tabela
 ```
 
 ```
-##      fazenda area acum linf lsup sel
-## [1,]       1   50   50    1   50   0
-## [2,]       2 1000 1050   51 1050   2
-## [3,]       3  125 1175 1051 1175   0
-## [4,]       4  300 1475 1176 1475   0
-## [5,]       5  500 1975 1476 1975   1
-## [6,]       6   25 2000 1976 2000   0
+##   fazenda area acum linf lsup sel
+## 1       1   50   50    1   50   0
+## 2       2 1000 1050   51 1050   2
+## 3       3  125 1175 1051 1175   0
+## 4       4  300 1475 1176 1475   1
+## 5       5  500 1975 1476 1975   0
+## 6       6   25 2000 1976 2000   0
 ```
 
 ```r
@@ -159,10 +159,10 @@ fazendas_sel
 ```
 
 ```
-## [1] 2 2 2
+## [1] 2 2 4
 ```
 
-Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados número pseudoaleatórios distintos nas duas soluções.
+Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados números pseudoaleatórios distintos nas duas soluções.
 
 ### Estimação do total sob amostragem PPT com reposição
 
@@ -209,6 +209,9 @@ Alguns cuidados devem ser observados ao implementar a *Amostragem PPT de Poisson
 
 A seguir mostramos uma implementação em R do algoritmo de seleção para *Amostragem PPT de Poisson*.
 
+**(#exm:exmppt2)** Vamos utilizar os mesmos dados do \@ref(#exm:exmppt1) para selecionar uma amostra de tamanho esperado $n=3$, utilizando *Amostragem PPT de Poisson*.
+
+
 ```r
 #Algoritmo de seleção PPT de Poisson
 # Inicializando variáveis
@@ -216,14 +219,17 @@ N=6
 n=3
 fazenda=c(1:N)
 area=c(50,1000,125,300,500,25)
+area=area[order(area, decreasing=T)]
 sel=A=pii=rep(0,N)
 X=sum(area)
 # Verificando as unidades com seleção "certa" pelo tamanho
 for (i in 1:N){
   pii[i]=n*area[i]/X
   if (pii[i]>=1){
-    sel[i]=1                   # Seleção certa: sel=1
+# Seleção certa: sel=1    
+    sel[i]=1                   
     X=X-area[i]
+    pii[i]=1
     n=n-1
   }
 }
@@ -233,26 +239,26 @@ for (i in 1:N){
   if (sel[i] < 1){
   A[i]=runif(1,0,1)
   pii[i]=n*area[i]/X
-  if (A[i]<=pii[i]) {sel[i]=2} # Seleção aleatória: sel=2
+# Seleção aleatória: sel=2
+  if (A[i]<=pii[i]) {sel[i]=2} 
   }
 }
 # Juntando as informações numa tabela
-tabela=cbind(fazenda,area,A,pii,sel)
+tabela=data.frame(cbind(fazenda,area,A,pii,sel))
 # Tabela com os dados e marcação das unidades selecionadas 
 # (seleção certa: sel=1, seleção aleatória: sel=2)
 tabela
 ```
 
 ```
-##      fazenda area          A  pii sel
-## [1,]       1   50 0.08113453 0.10   2
-## [2,]       2 1000 0.00000000 1.50   1
-## [3,]       3  125 0.64321000 0.25   0
-## [4,]       4  300 0.13157666 0.60   2
-## [5,]       5  500 0.00000000 1.00   1
-## [6,]       6   25 0.98042975 0.05   0
+##   fazenda area         A  pii sel
+## 1       1 1000 0.0000000 1.00   1
+## 2       2  500 0.0000000 1.00   1
+## 3       3  300 0.9456400 0.60   0
+## 4       4  125 0.1390676 0.25   2
+## 5       5   50 0.5285758 0.10   0
+## 6       6   25 0.7318679 0.05   0
 ```
-
 A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981. 
 
 A *Amostragem PPT de Poisson* é pouco usada na prática devido à variabilidade do tamanho efetivo da amostra. É um método menos eficiente que outros métodos de seleção PPT sem reposição. Um método moderno que corrige este defeito é *Amostragem Sequencial de Poisson - ASP* - ver @Ohlsson1998 - descrito na seção seguinte.
@@ -305,6 +311,44 @@ Um algoritmo baseado em processamento sequencial de lista para implementar o mé
 4. Ordene as unidades crescentemente segundo os valores dos números aleatórios modificados $C_i$.
 5. Selecione para a amostra as $n$ unidades com os menores valores de $C_i$.
 
+****(#exm:exmppt3)** Seleção de uma amostra de $n=10$ municípios do Acre, a partir do arquivo 'MunicBR_dat.rds', por *Amostragem Sequencial de Poisson*, utilizando o R.
+
+
+```r
+# Algoritmo para Amostragem sequencial de Poisson
+# Lendo os municípios do Acre
+tabela <- readRDS(file="Dados/MunicBR_dat.rds")[53:74,c(1, 4)]
+N=length(tabela$Pop)
+n=10
+# Gerando números aleatórios ai~U(0,1)
+tabela$ai=runif(N,0,1)
+X=sum(tabela$Pop)
+# Calculando os tamanhos relativos pi
+tabela$pi=tabela$Pop/X
+# Calculando os aleatórios modificados ci
+tabela$ci=tabela$ai/tabela$pi
+# Ordenando as linhas da tabela segundo ci
+tabela=tabela[order(tabela$ci),]
+# Tomando as n primeiras linas da tabela ordenada
+# como a amostra desejada
+amostra=tabela[1:n,]
+amostra
+```
+
+```
+##    CodMunic    Pop         ai         pi         ci
+## 70  1200450  20799 0.01399895 0.02678685  0.5226054
+## 67  1200401 357194 0.33673075 0.46002707  0.7319803
+## 73  1200708  17021 0.02976482 0.02192120  1.3578098
+## 60  1200302  32411 0.12237209 0.04174185  2.9316404
+## 61  1200328   7147 0.02766192 0.00920456  3.0052411
+## 58  1200203  80377 0.44754425 0.10351684  4.3233954
+## 55  1200104  22899 0.23997713 0.02949142  8.1371832
+## 72  1200609  37571 0.43154665 0.04838737  8.9185809
+## 56  1200138   9003 0.10643966 0.01159489  9.1798796
+## 71  1200500  40311 0.88189277 0.05191619 16.9868549
+```
+
 ### Estimação com amostragem sequencial de Poisson
 
 O estimador tipo HT do total sob *Amostragem Sequencial de Poisson* é dado por: 
@@ -349,32 +393,23 @@ A seleção com amostragem PPT sistemática com ordenação segue os seguintes p
 1. Faça uma ordenação das unidades da população segundo uma (ou mais) variável(is) de interesse.
 2. Selecione uma amostra sistemática com PPT seguindo o algoritmo anterior.
 
-Apresentamos uma implementação simples de algiritmo para seleção Sistemática com PPT, considerando a inclusão na amostra como certas as unidades em que o valor da variável tamanho é maior que $K$. Dessa maneira a seleção é sem reposição.
+Apresentamos uma implementação simples de algoritmo para seleção Sistemática com PPT, considerando a inclusão na amostra como certas as unidades em que o valor da variável tamanho é maior que $K$. Dessa maneira a seleção é sem reposição.
+
+**(#exm:exmppt3)**  O arquivo MunicBR_dat.rds apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondonia e selecionar uma amostra de tamanho $n=10$ municpios, com probabilidades proporcionais à populacão de cada município.
 
 
 ```r
 # Seleção Sistemática com PPT e seleção das unidades certas se for o caso
 # Inicializando variáveis
-tamanho <- readRDS(file="Dados/MunicBR_dat.rds")[1:52,]$Pop # Lendo as populações dos municípios de Rondonia
+# Lendo as populações dos municípios de Rondonia
+tamanho <- readRDS(file="Dados/MunicBR_dat.rds")[1:52,]$Pop 
 N=length(tamanho)
 n=10
 certas=aleat=sel=selc=r=NULL
-tamanho=tamanho[order(tamanho,decreasing=T)] # Ordenação dos tamanhos em ordem decescente
-tamanho
-```
-
-```
-##  [1] 484992 128026 101269  87727  85863  55597  55357  45761  40099  36939
-## [11]  36555  35633  31699  26227  25728  23668  23017  22973  21427  19459
-## [21]  19410  19190  18265  18041  17399  15853  15541  13939  13827  13491
-## [31]  12505  12469  11343  10899  10534  10518  10515   9661   9636   9036
-## [41]   8887   8425   7883   6495   6268   6219   5477   5080   3689   3666
-## [51]   3597   2440
-```
-
-```r
+# Ordenação dos tamanhos em ordem decescente
+tamanho=tamanho[order(tamanho,decreasing=T)] 
 sel=rep(0,N)
-#Determinado tamanho mínimo das unidades certas
+#Determinando tamanho mínimo das unidades certas
 n_aux=n
 tamtot_aux=tam_certo=sum(tamanho)
 for (i in 1:N){
@@ -384,18 +419,10 @@ for (i in 1:N){
     p=1
     n_aux=n_aux-1
     tamtot_aux=tamtot_aux-tamanho[i]
+# Seleção certa: sel=1
     sel[i]=1
   }
 }
-sel
-```
-
-```
-##  [1] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-## [36] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-```
-
-```r
 aleat=tamanho
 if (sum(sel)>0){
   certas=tamanho[tamanho>=tam_certo]
@@ -414,31 +441,24 @@ for (i in 2:N){
   linf[i]=acum[i-1]+1
   lsup[i]=acum[i]
 }
-K=lsup[N]/n_aux                     # Salto de seleção
-r[1]=runif(1,0,K)                   # Partida aleatória
+# Salto de seleção
+K=lsup[N]/n_aux                     
+# Partida aleatória
+r[1]=runif(1,0,K)                   
 if (n_aux>1){for (i in 2:n_aux){r[i]=r[i-1]+K}} 
 # Marcando fazendas selecionadas aleatoriamente
 for (i in 1:n_aux){
   for (j in 1:N){
     if((linf[j] < r[i]) & (r[i]<=lsup[j])){
-      sel[j]=2           #Seleção aleatória: sel=2
+#Seleção aleatória: sel=2
+      sel[j]=2           
     }
   }
 }
-sel
-```
-
-```
-##  [1] 2 2 2 0 2 0 2 0 0 0 2 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 2 0 0
-## [36] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-```
-
-```r
 # Juntando as informações numa tabela
 tabela=data.frame(cbind(c(certas,aleat),c(selc,sel)))
-
-# Amostra com marcação da unidades selecionadas certas(sel=1) e aleatórias(sel=2)
 colnames(tabela)=c('Tamanho','Seleção')
+# Amostra com marcação das unidades selecionadas certas(Seleção=1) e aleatórias(Seleção=2)
 tabela[tabela[,2]>0,]
 ```
 
@@ -449,16 +469,16 @@ tabela[tabela[,2]>0,]
 ## 3   101269       2
 ## 4    87727       2
 ## 6    55597       2
-## 8    45761       2
-## 12   35633       2
-## 17   23017       2
-## 24   18041       2
-## 34   10899       2
+## 9    40099       2
+## 13   31699       2
+## 18   22973       2
+## 25   17399       2
+## 36   10518       2
 ```
 
 Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação. 
 
-**(#exm:exmppt2)** Nas pesquisas domiciliares por amostragem do IBGE, anteriores à adoção da amostra mestra para o Sistema Integrado de Pesquisas Domiciliares - SIPD,  tais como na PNAD, POF e PME, era usual adotar a seleção sistemática com PPT. No caso da PNAD, o plano amostral incluía a seleção de municípios, que eram estratificados por tamanho em termos de população e selecionados sistematicamente com probabilidade proporcional à população residente obtida no último Censo Demográfico. Antes da seleção dos setores, arrolava-se em cada município selecionado, primeiramente, os setores urbanos em ordem crescente de numeração e, posteriormente, os setores rurais. Os setores eram selecionados, em cada município da amostra, também sistematicamente com probabilidade proporcional utilizando como medida de tamanho o número de unidades domiciliares existentes por ocasião do último Censo Demográfico. Nas demais pesquisas domiciliares, onde a unidade primária de seleção era o setor, era feita a seleção dos setores em cada estrato sistematicamente com PPT (medido em número de domicílios ou domicílios particulares ocupados). Detalhes sobre os principais aspectos de amostragem das pesquisas domiciliares do IBGE podem ser vistos em @Albieri2015. Cabe registrar que, para a estimação da precisão das estimativas, eram adotados estimadores das variâncias como se o plano amostral fosse de seleção PPT com reposição.  
+**(#exm:exmppt4)** Nas pesquisas domiciliares por amostragem do IBGE, anteriores à adoção da amostra mestra para o Sistema Integrado de Pesquisas Domiciliares - SIPD,  tais como na PNAD, POF e PME, era usual adotar a seleção sistemática com PPT. No caso da PNAD, o plano amostral incluía a seleção de municípios, que eram estratificados por tamanho em termos de população e selecionados sistematicamente com probabilidade proporcional à população residente obtida no último Censo Demográfico. Antes da seleção dos setores, arrolava-se em cada município selecionado, primeiramente, os setores urbanos em ordem crescente de numeração e, posteriormente, os setores rurais. Os setores eram selecionados, em cada município da amostra, também sistematicamente com probabilidade proporcional utilizando como medida de tamanho o número de unidades domiciliares existentes por ocasião do último Censo Demográfico. Nas demais pesquisas domiciliares, onde a unidade primária de seleção era o setor, era feita a seleção dos setores em cada estrato sistematicamente com PPT (medido em número de domicílios ou domicílios particulares ocupados). Detalhes sobre os principais aspectos de amostragem das pesquisas domiciliares do IBGE podem ser vistos em @Albieri2015. Cabe registrar que, para a estimação da precisão das estimativas, eram adotados estimadores das variâncias como se o plano amostral fosse de seleção PPT com reposição.  
 
 A Amostragem Sistemática com PPT (com ou sem ordenação) era muito usada na prática por sua simplicidade na seleção de amostras. Porém, com o advento de modernas ferramentas computacionais que permitem selecionar com facilidade amostras PPT sem reposição usando outros métodos, tornou-se menos popular.
 

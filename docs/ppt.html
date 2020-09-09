@@ -478,19 +478,19 @@ s=<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</sp
   }
 }
 <span class="co"># Juntando as informações numa tabela</span>
-tabela=<span class="kw">cbind</span>(fazenda,area,acum,linf,lsup,sel)
+tabela=<span class="kw">data.frame</span>(<span class="kw">cbind</span>(fazenda,area,acum,linf,lsup,sel))
 <span class="co"># Aleatórios selecionados</span>
 s</code></pre></div>
-<pre><code>## [1]  923 1562  803</code></pre>
+<pre><code>## [1] 1211  535 1007</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Tabela com os dados e marcação do número de vezes que cada fazenda foi selecionada</span>
 tabela</code></pre></div>
-<pre><code>##      fazenda area acum linf lsup sel
-## [1,]       1   50   50    1   50   0
-## [2,]       2 1000 1050   51 1050   2
-## [3,]       3  125 1175 1051 1175   0
-## [4,]       4  300 1475 1176 1475   0
-## [5,]       5  500 1975 1476 1975   1
-## [6,]       6   25 2000 1976 2000   0</code></pre>
+<pre><code>##   fazenda area acum linf lsup sel
+## 1       1   50   50    1   50   0
+## 2       2 1000 1050   51 1050   2
+## 3       3  125 1175 1051 1175   0
+## 4       4  300 1475 1176 1475   1
+## 5       5  500 1975 1476 1975   0
+## 6       6   25 2000 1976 2000   0</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Resolvendo o mesmo problema utilizando função de um pacote do R</span>
 <span class="co"># Carregando o pacote pps, para seleção proporcional ao tamanho</span>
 <span class="kw">require</span>(pps)</code></pre></div>
@@ -499,8 +499,8 @@ tabela</code></pre></div>
 fazendas_sel=<span class="kw">ppswr</span>(area,n)
 <span class="co"># Identificação das fazendas selecionadas</span>
 fazendas_sel</code></pre></div>
-<pre><code>## [1] 2 2 2</code></pre>
-<p>Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados número pseudoaleatórios distintos nas duas soluções.</p>
+<pre><code>## [1] 2 2 4</code></pre>
+<p>Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados números pseudoaleatórios distintos nas duas soluções.</p>
 <div id="estimação-do-total-sob-amostragem-ppt-com-reposição" class="section level3">
 <h3><span class="header-section-number">10.3.1</span> Estimação do total sob amostragem PPT com reposição</h3>
 <p>Um estimador não viciado do total sob amostragem PPT com reposição - PPTC é dado por:</p>
@@ -534,20 +534,24 @@ V_{PPTC}\left(\widehat  Y_{PPTC}\right) = \frac{1}{n} \displaystyle \sum_{i \in 
 <p>O conjunto <span class="math inline">\(s\)</span> de unidades selecionadas por este algoritmo não terá unidades repetidas e terá um tamanho efetivo aleatório, de valor esperado igual a <span class="math inline">\(n\)</span>.</p>
 <p>Alguns cuidados devem ser observados ao implementar a <em>Amostragem PPT de Poisson</em>. Em primeiro lugar, verifique se nenhuma unidade tem tamanho relativo <span class="math inline">\(x_i / X\)</span> maior que <span class="math inline">\(1/n\)</span>. Se isto ocorrer, a ‘probabilidade de inclusão’ desta unidade seria maior que 1, o que é impossível. Caso alguma unidade seja tão grande que <span class="math inline">\(x_i / X &gt; 1/n\)</span>, inclua esta unidade com certeza (isto é, faça <span class="math inline">\(\pi_i = 1\)</span>). Em seguida, refaça os cálculos dos <span class="math inline">\(\pi_i\)</span> com o tamanho desta unidade excluído do total <span class="math inline">\(X\)</span> e o tamanho de amostra diminuído de uma unidade. Repita a verificação até que nenhuma unidade tenha tamanho relativo maior que 1 sobre o tamanho residual da amostra.</p>
 <p>A seguir mostramos uma implementação em R do algoritmo de seleção para <em>Amostragem PPT de Poisson</em>.</p>
+<p><strong>Exemplo 10.2 </strong> Vamos utilizar os mesmos dados do @refExemplo 10.1  para selecionar uma amostra de tamanho esperado <span class="math inline">\(n=3\)</span>, utilizando <em>Amostragem PPT de Poisson</em>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Algoritmo de seleção PPT de Poisson</span>
 <span class="co"># Inicializando variáveis</span>
 N=<span class="dv">6</span>
 n=<span class="dv">3</span>
 fazenda=<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span>N)
 area=<span class="kw">c</span>(<span class="dv">50</span>,<span class="dv">1000</span>,<span class="dv">125</span>,<span class="dv">300</span>,<span class="dv">500</span>,<span class="dv">25</span>)
+area=area[<span class="kw">order</span>(area, <span class="dt">decreasing=</span>T)]
 sel=A=pii=<span class="kw">rep</span>(<span class="dv">0</span>,N)
 X=<span class="kw">sum</span>(area)
 <span class="co"># Verificando as unidades com seleção &quot;certa&quot; pelo tamanho</span>
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){
   pii[i]=n<span class="op">*</span>area[i]<span class="op">/</span>X
   <span class="cf">if</span> (pii[i]<span class="op">&gt;=</span><span class="dv">1</span>){
-    sel[i]=<span class="dv">1</span>                   <span class="co"># Seleção certa: sel=1</span>
+<span class="co"># Seleção certa: sel=1    </span>
+    sel[i]=<span class="dv">1</span>                   
     X=X<span class="op">-</span>area[i]
+    pii[i]=<span class="dv">1</span>
     n=n<span class="op">-</span><span class="dv">1</span>
   }
 }
@@ -557,21 +561,22 @@ X=<span class="kw">sum</span>(area)
   <span class="cf">if</span> (sel[i] <span class="op">&lt;</span><span class="st"> </span><span class="dv">1</span>){
   A[i]=<span class="kw">runif</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>)
   pii[i]=n<span class="op">*</span>area[i]<span class="op">/</span>X
-  <span class="cf">if</span> (A[i]<span class="op">&lt;=</span>pii[i]) {sel[i]=<span class="dv">2</span>} <span class="co"># Seleção aleatória: sel=2</span>
+<span class="co"># Seleção aleatória: sel=2</span>
+  <span class="cf">if</span> (A[i]<span class="op">&lt;=</span>pii[i]) {sel[i]=<span class="dv">2</span>} 
   }
 }
 <span class="co"># Juntando as informações numa tabela</span>
-tabela=<span class="kw">cbind</span>(fazenda,area,A,pii,sel)
+tabela=<span class="kw">data.frame</span>(<span class="kw">cbind</span>(fazenda,area,A,pii,sel))
 <span class="co"># Tabela com os dados e marcação das unidades selecionadas </span>
 <span class="co"># (seleção certa: sel=1, seleção aleatória: sel=2)</span>
 tabela</code></pre></div>
-<pre><code>##      fazenda area          A  pii sel
-## [1,]       1   50 0.08113453 0.10   2
-## [2,]       2 1000 0.00000000 1.50   1
-## [3,]       3  125 0.64321000 0.25   0
-## [4,]       4  300 0.13157666 0.60   2
-## [5,]       5  500 0.00000000 1.00   1
-## [6,]       6   25 0.98042975 0.05   0</code></pre>
+<pre><code>##   fazenda area         A  pii sel
+## 1       1 1000 0.0000000 1.00   1
+## 2       2  500 0.0000000 1.00   1
+## 3       3  300 0.9456400 0.60   0
+## 4       4  125 0.1390676 0.25   2
+## 5       5   50 0.5285758 0.10   0
+## 6       6   25 0.7318679 0.05   0</code></pre>
 <p>A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981.</p>
 <p>A <em>Amostragem PPT de Poisson</em> é pouco usada na prática devido à variabilidade do tamanho efetivo da amostra. É um método menos eficiente que outros métodos de seleção PPT sem reposição. Um método moderno que corrige este defeito é <em>Amostragem Sequencial de Poisson - ASP</em> - ver <span class="citation">Ohlsson (1998)</span> - descrito na seção seguinte.</p>
 <div id="estimação-do-total-sob-amostragem-de-poisson" class="section level3">
@@ -611,6 +616,36 @@ V_{PO}\left(\widehat  Y_{PO}^R \right) \doteq \frac {N}{N-1} \frac{1}{n} \displa
 <li>Ordene as unidades crescentemente segundo os valores dos números aleatórios modificados <span class="math inline">\(C_i\)</span>.</li>
 <li>Selecione para a amostra as <span class="math inline">\(n\)</span> unidades com os menores valores de <span class="math inline">\(C_i\)</span>.</li>
 </ol>
+<p>****Exemplo 10.3 ** Seleção de uma amostra de <span class="math inline">\(n=10\)</span> municípios do Acre, a partir do arquivo ‘MunicBR_dat.rds’, por <em>Amostragem Sequencial de Poisson</em>, utilizando o R.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Algoritmo para Amostragem sequencial de Poisson</span>
+<span class="co"># Lendo os municípios do Acre</span>
+tabela &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="dt">file=</span><span class="st">&quot;Dados/MunicBR_dat.rds&quot;</span>)[<span class="dv">53</span><span class="op">:</span><span class="dv">74</span>,<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]
+N=<span class="kw">length</span>(tabela<span class="op">$</span>Pop)
+n=<span class="dv">10</span>
+<span class="co"># Gerando números aleatórios ai~U(0,1)</span>
+tabela<span class="op">$</span>ai=<span class="kw">runif</span>(N,<span class="dv">0</span>,<span class="dv">1</span>)
+X=<span class="kw">sum</span>(tabela<span class="op">$</span>Pop)
+<span class="co"># Calculando os tamanhos relativos pi</span>
+tabela<span class="op">$</span>pi=tabela<span class="op">$</span>Pop<span class="op">/</span>X
+<span class="co"># Calculando os aleatórios modificados ci</span>
+tabela<span class="op">$</span>ci=tabela<span class="op">$</span>ai<span class="op">/</span>tabela<span class="op">$</span>pi
+<span class="co"># Ordenando as linhas da tabela segundo ci</span>
+tabela=tabela[<span class="kw">order</span>(tabela<span class="op">$</span>ci),]
+<span class="co"># Tomando as n primeiras linas da tabela ordenada</span>
+<span class="co"># como a amostra desejada</span>
+amostra=tabela[<span class="dv">1</span><span class="op">:</span>n,]
+amostra</code></pre></div>
+<pre><code>##    CodMunic    Pop         ai         pi         ci
+## 70  1200450  20799 0.01399895 0.02678685  0.5226054
+## 67  1200401 357194 0.33673075 0.46002707  0.7319803
+## 73  1200708  17021 0.02976482 0.02192120  1.3578098
+## 60  1200302  32411 0.12237209 0.04174185  2.9316404
+## 61  1200328   7147 0.02766192 0.00920456  3.0052411
+## 58  1200203  80377 0.44754425 0.10351684  4.3233954
+## 55  1200104  22899 0.23997713 0.02949142  8.1371832
+## 72  1200609  37571 0.43154665 0.04838737  8.9185809
+## 56  1200138   9003 0.10643966 0.01159489  9.1798796
+## 71  1200500  40311 0.88189277 0.05191619 16.9868549</code></pre>
 <div id="estimação-com-amostragem-sequencial-de-poisson" class="section level3">
 <h3><span class="header-section-number">10.5.1</span> Estimação com amostragem sequencial de Poisson</h3>
 <p>O estimador tipo HT do total sob <em>Amostragem Sequencial de Poisson</em> é dado por:</p>
@@ -649,23 +684,19 @@ V_{ASP}\left(\widehat Y_{ASP}\right) \doteq \frac{N}{N-1} \frac{1}{n} \displayst
 <li>Faça uma ordenação das unidades da população segundo uma (ou mais) variável(is) de interesse.</li>
 <li>Selecione uma amostra sistemática com PPT seguindo o algoritmo anterior.</li>
 </ol>
-<p>Apresentamos uma implementação simples de algiritmo para seleção Sistemática com PPT, considerando a inclusão na amostra como certas as unidades em que o valor da variável tamanho é maior que <span class="math inline">\(K\)</span>. Dessa maneira a seleção é sem reposição.</p>
+<p>Apresentamos uma implementação simples de algoritmo para seleção Sistemática com PPT, considerando a inclusão na amostra como certas as unidades em que o valor da variável tamanho é maior que <span class="math inline">\(K\)</span>. Dessa maneira a seleção é sem reposição.</p>
+<p><strong>Exemplo 10.3 </strong> O arquivo MunicBR_dat.rds apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondonia e selecionar uma amostra de tamanho <span class="math inline">\(n=10\)</span> municpios, com probabilidades proporcionais à populacão de cada município.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Seleção Sistemática com PPT e seleção das unidades certas se for o caso</span>
 <span class="co"># Inicializando variáveis</span>
-tamanho &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="dt">file=</span><span class="st">&quot;Dados/MunicBR_dat.rds&quot;</span>)[<span class="dv">1</span><span class="op">:</span><span class="dv">52</span>,]<span class="op">$</span>Pop <span class="co"># Lendo as populações dos municípios de Rondonia</span>
+<span class="co"># Lendo as populações dos municípios de Rondonia</span>
+tamanho &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="dt">file=</span><span class="st">&quot;Dados/MunicBR_dat.rds&quot;</span>)[<span class="dv">1</span><span class="op">:</span><span class="dv">52</span>,]<span class="op">$</span>Pop 
 N=<span class="kw">length</span>(tamanho)
 n=<span class="dv">10</span>
 certas=aleat=sel=selc=r=<span class="ot">NULL</span>
-tamanho=tamanho[<span class="kw">order</span>(tamanho,<span class="dt">decreasing=</span>T)] <span class="co"># Ordenação dos tamanhos em ordem decescente</span>
-tamanho</code></pre></div>
-<pre><code>##  [1] 484992 128026 101269  87727  85863  55597  55357  45761  40099  36939
-## [11]  36555  35633  31699  26227  25728  23668  23017  22973  21427  19459
-## [21]  19410  19190  18265  18041  17399  15853  15541  13939  13827  13491
-## [31]  12505  12469  11343  10899  10534  10518  10515   9661   9636   9036
-## [41]   8887   8425   7883   6495   6268   6219   5477   5080   3689   3666
-## [51]   3597   2440</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sel=<span class="kw">rep</span>(<span class="dv">0</span>,N)
-<span class="co">#Determinado tamanho mínimo das unidades certas</span>
+<span class="co"># Ordenação dos tamanhos em ordem decescente</span>
+tamanho=tamanho[<span class="kw">order</span>(tamanho,<span class="dt">decreasing=</span>T)] 
+sel=<span class="kw">rep</span>(<span class="dv">0</span>,N)
+<span class="co">#Determinando tamanho mínimo das unidades certas</span>
 n_aux=n
 tamtot_aux=tam_certo=<span class="kw">sum</span>(tamanho)
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){
@@ -675,13 +706,11 @@ tamtot_aux=tam_certo=<span class="kw">sum</span>(tamanho)
     p=<span class="dv">1</span>
     n_aux=n_aux<span class="op">-</span><span class="dv">1</span>
     tamtot_aux=tamtot_aux<span class="op">-</span>tamanho[i]
+<span class="co"># Seleção certa: sel=1</span>
     sel[i]=<span class="dv">1</span>
   }
 }
-sel</code></pre></div>
-<pre><code>##  [1] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-## [36] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">aleat=tamanho
+aleat=tamanho
 <span class="cf">if</span> (<span class="kw">sum</span>(sel)<span class="op">&gt;</span><span class="dv">0</span>){
   certas=tamanho[tamanho<span class="op">&gt;=</span>tam_certo]
   aleat=tamanho[tamanho<span class="op">&lt;</span>tam_certo]
@@ -699,25 +728,24 @@ sel=<span class="kw">rep</span>(<span class="dv">0</span>,N)
   linf[i]=acum[i<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>
   lsup[i]=acum[i]
 }
-K=lsup[N]<span class="op">/</span>n_aux                     <span class="co"># Salto de seleção</span>
-r[<span class="dv">1</span>]=<span class="kw">runif</span>(<span class="dv">1</span>,<span class="dv">0</span>,K)                   <span class="co"># Partida aleatória</span>
+<span class="co"># Salto de seleção</span>
+K=lsup[N]<span class="op">/</span>n_aux                     
+<span class="co"># Partida aleatória</span>
+r[<span class="dv">1</span>]=<span class="kw">runif</span>(<span class="dv">1</span>,<span class="dv">0</span>,K)                   
 <span class="cf">if</span> (n_aux<span class="op">&gt;</span><span class="dv">1</span>){<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span>n_aux){r[i]=r[i<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span>K}} 
 <span class="co"># Marcando fazendas selecionadas aleatoriamente</span>
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n_aux){
   <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N){
     <span class="cf">if</span>((linf[j] <span class="op">&lt;</span><span class="st"> </span>r[i]) <span class="op">&amp;</span><span class="st"> </span>(r[i]<span class="op">&lt;=</span>lsup[j])){
-      sel[j]=<span class="dv">2</span>           <span class="co">#Seleção aleatória: sel=2</span>
+<span class="co">#Seleção aleatória: sel=2</span>
+      sel[j]=<span class="dv">2</span>           
     }
   }
 }
-sel</code></pre></div>
-<pre><code>##  [1] 2 2 2 0 2 0 2 0 0 0 2 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 2 0 0
-## [36] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Juntando as informações numa tabela</span>
+<span class="co"># Juntando as informações numa tabela</span>
 tabela=<span class="kw">data.frame</span>(<span class="kw">cbind</span>(<span class="kw">c</span>(certas,aleat),<span class="kw">c</span>(selc,sel)))
-
-<span class="co"># Amostra com marcação da unidades selecionadas certas(sel=1) e aleatórias(sel=2)</span>
 <span class="kw">colnames</span>(tabela)=<span class="kw">c</span>(<span class="st">&#39;Tamanho&#39;</span>,<span class="st">&#39;Seleção&#39;</span>)
+<span class="co"># Amostra com marcação das unidades selecionadas certas(Seleção=1) e aleatórias(Seleção=2)</span>
 tabela[tabela[,<span class="dv">2</span>]<span class="op">&gt;</span><span class="dv">0</span>,]</code></pre></div>
 <pre><code>##    Tamanho Seleção
 ## 1   484992       1
@@ -725,13 +753,13 @@ tabela[tabela[,<span class="dv">2</span>]<span class="op">&gt;</span><span class
 ## 3   101269       2
 ## 4    87727       2
 ## 6    55597       2
-## 8    45761       2
-## 12   35633       2
-## 17   23017       2
-## 24   18041       2
-## 34   10899       2</code></pre>
+## 9    40099       2
+## 13   31699       2
+## 18   22973       2
+## 25   17399       2
+## 36   10518       2</code></pre>
 <p>Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação.</p>
-<p><strong>Exemplo 10.2 </strong> Nas pesquisas domiciliares por amostragem do IBGE, anteriores à adoção da amostra mestra para o Sistema Integrado de Pesquisas Domiciliares - SIPD, tais como na PNAD, POF e PME, era usual adotar a seleção sistemática com PPT. No caso da PNAD, o plano amostral incluía a seleção de municípios, que eram estratificados por tamanho em termos de população e selecionados sistematicamente com probabilidade proporcional à população residente obtida no último Censo Demográfico. Antes da seleção dos setores, arrolava-se em cada município selecionado, primeiramente, os setores urbanos em ordem crescente de numeração e, posteriormente, os setores rurais. Os setores eram selecionados, em cada município da amostra, também sistematicamente com probabilidade proporcional utilizando como medida de tamanho o número de unidades domiciliares existentes por ocasião do último Censo Demográfico. Nas demais pesquisas domiciliares, onde a unidade primária de seleção era o setor, era feita a seleção dos setores em cada estrato sistematicamente com PPT (medido em número de domicílios ou domicílios particulares ocupados). Detalhes sobre os principais aspectos de amostragem das pesquisas domiciliares do IBGE podem ser vistos em <span class="citation">Albieri e Bianchini (2015)</span>. Cabe registrar que, para a estimação da precisão das estimativas, eram adotados estimadores das variâncias como se o plano amostral fosse de seleção PPT com reposição.</p>
+<p><strong>Exemplo 10.4 </strong> Nas pesquisas domiciliares por amostragem do IBGE, anteriores à adoção da amostra mestra para o Sistema Integrado de Pesquisas Domiciliares - SIPD, tais como na PNAD, POF e PME, era usual adotar a seleção sistemática com PPT. No caso da PNAD, o plano amostral incluía a seleção de municípios, que eram estratificados por tamanho em termos de população e selecionados sistematicamente com probabilidade proporcional à população residente obtida no último Censo Demográfico. Antes da seleção dos setores, arrolava-se em cada município selecionado, primeiramente, os setores urbanos em ordem crescente de numeração e, posteriormente, os setores rurais. Os setores eram selecionados, em cada município da amostra, também sistematicamente com probabilidade proporcional utilizando como medida de tamanho o número de unidades domiciliares existentes por ocasião do último Censo Demográfico. Nas demais pesquisas domiciliares, onde a unidade primária de seleção era o setor, era feita a seleção dos setores em cada estrato sistematicamente com PPT (medido em número de domicílios ou domicílios particulares ocupados). Detalhes sobre os principais aspectos de amostragem das pesquisas domiciliares do IBGE podem ser vistos em <span class="citation">Albieri e Bianchini (2015)</span>. Cabe registrar que, para a estimação da precisão das estimativas, eram adotados estimadores das variâncias como se o plano amostral fosse de seleção PPT com reposição.</p>
 <p>A Amostragem Sistemática com PPT (com ou sem ordenação) era muito usada na prática por sua simplicidade na seleção de amostras. Porém, com o advento de modernas ferramentas computacionais que permitem selecionar com facilidade amostras PPT sem reposição usando outros métodos, tornou-se menos popular.</p>
 <p>Quando <em>Amostragem Sistemática com PPT</em> for usada para selecionar a amostra, pode-se usar o estimador HT para o total conforme descrito na Expressão <a href="ppt.html#eq:eqppt2">(10.2)</a>. Para esse plano amostral, a variância tem uma expressão complexa e não há estimador consistente de variância disponível na literatura. O problema da estimação de variância sob amostragem sistemática com PPT é ainda mais difícil quando o sorteio é feito com ordenação. <span class="citation">Berger (2003)</span> oferece uma estratégia que pode ser considerada nesse caso.</p>
 </div>
