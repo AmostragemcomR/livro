@@ -123,7 +123,7 @@ s
 ```
 
 ```
-## [1] 1211  535 1007
+## [1] 924 905 537
 ```
 
 ```r
@@ -134,9 +134,9 @@ tabela
 ```
 ##   fazenda area acum linf lsup sel
 ## 1       1   50   50    1   50   0
-## 2       2 1000 1050   51 1050   2
+## 2       2 1000 1050   51 1050   3
 ## 3       3  125 1175 1051 1175   0
-## 4       4  300 1475 1176 1475   1
+## 4       4  300 1475 1176 1475   0
 ## 5       5  500 1975 1476 1975   0
 ## 6       6   25 2000 1976 2000   0
 ```
@@ -159,7 +159,7 @@ fazendas_sel
 ```
 
 ```
-## [1] 2 2 4
+## [1] 2 4 2
 ```
 
 Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados números pseudoaleatórios distintos nas duas soluções.
@@ -254,10 +254,10 @@ tabela
 ##   fazenda area         A  pii sel
 ## 1       1 1000 0.0000000 1.00   1
 ## 2       2  500 0.0000000 1.00   1
-## 3       3  300 0.9456400 0.60   0
-## 4       4  125 0.1390676 0.25   2
-## 5       5   50 0.5285758 0.10   0
-## 6       6   25 0.7318679 0.05   0
+## 3       3  300 0.8888699 0.60   0
+## 4       4  125 0.5924758 0.25   0
+## 5       5   50 0.1560673 0.10   0
+## 6       6   25 0.3457706 0.05   0
 ```
 A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981. 
 
@@ -311,7 +311,7 @@ Um algoritmo baseado em processamento sequencial de lista para implementar o mé
 4. Ordene as unidades crescentemente segundo os valores dos números aleatórios modificados $C_i$.
 5. Selecione para a amostra as $n$ unidades com os menores valores de $C_i$.
 
-****(#exm:exmppt3)** Seleção de uma amostra de $n=10$ municípios do Acre, a partir do arquivo 'MunicBR_dat.rds', por *Amostragem Sequencial de Poisson*, utilizando o R.
+**(#exm:exmppt3)** Seleção de uma amostra de $n=10$ municípios do Acre, a partir do arquivo 'MunicBR_dat.rds', por *Amostragem Sequencial de Poisson*, utilizando o R.
 
 
 ```r
@@ -337,16 +337,16 @@ amostra
 
 ```
 ##    CodMunic    Pop         ai         pi         ci
-## 70  1200450  20799 0.01399895 0.02678685  0.5226054
-## 67  1200401 357194 0.33673075 0.46002707  0.7319803
-## 73  1200708  17021 0.02976482 0.02192120  1.3578098
-## 60  1200302  32411 0.12237209 0.04174185  2.9316404
-## 61  1200328   7147 0.02766192 0.00920456  3.0052411
-## 58  1200203  80377 0.44754425 0.10351684  4.3233954
-## 55  1200104  22899 0.23997713 0.02949142  8.1371832
-## 72  1200609  37571 0.43154665 0.04838737  8.9185809
-## 56  1200138   9003 0.10643966 0.01159489  9.1798796
-## 71  1200500  40311 0.88189277 0.05191619 16.9868549
+## 58  1200203  80377 0.05893643 0.10351684  0.5693415
+## 67  1200401 357194 0.42334299 0.46002707  0.9202567
+## 72  1200609  37571 0.16400288 0.04838737  3.3893740
+## 61  1200328   7147 0.03874662 0.00920456  4.2095025
+## 71  1200500  40311 0.25927028 0.05191619  4.9940161
+## 56  1200138   9003 0.11152879 0.01159489  9.6187913
+## 74  1200807  16029 0.28218622 0.02064361 13.6694218
+## 63  1200344   8386 0.15384462 0.01080026 14.2445327
+## 70  1200450  20799 0.46775675 0.02678685 17.4621766
+## 60  1200302  32411 0.78735882 0.04174185 18.8625773
 ```
 
 ### Estimação com amostragem sequencial de Poisson
@@ -395,7 +395,7 @@ A seleção com amostragem PPT sistemática com ordenação segue os seguintes p
 
 Apresentamos uma implementação simples de algoritmo para seleção Sistemática com PPT, considerando a inclusão na amostra como certas as unidades em que o valor da variável tamanho é maior que $K$. Dessa maneira a seleção é sem reposição.
 
-**(#exm:exmppt3)**  O arquivo MunicBR_dat.rds apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondonia e selecionar uma amostra de tamanho $n=10$ municpios, com probabilidades proporcionais à populacão de cada município.
+**(#exm:exmppt4)**  O arquivo MunicBR_dat.rds apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondonia e selecionar uma amostra de tamanho $n=10$ municpios, com probabilidades proporcionais à populacão de cada município.
 
 
 ```r
@@ -471,14 +471,14 @@ tabela[tabela[,2]>0,]
 ## 6    55597       2
 ## 9    40099       2
 ## 13   31699       2
-## 18   22973       2
-## 25   17399       2
-## 36   10518       2
+## 19   21427       2
+## 26   15853       2
+## 37   10515       2
 ```
 
 Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação. 
 
-**(#exm:exmppt4)** Nas pesquisas domiciliares por amostragem do IBGE, anteriores à adoção da amostra mestra para o Sistema Integrado de Pesquisas Domiciliares - SIPD,  tais como na PNAD, POF e PME, era usual adotar a seleção sistemática com PPT. No caso da PNAD, o plano amostral incluía a seleção de municípios, que eram estratificados por tamanho em termos de população e selecionados sistematicamente com probabilidade proporcional à população residente obtida no último Censo Demográfico. Antes da seleção dos setores, arrolava-se em cada município selecionado, primeiramente, os setores urbanos em ordem crescente de numeração e, posteriormente, os setores rurais. Os setores eram selecionados, em cada município da amostra, também sistematicamente com probabilidade proporcional utilizando como medida de tamanho o número de unidades domiciliares existentes por ocasião do último Censo Demográfico. Nas demais pesquisas domiciliares, onde a unidade primária de seleção era o setor, era feita a seleção dos setores em cada estrato sistematicamente com PPT (medido em número de domicílios ou domicílios particulares ocupados). Detalhes sobre os principais aspectos de amostragem das pesquisas domiciliares do IBGE podem ser vistos em @Albieri2015. Cabe registrar que, para a estimação da precisão das estimativas, eram adotados estimadores das variâncias como se o plano amostral fosse de seleção PPT com reposição.  
+**(#exm:exmppt5)** Nas pesquisas domiciliares por amostragem do IBGE, anteriores à adoção da amostra mestra para o Sistema Integrado de Pesquisas Domiciliares - SIPD,  tais como na PNAD, POF e PME, era usual adotar a seleção sistemática com PPT. No caso da PNAD, o plano amostral incluía a seleção de municípios, que eram estratificados por tamanho em termos de população e selecionados sistematicamente com probabilidade proporcional à população residente obtida no último Censo Demográfico. Antes da seleção dos setores, arrolava-se em cada município selecionado, primeiramente, os setores urbanos em ordem crescente de numeração e, posteriormente, os setores rurais. Os setores eram selecionados, em cada município da amostra, também sistematicamente com probabilidade proporcional utilizando como medida de tamanho o número de unidades domiciliares existentes por ocasião do último Censo Demográfico. Nas demais pesquisas domiciliares, onde a unidade primária de seleção era o setor, era feita a seleção dos setores em cada estrato sistematicamente com PPT (medido em número de domicílios ou domicílios particulares ocupados). Detalhes sobre os principais aspectos de amostragem das pesquisas domiciliares do IBGE podem ser vistos em @Albieri2015. Cabe registrar que, para a estimação da precisão das estimativas, eram adotados estimadores das variâncias como se o plano amostral fosse de seleção PPT com reposição.  
 
 A Amostragem Sistemática com PPT (com ou sem ordenação) era muito usada na prática por sua simplicidade na seleção de amostras. Porém, com o advento de modernas ferramentas computacionais que permitem selecionar com facilidade amostras PPT sem reposição usando outros métodos, tornou-se menos popular.
 
