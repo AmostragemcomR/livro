@@ -178,25 +178,26 @@ Alguns cuidados devem ser observados ao implementar a *Amostragem PPT de Poisson
 
 A seguir mostramos uma implementação em R do algoritmo de seleção para *Amostragem PPT de Poisson*.
 
-**(#exm:exmppt2)** Vamos utilizar os mesmos dados do \@ref(#exm:exmppt1) para selecionar uma amostra de tamanho esperado $n=3$, utilizando *Amostragem PPT de Poisson*.
+**(#exm:exmppt2)** Vamos utilizar os dados do arquivo 'MunicBR_dat.rds' para selecionar uma amostra de municípios do Amazonas, de tamanho esperado $n=20$, utilizando *Amostragem PPT de Poisson*.
 
 ```{r,eccho=T}
-#Algoritmo de seleção PPT de Poisson
-# Inicializando variáveis
-N=6
-n=3
-fazenda=c(1:N)
-area=c(50,1000,125,300,500,25)
-area=area[order(area, decreasing=T)]
+#Algoritmo de seleção PPT de Poisson com seleção certa das unidades
+# muito grandes, se for o caso
+# Lendo a identificação e população dos municípios do Amazonas
+tabela <- readRDS(file="Dados/MunicBR_dat.rds")[75:136,c(1, 4)]
+#Ordenação dos tamanhos em ordem decrescente
+tabela=tabela[order(tabela$Pop,decreasing=T),]
+N=length(tabela$Pop)
+n=20
 sel=A=pii=rep(0,N)
-X=sum(area)
+X=sum(tabela$Pop)
 # Verificando as unidades com seleção "certa" pelo tamanho
 for (i in 1:N){
-  pii[i]=n*area[i]/X
+  pii[i]=n*tabela$Pop[i]/X
   if (pii[i]>=1){
 # Seleção certa: sel=1    
     sel[i]=1                   
-    X=X-area[i]
+    X=X-tabela$Pop[i]
     pii[i]=1
     n=n-1
   }
@@ -205,18 +206,20 @@ for (i in 1:N){
 # e incluindo ou não na amostra por seleção aleatória
 for (i in 1:N){
   if (sel[i] < 1){
-  A[i]=runif(1,0,1)
-  pii[i]=n*area[i]/X
+    A[i]=runif(1,0,1)
+    pii[i]=n*tabela$Pop[i]/X
 # Seleção aleatória: sel=2
-  if (A[i]<=pii[i]) {sel[i]=2} 
+    if (A[i]<=pii[i]) {sel[i]=2} 
   }
 }
 # Juntando as informações numa tabela
-tabela=data.frame(cbind(fazenda,area,A,pii,sel))
-# Tabela com os dados e marcação das unidades selecionadas 
-# (seleção certa: sel=1, seleção aleatória: sel=2)
-tabela
+tabela$ai=A
+tabela$pii=pii
+tabela$sel=sel
+# Amostra com os dados das unidades selecionadas certas(sel=1) e aleatórias(sel=2)
+tabela[tabela$sel>0,]
 ```
+
 A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981. 
 
 A *Amostragem PPT de Poisson* é pouco usada na prática devido à variabilidade do tamanho efetivo da amostra. É um método menos eficiente que outros métodos de seleção PPT sem reposição. Um método moderno que corrige este defeito é *Amostragem Sequencial de Poisson - ASP* - ver @Ohlsson1998 - descrito na seção seguinte.
@@ -273,7 +276,7 @@ Um algoritmo baseado em processamento sequencial de lista para implementar o mé
 
 ```{r,echo=T}
 # Algoritmo para Amostragem sequencial de Poisson
-# Lendo os municípios do Acre
+# Lendo a identificação e a população dos municípios do Acre
 tabela <- readRDS(file="Dados/MunicBR_dat.rds")[53:74,c(1, 4)]
 N=length(tabela$Pop)
 n=10
@@ -336,50 +339,50 @@ A seleção com amostragem PPT sistemática com ordenação segue os seguintes p
 1. Faça uma ordenação das unidades da população segundo uma (ou mais) variável(is) de interesse.
 2. Selecione uma amostra sistemática com PPT seguindo o algoritmo anterior.
 
-Apresentamos uma implementação simples de algoritmo para seleção Sistemática com PPT, considerando a inclusão na amostra como certas as unidades em que o valor da variável tamanho é maior que $K$. Dessa maneira a seleção é sem reposição.
+Apresentamos uma implementação do algoritmo para seleção Sistemática com PPT, considerando como certas as unidades em que o valor da variável tamanho é maior que $K$. Dessa maneira a seleção é sem reposição.
 
-**(#exm:exmppt4)**  O arquivo MunicBR_dat.rds apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondonia e selecionar uma amostra de tamanho $n=10$ municpios, com probabilidades proporcionais à populacão de cada município.
+**(#exm:exmppt4)**  O arquivo 'MunicBR_dat.rds' apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondônia e selecionar uma amostra de tamanho $n=10$ municípios, com probabilidades proporcionais à populacão de cada município.
 
 ```{r,echo=T}
 # Seleção Sistemática com PPT e seleção das unidades certas se for o caso
 # Inicializando variáveis
-# Lendo as populações dos municípios de Rondonia
-tamanho <- readRDS(file="Dados/MunicBR_dat.rds")[1:52,]$Pop 
-N=length(tamanho)
+# Lendo a identificação e população dos municípios de Rondônia
+tabela <- readRDS(file="Dados/MunicBR_dat.rds")[1:52,c(1, 4)]
+N=length(tabela$Pop)
 n=10
 certas=aleat=sel=selc=r=NULL
-# Ordenação dos tamanhos em ordem decescente
-tamanho=tamanho[order(tamanho,decreasing=T)] 
+# Ordenação dos tamanhos em ordem decrescente
+tabela=tabela[order(tabela$Pop,decreasing=T),] 
 sel=rep(0,N)
 #Determinando tamanho mínimo das unidades certas
 n_aux=n
-tamtot_aux=tam_certo=sum(tamanho)
+tamtot_aux=tam_certo=sum(tabela$Pop)
 for (i in 1:N){
-  p=n_aux*tamanho[i]/tamtot_aux
+  p=n_aux*tabela$Pop[i]/tamtot_aux
   if (p>=1){
-    tam_certo=tamanho[i]
+    tam_certo=tabela$Pop[i]
     p=1
     n_aux=n_aux-1
-    tamtot_aux=tamtot_aux-tamanho[i]
-# Seleção certa: sel=1
+    tamtot_aux=tamtot_aux-tabela$Pop[i]
+    # Seleção certa: sel=1
     sel[i]=1
   }
 }
-aleat=tamanho
+aleat=tabela
 if (sum(sel)>0){
-  certas=tamanho[tamanho>=tam_certo]
-  aleat=tamanho[tamanho<tam_certo]
+  certas=tabela[tabela$Pop>=tam_certo,]
+  aleat=tabela[tabela$Pop<tam_certo,]
   selc=sel[sel>0]
 } 
 # Seleção aleatória sistemática PPT
 acum=linf=lsup=sel=NULL
-acum[1]=lsup[1]=aleat[1]
+acum[1]=lsup[1]=aleat$Pop[1]
 linf[1]=1
-N=length(aleat)
+N=length(aleat$Pop)
 sel=rep(0,N)
 # Criando intervalos de seleção PPT
 for (i in 2:N){
-  acum[i]=acum[i-1]+aleat[i]
+  acum[i]=acum[i-1]+aleat$Pop[i]
   linf[i]=acum[i-1]+1
   lsup[i]=acum[i]
 }
@@ -392,17 +395,15 @@ if (n_aux>1){for (i in 2:n_aux){r[i]=r[i-1]+K}}
 for (i in 1:n_aux){
   for (j in 1:N){
     if((linf[j] < r[i]) & (r[i]<=lsup[j])){
-#Seleção aleatória: sel=2
+      #Seleção aleatória: sel=2
       sel[j]=2           
     }
   }
 }
-# Juntando as informações numa tabela
-tabela=data.frame(cbind(c(certas,aleat),c(selc,sel)))
-colnames(tabela)=c('Tamanho','Seleção')
-# Amostra com marcação das unidades selecionadas certas(Seleção=1) e aleatórias(Seleção=2)
-tabela[tabela[,2]>0,]
-
+# Juntando as informações da seleção
+tabela$sel=c(selc,sel)
+# Amostra com marcação das unidades selecionadas certas(sel=1) e aleatórias(sel=2)
+tabela[tabela$sel>0,]
 ```
 
 Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação. 
@@ -423,7 +424,30 @@ A seleção com *Amostragem PPT de Pareto - AP*, de acordo com @Rosen2000, segue
 4. Ordene as unidades crescentemente segundo valores dos números aleatórios modificados $C_i$.
 5. Selecione para a amostra as $n$ unidades com os menores valores de $C_i$.
 
-A Amostragem PPT de Pareto - AP é o método empregado para sorteio de unidades primárias de amostragem da PNAD Contínua - ver @Freitas2014.
+**(#exm:exmppt6)** Vamos repetir o \@ref(exm:exmppt1), agora utilizando seleção por *Amostragem PPT de Pareto*.
+
+```{r,echo=T}
+# Algoritmo para Amostragem PPT de Pareto
+# Lendo a identificação e a população dos municípios do Acre
+tabela <- readRDS(file="Dados/MunicBR_dat.rds")[53:74,c(1, 4)]
+N=length(tabela$Pop)
+n=10
+# Gerando números aleatórios ai~U(0,1)
+tabela$ai=runif(N,0,1)
+X=sum(tabela$Pop)
+# Probabilidade de inclusão desejável da unidade
+tabela$lambdai=n*tabela$Pop/X
+# Calculando os aleatórios modificados ci
+tabela$ci=tabela$ai*(1-tabela$lambdai)/((1-tabela$ai)*tabela$lambdai)
+# Ordenando as linhas da tabela segundo ci
+tabela=tabela[order(tabela$ci),]
+# Tomando as n primeiras linhas da tabela ordenada
+# como a amostra deselada
+amostra=tabela[1:n,]
+amostra
+```
+
+A *Amostragem PPT de Pareto* é o método empregado para sorteio de unidades primárias de amostragem da PNAD Contínua - ver @Freitas2014.
 
 Para tamanhos de amostra iguais, AP é mais eficiente que ASP. A implementação deste método requer os mesmos cuidados com relação a unidades muito grandes que com outros métodos PPT sem reposição. As probabilidades exatas de inclusão não são estritamente proporcionais ao tamanho e são difíceis de calcular. Porém, resultados sugerem que as aproximações consideradas no passo 2 são suficientemente boas para a maioria das situações de interesse prático, como pode ser visto em @Aires2005.
 
