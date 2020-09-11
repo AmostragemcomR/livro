@@ -179,6 +179,48 @@ Outro exemplo: os rótulos $\{i_{N-n+1}, i_{N-n+2}, ..., i_N\}$ também fornecem
 
 O algoritmo de Hàjek requer duas passagens sobre a lista, mais uma operação de ordenação dos números aleatórios. Oferece grande ganho de eficiência em comparação com o algoritmo convencional, mas ainda não é o mais eficiente.
 
+**(#exm:exmaas1)** Suponha uma populção de tamanho $N=1000$ unidades da qual se deseja selecionar uma amostra de tamanho $n=20$ unidades, utilizando o algoritmo de Hàjek.
+
+
+```r
+# Algoritmo de Hàjek
+N=1000
+n=20
+# Gerando os índices da população e os correspondentes pseudoaleatórios 
+U=data.frame(1:N,runif(N, min = 0, max = 1))
+names(U)=c("i","aleat")
+# Ordenando segundo os aleatórios gerados (a ordenação pode ser crescente ou decrescente)
+s=U[order(U$aleat),]
+s=s[1:n,]
+rownames(s)=c(1:n)
+# A amostra será formada pelas unidades seguintes
+s
+```
+
+```
+##      i        aleat
+## 1  159 0.0001225637
+## 2  606 0.0003178839
+## 3   54 0.0011776586
+## 4  104 0.0027387321
+## 5  749 0.0042369373
+## 6  629 0.0050992307
+## 7  174 0.0056129538
+## 8   16 0.0059677742
+## 9  337 0.0062985050
+## 10 405 0.0067239902
+## 11 632 0.0075833306
+## 12 916 0.0085414222
+## 13 786 0.0107389898
+## 14 618 0.0108613742
+## 15 873 0.0138358008
+## 16 708 0.0148384762
+## 17 781 0.0153113699
+## 18 589 0.0156525625
+## 19 719 0.0157333631
+## 20 392 0.0204137764
+```
+
 ### Algoritmo de Fan, Muller e Rezucha para selecionar AAS
 
 Este algoritmo foi proposto por @Fan1962 e consiste nos seguintes passos: 
@@ -196,56 +238,19 @@ O algoritmo de Fan, Muller e Rezucha, para selecionar uma *AAS* de tamanho $n$ d
     * Inclua $U_i$ na amostra
     * $N\leftarrow N-1$
     * $n\leftarrow n-1$
-4)  Se $a_i\le n/N$
+4)  Se $a_i\ge n/N$
     * $N\leftarrow N-1$
 5)  Se $n=0$ ou $N=0$ pare
 6)  Retorne ao passo 2
 
 Este algoritmo é muito eficiente em comparação com os anteriores, porque requer processar a lista no máximo uma vez, e pode nem mesmo requerer chegar ao fim da lista: a amostra pode ser selecionada por completo bem antes de chegar ao final da lista. Apesar de sua simplicidade e eficiência, há alternativas ainda mais eficientes, que entretanto não serão discutidas aqui. Caso o leitor necessite implementar um algoritmo para seleção de uma AAS, recomendamos o emprego deste algoritmo. Será suficientemente bom para a maioria das aplicações práticas.
 
-Tanto o algoritmo de Hàjek como o de Fan, Muller e Rezucha podem ser facilmente implementados no R.
+**(#exm:exmaas2)** Vamos repetir o Exemplo \@ref(exm:exmaas1), utilizando algoritmo de Fan, Muller e Rezucha.
 
-```r
-# Algoritmo de Hàjek
-
-# Gerando os índices da população e os correspondentes pseudoaleatórios 
-U=data.frame(1:1000,runif(1000, min = 0, max = 1))
-names(U)=c("i","aleat")
-s=U[order(U$aleat),]
-s=data.frame(as.vector(s[1:20,1]))
-names(s)=c("i")
-# A amostra será formada pelas unidades seguintes
-s
-```
-
-```
-##      i
-## 1  810
-## 2  588
-## 3   24
-## 4  577
-## 5  951
-## 6  681
-## 7  525
-## 8  536
-## 9  744
-## 10 812
-## 11 503
-## 12 913
-## 13 689
-## 14 879
-## 15 540
-## 16  91
-## 17 274
-## 18  10
-## 19 615
-## 20 595
-```
 
 ```r
 # Algoritmo de Fan, Muller e Rezucha para seleção de uma amostra 
 # de n unidades de uma população de tamanho N
-
 N = 1000
 n = 20
 s = NULL # Vetor para guardar os índices das unidades da amostra
@@ -260,9 +265,8 @@ while (n > 0 & N > 0) {
     j = j+1
     s[j]=i
     n = n-1 # Atualiza quantas unidades faltam para a amostra
-    N = N-1 # Atualiza unidades da população sujeitas à seleção
   }
-  else N = N-1 # Atualiza unidades da população sujeitas à seleção
+  N = N-1 # Atualiza unidades da população sujeitas à seleção
 }
 s=data.frame(s)
 names(s)=c("i")
@@ -272,26 +276,26 @@ s
 
 ```
 ##      i
-## 1   36
-## 2   54
-## 3   65
-## 4  126
-## 5  236
-## 6  249
-## 7  255
-## 8  287
-## 9  385
-## 10 396
-## 11 495
-## 12 527
-## 13 584
-## 14 657
-## 15 721
-## 16 732
-## 17 734
-## 18 831
-## 19 885
-## 20 898
+## 1   34
+## 2   73
+## 3  135
+## 4  149
+## 5  233
+## 6  313
+## 7  430
+## 8  450
+## 9  487
+## 10 494
+## 11 519
+## 12 521
+## 13 667
+## 14 676
+## 15 681
+## 16 694
+## 17 750
+## 18 784
+## 19 980
+## 20 995
 ```
 ### Probabilidades de inclusão sob AAS
 
@@ -432,7 +436,7 @@ A primeira decisão é qual dos dois caminhos seguir para determinar o tamanho d
 
 Se a escolha for determinar o tamanho da amostra fixando parâmetros de *custo*, recomendamos usar como tamanho de amostra o *maior tamanho* permitido pelo orçamento (ou tempo) disponível. Nesse caso, não há uma teoria geral pronta para ser aplicada a toda e qualquer pesquisa. Há que estudar a *função de custo* de cada pesquisa e com base nela, definir o tamanho da amostra.
 
-**(#exm:exmaas1)** Determinando o tamanho de amostra para uma pesquisa junto a empresas
+**(#exm:exmaas3)** Determinando o tamanho de amostra para uma pesquisa junto a empresas
 
 Considere um cenário em que o interesse é realizar uma pesquisa junto a empresas, para estimar alguns totais ou médias. O cliente que demanda a pesquisa informa que tem disponível um orçamento limitado, e que para a atividade de coleta da pesquisa o valor disponível é de R$ 400.000,00 (quatrocentos mil reais). 
 
@@ -515,7 +519,7 @@ $$
 2. É possível derivar expressões similares para o caso da estimação de totais, e também de outros parâmetros.    
 3. Para planos amostrais mais complexos, é mais difícil resolver equações do tipo acima para determinar tamanhos amostrais, e sua alocação em estratos e conglomerados. Entretanto, a ideia de *Efeito do Plano Amostral* - EPA vai ser útil neste contexto. Ver discussão no Capítulo \@ref(cong).
 
-**(#exm:exmaas2)** Considere a população formada pelos municípios brasileiros, conforme consta do arquivo 'MunicBR_dat.rds'. Tendo esta população em mente, imagine que seria usada para seleção de uma amostra AAS de $n=200$ municípios. Imagine que tal amostra seria usada para estimar a *média populacional* da variável *área* dos municípios. 
+**(#exm:exmaas4)** Considere a população formada pelos municípios brasileiros, conforme consta do arquivo 'MunicBR_dat.rds'. Tendo esta população em mente, imagine que seria usada para seleção de uma amostra AAS de $n=200$ municípios. Imagine que tal amostra seria usada para estimar a *média populacional* da variável *área* dos municípios. 
 
 1.	Com esta perspectiva, use os *dados populacionais* para:    
     a)	Calcular a *média populacional*.    
@@ -529,7 +533,7 @@ $$
     d)	O *tamanho da amostra* que seria necessária para estimar a média da área com um erro máximo de 150 km<sup>2</sup> ao nível de confiança de 95%.    
 3.	Compare estimativas obtidas no item 2 com os valores obtidos no item 1 e analise/comente.
 
-Solução do (#exm:exmaas2) usando R
+Solução do (#exm:exmaas4) usando R
 
 
 ```r
@@ -653,7 +657,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 1540.037
+## [1] 2348.159
 ```
 
 ```r
@@ -662,7 +666,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 315399.2
+## [1] 231133.7
 ```
 
 ```r
@@ -678,7 +682,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 25.28934
+## [1] 16.58599
 ```
 
 ```r
@@ -687,7 +691,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 49.5662
+## [1] 32.50793
 ```
 
 ```r
@@ -705,7 +709,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 3716.752
+## [1] 3314.678
 ```
 
 ```r
@@ -713,7 +717,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 3717
+## [1] 3315
 ```
 
 

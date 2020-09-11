@@ -123,7 +123,7 @@ s
 ```
 
 ```
-## [1]  725 1890 1827
+## [1] 1190 1435  426
 ```
 
 ```r
@@ -136,8 +136,8 @@ tabela
 ## 1       1   50   50    1   50   0
 ## 2       2 1000 1050   51 1050   1
 ## 3       3  125 1175 1051 1175   0
-## 4       4  300 1475 1176 1475   0
-## 5       5  500 1975 1476 1975   2
+## 4       4  300 1475 1176 1475   2
+## 5       5  500 1975 1476 1975   0
 ## 6       6   25 2000 1976 2000   0
 ```
 
@@ -159,7 +159,7 @@ fazendas_sel
 ```
 
 ```
-## [1] 2 2 4
+## [1] 2 2 5
 ```
 
 Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados números pseudoaleatórios distintos nas duas soluções.
@@ -253,24 +253,31 @@ tabela[tabela$sel>0,]
 ```
 
 ```
-##     CodMunic     Pop          ai        pii sel
-## 112  1302603 1982177 0.000000000 1.00000000   1
-## 120  1303403  109225 0.000000000 1.00000000   1
-## 103  1301902   94278 0.521367630 0.98863106   2
-## 110  1302504   91795 0.916967274 0.96259348   2
-## 94   1301209   81325 0.712750685 0.85280151   2
-## 115  1302900   57663 0.499831172 0.60467376   2
-## 113  1302702   51331 0.235959345 0.53827426   2
-## 100  1301704   49137 0.387337743 0.51526724   2
-## 109  1302405   41600 0.431439637 0.43623170   2
-## 126  1303809   41575 0.206793313 0.43596954   2
-## 84   1300607   37564 0.307917441 0.39390884   2
-## 117  1303106   33829 0.165721714 0.35474236   2
-## 96   1301407   33127 0.004608445 0.34738095   2
-## 93   1301159   26722 0.274631257 0.28021595   2
-## 133  1304237   18162 0.126577139 0.19045289   2
-## 135  1304302   17367 0.032176417 0.18211625   2
-## 129  1304005    8946 0.091346550 0.09381079   2
+##     CodMunic     Pop         ai       pii sel
+## 112  1302603 1982177 0.00000000 1.0000000   1
+## 120  1303403  109225 0.00000000 1.0000000   1
+## 103  1301902   94278 0.02659348 0.9886311   2
+## 110  1302504   91795 0.16166851 0.9625935   2
+## 94   1301209   81325 0.55703691 0.8528015   2
+## 132  1304203   62885 0.39123509 0.6594334   2
+## 130  1304062   58314 0.32912409 0.6115004   2
+## 115  1302900   57663 0.49019677 0.6046738   2
+## 113  1302702   51331 0.28851418 0.5382743   2
+## 100  1301704   49137 0.45339408 0.5152672   2
+## 109  1302405   41600 0.31725510 0.4362317   2
+## 126  1303809   41575 0.16931454 0.4359695   2
+## 127  1303908   34963 0.30811437 0.3666339   2
+## 117  1303106   33829 0.01643684 0.3547424   2
+## 87   1300706   32792 0.30096525 0.3438680   2
+## 95   1301308   25696 0.05350307 0.2694570   2
+## 124  1303601   20986 0.11346199 0.2200663   2
+## 121  1303502   19149 0.03318676 0.2008029   2
+## 78   1300102   18351 0.19168299 0.1924348   2
+## 114  1302801   18310 0.02419562 0.1920049   2
+## 97   1301506   18051 0.12073117 0.1892889   2
+## 80   1300201   17174 0.06878862 0.1800924   2
+## 90   1300904   14754 0.02449975 0.1547154   2
+## 89   1300839   12004 0.08763995 0.1258780   2
 ```
 
 A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981. 
@@ -343,24 +350,24 @@ tabela$pi=tabela$Pop/X
 tabela$ci=tabela$ai/tabela$pi
 # Ordenando as linhas da tabela segundo ci
 tabela=tabela[order(tabela$ci),]
-# Tomando as n primeiras linas da tabela ordenada
+# Tomando as n primeiras linhas da tabela ordenada
 # como a amostra desejada
 amostra=tabela[1:n,]
 amostra
 ```
 
 ```
-##    CodMunic    Pop         ai         pi         ci
-## 58  1200203  80377 0.07718602 0.10351684  0.7456373
-## 72  1200609  37571 0.05115413 0.04838737  1.0571794
-## 67  1200401 357194 0.66233709 0.46002707  1.4397785
-## 73  1200708  17021 0.10589952 0.02192120  4.8309182
-## 70  1200450  20799 0.13656474 0.02678685  5.0982002
-## 60  1200302  32411 0.25125741 0.04174185  6.0193169
-## 65  1200385  17795 0.19578923 0.02291803  8.5430227
-## 68  1200427  15968 0.22745344 0.02056505 11.0601942
-## 74  1200807  16029 0.25156486 0.02064361 12.1860882
-## 71  1200500  40311 0.71253418 0.05191619 13.7247011
+##    CodMunic    Pop         ai         pi        ci
+## 67  1200401 357194 0.85688286 0.46002707  1.862679
+## 66  1200393  10143 0.05179856 0.01306308  3.965263
+## 58  1200203  80377 0.41196621 0.10351684  3.979702
+## 68  1200427  15968 0.09238309 0.02056505  4.492238
+## 59  1200252  16099 0.11043318 0.02073376  5.326249
+## 71  1200500  40311 0.52188932 0.05191619 10.052535
+## 60  1200302  32411 0.47400906 0.04174185 11.355728
+## 73  1200708  17021 0.29004992 0.02192120 13.231481
+## 72  1200609  37571 0.65541269 0.04838737 13.545120
+## 62  1200336  16410 0.28911107 0.02113430 13.679710
 ```
 
 ### Estimação com amostragem sequencial de Poisson
@@ -409,7 +416,7 @@ A seleção com amostragem PPT sistemática com ordenação segue os seguintes p
 
 Apresentamos uma implementação do algoritmo para seleção Sistemática com PPT, considerando como certas as unidades em que o valor da variável tamanho é maior que $K$. Dessa maneira a seleção é sem reposição.
 
-**(#exm:exmppt4)**  O arquivo 'MunicBR_dat.rds' apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondônia e selecionar uma amostra de tamanho $n=10$ municípios, com probabilidades proporcionais à populacão de cada município.
+**(#exm:exmppt4)**  O arquivo 'MunicBR_dat.rds' apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondônia e selecionar uma amostra de tamanho $n=10$ municípios, com probabilidades proporcionais à população de cada município.
 
 
 ```r
@@ -480,13 +487,13 @@ tabela[tabela$sel>0,]
 ## 17  1100205 484992   1
 ## 12  1100122 128026   2
 ## 2   1100023 101269   2
-## 22  1100304  87727   2
-## 11  1100114  55597   2
-## 15  1100155  40099   2
-## 13  1100130  35633   2
-## 18  1100254  23017   2
-## 5   1100056  18041   2
-## 38  1101203  10899   2
+## 4   1100049  85863   2
+## 20  1100288  55357   2
+## 16  1100189  36939   2
+## 1   1100015  25728   2
+## 35  1100940  19410   2
+## 26  1100379  13827   2
+## 21  1100296   8887   2
 ```
 
 Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação. 
@@ -507,7 +514,7 @@ A seleção com *Amostragem PPT de Pareto - AP*, de acordo com @Rosen2000, segue
 4. Ordene as unidades crescentemente segundo valores dos números aleatórios modificados $C_i$.
 5. Selecione para a amostra as $n$ unidades com os menores valores de $C_i$.
 
-**(#exm:exmppt6)** Vamos repetir o \@ref(exm:exmppt1), agora utilizando seleção por *Amostragem PPT de Pareto*.
+**(#exm:exmppt6)** Vamos repetir o Exemplo \@ref(exm:exmppt3), agora utilizando seleção por *Amostragem PPT de Pareto*.
 
 
 ```r
@@ -526,23 +533,23 @@ tabela$ci=tabela$ai*(1-tabela$lambdai)/((1-tabela$ai)*tabela$lambdai)
 # Ordenando as linhas da tabela segundo ci
 tabela=tabela[order(tabela$ci),]
 # Tomando as n primeiras linhas da tabela ordenada
-# como a amostra deselada
+# como a amostra desejada
 amostra=tabela[1:n,]
 amostra
 ```
 
 ```
-##    CodMunic    Pop         ai    lambdai         ci
-## 58  1200203  80377 0.99084888 1.03516845 -3.6785400
-## 67  1200401 357194 0.20222520 4.60027071 -0.1983840
-## 55  1200104  22899 0.07846898 0.29491425  0.2035796
-## 60  1200302  32411 0.14983312 0.41741847  0.2459737
-## 66  1200393  10143 0.06671715 0.13063082  0.4757544
-## 53  1200013  13353 0.09540072 0.17197214  0.5077879
-## 71  1200500  40311 0.45769475 0.51916189  0.7816786
-## 69  1200435   5374 0.06709264 0.06921128  0.9671872
-## 68  1200427  15968 0.20886810 0.20565049  1.0197767
-## 70  1200450  20799 0.36123617 0.26786853  1.5456754
+##    CodMunic    Pop         ai   lambdai          ci
+## 67  1200401 357194 0.98180158 4.6002707 -42.2223035
+## 58  1200203  80377 0.84112878 1.0351684  -0.1798703
+## 64  1200351  15857 0.06793424 0.2042209   0.2840105
+## 60  1200302  32411 0.19511540 0.4174185   0.3383319
+## 71  1200500  40311 0.39095341 0.5191619   0.5945256
+## 68  1200427  15968 0.17470160 0.2056505   0.8176506
+## 63  1200344   8386 0.18568255 0.1080026   1.8832451
+## 56  1200138   9003 0.20327205 0.1159489   1.9452639
+## 61  1200328   7147 0.23311517 0.0920456   2.9984818
+## 73  1200708  17021 0.55228415 0.2192120   4.3936853
 ```
 
 A *Amostragem PPT de Pareto* é o método empregado para sorteio de unidades primárias de amostragem da PNAD Contínua - ver @Freitas2014.

@@ -289,7 +289,7 @@ tabela$pi=tabela$Pop/X
 tabela$ci=tabela$ai/tabela$pi
 # Ordenando as linhas da tabela segundo ci
 tabela=tabela[order(tabela$ci),]
-# Tomando as n primeiras linas da tabela ordenada
+# Tomando as n primeiras linhas da tabela ordenada
 # como a amostra desejada
 amostra=tabela[1:n,]
 amostra
@@ -341,7 +341,7 @@ A seleção com amostragem PPT sistemática com ordenação segue os seguintes p
 
 Apresentamos uma implementação do algoritmo para seleção Sistemática com PPT, considerando como certas as unidades em que o valor da variável tamanho é maior que $K$. Dessa maneira a seleção é sem reposição.
 
-**(#exm:exmppt4)**  O arquivo 'MunicBR_dat.rds' apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondônia e selecionar uma amostra de tamanho $n=10$ municípios, com probabilidades proporcionais à populacão de cada município.
+**(#exm:exmppt4)**  O arquivo 'MunicBR_dat.rds' apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondônia e selecionar uma amostra de tamanho $n=10$ municípios, com probabilidades proporcionais à população de cada município.
 
 ```{r,echo=T}
 # Seleção Sistemática com PPT e seleção das unidades certas se for o caso
@@ -424,7 +424,7 @@ A seleção com *Amostragem PPT de Pareto - AP*, de acordo com @Rosen2000, segue
 4. Ordene as unidades crescentemente segundo valores dos números aleatórios modificados $C_i$.
 5. Selecione para a amostra as $n$ unidades com os menores valores de $C_i$.
 
-**(#exm:exmppt6)** Vamos repetir o \@ref(exm:exmppt1), agora utilizando seleção por *Amostragem PPT de Pareto*.
+**(#exm:exmppt6)** Vamos repetir o Exemplo \@ref(exm:exmppt3), agora utilizando seleção por *Amostragem PPT de Pareto*.
 
 ```{r,echo=T}
 # Algoritmo para Amostragem PPT de Pareto
@@ -442,7 +442,7 @@ tabela$ci=tabela$ai*(1-tabela$lambdai)/((1-tabela$ai)*tabela$lambdai)
 # Ordenando as linhas da tabela segundo ci
 tabela=tabela[order(tabela$ci),]
 # Tomando as n primeiras linhas da tabela ordenada
-# como a amostra deselada
+# como a amostra desejada
 amostra=tabela[1:n,]
 amostra
 ```
