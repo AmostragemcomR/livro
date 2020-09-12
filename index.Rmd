@@ -17,7 +17,6 @@ biblio-style: "apalike"
 suppress-bibliography: false
 link-citations: no
 github-repo: PedroNSilva/amotepur
-cover-image: "Figuras/cover.png"
 description: "Este é o livro de Amostragem elaborado pelos autores."
 ---
 

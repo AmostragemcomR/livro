@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1599920363306.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "991064494",
+    "id" : "98D9AD98",
+    "lastKnownWriteTime" : 1599920516,
+    "last_content_update" : 1599920516727,
+    "path" : "~/GitHub/amostragem/00-Siglas.Rmd",
+    "project_path" : "00-Siglas.Rmd",
+    "properties" : {
+        "cursorPosition" : "166,55",
+        "scrollLine" : "158"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "4081028930",
+    "hash" : "3611341723",
     "id" : "9D2C21A8",
-    "lastKnownWriteTime" : 1599845541,
-    "last_content_update" : 1599845541492,
+    "lastKnownWriteTime" : 1599853092,
+    "last_content_update" : 1599853092449,
     "path" : "~/GitHub/amostragem/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "19,15",
+        "cursorPosition" : "18,33",
         "scrollLine" : "0"
     },
     "relative_order" : 2,
