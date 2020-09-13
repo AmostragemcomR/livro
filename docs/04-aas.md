@@ -179,7 +179,7 @@ Outro exemplo: os rótulos $\{i_{N-n+1}, i_{N-n+2}, ..., i_N\}$ também fornecem
 
 O algoritmo de Hàjek requer duas passagens sobre a lista, mais uma operação de ordenação dos números aleatórios. Oferece grande ganho de eficiência em comparação com o algoritmo convencional, mas ainda não é o mais eficiente.
 
-**(#exm:exmaas1)** Suponha uma populção de tamanho $N=1000$ unidades da qual se deseja selecionar uma amostra de tamanho $n=20$ unidades, utilizando o algoritmo de Hàjek.
+**(#exm:exmaas1)** Suponha uma população de tamanho $N=1000$ unidades da qual se deseja selecionar uma amostra de tamanho $n=20$ unidades, utilizando o algoritmo de Hàjek.
 
 
 ```r
@@ -199,26 +199,26 @@ s
 
 ```
 ##      i        aleat
-## 1  141 0.0006355506
-## 2  381 0.0007229913
-## 3  902 0.0007429493
-## 4  810 0.0022562393
-## 5   32 0.0028009631
-## 6  286 0.0029785803
-## 7  698 0.0039443066
-## 8  281 0.0044993777
-## 9   65 0.0046208417
-## 10 302 0.0062556399
-## 11 145 0.0076079480
-## 12 114 0.0082445713
-## 13 297 0.0086779832
-## 14 316 0.0092051600
-## 15 122 0.0095713895
-## 16 551 0.0137791571
-## 17 658 0.0138795909
-## 18  42 0.0176575726
-## 19 794 0.0199006468
-## 20 583 0.0205220026
+## 1  593 0.0007313755
+## 2   41 0.0008781038
+## 3  353 0.0013701858
+## 4  565 0.0028083692
+## 5  325 0.0059777885
+## 6  760 0.0067949605
+## 7  451 0.0070484621
+## 8  474 0.0074924249
+## 9  138 0.0075825939
+## 10 124 0.0077831117
+## 11 696 0.0084434946
+## 12 141 0.0085714557
+## 13 539 0.0090699461
+## 14 817 0.0099621178
+## 15 614 0.0107711584
+## 16 270 0.0120486952
+## 17 914 0.0122060969
+## 18 332 0.0133003707
+## 19 684 0.0149822293
+## 20  44 0.0157300688
 ```
 
 ### Algoritmo de Fan, Muller e Rezucha para selecionar AAS
@@ -258,7 +258,7 @@ i = 0 # Contador das unidades populacionais
 j = 0 # Contador das unidades da amostra
 while (n > 0 & N > 0) {
   i=i+1 
-# Geração de número pseudo-aleatório uniforme entre 0 e 1 e
+# Geração de número pseudoaleatório uniforme entre 0 e 1 e
 # comparação com a fração amostral atualizada. Se for menor
 # a unidade entra na amostra.
   if (runif(1) < n/N){
@@ -276,26 +276,26 @@ s
 
 ```
 ##      i
-## 1   47
-## 2   57
-## 3   82
-## 4  104
-## 5  142
-## 6  145
-## 7  148
-## 8  200
-## 9  212
-## 10 213
-## 11 332
-## 12 336
-## 13 345
-## 14 490
-## 15 497
-## 16 544
-## 17 572
-## 18 693
-## 19 725
-## 20 915
+## 1    3
+## 2   85
+## 3  210
+## 4  218
+## 5  220
+## 6  253
+## 7  255
+## 8  299
+## 9  408
+## 10 530
+## 11 649
+## 12 739
+## 13 751
+## 14 757
+## 15 815
+## 16 867
+## 17 873
+## 18 935
+## 19 973
+## 20 978
 ```
 ### Probabilidades de inclusão sob AAS
 
@@ -657,7 +657,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 1217.762
+## [1] 2130.553
 ```
 
 ```r
@@ -666,7 +666,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 29042.39
+## [1] 341432.6
 ```
 
 ```r
@@ -682,7 +682,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 31.98207
+## [1] 18.28002
 ```
 
 ```r
@@ -691,7 +691,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 62.68371
+## [1] 35.82817
 ```
 
 ```r
@@ -709,7 +709,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 868.2779
+## [1] 3813.497
 ```
 
 ```r
@@ -717,7 +717,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 869
+## [1] 3814
 ```
 
 

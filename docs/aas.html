@@ -570,7 +570,7 @@ V_{AASC} (\widehat{Y}_{AASC}) = \displaystyle  N^2  \sigma_y^2 / n\,\,\tag{4.2}
 <p>Por exemplo, os rótulos <span class="math inline">\(\{i_1, i_2, ..., i_n\}\)</span> fornecem uma AAS.</p>
 <p>Outro exemplo: os rótulos <span class="math inline">\(\{i_{N-n+1}, i_{N-n+2}, ..., i_N\}\)</span> também fornecem uma AAS de tamanho <span class="math inline">\(n\)</span> de <span class="math inline">\(U\)</span>.</p>
 <p>O algoritmo de Hàjek requer duas passagens sobre a lista, mais uma operação de ordenação dos números aleatórios. Oferece grande ganho de eficiência em comparação com o algoritmo convencional, mas ainda não é o mais eficiente.</p>
-<p><strong>Exemplo 4.1 </strong> Suponha uma populção de tamanho <span class="math inline">\(N=1000\)</span> unidades da qual se deseja selecionar uma amostra de tamanho <span class="math inline">\(n=20\)</span> unidades, utilizando o algoritmo de Hàjek.</p>
+<p><strong>Exemplo 4.1 </strong> Suponha uma população de tamanho <span class="math inline">\(N=1000\)</span> unidades da qual se deseja selecionar uma amostra de tamanho <span class="math inline">\(n=20\)</span> unidades, utilizando o algoritmo de Hàjek.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Algoritmo de Hàjek</span>
 N=<span class="dv">1000</span>
 n=<span class="dv">20</span>
@@ -584,26 +584,26 @@ s=s[<span class="dv">1</span><span class="op">:</span>n,]
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i        aleat
-## 1  141 0.0006355506
-## 2  381 0.0007229913
-## 3  902 0.0007429493
-## 4  810 0.0022562393
-## 5   32 0.0028009631
-## 6  286 0.0029785803
-## 7  698 0.0039443066
-## 8  281 0.0044993777
-## 9   65 0.0046208417
-## 10 302 0.0062556399
-## 11 145 0.0076079480
-## 12 114 0.0082445713
-## 13 297 0.0086779832
-## 14 316 0.0092051600
-## 15 122 0.0095713895
-## 16 551 0.0137791571
-## 17 658 0.0138795909
-## 18  42 0.0176575726
-## 19 794 0.0199006468
-## 20 583 0.0205220026</code></pre>
+## 1  593 0.0007313755
+## 2   41 0.0008781038
+## 3  353 0.0013701858
+## 4  565 0.0028083692
+## 5  325 0.0059777885
+## 6  760 0.0067949605
+## 7  451 0.0070484621
+## 8  474 0.0074924249
+## 9  138 0.0075825939
+## 10 124 0.0077831117
+## 11 696 0.0084434946
+## 12 141 0.0085714557
+## 13 539 0.0090699461
+## 14 817 0.0099621178
+## 15 614 0.0107711584
+## 16 270 0.0120486952
+## 17 914 0.0122060969
+## 18 332 0.0133003707
+## 19 684 0.0149822293
+## 20  44 0.0157300688</code></pre>
 </div>
 <div id="algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</h3>
@@ -639,7 +639,7 @@ i =<span class="st"> </span><span class="dv">0</span> <span class="co"># Contado
 j =<span class="st"> </span><span class="dv">0</span> <span class="co"># Contador das unidades da amostra</span>
 <span class="cf">while</span> (n <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>N <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {
   i=i<span class="op">+</span><span class="dv">1</span> 
-<span class="co"># Geração de número pseudo-aleatório uniforme entre 0 e 1 e</span>
+<span class="co"># Geração de número pseudoaleatório uniforme entre 0 e 1 e</span>
 <span class="co"># comparação com a fração amostral atualizada. Se for menor</span>
 <span class="co"># a unidade entra na amostra.</span>
   <span class="cf">if</span> (<span class="kw">runif</span>(<span class="dv">1</span>) <span class="op">&lt;</span><span class="st"> </span>n<span class="op">/</span>N){
@@ -654,26 +654,26 @@ s=<span class="kw">data.frame</span>(s)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i
-## 1   47
-## 2   57
-## 3   82
-## 4  104
-## 5  142
-## 6  145
-## 7  148
-## 8  200
-## 9  212
-## 10 213
-## 11 332
-## 12 336
-## 13 345
-## 14 490
-## 15 497
-## 16 544
-## 17 572
-## 18 693
-## 19 725
-## 20 915</code></pre>
+## 1    3
+## 2   85
+## 3  210
+## 4  218
+## 5  220
+## 6  253
+## 7  255
+## 8  299
+## 9  408
+## 10 530
+## 11 649
+## 12 739
+## 13 751
+## 14 757
+## 15 815
+## 16 867
+## 17 873
+## 18 935
+## 19 973
+## 20 978</code></pre>
 </div>
 <div id="probabilidades-de-inclusão-sob-aas" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Probabilidades de inclusão sob AAS</h3>
@@ -936,25 +936,25 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 
 <span class="co"># a. Média amostral</span>
 (med_amo &lt;-<span class="st"> </span><span class="kw">mean</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 1217.762</code></pre>
+<pre><code>## [1] 2130.553</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># b. Estimativas da dispersão do estimador de média sob AAS</span>
 (var_med_amo &lt;-<span class="st"> </span>((<span class="dv">1</span><span class="op">/</span>n) <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>N)) <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 29042.39</code></pre>
+<pre><code>## [1] 341432.6</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(dp_med_amo &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VAR_med_amo))</code></pre></div>
 <pre><code>## [1] 389.4654</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cv_med_amo &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>DP_med_amo <span class="op">/</span><span class="st"> </span>med_amo)</code></pre></div>
-<pre><code>## [1] 31.98207</code></pre>
+<pre><code>## [1] 18.28002</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># c. Margem de erro relativo do estimador de média sob AAS</span>
 (me_med_amo &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>cv_med_amo)</code></pre></div>
-<pre><code>## [1] 62.68371</code></pre>
+<pre><code>## [1] 35.82817</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%</span>
 (D &lt;-<span class="st"> </span><span class="dv">150</span>)</code></pre></div>
 <pre><code>## [1] 150</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span>(N <span class="op">*</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)) <span class="op">/</span>
 <span class="st">              </span>(N <span class="op">*</span><span class="st"> </span>D<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)))</code></pre></div>
-<pre><code>## [1] 868.2779</code></pre>
+<pre><code>## [1] 3813.497</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span><span class="kw">ceiling</span>(n_amo_est))</code></pre></div>
-<pre><code>## [1] 869</code></pre>
+<pre><code>## [1] 3814</code></pre>
 </div>
 </div>
 <div id="exerc4" class="section level2">
