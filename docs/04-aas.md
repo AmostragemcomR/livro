@@ -198,27 +198,27 @@ s
 ```
 
 ```
-##      i        aleat
-## 1  593 0.0007313755
-## 2   41 0.0008781038
-## 3  353 0.0013701858
-## 4  565 0.0028083692
-## 5  325 0.0059777885
-## 6  760 0.0067949605
-## 7  451 0.0070484621
-## 8  474 0.0074924249
-## 9  138 0.0075825939
-## 10 124 0.0077831117
-## 11 696 0.0084434946
-## 12 141 0.0085714557
-## 13 539 0.0090699461
-## 14 817 0.0099621178
-## 15 614 0.0107711584
-## 16 270 0.0120486952
-## 17 914 0.0122060969
-## 18 332 0.0133003707
-## 19 684 0.0149822293
-## 20  44 0.0157300688
+##      i       aleat
+## 1  283 0.002979355
+## 2  161 0.003564131
+## 3  881 0.005522907
+## 4  746 0.005672693
+## 5  535 0.005914881
+## 6  566 0.006536112
+## 7  649 0.007858688
+## 8  576 0.009416979
+## 9  339 0.011502403
+## 10 577 0.011872970
+## 11 644 0.015691239
+## 12 418 0.016443946
+## 13 250 0.017239439
+## 14 862 0.017675650
+## 15 843 0.020208388
+## 16 361 0.020234110
+## 17 177 0.020665932
+## 18 770 0.021345607
+## 19 146 0.021489276
+## 20 492 0.021637605
 ```
 
 ### Algoritmo de Fan, Muller e Rezucha para selecionar AAS
@@ -276,26 +276,26 @@ s
 
 ```
 ##      i
-## 1    3
-## 2   85
-## 3  210
-## 4  218
-## 5  220
-## 6  253
-## 7  255
-## 8  299
-## 9  408
-## 10 530
-## 11 649
-## 12 739
-## 13 751
-## 14 757
-## 15 815
-## 16 867
-## 17 873
-## 18 935
-## 19 973
-## 20 978
+## 1   52
+## 2   61
+## 3  122
+## 4  170
+## 5  263
+## 6  265
+## 7  287
+## 8  347
+## 9  426
+## 10 469
+## 11 493
+## 12 501
+## 13 654
+## 14 684
+## 15 778
+## 16 796
+## 17 824
+## 18 834
+## 19 853
+## 20 868
 ```
 ### Probabilidades de inclusão sob AAS
 
@@ -391,7 +391,7 @@ Sob repetições do procedimento de seleção segundo *AAS*, $\overline{y}$ tem 
 Se $n$ for grande e $f = n/N$ for pequena, o *Teorema Central do Limite* - ver @Hajek1960 - pode ser usado para obter a distribuição aproximada:
 
 $$
-\frac{\overline {y}-E_{AAS}(\overline{y})}{\sqrt{V_{AAS}(\overline{y})}}=\frac{\overline {y}-\overline{Y}}{\displaystyle\sqrt{\left(\frac{1}{n}-\frac{1}{N}\right)S_y^2}}\approx N(0;1)\,\,(\#eq:eqaas9)
+\frac{\overline {y}-E_{AAS}(\overline{y})}{\sqrt{V_{AAS}(\overline{y})}}=\frac{\overline {y}-\overline{Y}}{\displaystyle\sqrt{\left(\frac{1}{n}-\frac{1}{N}\right)S^2_y}}\approx N(0;1)\,\,(\#eq:eqaas9)
 $$
 
 onde $N(0;1)$ denota uma variável aleatória com distribuição normal padrão com média zero e variância um. Mais detalhes podem ser obtidos em @Cochran1977, Seções 2.8 e 2.15, ou em @Sarndal1992, Seção 2.11.
@@ -493,7 +493,7 @@ $$\frac{1}{n} = \left( \frac{10}{1,645} \right)^2 \frac{1}{S_y^2} + \frac{1}{N} 
 Para calcular o tamanho desejado da amostra precisamos conhecer $N$ e $S_y^2$. Seguem algumas sugestões de como fazer para resolver a questão de que $S_y^2$ é também desconhecido:
 
 1)	Usar informações de *pesquisas anteriores*.
-2)	Fazer *amostra prévia* (*amostra piloto*) e estimar $S_y^2$ usando $s_y^2$ com os dados dessa amostra prévia.
+2)	Fazer *amostra prévia* (*amostra piloto*) e estimar $S^2_y$ usando $\widehat S_y^2$ com os dados dessa amostra prévia.
 3)	Em casos especiais (proporções e outros), *usar cota superior* para o valor de $S_y^2$.
 
 **O caso geral**
@@ -657,7 +657,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 2130.553
+## [1] 1303.905
 ```
 
 ```r
@@ -666,7 +666,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 341432.6
+## [1] 30389.75
 ```
 
 ```r
@@ -682,7 +682,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 18.28002
+## [1] 29.86916
 ```
 
 ```r
@@ -691,7 +691,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 35.82817
+## [1] 58.54248
 ```
 
 ```r
@@ -709,7 +709,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 3813.497
+## [1] 902.0363
 ```
 
 ```r
@@ -717,7 +717,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 3814
+## [1] 903
 ```
 
 
@@ -739,10 +739,10 @@ d)	Repita 500 vezes o item b, e analise a distribuição resultante das estimati
 a.  Liste todas as possíveis AAS de tamanho $n=2$.
 b.  Calcule $S^2_y$ e $V_{AAS}(\overline y)$.
 c.  Mostre numericamente que $V_{AAS}(\overline y)=\frac {N-n}N \frac {S^2_y}n$.
-d.  Mostre numericamente que $E_{AAS}(s^2_y)=S^2_y$.
+d.  Mostre numericamente que $E_{AAS}(\widehat S^2_y)=S^2_y$.
 e.  Liste todas as possíveis AASC de tamanho $n=2$.
 f.  Mostre numericamente que $V_{AASC}(\overline y)= \frac {\sigma^2_y}n$.
-g.  Mostre numericamente que $E_{AASC}(s^2_y)=\sigma^2_y$.
+g.  Mostre numericamente que $E_{AASC}(\widehat S^2_y)=\sigma^2_y$.
 
 **(#exr:exraas4)** A administração de um parque florestal deseja estimar a população de coelhos e veados no parque nos meses de inverno. Para isso a área da floresta foi dividida, através de um levantamento aerofotométrico, em 10.000 pequenas áreas de aproximadamente 10 m<sup>2</sup>. Uma AAS de $n = 500$ dessas pequenas áreas foi selecionada e foram observados os números de coelhos e veados em cada uma delas, resultando na Tabela \@ref(tab:tabaas6):
 

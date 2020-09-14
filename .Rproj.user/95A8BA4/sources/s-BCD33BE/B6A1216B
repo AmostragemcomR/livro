@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "540215189",
+    "hash" : "1984352388",
     "id" : "B6A1216B",
-    "lastKnownWriteTime" : 1600027280,
-    "last_content_update" : 1600027281074,
+    "lastKnownWriteTime" : 1600108073,
+    "last_content_update" : 1600108073994,
     "path" : "~/GitHub/amostragem/04-aas.Rmd",
     "project_path" : "04-aas.Rmd",
     "properties" : {
-        "cursorPosition" : "234,35",
-        "scrollLine" : "222"
+        "cursorPosition" : "343,165",
+        "scrollLine" : "337"
     },
     "relative_order" : 4,
     "source_on_save" : false,

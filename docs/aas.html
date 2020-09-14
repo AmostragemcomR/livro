@@ -583,27 +583,27 @@ s=s[<span class="dv">1</span><span class="op">:</span>n,]
 <span class="kw">rownames</span>(s)=<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span>n)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
-<pre><code>##      i        aleat
-## 1  593 0.0007313755
-## 2   41 0.0008781038
-## 3  353 0.0013701858
-## 4  565 0.0028083692
-## 5  325 0.0059777885
-## 6  760 0.0067949605
-## 7  451 0.0070484621
-## 8  474 0.0074924249
-## 9  138 0.0075825939
-## 10 124 0.0077831117
-## 11 696 0.0084434946
-## 12 141 0.0085714557
-## 13 539 0.0090699461
-## 14 817 0.0099621178
-## 15 614 0.0107711584
-## 16 270 0.0120486952
-## 17 914 0.0122060969
-## 18 332 0.0133003707
-## 19 684 0.0149822293
-## 20  44 0.0157300688</code></pre>
+<pre><code>##      i       aleat
+## 1  283 0.002979355
+## 2  161 0.003564131
+## 3  881 0.005522907
+## 4  746 0.005672693
+## 5  535 0.005914881
+## 6  566 0.006536112
+## 7  649 0.007858688
+## 8  576 0.009416979
+## 9  339 0.011502403
+## 10 577 0.011872970
+## 11 644 0.015691239
+## 12 418 0.016443946
+## 13 250 0.017239439
+## 14 862 0.017675650
+## 15 843 0.020208388
+## 16 361 0.020234110
+## 17 177 0.020665932
+## 18 770 0.021345607
+## 19 146 0.021489276
+## 20 492 0.021637605</code></pre>
 </div>
 <div id="algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</h3>
@@ -654,26 +654,26 @@ s=<span class="kw">data.frame</span>(s)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i
-## 1    3
-## 2   85
-## 3  210
-## 4  218
-## 5  220
-## 6  253
-## 7  255
-## 8  299
-## 9  408
-## 10 530
-## 11 649
-## 12 739
-## 13 751
-## 14 757
-## 15 815
-## 16 867
-## 17 873
-## 18 935
-## 19 973
-## 20 978</code></pre>
+## 1   52
+## 2   61
+## 3  122
+## 4  170
+## 5  263
+## 6  265
+## 7  287
+## 8  347
+## 9  426
+## 10 469
+## 11 493
+## 12 501
+## 13 654
+## 14 684
+## 15 778
+## 16 796
+## 17 824
+## 18 834
+## 19 853
+## 20 868</code></pre>
 </div>
 <div id="probabilidades-de-inclusão-sob-aas" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Probabilidades de inclusão sob AAS</h3>
@@ -762,7 +762,7 @@ V_{AAS} (\overline{y}) = \displaystyle \left( \frac{1}{n} - \frac{1}{N} \right) 
 <p>Sob repetições do procedimento de seleção segundo <em>AAS</em>, <span class="math inline">\(\overline{y}\)</span> tem uma distribuição de probabilidades. A distribuição exata de <span class="math inline">\(\overline{y}\)</span> depende da distribuição de <span class="math inline">\(y\)</span> na população, do tamanho da amostra <span class="math inline">\(n\)</span> e do plano amostral <span class="math inline">\(p(s)\)</span>, que neste caso, é AAS. Isto resulta numa situação complicada, que pode ser resolvida considerando a <em>Distribuição Assintótica da Média Amostral</em>.</p>
 <p>Se <span class="math inline">\(n\)</span> for grande e <span class="math inline">\(f = n/N\)</span> for pequena, o <em>Teorema Central do Limite</em> - ver <span class="citation">Hàjek (1960)</span> - pode ser usado para obter a distribuição aproximada:</p>
 <p><span class="math display" id="eq:eqaas9">\[
-\frac{\overline {y}-E_{AAS}(\overline{y})}{\sqrt{V_{AAS}(\overline{y})}}=\frac{\overline {y}-\overline{Y}}{\displaystyle\sqrt{\left(\frac{1}{n}-\frac{1}{N}\right)S_y^2}}\approx N(0;1)\,\,\tag{4.9}
+\frac{\overline {y}-E_{AAS}(\overline{y})}{\sqrt{V_{AAS}(\overline{y})}}=\frac{\overline {y}-\overline{Y}}{\displaystyle\sqrt{\left(\frac{1}{n}-\frac{1}{N}\right)S^2_y}}\approx N(0;1)\,\,\tag{4.9}
 \]</span></p>
 <p>onde <span class="math inline">\(N(0;1)\)</span> denota uma variável aleatória com distribuição normal padrão com média zero e variância um. Mais detalhes podem ser obtidos em <span class="citation">Cochran (1977)</span>, Seções 2.8 e 2.15, ou em <span class="citation">Särndal, Swensson, e Wretman (1992)</span>, Seção 2.11.</p>
 <p>É com base nessa distribuição assintótica que se pode fazer inferência por intervalos de confiança para a média populacional, e com base nesta ideia, medir a <em>margem de erro</em> de uma estimativa da média populacional. Um intervalo de confiança de nível <span class="math inline">\((1 - \alpha)%\)</span> para a média populacional sob AAS é dado por:</p>
@@ -838,7 +838,7 @@ IC_{AAS} (\overline{Y} ; 1 - \alpha) = \left [ \overline {y} \mp z_{\alpha/2} \s
 <p>Para calcular o tamanho desejado da amostra precisamos conhecer <span class="math inline">\(N\)</span> e <span class="math inline">\(S_y^2\)</span>. Seguem algumas sugestões de como fazer para resolver a questão de que <span class="math inline">\(S_y^2\)</span> é também desconhecido:</p>
 <ol style="list-style-type: decimal">
 <li>Usar informações de <em>pesquisas anteriores</em>.</li>
-<li>Fazer <em>amostra prévia</em> (<em>amostra piloto</em>) e estimar <span class="math inline">\(S_y^2\)</span> usando <span class="math inline">\(s_y^2\)</span> com os dados dessa amostra prévia.</li>
+<li>Fazer <em>amostra prévia</em> (<em>amostra piloto</em>) e estimar <span class="math inline">\(S^2_y\)</span> usando <span class="math inline">\(\widehat S_y^2\)</span> com os dados dessa amostra prévia.</li>
 <li>Em casos especiais (proporções e outros), <em>usar cota superior</em> para o valor de <span class="math inline">\(S_y^2\)</span>.</li>
 </ol>
 <p><strong>O caso geral</strong></p>
@@ -936,25 +936,25 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 
 <span class="co"># a. Média amostral</span>
 (med_amo &lt;-<span class="st"> </span><span class="kw">mean</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 2130.553</code></pre>
+<pre><code>## [1] 1303.905</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># b. Estimativas da dispersão do estimador de média sob AAS</span>
 (var_med_amo &lt;-<span class="st"> </span>((<span class="dv">1</span><span class="op">/</span>n) <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>N)) <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 341432.6</code></pre>
+<pre><code>## [1] 30389.75</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(dp_med_amo &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VAR_med_amo))</code></pre></div>
 <pre><code>## [1] 389.4654</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cv_med_amo &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>DP_med_amo <span class="op">/</span><span class="st"> </span>med_amo)</code></pre></div>
-<pre><code>## [1] 18.28002</code></pre>
+<pre><code>## [1] 29.86916</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># c. Margem de erro relativo do estimador de média sob AAS</span>
 (me_med_amo &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>cv_med_amo)</code></pre></div>
-<pre><code>## [1] 35.82817</code></pre>
+<pre><code>## [1] 58.54248</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%</span>
 (D &lt;-<span class="st"> </span><span class="dv">150</span>)</code></pre></div>
 <pre><code>## [1] 150</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span>(N <span class="op">*</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)) <span class="op">/</span>
 <span class="st">              </span>(N <span class="op">*</span><span class="st"> </span>D<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)))</code></pre></div>
-<pre><code>## [1] 3813.497</code></pre>
+<pre><code>## [1] 902.0363</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span><span class="kw">ceiling</span>(n_amo_est))</code></pre></div>
-<pre><code>## [1] 3814</code></pre>
+<pre><code>## [1] 903</code></pre>
 </div>
 </div>
 <div id="exerc4" class="section level2">
@@ -973,10 +973,10 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 <li>Liste todas as possíveis AAS de tamanho <span class="math inline">\(n=2\)</span>.</li>
 <li>Calcule <span class="math inline">\(S^2_y\)</span> e <span class="math inline">\(V_{AAS}(\overline y)\)</span>.</li>
 <li>Mostre numericamente que <span class="math inline">\(V_{AAS}(\overline y)=\frac {N-n}N \frac {S^2_y}n\)</span>.</li>
-<li>Mostre numericamente que <span class="math inline">\(E_{AAS}(s^2_y)=S^2_y\)</span>.</li>
+<li>Mostre numericamente que <span class="math inline">\(E_{AAS}(\widehat S^2_y)=S^2_y\)</span>.</li>
 <li>Liste todas as possíveis AASC de tamanho <span class="math inline">\(n=2\)</span>.</li>
 <li>Mostre numericamente que <span class="math inline">\(V_{AASC}(\overline y)= \frac {\sigma^2_y}n\)</span>.</li>
-<li>Mostre numericamente que <span class="math inline">\(E_{AASC}(s^2_y)=\sigma^2_y\)</span>.</li>
+<li>Mostre numericamente que <span class="math inline">\(E_{AASC}(\widehat S^2_y)=\sigma^2_y\)</span>.</li>
 </ol>
 <p><strong>Exercício 4.4 </strong> A administração de um parque florestal deseja estimar a população de coelhos e veados no parque nos meses de inverno. Para isso a área da floresta foi dividida, através de um levantamento aerofotométrico, em 10.000 pequenas áreas de aproximadamente 10 m<sup>2</sup>. Uma AAS de <span class="math inline">\(n = 500\)</span> dessas pequenas áreas foi selecionada e foram observados os números de coelhos e veados em cada uma delas, resultando na Tabela <a href="aas.html#tab:tabaas6">4.6</a>:</p>
 <center>
