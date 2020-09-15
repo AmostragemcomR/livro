@@ -263,11 +263,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.3" data-path="estrat.html"><a href="estrat.html#alocação-da-amostra-nos-estratos"><i class="fa fa-check"></i><b>11.3</b> Alocação da amostra nos estratos</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="estrat.html"><a href="estrat.html#alocação-proporcional"><i class="fa fa-check"></i><b>11.3.1</b> Alocação proporcional</a></li>
 <li class="chapter" data-level="11.3.2" data-path="estrat.html"><a href="estrat.html#alocação-ótima"><i class="fa fa-check"></i><b>11.3.2</b> Alocação ótima</a></li>
-<li class="chapter" data-level="11.3.3" data-path="estrat.html"><a href="estrat.html#tamanho-da-amostra-estratificada---caso-geral"><i class="fa fa-check"></i><b>11.3.3</b> Tamanho da amostra estratificada - caso geral</a></li>
-<li class="chapter" data-level="11.3.4" data-path="estrat.html"><a href="estrat.html#tamanho-da-amostra-sob-alocação-ótima"><i class="fa fa-check"></i><b>11.3.4</b> Tamanho da amostra sob alocação ótima</a></li>
-<li class="chapter" data-level="11.3.5" data-path="estrat.html"><a href="estrat.html#comparação-de-alternativas-de-alocação-da-amostra"><i class="fa fa-check"></i><b>11.3.5</b> Comparação de alternativas de alocação da amostra</a></li>
-<li class="chapter" data-level="11.3.6" data-path="estrat.html"><a href="estrat.html#alocação-potência"><i class="fa fa-check"></i><b>11.3.6</b> Alocação potência</a></li>
-<li class="chapter" data-level="11.3.7" data-path="estrat.html"><a href="estrat.html#alguns-problemas-com-alocação-ótima"><i class="fa fa-check"></i><b>11.3.7</b> Alguns problemas com alocação ótima</a></li>
+<li class="chapter" data-level="11.3.3" data-path="estrat.html"><a href="estrat.html#tamanho-da-amostra-estratificada-simples"><i class="fa fa-check"></i><b>11.3.3</b> Tamanho da amostra estratificada simples</a></li>
+<li class="chapter" data-level="11.3.4" data-path="estrat.html"><a href="estrat.html#comparação-de-alternativas-de-alocação-da-amostra"><i class="fa fa-check"></i><b>11.3.4</b> Comparação de alternativas de alocação da amostra</a></li>
+<li class="chapter" data-level="11.3.5" data-path="estrat.html"><a href="estrat.html#alocação-potência"><i class="fa fa-check"></i><b>11.3.5</b> Alocação potência</a></li>
+<li class="chapter" data-level="11.3.6" data-path="estrat.html"><a href="estrat.html#alguns-problemas-com-alocação-ótima"><i class="fa fa-check"></i><b>11.3.6</b> Alguns problemas com alocação ótima</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="estrat.html"><a href="estrat.html#definição-dos-limites-dos-estratos"><i class="fa fa-check"></i><b>11.4</b> Definição dos limites dos estratos</a></li>
 <li class="chapter" data-level="11.5" data-path="estrat.html"><a href="estrat.html#número-de-estratos-na-amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.5</b> Número de estratos na amostragem estratificada simples</a></li>
@@ -403,38 +402,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <td align="left">Variação de <span class="math inline">\(p(1-p)\)</span> em função dos valores de <span class="math inline">\(p\)</span></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="estrat.html#fig:numeroestratos">Figura 11.1</a></td>
-<td align="left">Soluções sobre escolha de número de estratos</td>
+<td align="left"><a href="estrat.html#fig:precisaovsestratos">Figura 11.1</a></td>
+<td align="left">Ganhos de precisão <em>versus</em> número de estratos</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="estrat.html#fig:precisaovsestratos">Figura 11.2</a></td>
-<td align="left">Ganhos de precisão versus número de estratos</td>
-</tr>
-<tr class="even">
 <td align="left"><a href="cong.html#fig:hierar1">Figura 12.1</a></td>
 <td align="left">Ilustração da hierarquia com vários níveis (vários para um)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="cong.html#fig:baralho">Figura 12.2</a></td>
 <td align="left">Ilustração de unidades elementares “naturalmente” agrupadas</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="cong.html#fig:baralhoAC1">Figura 12.3</a></td>
 <td align="left">Ilustração da seleção de amostragem conglomerada em um estágio</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="cong.html#fig:baralhoAC2">Figura 12.4</a></td>
 <td align="left">Ilustração da seleção de amostragem conglomerada em 2 estágios</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="calib.html#fig:figcalib1">Figura 13.1</a></td>
 <td align="left">Resíduos para o modelo de regressão da população para os estimadores de HT (esquerda) e de calibração (direita)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="calib.html#fig:figcalib2">Figura 13.2</a></td>
 <td align="left">Regressão linear para a população de fazendas de cana-de-açúcar</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="calib.html#fig:figcalib3">Figura 13.3</a></td>
 <td align="left"><span class="math inline">\(EQM\)</span> do estimador de regressão versus número de variáveis auxiliares</td>
 </tr>

@@ -263,11 +263,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.3" data-path="estrat.html"><a href="estrat.html#alocação-da-amostra-nos-estratos"><i class="fa fa-check"></i><b>11.3</b> Alocação da amostra nos estratos</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="estrat.html"><a href="estrat.html#alocação-proporcional"><i class="fa fa-check"></i><b>11.3.1</b> Alocação proporcional</a></li>
 <li class="chapter" data-level="11.3.2" data-path="estrat.html"><a href="estrat.html#alocação-ótima"><i class="fa fa-check"></i><b>11.3.2</b> Alocação ótima</a></li>
-<li class="chapter" data-level="11.3.3" data-path="estrat.html"><a href="estrat.html#tamanho-da-amostra-estratificada---caso-geral"><i class="fa fa-check"></i><b>11.3.3</b> Tamanho da amostra estratificada - caso geral</a></li>
-<li class="chapter" data-level="11.3.4" data-path="estrat.html"><a href="estrat.html#tamanho-da-amostra-sob-alocação-ótima"><i class="fa fa-check"></i><b>11.3.4</b> Tamanho da amostra sob alocação ótima</a></li>
-<li class="chapter" data-level="11.3.5" data-path="estrat.html"><a href="estrat.html#comparação-de-alternativas-de-alocação-da-amostra"><i class="fa fa-check"></i><b>11.3.5</b> Comparação de alternativas de alocação da amostra</a></li>
-<li class="chapter" data-level="11.3.6" data-path="estrat.html"><a href="estrat.html#alocação-potência"><i class="fa fa-check"></i><b>11.3.6</b> Alocação potência</a></li>
-<li class="chapter" data-level="11.3.7" data-path="estrat.html"><a href="estrat.html#alguns-problemas-com-alocação-ótima"><i class="fa fa-check"></i><b>11.3.7</b> Alguns problemas com alocação ótima</a></li>
+<li class="chapter" data-level="11.3.3" data-path="estrat.html"><a href="estrat.html#tamanho-da-amostra-estratificada-simples"><i class="fa fa-check"></i><b>11.3.3</b> Tamanho da amostra estratificada simples</a></li>
+<li class="chapter" data-level="11.3.4" data-path="estrat.html"><a href="estrat.html#comparação-de-alternativas-de-alocação-da-amostra"><i class="fa fa-check"></i><b>11.3.4</b> Comparação de alternativas de alocação da amostra</a></li>
+<li class="chapter" data-level="11.3.5" data-path="estrat.html"><a href="estrat.html#alocação-potência"><i class="fa fa-check"></i><b>11.3.5</b> Alocação potência</a></li>
+<li class="chapter" data-level="11.3.6" data-path="estrat.html"><a href="estrat.html#alguns-problemas-com-alocação-ótima"><i class="fa fa-check"></i><b>11.3.6</b> Alguns problemas com alocação ótima</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="estrat.html"><a href="estrat.html#definição-dos-limites-dos-estratos"><i class="fa fa-check"></i><b>11.4</b> Definição dos limites dos estratos</a></li>
 <li class="chapter" data-level="11.5" data-path="estrat.html"><a href="estrat.html#número-de-estratos-na-amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.5</b> Número de estratos na amostragem estratificada simples</a></li>
@@ -600,117 +599,121 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 <tr class="odd">
 <td align="left"><a href="estrat.html#tab:tabestr2">Tabela 11.2</a></td>
-<td align="left">Valores de <span class="math inline">\(EPA\)</span> para valores variados de <span class="math inline">\(H\)</span> e de correlação</td>
+<td align="left">Referências sobre delimitação ótima de estratos</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="estrat.html#tab:tabestr3">Tabela 11.3</a></td>
-<td align="left">Dados observados na amostra, por estrato</td>
+<td align="left">Valores de <span class="math inline">\(EPA\)</span> para valores variados de <span class="math inline">\(H\)</span> e de correlação</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="estrat.html#tab:tabestr4">Tabela 11.4</a></td>
-<td align="left">Informações da estratificação das fazendas de soja</td>
+<td align="left">Dados observados na amostra, por estrato</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="estrat.html#tab:tabestr5">Tabela 11.5</a></td>
-<td align="left">Informações censitárias sobre a variável de interesse</td>
+<td align="left">Informações da estratificação das fazendas de soja</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="estrat.html#tab:tabestr6">Tabela 11.6</a></td>
-<td align="left">Estratificação das lojas e resultados da amostra</td>
+<td align="left">Informações censitárias sobre a variável de interesse</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="estrat.html#tab:tabestr7">Tabela 11.7</a></td>
-<td align="left">Resultados observados na amostra</td>
+<td align="left">Estratificação das lojas e resultados da amostra</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="estrat.html#tab:tabestr8">Tabela 11.8</a></td>
-<td align="left">Tamanho e variância por estrato</td>
+<td align="left">Resultados observados na amostra</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="estrat.html#tab:tabestr9">Tabela 11.9</a></td>
-<td align="left">Faltas no mês para cada trabalhador selecionado</td>
+<td align="left">Tamanho e variância por estrato</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="estrat.html#tab:tabestr10">Tabela 11.10</a></td>
-<td align="left">Informações populacionais dos clientes</td>
+<td align="left">Faltas no mês para cada trabalhador selecionado</td>
 </tr>
 <tr class="even">
+<td align="left"><a href="estrat.html#tab:tabestr11">Tabela 11.11</a></td>
+<td align="left">Informações populacionais dos clientes</td>
+</tr>
+<tr class="odd">
 <td align="left"><a href="cong.html#tab:tabcong1">Tabela 12.1</a></td>
 <td align="left">Exemplos de possíveis conglomerados</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="cong.html#tab:tabcong2">Tabela 12.2</a></td>
 <td align="left">Tamanhos da população e da amostra na AC1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="cong.html#tab:tabcong3">Tabela 12.3</a></td>
 <td align="left">Parâmetros populacionais nos conglomerados e na população</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="cong.html#tab:tabcong4">Tabela 12.4</a></td>
 <td align="left">Descrição das informações amostrais na AC1S</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="cong.html#tab:tabcong5">Tabela 12.5</a></td>
 <td align="left">Estimadores do total, média e respectivas variâncias sob AC1S</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="cong.html#tab:tabcong6">Tabela 12.6</a></td>
 <td align="left">Efeitos do plano amostral sob AC1S por tamanho do conglomerado e valor do coeficiente de correlação intraclasse</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="cong.html#tab:tabcong7">Tabela 12.7</a></td>
 <td align="left">Estimadores do total e respectivas variâncias sob AC2S, AC2PC e AC2PS</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="cong.html#tab:tabcong8">Tabela 12.8</a></td>
 <td align="left">Resultados obtidos para a amostra</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="cong.html#tab:tabcong9">Tabela 12.9</a></td>
 <td align="left">Valores populacionais</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="cong.html#tab:tabcong10">Tabela 12.10</a></td>
 <td align="left">Conglomerados e respectivas unidades formadoras</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="cong.html#tab:tabcong11">Tabela 12.11</a></td>
 <td align="left">Número de domicílios e domicílios alugados na amostra de 20 quarteirões</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="cong.html#tab:tabcong12">Tabela 12.12</a></td>
 <td align="left">Valores observados para os conglomerados da amostra</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="cong.html#tab:tabcong13">Tabela 12.13</a></td>
 <td align="left">Valores observados para a amostra</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="calib.html#tab:tabcalib1">Tabela 13.1</a></td>
 <td align="left">Comparação dos estimadores HT e de calibração, dado um plano amostral <span class="math inline">\(p\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="calib.html#tab:tabcalib2">Tabela 13.2</a></td>
 <td align="left">Estimativas de total de fazendas de cana-de-açúcar, dos erros padrão e coeficientes de variação (CV) usando os estimadores HT e GREG para variáveis selecionadas</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="calib.html#tab:tabcalib3">Tabela 13.3</a></td>
 <td align="left">Estimativas de total de fazendas de cana-de-açucar, dos erros padrão e coeficientes de variação (CV) usando os estimadores HT e pós-estratificação (PS-Região) para variáveis selecionadas</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="calib.html#tab:tabcalib4">Tabela 13.4</a></td>
 <td align="left">Funções de distância para estimação de calibração propostas em Deville e Särndal (1992)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="calib.html#tab:tabcalib5">Tabela 13.5</a></td>
 <td align="left">Funções de calibração propostas em Deville e Särndal (1992)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="calib.html#tab:tabcalib6">Tabela 13.6</a></td>
 <td align="left">Identificação dos grupos sub-representados e super-representados na pesquisa de força de trabalho do Reino Unido</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="calib.html#tab:tabcalib7">Tabela 13.7</a></td>
 <td align="left">Estimativas do rendimento médio domiciliar por esquema de ponderação da pesquisa domiciliar da Holanda 1977/1978</td>
 </tr>

@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1599919588174.000,
+    "created" : 1600173845868.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2881097557",
-    "id" : "5F19B817",
+    "hash" : "0",
+    "id" : "4F92A7A9",
     "lastKnownWriteTime" : 1600027281,
-    "last_content_update" : 1600027281341,
+    "last_content_update" : 1600027281,
     "path" : "~/GitHub/amostragem/02-conceitos.Rmd",
     "project_path" : "02-conceitos.Rmd",
     "properties" : {
-        "cursorPosition" : "212,858",
-        "scrollLine" : "212"
+        "cursorPosition" : "329,101",
+        "scrollLine" : "0"
     },
-    "relative_order" : 6,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"
