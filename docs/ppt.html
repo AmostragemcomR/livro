@@ -480,15 +480,15 @@ s=<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</sp
 tabela=<span class="kw">data.frame</span>(<span class="kw">cbind</span>(fazenda,area,acum,linf,lsup,sel))
 <span class="co"># Aleatórios selecionados</span>
 s</code></pre></div>
-<pre><code>## [1]  551  358 1135</code></pre>
+<pre><code>## [1]  889  785 1882</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Tabela com os dados e marcação do número de vezes que cada fazenda foi selecionada</span>
 tabela</code></pre></div>
 <pre><code>##   fazenda area acum linf lsup sel
 ## 1       1   50   50    1   50   0
 ## 2       2 1000 1050   51 1050   2
-## 3       3  125 1175 1051 1175   1
+## 3       3  125 1175 1051 1175   0
 ## 4       4  300 1475 1176 1475   0
-## 5       5  500 1975 1476 1975   0
+## 5       5  500 1975 1476 1975   1
 ## 6       6   25 2000 1976 2000   0</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Resolvendo o mesmo problema utilizando função de um pacote do R</span>
 <span class="co"># Carregando o pacote pps, para seleção proporcional ao tamanho</span>
@@ -498,7 +498,7 @@ tabela</code></pre></div>
 fazendas_sel=<span class="kw">ppswr</span>(area,n)
 <span class="co"># Identificação das fazendas selecionadas</span>
 fazendas_sel</code></pre></div>
-<pre><code>## [1] 5 2 5</code></pre>
+<pre><code>## [1] 2 2 4</code></pre>
 <p>Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados números pseudoaleatórios distintos nas duas soluções.</p>
 <div id="estimação-do-total-sob-amostragem-ppt-com-reposição" class="section level3">
 <h3><span class="header-section-number">10.3.1</span> Estimação do total sob amostragem PPT com reposição</h3>
@@ -574,21 +574,21 @@ tabela[tabela<span class="op">$</span>sel<span class="op">&gt;</span><span class
 <pre><code>##     CodMunic     Pop         ai       pii sel
 ## 112  1302603 1982177 0.00000000 1.0000000   1
 ## 120  1303403  109225 0.00000000 1.0000000   1
-## 103  1301902   94278 0.73724604 0.9886311   2
-## 110  1302504   91795 0.03283246 0.9625935   2
-## 130  1304062   58314 0.46030001 0.6115004   2
-## 115  1302900   57663 0.25098888 0.6046738   2
-## 113  1302702   51331 0.10302632 0.5382743   2
-## 109  1302405   41600 0.16919881 0.4362317   2
-## 96   1301407   33127 0.17740680 0.3473809   2
-## 87   1300706   32792 0.31013487 0.3438680   2
-## 93   1301159   26722 0.27279417 0.2802159   2
-## 111  1302553   26530 0.01624680 0.2782026   2
-## 131  1304104   18383 0.12674769 0.1927704   2
-## 133  1304237   18162 0.03595806 0.1904529   2
-## 135  1304302   17367 0.01243807 0.1821162   2
-## 75   1300029   15166 0.02390367 0.1590358   2
-## 107  1302207   12408 0.03926775 0.1301145   2</code></pre>
+## 103  1301902   94278 0.11570842 0.9886311   2
+## 94   1301209   81325 0.49479076 0.8528015   2
+## 132  1304203   62885 0.41843626 0.6594334   2
+## 115  1302900   57663 0.36022162 0.6046738   2
+## 113  1302702   51331 0.09706301 0.5382743   2
+## 100  1301704   49137 0.17349549 0.5152672   2
+## 88   1300805   38073 0.21488598 0.3992464   2
+## 127  1303908   34963 0.29124645 0.3666339   2
+## 96   1301407   33127 0.23388633 0.3473809   2
+## 91   1301001   27405 0.18252196 0.2873781   2
+## 82   1300409   27110 0.09615906 0.2842846   2
+## 95   1301308   25696 0.24546203 0.2694570   2
+## 98   1301605   21859 0.12603485 0.2292209   2
+## 124  1303601   20986 0.04602906 0.2200663   2
+## 121  1303502   19149 0.09705736 0.2008029   2</code></pre>
 <p>A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981.</p>
 <p>A <em>Amostragem PPT de Poisson</em> é pouco usada na prática devido à variabilidade do tamanho efetivo da amostra. É um método menos eficiente que outros métodos de seleção PPT sem reposição. Um método moderno que corrige este defeito é <em>Amostragem Sequencial de Poisson - ASP</em> - ver <span class="citation">Ohlsson (1998)</span> - descrito na Seção <a href="ppt.html#ASP">10.5</a>.</p>
 <div id="estimação-do-total-sob-amostragem-de-poisson" class="section level3">
@@ -647,17 +647,17 @@ tabela=tabela[<span class="kw">order</span>(tabela<span class="op">$</span>ci),]
 <span class="co"># como a amostra desejada</span>
 amostra=tabela[<span class="dv">1</span><span class="op">:</span>n,]
 amostra</code></pre></div>
-<pre><code>##    CodMunic    Pop         ai         pi          ci
-## 67  1200401 357194 0.01081503 0.46002707  0.02350955
-## 60  1200302  32411 0.01528476 0.04174185  0.36617347
-## 57  1200179   9836 0.01769362 0.01266770  1.39675109
-## 65  1200385  17795 0.14784375 0.02291803  6.45098056
-## 58  1200203  80377 0.87212973 0.10351684  8.42500299
-## 62  1200336  16410 0.23881477 0.02113430 11.29986781
-## 71  1200500  40311 0.60973751 0.05191619 11.74465065
-## 70  1200450  20799 0.40160180 0.02678685 14.99249679
-## 64  1200351  15857 0.31045577 0.02042209 15.20195594
-## 74  1200807  16029 0.31425682 0.02064361 15.22295779</code></pre>
+<pre><code>##    CodMunic    Pop        ai         pi        ci
+## 67  1200401 357194 0.7272168 0.46002707  1.580813
+## 58  1200203  80377 0.3479198 0.10351684  3.360997
+## 71  1200500  40311 0.2302807 0.05191619  4.435625
+## 70  1200450  20799 0.1496924 0.02678685  5.588280
+## 60  1200302  32411 0.5693393 0.04174185 13.639533
+## 65  1200385  17795 0.4412025 0.02291803 19.251328
+## 72  1200609  37571 0.9363787 0.04838737 19.351718
+## 55  1200104  22899 0.5792532 0.02949142 19.641411
+## 53  1200013  13353 0.4482767 0.01719721 26.066820
+## 68  1200427  15968 0.6985216 0.02056505 33.966446</code></pre>
 <div id="estimação-com-amostragem-sequencial-de-poisson" class="section level3">
 <h3><span class="header-section-number">10.5.1</span> Estimação com amostragem sequencial de Poisson</h3>
 <p>O estimador tipo HT do total sob <em>Amostragem Sequencial de Poisson</em> é dado por:</p>
@@ -760,15 +760,15 @@ tabela<span class="op">$</span>sel=<span class="kw">c</span>(selc,sel)
 tabela[tabela<span class="op">$</span>sel<span class="op">&gt;</span><span class="dv">0</span>,]</code></pre></div>
 <pre><code>##    CodMunic    Pop sel
 ## 17  1100205 484992   1
+## 12  1100122 128026   2
 ## 2   1100023 101269   2
 ## 22  1100304  87727   2
 ## 11  1100114  55597   2
-## 10  1100106  45761   2
+## 15  1100155  40099   2
 ## 13  1100130  35633   2
 ## 18  1100254  23017   2
 ## 5   1100056  18041   2
-## 49  1101609  11343   2
-## 19  1100262   3666   2</code></pre>
+## 38  1101203  10899   2</code></pre>
 <p>Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação.</p>
 <p><strong>Exemplo 10.5 </strong> Nas pesquisas domiciliares por amostragem do IBGE, anteriores à adoção da amostra mestra para o Sistema Integrado de Pesquisas Domiciliares - SIPD, tais como na PNAD, POF e PME, era usual adotar a seleção sistemática com PPT. No caso da PNAD, o plano amostral incluía a seleção de municípios, que eram estratificados por tamanho em termos de população e selecionados sistematicamente com probabilidade proporcional à população residente obtida no último Censo Demográfico. Antes da seleção dos setores, arrolava-se em cada município selecionado, primeiramente, os setores urbanos em ordem crescente de numeração e, posteriormente, os setores rurais. Os setores eram selecionados, em cada município da amostra, também sistematicamente com probabilidade proporcional utilizando como medida de tamanho o número de unidades domiciliares existentes por ocasião do último Censo Demográfico. Nas demais pesquisas domiciliares, onde a unidade primária de seleção era o setor, era feita a seleção dos setores em cada estrato sistematicamente com PPT (medido em número de domicílios ou domicílios particulares ocupados). Detalhes sobre os principais aspectos de amostragem das pesquisas domiciliares do IBGE podem ser vistos em <span class="citation">Albieri e Bianchini (2015)</span>. Cabe registrar que, para a estimação da precisão das estimativas, eram adotados estimadores das variâncias como se o plano amostral fosse de seleção PPT com reposição.</p>
 <p>A Amostragem Sistemática com PPT (com ou sem ordenação) era muito usada na prática por sua simplicidade na seleção de amostras. Porém, com o advento de modernas ferramentas computacionais que permitem selecionar com facilidade amostras PPT sem reposição usando outros métodos, tornou-se menos popular.</p>
@@ -804,17 +804,17 @@ tabela=tabela[<span class="kw">order</span>(tabela<span class="op">$</span>ci),]
 <span class="co"># como a amostra desejada</span>
 amostra=tabela[<span class="dv">1</span><span class="op">:</span>n,]
 amostra</code></pre></div>
-<pre><code>##    CodMunic    Pop          ai   lambdai          ci
-## 67  1200401 357194 0.091536321 4.6002707 -0.07885653
-## 58  1200203  80377 0.307598668 1.0351684 -0.01509276
-## 73  1200708  17021 0.006866259 0.2192120  0.02462529
-## 70  1200450  20799 0.011347493 0.2678685  0.03137066
-## 74  1200807  16029 0.135075344 0.2064361  0.60033552
-## 72  1200609  37571 0.523705001 0.4838737  1.17282908
-## 59  1200252  16099 0.264766435 0.2073376  1.37672662
-## 55  1200104  22899 0.443094811 0.2949142  1.90222370
-## 53  1200013  13353 0.308487440 0.1719721  2.14795057
-## 62  1200336  16410 0.538038833 0.2113430  4.34618805</code></pre>
+<pre><code>##    CodMunic    Pop         ai   lambdai         ci
+## 67  1200401 357194 0.71970631 4.6002707 -2.0095266
+## 58  1200203  80377 0.76531061 1.0351684 -0.1107864
+## 60  1200302  32411 0.12269485 0.4174185  0.1951914
+## 59  1200252  16099 0.07734297 0.2073376  0.3204724
+## 73  1200708  17021 0.13051539 0.2192120  0.5346489
+## 68  1200427  15968 0.24025632 0.2056505  1.2214891
+## 63  1200344   8386 0.15586455 0.1080026  1.5249821
+## 72  1200609  37571 0.62754952 0.4838737  1.7972293
+## 61  1200328   7147 0.16740789 0.0920456  1.9833742
+## 62  1200336  16410 0.41720492 0.2113430  2.6713692</code></pre>
 <p>A <em>Amostragem PPT de Pareto</em> é o método empregado para sorteio de unidades primárias de amostragem da PNAD Contínua - ver <span class="citation">Freitas e Antonaci (2014)</span>.</p>
 <p>Para tamanhos de amostra iguais, AP é mais eficiente que ASP. A implementação deste método requer os mesmos cuidados com relação a unidades muito grandes que com outros métodos PPT sem reposição. As probabilidades exatas de inclusão não são estritamente proporcionais ao tamanho e são difíceis de calcular. Porém, resultados sugerem que as aproximações consideradas no passo 2 são suficientemente boas para a maioria das situações de interesse prático, como pode ser visto em <span class="citation">Aires e Rosén (2005)</span>.</p>
 <div id="estimação-do-total-sob-amostragem-ppt-de-pareto" class="section level3">
