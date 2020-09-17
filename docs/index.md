@@ -2,7 +2,7 @@
 lang: pt-BR
 title: "Amostragem: Teoria e Prática Usando R"
 author: "Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias"
-date: '17 de setembro de 2020, 14:47:10'
+date: '17 de setembro de 2020, 16:39:55'
 summary_depth: 3
 summary_float:
    collapsed: false

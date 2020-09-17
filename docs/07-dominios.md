@@ -224,13 +224,13 @@ A Tabela \@ref(tab:tabdom1) apresenta um resumo de estimadores do total, propor√
 ----------
 Estimador 
 --------------------------------------
-$\widehat{Y}_c=\frac N n\displaystyle\sum_{i\in s} y_{ic},\,\, N_c\,\,\text{desconhecido}$
+$\displaystyle\widehat{Y}_c=\frac N n\displaystyle\sum_{i\in s} y_{ic},\,\, N_c\,\,\text{desconhecido}$
 
 $\widehat{Y}_c^R=N_c\overline{y}_c,\,\, N_c\,\,\text{conhecido}$ 
 
-$\widehat{p}_c=\frac{n_c} n, \,\, N_c \,\,\text{desconhecido}$ 
+$\displaystyle\widehat{p}_c=\frac{n_c} n, \,\, N_c \,\,\text{desconhecido}$ 
 
-$\overline{y}_c=\frac{\widehat{Y}_c}{\widehat{N}_c}=\displaystyle\frac 1{n_c}\sum_{i\in s}y_{ic},\,\, N_c \,\,\text{desconhecido}$
+$\displaystyle\overline{y}_c=\frac{\widehat{Y}_c}{\widehat{N}_c}=\displaystyle\frac 1{n_c}\sum_{i\in s}y_{ic},\,\, N_c \,\,\text{desconhecido}$
 
 $\widehat{V}_{AAS}(\widehat{Y}_c)=N^2\displaystyle\left(\frac{1}{n}-\frac{1}{N}\right)\frac{1}{N-1}\sum_{i\in s}                                    \left(y_{id}-\frac{t_c}{n}\right)^2,\,\, N_c\,\,\text{desconhecido}$
 
@@ -271,7 +271,7 @@ library(tidyverse)
 ```
 
 ```
-## -- Attaching packages --------
+## -- Attaching packages ---------------------- tidyverse 1.2.1 --
 ```
 
 ```
@@ -282,7 +282,7 @@ library(tidyverse)
 ```
 
 ```
-## -- Conflicts -----------------
+## -- Conflicts ------------------------- tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
 ```
