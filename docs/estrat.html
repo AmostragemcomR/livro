@@ -378,10 +378,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="o-método-geral" class="section level2">
 <h2><span class="header-section-number">11.1</span> O método geral</h2>
 <p>Particione (divida) a população <span class="math inline">\(U\)</span> em <span class="math inline">\(H\)</span> subconjuntos (grupos) mutuamente exclusivos e exaustivos, chamados <em>estratos</em>, denotados por <span class="math inline">\(U_1, ..., U_h, ..., U_H\)</span>, de modo que: <span class="math display">\[
-U = U_1 \cup \dots \cup U_h \cup \dots \cup U_H = \displaystyle \bigcup_{h=1}^H U_h  
-\]</span> e <span class="math display">\[
-U_h \cap U_k = \emptyset, \, h \ne k
-\]</span>.</p>
+U = U_1 \cup \dots \cup U_h \cup \dots \cup U_H = \displaystyle \bigcup_{h=1}^H U_h\quad\text {e}\quad U_h \cap U_k = \emptyset, \, h \ne k
+\]</span></p>
 <p>Então <span class="math inline">\(U_h = \textrm {\{unidades pertencentes ao estrato h}\}\)</span>, para <span class="math inline">\(h=1, 2, ...,H\)</span>.</p>
 <p>Seja <span class="math inline">\(N_h\)</span> o tamanho de <span class="math inline">\(U_h\)</span>. O tamanho total da população é dado pela soma dos tamanhos dos estratos, <span class="math inline">\(N = N_1 + \dots + N_h + \dots + N_H\)</span>.</p>
 <p>Selecione uma amostra <span class="math inline">\(s_h\)</span> de tamanho <span class="math inline">\(n_h\)</span>, com <span class="math inline">\(n_h &gt; 0\)</span>, segundo um plano amostral <span class="math inline">\(p_h(s_h)\)</span> <em>independentemente</em> dentro de cada estrato <span class="math inline">\(h\)</span>, onde <span class="math inline">\(n = \displaystyle \sum_{h=1}^{H} n_h\)</span> é o tamanho total da amostra selecionada. Fica assim assegurado que cada estrato tem sua população representada na amostra completa dada por: <span class="math inline">\(s = s_1 \cup \dots \cup s_h \cup \dots \cup s_H\)</span>. Note que em função da definição dos estratos, as amostras nos vários estratos também são conjuntos mutuamente exclusivos, isto é, <span class="math inline">\(s_h \cap s_k = \emptyset, \, h \ne k\)</span>.</p>
@@ -936,7 +934,7 @@ Figura 11.1: Ganhos de precisão <em>versus</em> número de estratos
 </table>
 </center>
 <p>Estime o total de fumantes e o intervalo de 95% de confiança, entre as pessoas maiores de 16 anos na localidade, utilizando o estimador simples da amostragem estratificada.</p>
-<p><strong>Exercício 11.5 </strong> Um pesquisador pretende realizar uma pesquisa por amostragem para estimar a produção de soja numa determinada região. Ele tem acesso a uma lista das fazendas produtoras de soja localizadas na região, compilada por ocasião do último censo agropecuário, realizado menos de 1 ano atrás. Usando essa lista, que contém a informação sobre área plantada com soja na ocasião do censo em cada fazenda, o pesquisador dividiu as fazendas da população em dois grupos: fazendas grandes (área plantada com soja maior que 50 hectares) e fazendas pequenas (todas as demais). A Tabela <a href="estrat.html#tab:tabestr5">11.5</a> contém as informações compiladas pelo pesquisador usando a lista.</p>
+<p><strong>Exercício 11.5 </strong> Um pesquisador pretende realizar uma pesquisa por amostragem para estimar a produção de soja numa determinada região. Ele tem acesso a uma lista das fazendas produtoras de soja localizadas na região, compilada por ocasião do último censo agropecuário. Usando essa lista, que contém a informação sobre área plantada com soja na ocasião do censo em cada fazenda, o pesquisador dividiu as fazendas da população em dois grupos: fazendas grandes (área plantada com soja maior que 50 hectares) e fazendas pequenas (todas as demais). A Tabela <a href="estrat.html#tab:tabestr5">11.5</a> contém as informações compiladas pelo pesquisador usando a lista.</p>
 <center>
 <table>
 <caption>

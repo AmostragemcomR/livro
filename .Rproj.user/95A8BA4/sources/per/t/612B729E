@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3216932296",
+    "hash" : "121476451",
     "id" : "612B729E",
-    "lastKnownWriteTime" : 1600198295,
-    "last_content_update" : 1600198296054,
+    "lastKnownWriteTime" : 1600364826,
+    "last_content_update" : 1600364826177,
     "path" : "~/GitHub/amostragem/07-dominios.Rmd",
     "project_path" : "07-dominios.Rmd",
     "properties" : {
-        "cursorPosition" : "202,55",
-        "scrollLine" : "0"
+        "cursorPosition" : "232,96",
+        "scrollLine" : "222"
     },
     "relative_order" : 5,
     "source_on_save" : false,
