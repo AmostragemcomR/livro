@@ -2,7 +2,7 @@
 lang: pt-BR
 title: "Amostragem: Teoria e Prática Usando R"
 author: "Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias"
-date: '17 de setembro de 2020, 16:39:55'
+date: '18 de setembro de 2020, 16:17:55'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -12,8 +12,8 @@ output:
    bookdown::gitbook: default
 documentclass: book                   
 
-bibliography: [book.bib]
-biblio-style: "apalike"
+bibliography: book.bib
+biblio-style: apalike
 suppress-bibliography: false
 link-citations: no
 github-repo: PedroNSilva/amotepur
