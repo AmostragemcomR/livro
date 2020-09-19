@@ -57,7 +57,7 @@
       </if>
       <else-if variable="URL">
         <group>
-          <text value="Available at:" suffix=" "/>
+          <text value="Disponível em:" suffix=" "/>
           <text variable="URL"/>
           <group prefix=" [" suffix="]">
             <text term="accessed" text-case="capitalize-first" suffix=" "/>
