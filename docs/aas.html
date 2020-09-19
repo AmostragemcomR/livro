@@ -583,30 +583,30 @@ s=s[<span class="dv">1</span><span class="op">:</span>n,]
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i        aleat
-## 1  998 0.0003641320
-## 2  744 0.0009870545
-## 3  831 0.0010092270
-## 4  981 0.0018301443
-## 5  273 0.0021707613
-## 6  560 0.0031054607
-## 7  322 0.0031098262
-## 8  415 0.0043243961
-## 9  371 0.0044635949
-## 10  68 0.0070378138
-## 11 556 0.0075632574
-## 12  99 0.0076771586
-## 13 572 0.0104155499
-## 14 591 0.0105749385
-## 15 795 0.0108221991
-## 16 893 0.0112944550
-## 17 490 0.0113933743
-## 18 711 0.0128083739
-## 19 995 0.0132716089
-## 20 187 0.0137904841</code></pre>
+## 1  567 0.0003413064
+## 2  211 0.0005003812
+## 3   64 0.0007114946
+## 4  613 0.0016312490
+## 5  117 0.0018061693
+## 6  243 0.0022956741
+## 7  965 0.0023635607
+## 8  495 0.0037863646
+## 9  890 0.0078055228
+## 10 780 0.0117069657
+## 11 960 0.0122595825
+## 12 430 0.0136466655
+## 13 238 0.0159043365
+## 14 125 0.0175224950
+## 15  32 0.0175951440
+## 16 832 0.0178801762
+## 17 662 0.0181537841
+## 18 273 0.0188324959
+## 19 268 0.0196063516
+## 20 247 0.0198823721</code></pre>
 </div>
 <div id="algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</h3>
-<p>Este algoritmo foi proposto por <span class="citation">Fan, Muller, e Rezucha (1962)</span> e consiste nos seguintes passos:</p>
+<p>Este algoritmo foi proposto por <span class="citation">Fan et al. (1962)</span> e consiste nos seguintes passos:</p>
 <p>Como no algoritmo anterior, sejam <span class="math inline">\(a_i, \, i = 1, 2, ..., m\)</span>, determinações de variáveis aleatórias IID <span class="math inline">\(A_1, A_2, ..., A_m\)</span>, todas com distribuição <span class="math inline">\(U(0;1)\)</span>.</p>
 <p>Processe sequencialmente a lista, para as unidades <span class="math inline">\(i = 1, 2, 3, ..., m\)</span>, incluindo na amostra as unidades <span class="math inline">\(i\)</span>, tais que <span class="math inline">\(a_i &lt; \frac{n - k_{i-1}}{N - i + 1}\)</span>, onde <span class="math inline">\(k_{i-1}\)</span> é o número de unidades selecionadas até o processamento da unidade <span class="math inline">\(i-1\)</span>. Após processar cada unidade da lista, atualize o número de unidades já incluídas na amostra. Interrompa o processamento quando <span class="math inline">\(k_{m} = n\)</span>, o que ocorre quando for processada a unidade de ordem <span class="math inline">\(m\)</span>. Note que <span class="math inline">\(m\)</span> é uma quantidade aleatória, que vai variar no intervalo <span class="math inline">\(n \le m \le N\)</span>, e corresponde ao número de sorteios necessários para conseguir uma AAS de tamanho <span class="math inline">\(n\)</span> da população de tamanho <span class="math inline">\(N\)</span>.</p>
 <p>O algoritmo de Fan, Muller e Rezucha, para selecionar uma <em>AAS</em> de tamanho <span class="math inline">\(n\)</span> de uma população de <span class="math inline">\(N\)</span> unidades, pode ser resumido nos seguintes passos:</p>
@@ -653,30 +653,30 @@ s=<span class="kw">data.frame</span>(s)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i
-## 1   35
-## 2   50
-## 3   71
-## 4  222
-## 5  408
-## 6  410
-## 7  417
-## 8  564
-## 9  623
-## 10 627
-## 11 650
-## 12 694
-## 13 706
-## 14 715
-## 15 727
-## 16 772
-## 17 793
-## 18 870
-## 19 920
-## 20 956</code></pre>
+## 1   30
+## 2  173
+## 3  243
+## 4  276
+## 5  338
+## 6  436
+## 7  453
+## 8  455
+## 9  536
+## 10 575
+## 11 609
+## 12 637
+## 13 666
+## 14 760
+## 15 771
+## 16 776
+## 17 788
+## 18 819
+## 19 847
+## 20 859</code></pre>
 </div>
 <div id="probabilidades-de-inclusão-sob-aas" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Probabilidades de inclusão sob AAS</h3>
-<p>Como já indicado no Capítulo <a href="visger.html#visger">3</a>, tratar com as distribuições de aleatorização <span class="math inline">\(p(s)\)</span> sob AAS pode ser complicado do ponto de vista prático. <span class="citation">Särndal, Swensson, e Wretman (1992)</span>, página 29, mencionam que numa população com <span class="math inline">\(N = 1.000\)</span> unidades, o conjunto <span class="math inline">\(S\)</span> de amostras AAS possíveis de tamanho <span class="math inline">\(n=40\)</span> tem dimensão <span class="math inline">\(\binom{N}{n} = \binom{1.000}{40} = 5,6 \times 10^{71}\)</span>. Se a população tivesse <span class="math inline">\(N = 5.000\)</span> e a amostra tamanho <span class="math inline">\(n = 200\)</span>, a dimensão de <span class="math inline">\(S\)</span> cresceria para <span class="math inline">\(\binom{5.000}{200} = 1,4 \times 10^{363}\)</span>. Portanto, a enumeração de todas as amostras possíveis seria tarefa complicada, mesmo com computadores poderosos.</p>
+<p>Como já indicado no Capítulo <a href="visger.html#visger">3</a>, tratar com as distribuições de aleatorização <span class="math inline">\(p(s)\)</span> sob AAS pode ser complicado do ponto de vista prático. <span class="citation">Särndal et al. (1992)</span>, página 29, mencionam que numa população com <span class="math inline">\(N = 1.000\)</span> unidades, o conjunto <span class="math inline">\(S\)</span> de amostras AAS possíveis de tamanho <span class="math inline">\(n=40\)</span> tem dimensão <span class="math inline">\(\binom{N}{n} = \binom{1.000}{40} = 5,6 \times 10^{71}\)</span>. Se a população tivesse <span class="math inline">\(N = 5.000\)</span> e a amostra tamanho <span class="math inline">\(n = 200\)</span>, a dimensão de <span class="math inline">\(S\)</span> cresceria para <span class="math inline">\(\binom{5.000}{200} = 1,4 \times 10^{363}\)</span>. Portanto, a enumeração de todas as amostras possíveis seria tarefa complicada, mesmo com computadores poderosos.</p>
 <p>Note que os tamanhos de população e amostra acima são modestos do ponto de vista de aplicações práticas. Foi para eliminar essa dificuldade que introduzimos resumos simples derivados da distribuição <span class="math inline">\(p(s)\)</span>. Tais resumos serão suficientes para a obtenção de propriedades de estimadores tais como valor esperado e variância, na maioria das situações de interesse prático. Esses resumos são as <em>probabilidades de inclusão</em> de unidades ou de pares de unidades na amostra.</p>
 <p>Tem-se então que:</p>
 <ol style="list-style-type: decimal">
@@ -763,7 +763,7 @@ V_{AAS} (\overline{y}) = \displaystyle \left( \frac{1}{n} - \frac{1}{N} \right) 
 <p><span class="math display" id="eq:eqaas9">\[
 \frac{\overline {y}-E_{AAS}(\overline{y})}{\sqrt{V_{AAS}(\overline{y})}}=\frac{\overline {y}-\overline{Y}}{\displaystyle\sqrt{\left(\frac{1}{n}-\frac{1}{N}\right)S^2_y}}\approx N(0;1)\,\,\tag{4.9}
 \]</span></p>
-<p>onde <span class="math inline">\(N(0;1)\)</span> denota uma variável aleatória com distribuição normal padrão com média zero e variância um. Mais detalhes podem ser obtidos em <span class="citation">Cochran (1977)</span>, Seções 2.8 e 2.15, ou em <span class="citation">Särndal, Swensson, e Wretman (1992)</span>, Seção 2.11.</p>
+<p>onde <span class="math inline">\(N(0;1)\)</span> denota uma variável aleatória com distribuição normal padrão com média zero e variância um. Mais detalhes podem ser obtidos em <span class="citation">Cochran (1977)</span>, Seções 2.8 e 2.15, ou em <span class="citation">Särndal et al. (1992)</span>, Seção 2.11.</p>
 <p>É com base nessa distribuição assintótica que se pode fazer inferência por intervalos de confiança para a média populacional, e com base nesta ideia, medir a <em>margem de erro</em> de uma estimativa da média populacional. Um intervalo de confiança de nível <span class="math inline">\((1 - \alpha)%\)</span> para a média populacional sob AAS é dado por:</p>
 <p><span class="math display" id="eq:eqaas10">\[
 IC_{AAS} (\overline{Y} ; 1 - \alpha) = \left [ \overline {y} \mp z_{\alpha/2} \sqrt{\widehat {V}_{AAS}(\overline{y})} \right ]\,\,\tag{4.10}
@@ -935,25 +935,25 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 
 <span class="co"># a. Média amostral</span>
 (med_amo &lt;-<span class="st"> </span><span class="kw">mean</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 1469.178</code></pre>
+<pre><code>## [1] 1735.292</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># b. Estimativas da dispersão do estimador de média sob AAS</span>
 (var_med_amo &lt;-<span class="st"> </span>((<span class="dv">1</span><span class="op">/</span>n) <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>N)) <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 60720.43</code></pre>
+<pre><code>## [1] 168983.6</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(dp_med_amo &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VAR_med_amo))</code></pre></div>
 <pre><code>## [1] 389.4654</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cv_med_amo &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>DP_med_amo <span class="op">/</span><span class="st"> </span>med_amo)</code></pre></div>
-<pre><code>## [1] 26.50906</code></pre>
+<pre><code>## [1] 22.4438</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># c. Margem de erro relativo do estimador de média sob AAS</span>
 (me_med_amo &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>cv_med_amo)</code></pre></div>
-<pre><code>## [1] 51.9568</code></pre>
+<pre><code>## [1] 43.98904</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%</span>
 (D &lt;-<span class="st"> </span><span class="dv">150</span>)</code></pre></div>
 <pre><code>## [1] 150</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span>(N <span class="op">*</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)) <span class="op">/</span>
 <span class="st">              </span>(N <span class="op">*</span><span class="st"> </span>D<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)))</code></pre></div>
-<pre><code>## [1] 1551.542</code></pre>
+<pre><code>## [1] 2885.04</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span><span class="kw">ceiling</span>(n_amo_est))</code></pre></div>
-<pre><code>## [1] 1552</code></pre>
+<pre><code>## [1] 2886</code></pre>
 </div>
 </div>
 <div id="exerc4" class="section level2">

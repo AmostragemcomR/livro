@@ -374,15 +374,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><span class="math display" id="eq:eqbin4">\[
 \widehat Y_{AB}^R = \frac{N\pi}{n}\widehat Y_{AB} = N\frac{1}{n}\sum_{i \in s}y_i = N\overline y\,\,\tag{9.4}
 \]</span></p>
-<p>Conforme <span class="citation">Särndal, Swensson, e Wretman (1992)</span>, página 65, uma aproximação da variância desse estimador de razão do total é dada por:</p>
+<p>Conforme <span class="citation">Särndal et al. (1992)</span>, página 65, uma aproximação da variância desse estimador de razão do total é dada por:</p>
 <p><span class="math display" id="eq:eqbin5">\[
 V_{AB}(\widehat Y_{AB}^R) \doteq N^2 \left(\frac{1}{N \pi}-\frac{1}{N}\right)S_y^2\,\,\tag{9.5}
 \]</span></p>
-<p>Esta variância é, portanto, aproximadamente igual à de uma AAS de tamanho igual a <span class="math inline">\(N \pi\)</span>, que seria também o tamanho esperado da amostra sob AB. Ainda conforme <span class="citation">Särndal, Swensson, e Wretman (1992)</span>, página 63, a variância do estimador simples do total pode ser reescrita como:</p>
+<p>Esta variância é, portanto, aproximadamente igual à de uma AAS de tamanho igual a <span class="math inline">\(N \pi\)</span>, que seria também o tamanho esperado da amostra sob AB. Ainda conforme <span class="citation">Särndal et al. (1992)</span>, página 63, a variância do estimador simples do total pode ser reescrita como:</p>
 <p><span class="math display" id="eq:eqbin6">\[
 V_{AB}(\widehat Y_{AB}) = N^2\left(\frac{1}{N\pi} - \frac{1}{N}\right)S_y^2 \left[1 - \frac{1}{N} + \frac{1}{CV_y^2}\right]\,\,\tag{9.6}
 \]</span></p>
-<p>Logo, de acordo com <span class="citation">Särndal, Swensson, e Wretman (1992)</span>, página 65, a eficiência relativa do estimador alternativo é dada por:</p>
+<p>Logo, de acordo com <span class="citation">Särndal et al. (1992)</span>, página 65, a eficiência relativa do estimador alternativo é dada por:</p>
 <p><span class="math display" id="eq:eqbin7">\[
 \frac{V_{AB}(\widehat Y_{AB})}{V_{AB}(\widehat Y_{AB}^R)} \doteq \left[1-\frac{1}{N}+\frac{1}{CV_y^2}\right] \doteq \left[1+\frac{1}{CV_y^2}\right]\,\,\tag{9.7}
 \]</span></p>
@@ -677,7 +677,7 @@ V({\overline y}_M)=\frac1{N^2}\sum_{i\in U}\sum_{(j&lt;i)\in U}\left(1-\sum_{s\n
 </div>
 <div id="exemplos-de-aplicação-da-amostragem-inversa-simples" class="section level3">
 <h3><span class="header-section-number">9.2.5</span> Exemplos de aplicação da amostragem inversa simples</h3>
-<p><span class="citation">Vasconcellos, Silva, e Szwarcwald (2005)</span> descreve uma aplicação de amostragem inversa simples na etapa de seleção de domicílios dentro dos setores selecionados, numa pesquisa domiciliar empregando amostragem conglomerada. Essa pesquisa talvez represente a primeira aplicação de amostragem inversa numa pesquisa domiciliar nacional realizada no Brasil.</p>
+<p><span class="citation">Vasconcellos et al. (2005)</span> descreve uma aplicação de amostragem inversa simples na etapa de seleção de domicílios dentro dos setores selecionados, numa pesquisa domiciliar empregando amostragem conglomerada. Essa pesquisa talvez represente a primeira aplicação de amostragem inversa numa pesquisa domiciliar nacional realizada no Brasil.</p>
 <p><span class="citation">Tille (2016)</span> descreve a aplicação de amostragem inversa a um problema sugerido por uma pesquisa do Statístics Canada, onde é selecionada uma amostra de empresas (ou unidades locais) em estratos representados por regiões econômicas e, em cada uma destas empresas, deve ser selecionada uma amostra das ocupações que fazem parte de uma lista de ocupações para as quais se deseja obter informações. Não se conhece <em>a priori</em> a lista de ocupações existentes em cada empresa e, portanto, pode-se lançar mão da amostragem inversa selecionando as ocupações dentro de cada empresa e identificando as ocupações pertencentes à lista de ocupações de interesse, até se obterem informações sobre <span class="math inline">\(m\)</span> ocupações distintas.</p>
 <p>O procedimento de AIS pode ser confundido por alguns com um protocolo de <em>substituição</em> de unidades selecionadas para a amostra inicial. Esta confusão é indevida. Protocolos baseados em <em>substituição</em> de unidades têm em comum a prática de considerar na inferência apenas as unidades da amostra disponível, sem levar em conta o tamanho do esforço feito para conseguir a amostra efetiva. Em muitos casos, sequer são mantidos registros do esforço de coleta efetuado para obtenção de cada entrevista. Além disso, geralmente são implementados dando liberdade a entrevistadores para decidir quando substituir uma unidade selecionada e como fazer a substituição. Tais características tornam protocolos de substituição abordagem de risco e que não recomendamos.</p>
 <p>A AIS, ao contrário, é guiada por procedimentos estritos de amostragem probabilística e, se bem implementada, contribui para reduzir possíveis vieses de seleção da amostra. Além disso, requer a manutenção do controle dos esforços de coleta, permitindo mapear rigorosamente onde ocorreu a eventual não resposta ou perda de unidades selecionadas e, também, mantendo registros do esforço de coleta que permitem incorporar na estimação dados sobre o tamanho desse esforço.</p>
