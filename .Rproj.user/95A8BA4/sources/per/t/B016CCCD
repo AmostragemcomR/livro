@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1840688537",
+    "hash" : "2252464011",
     "id" : "B016CCCD",
-    "lastKnownWriteTime" : 1600623971,
-    "last_content_update" : 1600623971724,
+    "lastKnownWriteTime" : 1600634858,
+    "last_content_update" : 1600634858629,
     "path" : "~/GitHub/amostragem/13-calibracao.Rmd",
     "project_path" : "13-calibracao.Rmd",
     "properties" : {
         "cursorPosition" : "1007,94",
-        "scrollLine" : "988"
+        "scrollLine" : "1001"
     },
     "relative_order" : 7,
     "source_on_save" : false,
