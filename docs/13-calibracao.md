@@ -1168,10 +1168,11 @@ $y_i$  18  42  24  36  24  36  14  10  48  54
 </center>
 
 Estime o número total de árvores mortas na reserva usando:
-a)  Estimador HT do total;
-b)  Estimador de razão do total;
-c)  Estimador de regressão simples do total. 
-d)  Para cada estimativa do total, obtenha também estimativas da variância e erro padrão.
+
+a)  Estimador HT do total;     
+b)  Estimador de razão do total;     
+c)  Estimador de regressão simples do total.      
+d)  Para cada estimativa do total, obtenha também estimativas da variância e erro padrão.     
 
 **(#exr:execalib4)**  Considere uma população $U$ com $N = 100$ unidades. Para cada uma das unidades $U_i$, considere o par $(Y_i,X_i)$, onde $Y_i$ tem distribuição $U(50;100)$ e $x_i = 3y_i+e_i$, com $e_i \approx N(0;16)$, $i=1, 2, ..., 100$.
 

@@ -634,7 +634,7 @@ A Tabela \@ref(tab:tabrazao8) contém os dados dessa população de pesquisa.
 </center>
 
 a) Calcule os parâmetros populacionais: $X,\:Y,\:S^2_x,\:S^2_y\:$ e $R$.
-b) Determine todas as AAS possíveis de tamanho 3 e construa as distribuições amostrais dos estimadores dos totais, das variâncias e da razao.
+b) Determine todas as AAS possíveis de tamanho 3 e construa as distribuições amostrais dos estimadores dos totais, das variâncias e da razão.
 c) Construa os histogramas para as distribuições e comente os resultados.
 d) Calcule o vício do estimador da razão e compare com o resultado obtido pela fórmula aproximada do vício.
 
