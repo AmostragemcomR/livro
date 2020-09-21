@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "790877195",
+    "hash" : "3489454459",
     "id" : "2F598039",
-    "lastKnownWriteTime" : 1600623972,
-    "last_content_update" : 1600623972255,
+    "lastKnownWriteTime" : 1600719688,
+    "last_content_update" : 1600719688652,
     "path" : "~/GitHub/amostragem/06-razoes.Rmd",
     "project_path" : "06-razoes.Rmd",
     "properties" : {
-        "cursorPosition" : "346,359",
-        "scrollLine" : "0"
+        "cursorPosition" : "440,186",
+        "scrollLine" : "425"
     },
     "relative_order" : 11,
     "source_on_save" : false,

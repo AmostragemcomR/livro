@@ -199,26 +199,26 @@ s
 
 ```
 ##      i       aleat
-## 1  800 0.001102670
-## 2  162 0.001508168
-## 3  615 0.001585985
-## 4  399 0.002582773
-## 5  352 0.006099564
-## 6  754 0.008820142
-## 7  101 0.009083238
-## 8  255 0.010353124
-## 9  198 0.011729296
-## 10 646 0.013690625
-## 11 424 0.014947965
-## 12  11 0.015691754
-## 13 257 0.017414170
-## 14 482 0.017967515
-## 15 946 0.019245258
-## 16 286 0.019535423
-## 17 968 0.021590348
-## 18 526 0.022900995
-## 19 350 0.023371350
-## 20 497 0.023439685
+## 1  761 0.002178856
+## 2  161 0.002581028
+## 3  496 0.003868177
+## 4   27 0.006805639
+## 5   76 0.007020782
+## 6  379 0.007355749
+## 7  206 0.008152907
+## 8  658 0.010037332
+## 9   45 0.011502686
+## 10 207 0.013251558
+## 11 269 0.013511966
+## 12 920 0.017049141
+## 13 893 0.017489562
+## 14 436 0.017666590
+## 15 547 0.018676865
+## 16 616 0.018830100
+## 17 377 0.019375993
+## 18 756 0.019627421
+## 19 249 0.022716546
+## 20 528 0.024089944
 ```
 
 ### Algoritmo de Fan, Muller e Rezucha para selecionar AAS
@@ -276,26 +276,26 @@ s
 
 ```
 ##      i
-## 1  153
-## 2  179
-## 3  230
-## 4  244
-## 5  245
-## 6  272
-## 7  274
-## 8  364
-## 9  502
-## 10 563
-## 11 588
-## 12 716
-## 13 723
-## 14 817
-## 15 846
-## 16 851
-## 17 872
-## 18 907
-## 19 914
-## 20 938
+## 1    2
+## 2   46
+## 3   47
+## 4   88
+## 5  168
+## 6  195
+## 7  255
+## 8  269
+## 9  429
+## 10 459
+## 11 487
+## 12 519
+## 13 524
+## 14 529
+## 15 559
+## 16 612
+## 17 694
+## 18 842
+## 19 870
+## 20 942
 ```
 ### Probabilidades de inclusão sob AAS
 
@@ -657,7 +657,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 1140.981
+## [1] 1593.006
 ```
 
 ```r
@@ -666,7 +666,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 17864.85
+## [1] 70661.57
 ```
 
 ```r
@@ -682,7 +682,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 34.13427
+## [1] 24.44845
 ```
 
 ```r
@@ -691,7 +691,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 66.90194
+## [1] 47.91809
 ```
 
 ```r
@@ -709,7 +709,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 568.1928
+## [1] 1726.81
 ```
 
 ```r
@@ -717,7 +717,7 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 ```
 
 ```
-## [1] 569
+## [1] 1727
 ```
 
 
@@ -763,26 +763,26 @@ a.  Estime o total de veados do parque e o coeficiente de variação da estimati
 b.  Estime o total de coelhos do parque e o coeficiente de variação da estimativa.
 c.  Observando os CVs estimados, compare e comente sobre a precisão das estimativas de total de veados e coelhos.
  
-**(#exr:exraas5)** Uma grande empresa de construção tem 120 obras em andamento em diversos estágios. Para estimar o total de dinheiro já investido no conjunto das obras, para um relatório gerencial, foram selecionadas 12 delas, por AAS, e verificados os gastos acumulados até aquele momento. Os resultados estão na Tabela \@ref(tab:tabaas7):
+**(#exr:exraas5)** Uma grande empresa de construção tem 120 obras em andamento em diversos estágios. Para estimar o total de dinheiro já investido no conjunto das obras, para um relatório gerencial, foram selecionadas 12 delas, por AAS, e verificados os gastos, em Reais, acumulados até aquele momento. Os resultados estão na Tabela \@ref(tab:tabaas7):
 
 <center>
 <table>
-<caption>(#tab:tabaas7)Gastos apurados nas obras da amostra</caption>
+<caption>(#tab:tabaas7)Gastos, em Reais, apurados nas obras da amostra</caption>
 </table>
 ----------
- Obra   Gasto  Obra   Gasto 
------- ------ ------ ------
- 1     35.500    7   26.400 
+ Obra   Gasto(R$)   Obra   Gasto(R$) 
+------ ----------- ------ -----------
+ 1       35.500       7     26.400 
  
- 2     36.400    8   32.200 
+ 2       36.400       8     32.200 
  
- 3     32.600    9   28.900 
+ 3       32.600       9     28.900 
  
- 4     38.200   10   34.100 
+ 4       38.200      10     34.100 
  
- 5     30.200   11   38.000 
+ 5       30.200      11     38.000 
  
- 6     29.800   12   27.500
+ 6       29.800      12     27.500
 ----------
 </center>
 
@@ -797,9 +797,9 @@ c. Compare as estimativas de precisão obtidas nos itens a e b.
 <caption>(#tab:tabaas8)Salários pagos pelas empresas da amostra</caption>
 </table>
 ----------
-Empresa            1    2    3   4   5
------------------ --- ---- ---- --- ---
- Salários pagos    12  100  120  48  60 
+Empresa                    1    2    3   4   5
+------------------------ --- ---- ---- --- ---
+Salários pagos(1000 R$)   12  100  120  48  60 
 ----------
 </center>
   

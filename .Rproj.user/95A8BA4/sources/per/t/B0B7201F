@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1600716511810.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "442536118",
+    "id" : "B0B7201F",
+    "lastKnownWriteTime" : 1600719688,
+    "last_content_update" : 1600719688419,
+    "path" : "~/GitHub/amostragem/04-aas.Rmd",
+    "project_path" : "04-aas.Rmd",
+    "properties" : {
+        "cursorPosition" : "621,27",
+        "scrollLine" : "604"
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

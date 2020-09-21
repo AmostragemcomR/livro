@@ -1121,7 +1121,7 @@ a) Estimador simples.
 b) Estimador de razão, utilizando como variável auxiliar a população (característica $x$).
 c) Compare e comente os resultados.
 
-**(#exr:execalib2)** Num estudo para estimar a quantidade total de açúcar contida num carregamento de laranjas, uma AAS de $n=10$ laranjas foi selecionada. Cada uma das laranjas foi pesada, retirado o suco e pesada a quantidade de açúcar no suco. A Tabela \@ref(tab:tabcalib8) dá os resultados para as 10 laranjas da amostra. O caminhão foi pesado carregado com as laranjas e, depois, vazio levando à conclusão que o peso total da carga de laranjas era de 1.800 libras. Estime o total de açúcar contido em todas as laranjas e dê um intervalo de 95% de confiança para esse total.
+**(#exr:execalib2)** (Adaptado de @Scheaffer1990, exemplo 6.2) Num estudo para estimar a quantidade total de açúcar contida num carregamento de laranjas, uma AAS de $n=10$ laranjas foi selecionada. Cada uma das laranjas foi pesada, retirado o suco e pesada a quantidade de açúcar no suco. A Tabela \@ref(tab:tabcalib8) dá os resultados para as 10 laranjas da amostra. O caminhão foi pesado carregado com as laranjas e, depois, vazio levando à conclusão que o peso total da carga de laranjas era de 1.800 libras. Estime o total de açúcar contido em todas as laranjas e dê um intervalo de 95% de confiança para esse total.
 
 <center>
 <table>
@@ -1129,6 +1129,7 @@ c) Compare e comente os resultados.
 </table>
 ----------
  Laranja   Peso da laranja   Quantidade de açúcar
+              (libras)            (libras)
 --------- ----------------- ----------------------
  1                   0,40                 0,021
 
@@ -1203,7 +1204,7 @@ a)  Estime o total do dinheiro dos 50 alunos do grupo e a variância da estimati
 b)  Refaça as estimativas sem utilizar as informações da variável auxiliar.
 c)  Comente os resultados.
 
-**(#exr:execalib6)**  Deseja-se estimar a idade média das árvores de um bosque. Determinar a idade diretamente é bastante custoso. Sabe-se, entretanto, que há uma correlação entre a idade e o diâmetro do tronco da árvore. Foi selecionada uma *AAS* de 20 árvores e para estas foi determinada a idade de cada uma. Foram medidos os diâmetros de todas as 1.132 árvores do bosque e calculado o diâmetro médio em 10,3 polegadas. 
+**(#exr:execalib6)**  Deseja-se estimar a idade média das árvores de um bosque. Determinar a idade diretamente é bastante custoso. Sabe-se, entretanto, que há uma correlação entre a idade e o diâmetro do tronco da árvore. Foi selecionada uma *AAS* de 20 árvores e para estas foi determinada a idade, em anos, de cada uma. Foram medidos os diâmetros de todas as 1.132 árvores do bosque e calculado o diâmetro médio em 10,3 polegadas. 
 
 A Tabela \@ref(tab:tabcalib11) apresenta os dados para a amostra selecionada.
 
@@ -1212,27 +1213,27 @@ A Tabela \@ref(tab:tabcalib11) apresenta os dados para a amostra selecionada.
 <caption>(#tab:tabcalib11)Diâmetro e idade das árvores da amostra</caption>
 </table>
 ----------
- Árvore	  Diâmetro	Idade       Árvore   Diâmetro  Idade
--------- --------- ------ ---- -------- --------- ------
- 1          12,0    125         11	          5,7	   61
+ Árvore	  Diâmetro(in)	Idade(anos)  Árvore   Diâmetro(in)  Idade(anos)
+-------- ------------- ------------ -------- ------------- ------------
+ 1          12,0             125         11	          5,7	          61
  
- 2          11,4    119         12           8,0     80
+ 2          11,4             119         12           8,0           80
  
- 3           7,9     83         13          10,3    114
+ 3           7,9              83         13          10,3          114
  
- 4           9.0     85         14          12,0    147
+ 4           9.0              85         14          12,0          147
  
- 5          10,5     99         15           9,2    122
+ 5          10,5              99         15           9,2          122
  
- 6           7,9    117         16           8,5    106
+ 6           7,9             117         16           8,5          106
    
- 7           7,3     69         17           7,0     82
+ 7           7,3              69         17           7,0           82
  
- 8          10,2    133         18          10,7     88
+ 8          10,2             133         18          10,7           88
  
- 9          11,7    154         19           9,3     97
+ 9          11,7             154         19           9,3           97
  
- 10         11,3    168         20           8,2     99
+ 10         11,3             168         20           8,2           99
 -----------
 </center>
 

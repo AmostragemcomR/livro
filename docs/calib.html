@@ -1658,7 +1658,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <li>Estimador de razão, utilizando como variável auxiliar a população (característica <span class="math inline">\(x\)</span>).</li>
 <li>Compare e comente os resultados.</li>
 </ol>
-<p><strong>Exercício 13.2 </strong> Num estudo para estimar a quantidade total de açúcar contida num carregamento de laranjas, uma AAS de <span class="math inline">\(n=10\)</span> laranjas foi selecionada. Cada uma das laranjas foi pesada, retirado o suco e pesada a quantidade de açúcar no suco. A Tabela <a href="calib.html#tab:tabcalib8">13.8</a> dá os resultados para as 10 laranjas da amostra. O caminhão foi pesado carregado com as laranjas e, depois, vazio levando à conclusão que o peso total da carga de laranjas era de 1.800 libras. Estime o total de açúcar contido em todas as laranjas e dê um intervalo de 95% de confiança para esse total.</p>
+<p><strong>Exercício 13.2 </strong> (Adaptado de <span class="citation">Scheaffer et al. (1990)</span>, exemplo 6.2) Num estudo para estimar a quantidade total de açúcar contida num carregamento de laranjas, uma AAS de <span class="math inline">\(n=10\)</span> laranjas foi selecionada. Cada uma das laranjas foi pesada, retirado o suco e pesada a quantidade de açúcar no suco. A Tabela <a href="calib.html#tab:tabcalib8">13.8</a> dá os resultados para as 10 laranjas da amostra. O caminhão foi pesado carregado com as laranjas e, depois, vazio levando à conclusão que o peso total da carga de laranjas era de 1.800 libras. Estime o total de açúcar contido em todas as laranjas e dê um intervalo de 95% de confiança para esse total.</p>
 <center>
 <table>
 <caption>
@@ -1674,8 +1674,8 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <thead>
 <tr class="header">
 <th align="center">Laranja</th>
-<th align="center">Peso da laranja</th>
-<th align="center">Quantidade de açúcar</th>
+<th align="center">Peso da laranja (libras)</th>
+<th align="center">Quantidade de açúcar (libras)</th>
 </tr>
 </thead>
 <tbody>
@@ -1872,7 +1872,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <li>Refaça as estimativas sem utilizar as informações da variável auxiliar.</li>
 <li>Comente os resultados.</li>
 </ol>
-<p><strong>Exercício 13.6 </strong> Deseja-se estimar a idade média das árvores de um bosque. Determinar a idade diretamente é bastante custoso. Sabe-se, entretanto, que há uma correlação entre a idade e o diâmetro do tronco da árvore. Foi selecionada uma <em>AAS</em> de 20 árvores e para estas foi determinada a idade de cada uma. Foram medidos os diâmetros de todas as 1.132 árvores do bosque e calculado o diâmetro médio em 10,3 polegadas.</p>
+<p><strong>Exercício 13.6 </strong> Deseja-se estimar a idade média das árvores de um bosque. Determinar a idade diretamente é bastante custoso. Sabe-se, entretanto, que há uma correlação entre a idade e o diâmetro do tronco da árvore. Foi selecionada uma <em>AAS</em> de 20 árvores e para estas foi determinada a idade, em anos, de cada uma. Foram medidos os diâmetros de todas as 1.132 árvores do bosque e calculado o diâmetro médio em 10,3 polegadas.</p>
 <p>A Tabela <a href="calib.html#tab:tabcalib11">13.11</a> apresenta os dados para a amostra selecionada.</p>
 <center>
 <table>
@@ -1880,25 +1880,23 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <span id="tab:tabcalib11">Tabela 13.11: </span>Diâmetro e idade das árvores da amostra
 </caption>
 </table>
-<table style="width:78%;">
+<table>
 <colgroup>
 <col width="12%" />
-<col width="13%" />
-<col width="9%" />
-<col width="6%" />
+<col width="19%" />
+<col width="17%" />
 <col width="12%" />
-<col width="13%" />
-<col width="8%" />
+<col width="19%" />
+<col width="19%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="center">Árvore</th>
-<th align="right">Diâmetro</th>
-<th align="right">Idade</th>
-<th></th>
+<th align="right">Diâmetro(in)</th>
+<th align="right">Idade(anos)</th>
 <th align="center">Árvore</th>
-<th align="right">Diâmetro</th>
-<th align="right">Idade</th>
+<th align="right">Diâmetro(in)</th>
+<th align="right">Idade(anos)</th>
 </tr>
 </thead>
 <tbody>
@@ -1906,7 +1904,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">1</td>
 <td align="right">12,0</td>
 <td align="right">125</td>
-<td></td>
 <td align="center">11</td>
 <td align="right">5,7</td>
 <td align="right">61</td>
@@ -1915,7 +1912,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">2</td>
 <td align="right">11,4</td>
 <td align="right">119</td>
-<td></td>
 <td align="center">12</td>
 <td align="right">8,0</td>
 <td align="right">80</td>
@@ -1924,7 +1920,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">3</td>
 <td align="right">7,9</td>
 <td align="right">83</td>
-<td></td>
 <td align="center">13</td>
 <td align="right">10,3</td>
 <td align="right">114</td>
@@ -1933,7 +1928,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">4</td>
 <td align="right">9.0</td>
 <td align="right">85</td>
-<td></td>
 <td align="center">14</td>
 <td align="right">12,0</td>
 <td align="right">147</td>
@@ -1942,7 +1936,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">5</td>
 <td align="right">10,5</td>
 <td align="right">99</td>
-<td></td>
 <td align="center">15</td>
 <td align="right">9,2</td>
 <td align="right">122</td>
@@ -1951,7 +1944,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">6</td>
 <td align="right">7,9</td>
 <td align="right">117</td>
-<td></td>
 <td align="center">16</td>
 <td align="right">8,5</td>
 <td align="right">106</td>
@@ -1960,7 +1952,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">7</td>
 <td align="right">7,3</td>
 <td align="right">69</td>
-<td></td>
 <td align="center">17</td>
 <td align="right">7,0</td>
 <td align="right">82</td>
@@ -1969,7 +1960,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">8</td>
 <td align="right">10,2</td>
 <td align="right">133</td>
-<td></td>
 <td align="center">18</td>
 <td align="right">10,7</td>
 <td align="right">88</td>
@@ -1978,7 +1968,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">9</td>
 <td align="right">11,7</td>
 <td align="right">154</td>
-<td></td>
 <td align="center">19</td>
 <td align="right">9,3</td>
 <td align="right">97</td>
@@ -1987,7 +1976,6 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">10</td>
 <td align="right">11,3</td>
 <td align="right">168</td>
-<td></td>
 <td align="center">20</td>
 <td align="right">8,2</td>
 <td align="right">99</td>
