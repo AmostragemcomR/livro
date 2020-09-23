@@ -2,7 +2,7 @@
 lang: pt-BR
 title: "Amostragem: Teoria e Prática Usando R"
 author: "Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias"
-date: '22 de setembro de 2020, 18:29:28'
+date: '23 de setembro de 2020, 14:25:23'
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -14,7 +14,7 @@ documentclass: book
 
 bibliography: [book.bib]
 #csl: Modified-alternatives-to-animal-experimentation.csl
-csl: Mapa.csl
+csl: Modified-apa.csl
 suppress-bibliography: false
 link-citations: no
 github-repo: PedroNSilva/amotepur

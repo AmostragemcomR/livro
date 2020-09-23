@@ -119,9 +119,9 @@ Em alguns casos, as diferentes variáveis $y$ podem ter resíduos da regressão 
 
 Portanto, a ideia de usar diferentes conjuntos de pesos para diferentes variáveis $y$ é pouco atraente e raramente aplicada na prática. Embora isso não seja um requisito para a definição de estimadores de calibração, assumimos a partir de agora que a derivação dos pesos de calibração é feita com o objetivo de usar um único conjunto de pesos calibrados $\{ w_i,\, i \in s \}$ para estimar totais de todas as variáveis de pesquisa.
 
-## Razões para calibração
+## Motivos para calibração
 
-Os estimadores de calibração possuem algumas boas propriedades. Primeiro, os pesos de calibração de acordo com a Expressão \@ref(eq:eqcal4) fornecem estimativas amostrais para os totais das variáveis auxiliares que correspondem exatamente aos totais populacionais conhecidos para essas variáveis. Portanto, se os totais populacionais das variáveis auxiliares tiverem sido publicados antes que os resultados da pesquisa sejam produzidos, a calibração garantirá que as estimativas da pesquisa sejam *coerentes* com as já existentes no domínio público. Essa propriedade, embora não seja essencial, é uma das razões dominantes pelas quais a calibração é usada com frequência na prática de pesquisa.
+Os estimadores de calibração possuem algumas boas propriedades. Primeiro, os pesos de calibração de acordo com a Expressão \@ref(eq:eqcal4) fornecem estimativas amostrais para os totais das variáveis auxiliares que correspondem exatamente aos totais populacionais conhecidos para essas variáveis. Portanto, se os totais populacionais das variáveis auxiliares tiverem sido publicados antes que os resultados da pesquisa sejam produzidos, a calibração garantirá que as estimativas da pesquisa sejam *coerentes* com as já existentes no domínio público. Essa propriedade, embora não seja essencial, é um dos motivos dominantes pelas quais a calibração é usada com frequência na prática de pesquisa.
 
 A segunda propriedade é a sua *simplicidade*, ou seja, o fato de que o estimador de calibração é linear. Isso significa que cada registro de pesquisa pode ter um único peso a ser usado para estimar todas as variáveis da pesquisa. O cálculo das estimativas para totais, médias, proporções e muitos outros parâmetros é simples, usando um *software* estatístico padrão. No caso das funções de distância definidas pelas Expressões \@ref(eq:eqcal6) e \@ref(eq:eqcal7), os pesos calibrados são dados em uma expressão de forma fechada e são fáceis de calcular usando um *software* estatístico padrão.
 
@@ -133,7 +133,7 @@ Os estimadores de calibração, sob certas hipóteses, também podem oferecer al
 
 A pós-estratificação e a estimação de regressão são amplamente usadas para tentar reduzir o vício de não resposta em pesquisas por amostragem. O estimador de regressão (calibração) será aproximadamente não viciado quando o modelo de regressão definido em \@ref(eq:eqcal10) for adequado e o mecanismo combinado de amostragem e resposta for ignorável, dado o conjunto de variáveis $\bf x$ para as quais informações populacionais auxiliares estão disponíveis (ver, por exemplo, @Bethlehem1988, @Lundstrom1999, o Capítulo 15 de @Sarndal1992 e @Sarndal2005).
 
-Todas essas razões são argumentos poderosos para usar a calibração. No entanto, ao fazer isso, os usuários também devem estar cientes de alguns problemas ou dificuldades que podem ser encontrados. Primeiro, notamos que os estimadores de calibração não são exatamente não viciados. De fato, o vício do estimador de calibração é dado por: 
+Todas essas questões são argumentos poderosos para usar a calibração. No entanto, ao fazer isso, os usuários também devem estar cientes de alguns problemas ou dificuldades que podem ser encontrados. Primeiro, notamos que os estimadores de calibração não são exatamente não viciados. De fato, o vício do estimador de calibração é dado por: 
 
 $$
 E({\bf \widehat T}_{y}^C - {\bf T}_y) = E \left[\sum_{i \in s} (w_i - d_i) {\bf y}_i \right] \,\, (\#eq:eqcal14)
