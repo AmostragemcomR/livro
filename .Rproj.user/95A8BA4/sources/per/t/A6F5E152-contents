@@ -686,26 +686,27 @@ a)  Determine a alocação proporcional da amostra nos estratos.
 b)  Determine a alocação de Neyman da amostra nos estratos.
 c)  Compare a eficiência da AES, com as alocações utilizadas nos itens anteriores, em relação a uma AAS de mesmo tamanho.
 
-**(#exr:exeest7)** As 2.120 lojas de uma certa localidade foram estratificadas pelo número de empregados (única variável relativa ao tamanho da empresa encontrada no cadastro) numa pesquisa para estimar o faturamento total. A Tabela \@ref(tab:tabestr7) contém as informações da variável número de empregados, $x$, utilizadas no planejamento da amostra e os resultados sobre o faturamento das lojas, $y$, obtidos da coleta dos dados na amostra .
+**(#exr:exeest7)** As 2.120 lojas de uma certa localidade foram estratificadas pelo número de empregados (única variável relativa ao tamanho da empresa encontrada no cadastro) numa pesquisa para estimar o faturamento total. A Tabela \@ref(tab:tabestr7) contém as informações da variável número de empregados, $x$, utilizadas no planejamento da amostra e os resultados sobre o faturamento, $y$, por estrato das lojas, medido em 1000R$, obtidos na coleta dos dados na amostra .
 
 <center>
 ```{r, results="asis", echo=FALSE}
 cat("<table>",paste0("<caption>", "(#tab:tabestr7)", "Estratificação das lojas e resultados da amostra", "</caption>"),"</table>", sep ="\n")
 ```
 ---------- 
- Limites dos estratos             $N_h$              $X_h$         $S^2_{h,x}$        $\overline y_h$    $\widehat S^2_{h,y}$
----------------------- ---------------- ------------------ ------------------- --------------------- ---------------------
+ Limites dos estratos             $N_h$              $X_h$         $S^2_{h,x}$     $\overline y_h$   $\widehat S^2_{h,y}$
+                                                                                         
+---------------------- ---------------- ------------------ ------------------- ------------------- ----------------------
       5-14                1.100               9.020               8,30                   3                      2,53 
 
      15-49                  500               13.500             102,08                  17                     66,59
 
      50-99                  250               17.750             207,00                  52                     411,28
 
-    100-199                 130                17.329             840,10                 170                    1.953,64
+    100-199                 130                17.329             840,10                 170                   1.953,64
 
-    200-499                 120                36.600            7.500,00                 350                   16.770,25
+    200-499                 120                36.600            7.500,00                 350                 16.770,25
 
-   500 e mais                20                14.280            20.805,00               7.000                  3.062.500,00
+   500 e mais                20                14.280            20.805,00               7.000              3.062.500,00
 
   **Totais**             **2.120**             **108.479**    
 ----------
