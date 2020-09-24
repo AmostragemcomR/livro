@@ -592,8 +592,8 @@ c.  Observando os CVs estimados, compare e comente sobre a precisão das estimat
 cat("<table>",paste0("<caption>", "(#tab:tabaas7)", "Gastos, em Reais, apurados nas obras da amostra", "</caption>"),"</table>", sep ="\n")
 ```
 ----------
- Obra   Gasto(R$)   Obra   Gasto(R$) 
------- ----------- ------ -----------
+ Obra   Gasto(R$)   Obra   Gasto(Reais) 
+------ ----------- ------ -------------
  1       35.500       7     26.400 
  
  2       36.400       8     32.200 
@@ -619,9 +619,9 @@ c. Compare as estimativas de precisão obtidas nos itens a e b.
 cat("<table>",paste0("<caption>", "(#tab:tabaas8)", "Salários pagos pelas empresas da amostra", "</caption>"),"</table>", sep ="\n")
 ```
 ----------
-Empresa                    1    2    3   4   5
------------------------- --- ---- ---- --- ---
-Salários pagos(1000 R$)   12  100  120  48  60 
+Empresa                        1    2    3   4   5
+---------------------------- --- ---- ---- --- ---
+Salários pagos(1.000 Reais)   12  100  120  48  60 
 ----------
 </center>
   

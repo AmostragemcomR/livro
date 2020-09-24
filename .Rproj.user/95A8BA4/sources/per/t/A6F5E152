@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1667488752",
+    "hash" : "1617040804",
     "id" : "A6F5E152",
-    "lastKnownWriteTime" : 1600906696,
-    "last_content_update" : 1600906696220,
+    "lastKnownWriteTime" : 1600971809,
+    "last_content_update" : 1600971809303,
     "path" : "~/GitHub/amostragem/11-estratificada.Rmd",
     "project_path" : "11-estratificada.Rmd",
     "properties" : {
-        "cursorPosition" : "695,82",
-        "scrollLine" : "687"
+        "cursorPosition" : "708,81",
+        "scrollLine" : "689"
     },
     "relative_order" : 8,
     "source_on_save" : false,

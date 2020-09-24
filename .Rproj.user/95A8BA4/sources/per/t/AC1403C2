@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2333304054",
+    "hash" : "3527153250",
     "id" : "AC1403C2",
-    "lastKnownWriteTime" : 1600622468,
-    "last_content_update" : 1600622468371,
+    "lastKnownWriteTime" : 1600970395,
+    "last_content_update" : 1600970395129,
     "path" : "~/GitHub/amostragem/00-Tabelas.Rmd",
     "project_path" : "00-Tabelas.Rmd",
     "properties" : {
-        "cursorPosition" : "187,87",
-        "scrollLine" : "0"
+        "cursorPosition" : "51,134",
+        "scrollLine" : "31"
     },
     "relative_order" : 3,
     "source_on_save" : false,
