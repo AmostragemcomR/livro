@@ -1,5 +1,5 @@
 # Conceitos e Cadastros {#conceitos}
-
+<div style="text-align: justify">
 ## Fontes de dados e tipos de pesquisas
 
 Uma importante decisão em qualquer estudo ou projeto de pesquisa diz respeito ao levantamento das *fontes de dados* com potencial para atender às necessidades de informações de interesse. Um primeiro critério de classificação distingue as *fontes primárias*, cujos dados ainda não foram coletados, das *fontes secundárias*, cujos dados já foram coletados, possivelmente com outro(s) propósito(s), e estão disponíveis ou poderiam ser obtidos para uso imediato.  
@@ -384,7 +384,7 @@ Nesta situação cada unidade $C_i$ do cadastro corresponde a uma e somente uma 
 
 <center>
 <div class="figure">
-<img src="Figuras/Associa1-1.PNG" alt="Ilustração da regra de associação um para um" width="100%" />
+<img src="Figuras/Associa1-1.PNG" alt="Ilustração da regra de associação um para um" width="70%" />
 <p class="caption">(\#fig:umparaum)Ilustração da regra de associação um para um</p>
 </div>
 </center>
@@ -401,7 +401,7 @@ Nesta situação, cada unidade de referência da população de pesquisa corresp
 
 <center>
 <div class="figure">
-<img src="Figuras/Associa1-varios.PNG" alt="Ilustração da regra de associação um para vários" width="2396" />
+<img src="Figuras/Associa1-varios.PNG" alt="Ilustração da regra de associação um para vários" width="70%" />
 <p class="caption">(\#fig:umparavar)Ilustração da regra de associação um para vários</p>
 </div>
 </center>
@@ -419,13 +419,13 @@ Nesta situação, uma ou mais unidades de referência da população de pesquisa
 
 <center>
 <div class="figure">
-<img src="Figuras/Associavarios-1a.PNG" alt="Ilustração da regra de associação vários para um" width="100%" />
+<img src="Figuras/Associavarios-1a.PNG" alt="Ilustração da regra de associação vários para um" width="70%" />
 <p class="caption">(\#fig:varparaum1)Ilustração da regra de associação vários para um</p>
 </div>
 
 
 <div class="figure">
-<img src="Figuras/Associavarios-1b.PNG" alt="Ilustração da regra de associação vários para um" width="100%" />
+<img src="Figuras/Associavarios-1b.PNG" alt="Ilustração da regra de associação vários para um" width="70%" />
 <p class="caption">(\#fig:varparaum2)Ilustração da regra de associação vários para um</p>
 </div>
 </center>
@@ -436,7 +436,7 @@ Neste caso se adotam os planos de amostragem conglomerada em múltiplos estágio
 
 <center>
 <div class="figure">
-<img src="Figuras/Associavariosniveis.PNG" alt="Ilustração de regras de associação - hierarquia para vários níveis" width="2632" />
+<img src="Figuras/Associavariosniveis.PNG" alt="Ilustração de regras de associação - hierarquia para vários níveis" width="70%" />
 <p class="caption">(\#fig:hierarquia)Ilustração de regras de associação - hierarquia para vários níveis</p>
 </div>
 </center>

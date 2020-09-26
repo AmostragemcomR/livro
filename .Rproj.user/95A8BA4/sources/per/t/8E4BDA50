@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601127031911.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2315435241",
+    "id" : "8E4BDA50",
+    "lastKnownWriteTime" : 1601127180,
+    "last_content_update" : 1601127180282,
+    "path" : "~/GitHub/amostragem/03-visgeral.Rmd",
+    "project_path" : "03-visgeral.Rmd",
+    "properties" : {
+        "cursorPosition" : "1,33",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

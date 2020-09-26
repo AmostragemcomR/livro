@@ -339,6 +339,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="calib" class="section level1">
 <h1><span class="header-section-number">Capítulo 13</span> Estimadores de Calibração</h1>
+<div style="text-align: justify">
 <div id="motiva13" class="section level2">
 <h2><span class="header-section-number">13.1</span> Motivação</h2>
 <p>Em Amostragem, há várias maneiras de aproveitar <em>informações auxiliares</em> disponíveis para melhorar a precisão de estimativas de interesse em uma pesquisa amostral. As duas maneiras mais conhecidas são: <em>estratificação</em> e <em>amostragem com probabilidades proporcionais ao tamanho (PPT)</em>. Nos dois casos, a informação auxiliar é utilizada durante a etapa de planejamento amostral, portanto deve estar disponível <em>antes da seleção da amostra</em> para a realização de uma pesquisa.</p>
@@ -476,7 +477,7 @@ V_p \left( \displaystyle \sum_{i \in s} w_i E_{ij} \right) &lt; V_p \left( \disp
 <p>Os dois gráficos da Figura <a href="calib.html#fig:figcalib1">13.1</a> ilustram essa ideia. Neste exemplo, os resíduos do estimador de regressão para o modelo <span class="math inline">\(E_{\xi}(y_j) = {\bf x&#39; B}_j\)</span> têm variância menor do que a variável <span class="math inline">\(y_j\)</span> original (modelo implícito <span class="math inline">\(E_{\xi}(y_j) = {\bf B}_j\)</span>), levando ao estimador de regressão com menor variância aproximada do que a variância do estimador de HT para amostras do mesmo tamanho. Nas duas figuras, os gráficos de colunas à direita mostram os valores absolutos dos resíduos ordenados, evidenciando que estes são menores no caso do modelo de regressão com as variáveis auxiliares <span class="math inline">\(\bf x\)</span> (painel à direita).</p>
 <center>
 <div class="figure"><span id="fig:figcalib1"></span>
-<img src="Figuras/Figcalib1.PNG" alt="Residuos para o modelo de regressão da população para os estimadores de HT (esquerda) e de calibração (direita)" width="100%" />
+<img src="Figuras/Figcalib1.PNG" alt="Residuos para o modelo de regressão da população para os estimadores de HT (esquerda) e de calibração (direita)" width="70%" />
 <p class="caption">
 Figura 13.1: Residuos para o modelo de regressão da população para os estimadores de HT (esquerda) e de calibração (direita)
 </p>
@@ -1883,21 +1884,21 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 </table>
 <table>
 <colgroup>
-<col width="12%" />
+<col width="11%" />
 <col width="19%" />
-<col width="17%" />
-<col width="12%" />
+<col width="18%" />
+<col width="11%" />
 <col width="19%" />
 <col width="19%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="center">Árvore</th>
-<th align="right">Diâmetro(in)</th>
-<th align="right">Idade(anos)</th>
-<th align="center">Árvore</th>
-<th align="right">Diâmetro(in)</th>
-<th align="right">Idade(anos)</th>
+<th align="right">Diâmetro (in)</th>
+<th align="right">Idade (anos)</th>
+<th align="right">Árvore</th>
+<th align="right">Diâmetro (in)</th>
+<th align="right">Idade (anos)</th>
 </tr>
 </thead>
 <tbody>
@@ -1905,7 +1906,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">1</td>
 <td align="right">12,0</td>
 <td align="right">125</td>
-<td align="center">11</td>
+<td align="right">11</td>
 <td align="right">5,7</td>
 <td align="right">61</td>
 </tr>
@@ -1913,7 +1914,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">2</td>
 <td align="right">11,4</td>
 <td align="right">119</td>
-<td align="center">12</td>
+<td align="right">12</td>
 <td align="right">8,0</td>
 <td align="right">80</td>
 </tr>
@@ -1921,7 +1922,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">3</td>
 <td align="right">7,9</td>
 <td align="right">83</td>
-<td align="center">13</td>
+<td align="right">13</td>
 <td align="right">10,3</td>
 <td align="right">114</td>
 </tr>
@@ -1929,7 +1930,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">4</td>
 <td align="right">9.0</td>
 <td align="right">85</td>
-<td align="center">14</td>
+<td align="right">14</td>
 <td align="right">12,0</td>
 <td align="right">147</td>
 </tr>
@@ -1937,7 +1938,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">5</td>
 <td align="right">10,5</td>
 <td align="right">99</td>
-<td align="center">15</td>
+<td align="right">15</td>
 <td align="right">9,2</td>
 <td align="right">122</td>
 </tr>
@@ -1945,7 +1946,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">6</td>
 <td align="right">7,9</td>
 <td align="right">117</td>
-<td align="center">16</td>
+<td align="right">16</td>
 <td align="right">8,5</td>
 <td align="right">106</td>
 </tr>
@@ -1953,7 +1954,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">7</td>
 <td align="right">7,3</td>
 <td align="right">69</td>
-<td align="center">17</td>
+<td align="right">17</td>
 <td align="right">7,0</td>
 <td align="right">82</td>
 </tr>
@@ -1961,7 +1962,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">8</td>
 <td align="right">10,2</td>
 <td align="right">133</td>
-<td align="center">18</td>
+<td align="right">18</td>
 <td align="right">10,7</td>
 <td align="right">88</td>
 </tr>
@@ -1969,7 +1970,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">9</td>
 <td align="right">11,7</td>
 <td align="right">154</td>
-<td align="center">19</td>
+<td align="right">19</td>
 <td align="right">9,3</td>
 <td align="right">97</td>
 </tr>
@@ -1977,7 +1978,7 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
 <td align="center">10</td>
 <td align="right">11,3</td>
 <td align="right">168</td>
-<td align="center">20</td>
+<td align="right">20</td>
 <td align="right">8,2</td>
 <td align="right">99</td>
 </tr>

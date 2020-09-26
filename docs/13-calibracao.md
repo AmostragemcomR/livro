@@ -1,5 +1,5 @@
 # Estimadores de Calibração {#calib}
-
+<div style="text-align: justify">
 ## Motivação {#motiva13}
 
 Em Amostragem, há várias maneiras de aproveitar *informações auxiliares* disponíveis para melhorar a precisão de estimativas de interesse em uma pesquisa amostral.
@@ -171,7 +171,7 @@ Os dois gráficos da Figura \@ref(fig:figcalib1) ilustram essa ideia. Neste exem
 
 <center>
 <div class="figure">
-<img src="Figuras/Figcalib1.PNG" alt="Residuos para o modelo de regressão da população para os estimadores de HT (esquerda) e de calibração (direita)" width="100%" />
+<img src="Figuras/Figcalib1.PNG" alt="Residuos para o modelo de regressão da população para os estimadores de HT (esquerda) e de calibração (direita)" width="70%" />
 <p class="caption">(\#fig:figcalib1)Residuos para o modelo de regressão da população para os estimadores de HT (esquerda) e de calibração (direita)</p>
 </div>
 </center>
@@ -1213,8 +1213,8 @@ A Tabela \@ref(tab:tabcalib11) apresenta os dados para a amostra selecionada.
 <caption>(#tab:tabcalib11)Diâmetro e idade das árvores da amostra</caption>
 </table>
 ----------
- Árvore	  Diâmetro(in)	Idade(anos)  Árvore   Diâmetro(in)  Idade(anos)
--------- ------------- ------------ -------- ------------- ------------
+ Árvore	  Diâmetro (in)	 Idade (anos)   Árvore  Diâmetro (in)  Idade (anos)
+-------- -------------- ------------- -------- -------------- -------------
  1          12,0             125         11	          5,7	          61
  
  2          11,4             119         12           8,0           80

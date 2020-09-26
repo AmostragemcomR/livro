@@ -1,5 +1,5 @@
 # Amostragem Conglomerada {#cong}
-
+<div style="text-align: justify">
 ## Conceituação básica 
 
 Todos os métodos de amostragem já apresentados nos Capítulos \@ref(aas) até \@ref(estrat) têm alguns aspectos em comum: requerem cadastros de unidades elementares para permitir selecionar a amostra; a seleção da amostra é feita num único estágio ou etapa; as unidades de referência são iguais às unidades de amostragem; e o tamanho total da população é conhecido com base no cadastro.

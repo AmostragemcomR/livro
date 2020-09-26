@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601128170942.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1230384437",
+    "id" : "F83D9261",
+    "lastKnownWriteTime" : 1601130161,
+    "last_content_update" : 1601130161569,
+    "path" : "~/GitHub/amostragem/12-conglomerados.Rmd",
+    "project_path" : "12-conglomerados.Rmd",
+    "properties" : {
+        "cursorPosition" : "1,33",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 14,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

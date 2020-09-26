@@ -1,5 +1,5 @@
 # Amostragem Estratificada {#estrat}
-
+<div style="text-align: justify">
 *Amostragem estratificada - AE* é um processo de amostragem que usa alguma informação auxiliar relevante para dividir a população $U$ em $H$ grupos disjuntos e exaustivos, geralmente mais homogêneos em relacão à(s) variável(is) de interesse, chamados *estratos*. Em seguida, é feita a seleção de amostras dentro de cada um dos estratos, de forma independente. A amostra final é formada então pela união das amostras selecionadas em cada um dos estratos. 
 
 Para ser viável, as *variáveis de estratificação* (aquelas usadas para dividir a população em estratos) precisam estar disponíveis para todas as unidades da população da qual se vai selecionar a amostra.
@@ -687,7 +687,7 @@ a)  Determine a alocação proporcional da amostra nos estratos.
 b)  Determine a alocação de Neyman da amostra nos estratos.
 c)  Compare a eficiência da AES, com as alocações utilizadas nos itens anteriores, em relação a uma AAS de mesmo tamanho.
 
-**(#exr:exeest7)** As 2.120 lojas de uma certa localidade foram estratificadas pelo número de empregados (única variável relativa ao tamanho da empresa encontrada no cadastro) numa pesquisa para estimar o faturamento total. A Tabela \@ref(tab:tabestr7) contém as informações da variável número de empregados, $x$, utilizadas no planejamento da amostra e os resultados sobre o faturamento, $y$, das lojas por estrato, obtidos na coleta dos dados na amostra. O faturamento foi medido em 1000 Reais. 
+**(#exr:exeest7)** As 2.120 lojas de uma certa localidade foram estratificadas pelo número de empregados (única variável relativa ao tamanho da empresa encontrada no cadastro) numa pesquisa para estimar o faturamento total. A Tabela \@ref(tab:tabestr7) contém as informações da variável número de empregados, $x$, utilizadas no planejamento da amostra e os resultados sobre o faturamento, $y$, das lojas por estrato, obtidos na coleta dos dados na amostra. O faturamento foi medido em 1.000 Reais. 
 
 <center>
 <table>

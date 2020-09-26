@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601128146314.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3969549102",
+    "id" : "4505D96E",
+    "lastKnownWriteTime" : 1601130161,
+    "last_content_update" : 1601130161463,
+    "path" : "~/GitHub/amostragem/11-estratificada.Rmd",
+    "project_path" : "11-estratificada.Rmd",
+    "properties" : {
+        "cursorPosition" : "688,487",
+        "scrollLine" : "698"
+    },
+    "relative_order" : 13,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
