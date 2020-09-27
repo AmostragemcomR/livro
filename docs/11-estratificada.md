@@ -601,7 +601,7 @@ A análise dos resultados acima evidencia que ganhos adicionais de eficiência p
 <center>
 <div class="figure">
 <img src="Figuras/precisaovsestratos.png" alt="Ganhos de precisão *versus* número de estratos" width="60%" />
-<p class="caption">(\#fig:precisaovsestratos)Ganhos de precisão *versus* número de estratos</p>
+<p class="caption">Ganhos de precisão *versus* número de estratos</p>
 </div>
 </center>
 
@@ -694,9 +694,9 @@ c)  Compare a eficiência da AES, com as alocações utilizadas nos itens anteri
 <caption>(#tab:tabestr7)Estratificação das lojas e resultados da amostra</caption>
 </table>
 ---------- 
- Limites dos estratos       $N_h$          $X_h$         $S^2_{h,x}$  $\overline y_h$  $\widehat S^2_{h,y}$
-                                                                                             
----------------------- ---------- -------------- ------------------- ---------------- ---------------------
+ Limites dos estratos       $N_h$          $X_h$         $S^2_{h,x}$   $\overline y_h$\  $\widehat S^2_{h,y}$
+                                                                          (1.000 Reais)                     
+---------------------- ---------- -------------- ------------------- ------------------ ---------------------
       5-14                1.100           9.020              8,30               3                   2,53 
 
      15-49                  500          13.500            102,08              17                  66,59

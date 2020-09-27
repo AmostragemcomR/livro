@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1230384437",
+    "hash" : "1869842586",
     "id" : "F83D9261",
-    "lastKnownWriteTime" : 1601130161,
-    "last_content_update" : 1601130161569,
+    "lastKnownWriteTime" : 1601209729,
+    "last_content_update" : 1601209729891,
     "path" : "~/GitHub/amostragem/12-conglomerados.Rmd",
     "project_path" : "12-conglomerados.Rmd",
     "properties" : {
-        "cursorPosition" : "1,33",
-        "scrollLine" : "0"
+        "cursorPosition" : "41,105",
+        "scrollLine" : "25"
     },
     "relative_order" : 14,
     "source_on_save" : false,

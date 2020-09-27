@@ -584,9 +584,9 @@ e)  Compare os resultados das duas amostras com os valores verdadeiros e comente
 cat("<table>",paste0("<caption>", "(#tab:tabppt5)", "Dados populacionais das empresas", "</caption>"),"</table>", sep ="\n")
 ```
 ----------
- Empresa   Pessoal        Receita
-           Ocupado  (1.000 Reais)
---------- -------- --------------
+ Empresa   Pessoal            Receita\
+           Ocupado       (1.000 Reais)
+--------- -------- -------------------
      1      250         8.000
 
      2      350        12.000
