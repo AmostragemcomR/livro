@@ -41,7 +41,7 @@ Conforme ilustrado na Figura \@ref(fig:hierar1), temos regras de associação co
 
 <div class="figure">
 <img src="Figuras/hierarquia.png" alt="Ilustração da hierarquia com vários níveis (vários para um)" width="70%" />
-<p class="caption">Ilustração da hierarquia com vários níveis (vários para um)</p>
+<p class="caption">(\#fig:hierar1)Ilustração da hierarquia com vários níveis (vários para um)</p>
 </div>
 </center>
 
@@ -114,7 +114,7 @@ Segue ilustração utilizando um baralho que pode ser observado na Figura \@ref(
 <center>
 <div class="figure">
 <img src="Figuras/baralho.png" alt="Ilustração de unidades elementares “naturalmente” agrupadas" width="80%" />
-<p class="caption">Ilustração de unidades elementares “naturalmente” agrupadas</p>
+<p class="caption">(\#fig:baralho)Ilustração de unidades elementares “naturalmente” agrupadas</p>
 </div>
 </center>
 
@@ -123,7 +123,7 @@ Na ilustração da Figura \@ref(fig:baralhoAC1) temos uma amostra selecionada po
 <center>
 <div class="figure">
 <img src="Figuras/baralhoAC1.png" alt="Ilustração da seleção de amostragem conglomerada em um estágio" width="80%" />
-<p class="caption">Ilustração da seleção de amostragem conglomerada em um estágio</p>
+<p class="caption">(\#fig:baralhoAC1)Ilustração da seleção de amostragem conglomerada em um estágio</p>
 </div>
 </center>
 
@@ -165,7 +165,7 @@ Segue ilustração na Figura \@ref(fig:baralhoAC2) de amostragem conglomerada em
 <center>
 <div class="figure">
 <img src="Figuras/baralhoAC2.png" alt="Ilustração da seleção de amostragem conglomerada em 2 estágios " width="80%" />
-<p class="caption">Ilustração da seleção de amostragem conglomerada em 2 estágios </p>
+<p class="caption">(\#fig:baralhoAC2)Ilustração da seleção de amostragem conglomerada em 2 estágios </p>
 </div>
 </center>
 

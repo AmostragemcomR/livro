@@ -601,7 +601,7 @@ A análise dos resultados acima evidencia que ganhos adicionais de eficiência p
 <center>
 <div class="figure">
 <img src="Figuras/precisaovsestratos.png" alt="Ganhos de precisão *versus* número de estratos" width="60%" />
-<p class="caption">Ganhos de precisão *versus* número de estratos</p>
+<p class="caption">(\#fig:precisaovsestratos)Ganhos de precisão *versus* número de estratos</p>
 </div>
 </center>
 
