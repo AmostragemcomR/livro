@@ -641,7 +641,7 @@ Essa expressão revela que o $EQM$ do estimador de regressão pode aumentar à m
 Como uma ilustração do problema, a Figura \@ref(fig:figcalib3) plota o $EQM$ do estimador de regressão para o aumento de conjuntos de variáveis auxiliares, assumindo amostragem aleatória simples com $n = 100$ de uma população de chefes de domicílios para os quais os dados foram coletados como parte do Censo Demográfico Experimental de Limeira, São Paulo, Brasil, 1988.
 
 <center>
-```{r, figcalib3, echo=FALSE, encoding="UTF-8", fig.cap="$EQM$ do estimador de regressão versus número de variáveis auxiliares",out.width = '60%'}
+```{r, figcalib3, echo=FALSE, encoding="UTF-8", fig.cap="EQM do estimador de regressão *versus* número de variáveis auxiliares",out.width = '50%'}
 knitr::include_graphics("Figuras/Figcalib3.PNG")
 ```
 </center>

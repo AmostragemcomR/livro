@@ -626,8 +626,8 @@ Como uma ilustração do problema, a Figura \@ref(fig:figcalib3) plota o $EQM$ d
 
 <center>
 <div class="figure">
-<img src="Figuras/Figcalib3.PNG" alt="$EQM$ do estimador de regressão versus número de variáveis auxiliares" width="60%" />
-<p class="caption">(\#fig:figcalib3)$EQM$ do estimador de regressão versus número de variáveis auxiliares</p>
+<img src="Figuras/Figcalib3.PNG" alt="EQM do estimador de regressão *versus* número de variáveis auxiliares" width="50%" />
+<p class="caption">(\#fig:figcalib3)EQM do estimador de regressão *versus* número de variáveis auxiliares</p>
 </div>
 </center>
 
