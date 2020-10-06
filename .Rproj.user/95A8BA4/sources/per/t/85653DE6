@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601989907399.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2672350706",
+    "id" : "85653DE6",
+    "lastKnownWriteTime" : 1601990829,
+    "last_content_update" : 1601990829451,
+    "path" : "~/GitHub/amostragem/13-calibracao.Rmd",
+    "project_path" : "13-calibracao.Rmd",
+    "properties" : {
+        "cursorPosition" : "243,2",
+        "scrollLine" : "232"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

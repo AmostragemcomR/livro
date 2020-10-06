@@ -596,7 +596,7 @@ $\rho=0,95$         0,323        0,198         0,154        0,134        0,123  
 ---------
 </center>
 
-A análise dos resultados acima evidencia que ganhos adicionais de eficiência para casos com mais de seis estratos seriam modestos. Na Figura \@ref(fig:precisaovsestratos) temos o gráfico dos ganhos de precisão versus número de estratos para $\rho_{x,y}=0,85$ e $\rho_{x,y}=0,95$. 
+A análise dos resultados acima evidencia que ganhos adicionais de eficiência para casos com mais de seis estratos seriam modestos. Na Figura \@ref(fig:precisaovsestratos) temos o gráfico dos ganhos de precisão *versus* número de estratos para $\rho_{x,y}=0,85$ e $\rho_{x,y}=0,95$. 
 
 <center>
 <div class="figure">
