@@ -1225,8 +1225,8 @@ A Tabela \@ref(tab:tabcalib11) apresenta os dados para a amostra selecionada.
 <caption>(#tab:tabcalib11)Diâmetro e idade das árvores da amostra</caption>
 </table>
 ----------
- Árvore	  Diâmetro(in)	Idade(anos)  Árvore   Diâmetro(in)  Idade(anos)
--------- ------------- ------------ -------- ------------- ------------
+ Árvore	  Diâmetro (in)	 Idade (anos)  Árvore   Diâmetro (in)  Idade (anos)
+-------- -------------- ------------- -------- -------------- -------------
  1          12,0             125         11	          5,7	          61
  
  2          11,4             119         12           8,0           80
