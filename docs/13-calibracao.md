@@ -1,5 +1,5 @@
 # Estimadores de Calibração {#calib}
-
+<div style="text-align: justify">
 ## Motivação {#motiva13}
 
 Em Amostragem, há várias maneiras de aproveitar *informações auxiliares* disponíveis para melhorar a precisão de estimativas de interesse em uma pesquisa amostral.
