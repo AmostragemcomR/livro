@@ -1,2 +1,1 @@
-# amostragem
- 
+# Amostragem Com exemplo utilizando o R
