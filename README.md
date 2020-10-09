@@ -1,1 +1,1 @@
-# Amostragem Com exemplo utilizando o R
+# Amostragem com exemplos utilizando o R.
