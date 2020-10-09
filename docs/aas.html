@@ -588,26 +588,26 @@ s=s[<span class="dv">1</span><span class="op">:</span>n,]
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i        aleat
-## 1  882 0.0008352017
-## 2  720 0.0012079997
-## 3  149 0.0035377895
-## 4  558 0.0043246676
-## 5  429 0.0076579270
-## 6  798 0.0085840393
-## 7  970 0.0088031671
-## 8  434 0.0109308022
-## 9  113 0.0119151678
-## 10 823 0.0147476029
-## 11 527 0.0151592584
-## 12 712 0.0158022642
-## 13 188 0.0177171982
-## 14 414 0.0180752473
-## 15 401 0.0186664127
-## 16 511 0.0188523226
-## 17 185 0.0222238956
-## 18 464 0.0224710638
-## 19 666 0.0231936087
-## 20 883 0.0247000339</code></pre>
+## 1  261 0.0002071334
+## 2  818 0.0004434944
+## 3  388 0.0017621717
+## 4  255 0.0018118373
+## 5  817 0.0037286317
+## 6  188 0.0054088663
+## 7  132 0.0081290193
+## 8  239 0.0086497886
+## 9  301 0.0092750064
+## 10  41 0.0093585418
+## 11 327 0.0095951704
+## 12 358 0.0097024620
+## 13 945 0.0111220335
+## 14 510 0.0116312129
+## 15  55 0.0134574622
+## 16 879 0.0140229065
+## 17 931 0.0154888642
+## 18  64 0.0155287813
+## 19 378 0.0223559523
+## 20 523 0.0229082948</code></pre>
 </div>
 <div id="algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</h3>
@@ -658,26 +658,26 @@ s=<span class="kw">data.frame</span>(s)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i
-## 1   10
-## 2   62
-## 3  103
-## 4  189
-## 5  200
-## 6  263
-## 7  322
-## 8  331
-## 9  357
-## 10 387
-## 11 390
-## 12 560
-## 13 598
-## 14 619
-## 15 730
-## 16 774
-## 17 832
-## 18 836
-## 19 841
-## 20 979</code></pre>
+## 1   37
+## 2   63
+## 3  118
+## 4  268
+## 5  286
+## 6  375
+## 7  378
+## 8  382
+## 9  396
+## 10 402
+## 11 404
+## 12 457
+## 13 467
+## 14 569
+## 15 585
+## 16 820
+## 17 821
+## 18 835
+## 19 878
+## 20 962</code></pre>
 </div>
 <div id="probabilidades-de-inclusão-sob-aas" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Probabilidades de inclusão sob AAS</h3>
@@ -940,25 +940,25 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 
 <span class="co"># a. Média amostral</span>
 (med_amo &lt;-<span class="st"> </span><span class="kw">mean</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 1246.777</code></pre>
+<pre><code>## [1] 1099.941</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># b. Estimativas da dispersão do estimador de média sob AAS</span>
 (var_med_amo &lt;-<span class="st"> </span>((<span class="dv">1</span><span class="op">/</span>n) <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>N)) <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 40468.41</code></pre>
+<pre><code>## [1] 48365.54</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(dp_med_amo &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VAR_med_amo))</code></pre></div>
 <pre><code>## [1] 389.4654</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cv_med_amo &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>DP_med_amo <span class="op">/</span><span class="st"> </span>med_amo)</code></pre></div>
-<pre><code>## [1] 31.23776</code></pre>
+<pre><code>## [1] 35.40785</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># c. Margem de erro relativo do estimador de média sob AAS</span>
 (me_med_amo &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>cv_med_amo)</code></pre></div>
-<pre><code>## [1] 61.22489</code></pre>
+<pre><code>## [1] 69.39811</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%</span>
 (D &lt;-<span class="st"> </span><span class="dv">150</span>)</code></pre></div>
 <pre><code>## [1] 150</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span>(N <span class="op">*</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)) <span class="op">/</span>
 <span class="st">              </span>(N <span class="op">*</span><span class="st"> </span>D<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)))</code></pre></div>
-<pre><code>## [1] 1139.967</code></pre>
+<pre><code>## [1] 1310.101</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span><span class="kw">ceiling</span>(n_amo_est))</code></pre></div>
-<pre><code>## [1] 1140</code></pre>
+<pre><code>## [1] 1311</code></pre>
 </div>
 </div>
 <div id="exerc4" class="section level2">
