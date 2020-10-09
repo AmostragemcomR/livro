@@ -17,7 +17,7 @@ bibliography: [book.bib]
 csl: Modified-apa.csl
 suppress-bibliography: false
 link-citations: no
-github-repo: PedroNSilva/amotepur
+github-repo: Amotepur/livro
 description: "Este é o livro de Amostragem elaborado pelos autores."
 ---
 

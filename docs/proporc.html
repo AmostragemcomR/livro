@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="Este é o livro de Amostragem elaborado pelos autores." />
-  <meta name="github-repo" content="PedroNSilva/amotepur" />
+  <meta name="github-repo" content="Amotepur/livro" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 5 Estimação de Proporções | Amostragem: Teoria e Prática Usando R" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
@@ -362,7 +364,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><span class="math display" id="eq:eqpro2">\[
 Y = \displaystyle \sum_{i \in U} y_i = N_A  \tag{5.2}
 \]</span> onde <span class="math inline">\(N_A\)</span> representa o número de unidades populacionais que possuem o atributo de interesse.</p>
-<p>Um exemplo clássico do uso de variáveis indicadoras ocorre quando se quer tabular frequências de respostas a uma pergunta categórica numa pesquisa ou censo. Considere uma pergunta cujas respostas podem ser um dos valores inteiros de <span class="math inline">\(1\)</span> a <span class="math inline">\(C\)</span>, onde <span class="math inline">\(C\)</span> representa o número de categorias de resposta da pergunta. Por exemplo, para a pergunta ‘Qual é o sexo do morador’, há duas categorias de resposta <span class="math inline">\((C= 2)\)</span>: 1 (=Feminino) e 2 (=Masculino). Logo, para contar o número de pessoas por sexo na população, seria necessário criar duas variáveis indicadoras: <span class="math inline">\(y_{1i} = I[Sexo(i) = 1]\)</span> e <span class="math inline">\(y_{2i} = I[Sexo(i) = 2]\)</span>. Estas contagens poderiam ser representadas por <span class="math inline">\(N_1\)</span>, para as pessoas do sexo Feminino, e <span class="math inline">\(N_2\)</span>, para as pessoas do sexo Masculino, que seriam obtidos como dois totais populacionais:</p>
+<p>Um exemplo clássico do uso de variáveis indicadoras ocorre quando se quer tabular frequências de respostas a uma pergunta categórica numa pesquisa ou censo. Considere uma pergunta cujas respostas podem ser um dos valores inteiros de <span class="math inline">\(1\)</span> a <span class="math inline">\(C\)</span>, onde <span class="math inline">\(C\)</span> representa o número de categorias de resposta da pergunta. Por exemplo, para a pergunta 'Qual é o sexo do morador', há duas categorias de resposta <span class="math inline">\((C= 2)\)</span>: 1 (=Feminino) e 2 (=Masculino). Logo, para contar o número de pessoas por sexo na população, seria necessário criar duas variáveis indicadoras: <span class="math inline">\(y_{1i} = I[Sexo(i) = 1]\)</span> e <span class="math inline">\(y_{2i} = I[Sexo(i) = 2]\)</span>. Estas contagens poderiam ser representadas por <span class="math inline">\(N_1\)</span>, para as pessoas do sexo Feminino, e <span class="math inline">\(N_2\)</span>, para as pessoas do sexo Masculino, que seriam obtidos como dois totais populacionais:</p>
 <p><span class="math display">\[
 \displaystyle Y_1 = \sum_{i \in U} y_{1i} = N_1 \\ Y_2 = \sum_{i \in U} y_{2i} = N_2
 \]</span></p>
@@ -702,7 +704,7 @@ desaas=<span class="kw">svydesign</span>(<span class="dt">ids=</span><span class
 <p>Na função <em>propCI</em> são apresentados outros dois métodos: O método <em>Agresti-Coull</em> que é um ajuste da aproximação Normal e o método <em>Jeffreys</em> que é um método Bayesiano. O método <em>Asymptotic</em> é chamado de <em>Wald</em>.</p>
 <p>Para as duas funções acima não se considera se a amostra foi selecionada com ou sem reposição, o que é perfeitamente aceitável para amostras grandes retiradas de populações também grandes.</p>
 <p>Para a função <em>svyciprop</em>, do pacote <em>survey</em>, é possível definir se a amostra foi selecionada sem ou com reposição, bastando fornecer, ou não, o tamanho, <span class="math inline">\(N\)</span>, da população para o cálculo do fator de correção para população finita. Nessa função é possível escolher entre 6 possíveis métodos para o cálculo do intervalo de confiança.</p>
-<p>Para detalhes sobre estas e demais funções do R, ver <span class="citation">R Core Team (2018)</span>. Para um pacote específico, pode-se obter uma referência mais completa digitando, no próprio R, o comando <em>citation(‘nome do pacote’)</em>.</p>
+<p>Para detalhes sobre estas e demais funções do R, ver <span class="citation">R Core Team (2018)</span>. Para um pacote específico, pode-se obter uma referência mais completa digitando, no próprio R, o comando <em>citation('nome do pacote')</em>.</p>
 <p>Pode-se observar que, nos exemplos acima, onde o tamanho da amostra é grande, os resultados de todos os métodos utilizados, em termos práticos, são bastante parecidos. Fica como exercício para o leitor verificar o que acontece quando for utilizada uma amostra de tamanho pequeno (menor que 30, por exemplo).</p>
 <p>Na maioria dos casos práticos, opta-se pelo uso da aproximação pela distribuição Normal de probabilidades, pela facilidade de seu uso tanto para <em>AAS</em> como <em>AASC</em>. Isso pode ser feito sempre que as condições do problema assim o permitirem, como se discute na próxima seção.</p>
 </div>
@@ -1143,7 +1145,7 @@ p_c=\frac {N_c} {N} \tag{5.44}
 <li>Estime a proporção de unidades onde <span class="math inline">\(y\)</span> é menor que 10.</li>
 <li>Construa um intervalo de 95% de confiança para a proporção de unidades onde <span class="math inline">\(y\)</span> é menor que 10.</li>
 </ol>
-<p><strong>Exercício 5.5 </strong> Considere a população de <span class="math inline">\(N=338\)</span> fazendas produtoras de cana-de-açúcar fornecida no arquivo ‘fazendas_dat.rds’. Selecione uma AAS de <span class="math inline">\(n=50\)</span> fazendas e use esta amostra para obter a estimativa pontual, o erro padrão, o CV e o intervalo de confiança de 95%, para cada um dos seguintes parâmetros populacionais:</p>
+<p><strong>Exercício 5.5 </strong> Considere a população de <span class="math inline">\(N=338\)</span> fazendas produtoras de cana-de-açúcar fornecida no arquivo 'fazendas_dat.rds'. Selecione uma AAS de <span class="math inline">\(n=50\)</span> fazendas e use esta amostra para obter a estimativa pontual, o erro padrão, o CV e o intervalo de confiança de 95%, para cada um dos seguintes parâmetros populacionais:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Proporção de fazendas na região 1.</li>
 <li>Proporção de fazendas com Area maior que 100.</li>

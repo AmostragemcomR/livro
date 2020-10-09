@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="Este é o livro de Amostragem elaborado pelos autores." />
-  <meta name="github-repo" content="PedroNSilva/amotepur" />
+  <meta name="github-repo" content="Amotepur/livro" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 6 Estimação de Razões e Funções de Totais | Amostragem: Teoria e Prática Usando R" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
@@ -711,7 +713,7 @@ V_{AAS} (\widehat{R}) \doteq \frac{1}{\overline{X}^2} \left( \frac{1}{n} -  \fra
 </center>
 <p>Antes de fechar este capítulo, vale comentar que a estimação de razões é recorrente em amostragem, pois com frequência é possível usar totais (ou médias) populacionais conhecidos para aprimorar a precisão de estimativas de médias ou totais com base em amostras. O tema da estimação usando informações populacionais auxiliares é tratado no Capítulo <a href="calib.html#calib">13</a>.</p>
 <p><strong>Exemplo 6.2 </strong> Estimadores de Razões e Médias de Razões</p>
-<p>Considere a população de municípios brasileiros fornecida no arquivo ‘MunicBR_dat.rds’.</p>
+<p>Considere a população de municípios brasileiros fornecida no arquivo 'MunicBR_dat.rds'.</p>
 <ol style="list-style-type: decimal">
 <li>Selecione uma AAS de <span class="math inline">\(n = 200\)</span> municípios e use esta amostra para estimar os seguintes parâmetros populacionais:
 <ol style="list-style-type: lower-alpha">
@@ -734,7 +736,7 @@ V_{AAS} (\widehat{R}) \doteq \frac{1}{\overline{X}^2} \left( \frac{1}{n} -  \fra
 <span class="kw">library</span>(sampling)
 <span class="kw">library</span>(tidyverse)</code></pre></div>
 <pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.5.3</code></pre>
-<pre><code>## -- Attaching packages --------</code></pre>
+<pre><code>## -- Attaching packages ---------</code></pre>
 <pre><code>## v ggplot2 3.2.1     v purrr   0.3.2
 ## v tibble  2.1.3     v dplyr   0.8.3
 ## v tidyr   1.0.0     v stringr 1.4.0
@@ -747,7 +749,7 @@ V_{AAS} (\widehat{R}) \doteq \frac{1}{\overline{X}^2} \left( \frac{1}{n} -  \fra
 <pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.5.3</code></pre>
 <pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.5.3</code></pre>
 <pre><code>## Warning: package &#39;forcats&#39; was built under R version 3.5.3</code></pre>
-<pre><code>## -- Conflicts -----------------
+<pre><code>## -- Conflicts ------------------
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Leitura dos dados</span>

@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="Este é o livro de Amostragem elaborado pelos autores." />
-  <meta name="github-repo" content="PedroNSilva/amotepur" />
+  <meta name="github-repo" content="Amotepur/livro" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 11 Amostragem Estratificada | Amostragem: Teoria e Prática Usando R" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
@@ -403,7 +405,7 @@ U = U_1 \cup \dots \cup U_h \cup \dots \cup U_H = \displaystyle \bigcup_{h=1}^H 
 <p>Pesquisas como a <em>UK International Passenger Survey</em> usam estratificação desta maneira, pois os métodos mais adequados para amostrar passageiros precisam variar conforme o modo de transporte e a forma de entrada no território do Reino Unido - ver <span class="citation">Horsfield (2017)</span>.</p>
 <p><strong>Exemplo 11.2 </strong> Amostragem Estratificada por Corte - AEC</p>
 <p>Este é um tipo de planejamento muito usado em pesquisas de estabelecimentos ou instituições. A população é dividida em estratos. Partes da população onde existe grande heterogeneidade ou que concentram grande parte do total de uma ou mais variáveis de interesse, porém compostas de um número relativamente pequeno de unidades populacionais, são alocadas num <em>estrato certo</em>. Nesse estrato se faz um censo, isto é, se pesquisa o conjunto completo de unidades ali alocadas. Nos demais estratos são pesquisadas amostras de suas unidades.</p>
-<p>Esse tipo de amostragem é muito utilizado em populações onde há grande assimetria das principais variáveis de interesse. Um bom exemplo são pesquisas econômicas na área da indústria onde, muitas vezes, um número pequeno de estabelecimentos industriais é responsável por grande parte do valor da produção. Neste caso, a precisão das estimativas de totais populacionais produzidas pode ser muito melhor ao empregar AEC em comparação com AAS (por exemplo), pois como no estrato certo é feito um censo, não há variabilidade devida ao uso de amostragem nesse estrato (variância nula do total ‘estimado’ nesse estrato).</p>
+<p>Esse tipo de amostragem é muito utilizado em populações onde há grande assimetria das principais variáveis de interesse. Um bom exemplo são pesquisas econômicas na área da indústria onde, muitas vezes, um número pequeno de estabelecimentos industriais é responsável por grande parte do valor da produção. Neste caso, a precisão das estimativas de totais populacionais produzidas pode ser muito melhor ao empregar AEC em comparação com AAS (por exemplo), pois como no estrato certo é feito um censo, não há variabilidade devida ao uso de amostragem nesse estrato (variância nula do total 'estimado' nesse estrato).</p>
 </div>
 <div id="amostragem-estratificada-simples" class="section level2">
 <h2><span class="header-section-number">11.2</span> Amostragem estratificada simples</h2>
@@ -758,7 +760,7 @@ Quando os ganhos de precisão alcançados com a estratificação não são grand
 <h2><span class="header-section-number">11.4</span> Definição dos limites dos estratos</h2>
 <p>Conforme já dito anteriormente, a determinação dos limites dos estratos influencia na eficiência na amostragem estratificada. Para definir estratos num contexto de <em>estratificação estatística</em>, se estiver disponível uma variável auxiliar <span class="math inline">\(x\)</span> correlacionada positivamente com a variável de interesse <span class="math inline">\(y\)</span>, seus valores podem ser usados para formar estratos. Surge então a questão de como formar os estratos de maneira a tirar proveito dessa variável para aumentar a eficiência da amostragem estratificada simples na estimação de parâmetros da variável de pesquisa <span class="math inline">\(y\)</span>. Este problema é conhecido como problema da <em>delimitação ótima dos estratos</em>.</p>
 <p>O primeiro passo é a escolha do valor de <span class="math inline">\(H\)</span>, o número total de estratos. Quanto maior for a correlação entre a variável auxiliar <span class="math inline">\(x\)</span> disponível e a variável de pesquisa <span class="math inline">\(y\)</span>, maior pode ser o número de estratos formados, até um certo limite. Evidências empíricas sugerem, entretanto, que valores no intervalo <span class="math inline">\(5 \le H \le 10\)</span> são suficientes para alcançar grande parte dos ganhos de eficiência decorrentes da estratificação.</p>
-<p>Quando <span class="math inline">\(H = 2\)</span>, há um par de métodos disponíveis para obter soluções ‘exatas’ do problema de delimitação ótima dos estratos. <span class="citation">Glasser (1962)</span> descreve um algoritmo para delimitar estratos de modo a minimizar a variância do estimador do outro será feita amostragem aleatória simples. Este é um exemplo de <em>amostragem estratificada por corte - AEC</em>, onde o valor que delimita a partir de que ponto as maiores unidades devem ser incluídas num <em>estrato certo</em> é escolhido pelo algoritmo. <span class="citation">Hidiroglou (1986)</span> apresenta um algoritmo alternativo também considerando AEC, mas onde o ponto de corte da estratificação é escolhido de modo a minimizar o tamanho total da amostra, para um valor especificado da variância do estimador de total aplicado à variável auxiliar <span class="math inline">\(x\)</span>.</p>
+<p>Quando <span class="math inline">\(H = 2\)</span>, há um par de métodos disponíveis para obter soluções 'exatas' do problema de delimitação ótima dos estratos. <span class="citation">Glasser (1962)</span> descreve um algoritmo para delimitar estratos de modo a minimizar a variância do estimador do outro será feita amostragem aleatória simples. Este é um exemplo de <em>amostragem estratificada por corte - AEC</em>, onde o valor que delimita a partir de que ponto as maiores unidades devem ser incluídas num <em>estrato certo</em> é escolhido pelo algoritmo. <span class="citation">Hidiroglou (1986)</span> apresenta um algoritmo alternativo também considerando AEC, mas onde o ponto de corte da estratificação é escolhido de modo a minimizar o tamanho total da amostra, para um valor especificado da variância do estimador de total aplicado à variável auxiliar <span class="math inline">\(x\)</span>.</p>
 <p>Para valores de <span class="math inline">\(H \ge 3\)</span>, há uma variedade de soluções disponíveis na literatura. <span class="citation">Brito et al. (2019)</span> apresenta uma revisão da literatura sobre estes métodos, mas também apresenta um algoritmo de otimização estocástica para resolver o problema. Este algoritmo está implementado no pacote <em>stratbr</em> do sistema R. A Tabela <a href="estrat.html#tab:tabestr2">11.2</a> lista as principais referências que tratam do tema.</p>
 <table>
 <caption>

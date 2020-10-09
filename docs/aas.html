@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="Este é o livro de Amostragem elaborado pelos autores." />
-  <meta name="github-repo" content="PedroNSilva/amotepur" />
+  <meta name="github-repo" content="Amotepur/livro" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 4 Amostragem Aleatória Simples | Amostragem: Teoria e Prática Usando R" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
@@ -486,7 +488,7 @@ V_{AASC} (\widehat{Y}_{AASC}) = \displaystyle  N^2  \sigma_y^2 / n\,\,\tag{4.2}
 <p>A <em>AAS</em> é um procedimento simples e básico da teoria e prática de amostragem, tendo importância não só pelas aplicações diretas como também por servir de base para muitos outros planos amostrais mais complexos. As ideias principais de amostragem podem ser com ele desenvolvidas.</p>
 <div id="algoritmo-convencional-para-selecionar-uma-aas" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Algoritmo “convencional” para selecionar uma AAS</h3>
-<p>O algoritmo “convencional” para a seleção na AAS sugerido pelos livros-texto mais conhecidos em amostragem consiste nos seguintes passos:</p>
+<p>O algoritmo &quot;convencional&quot; para a seleção na AAS sugerido pelos livros-texto mais conhecidos em amostragem consiste nos seguintes passos:</p>
 <ol style="list-style-type: decimal">
 <li>Selecione a primeira unidade dentre as <span class="math inline">\(N\)</span> unidades de <span class="math inline">\(U\)</span> com probabilidades iguais a <span class="math inline">\(1/N\)</span>, resultando na seleção da unidade <span class="math inline">\(i_1\)</span>.</li>
 <li>Selecione a segunda unidade dentre as <span class="math inline">\(N-1\)</span> unidades ainda não selecionadas de <span class="math inline">\(U\)</span> com probabilidades iguais a <span class="math inline">\(1/(N-1)\)</span>, resultando na seleção da unidade <span class="math inline">\(i_2 \ne {i_1}\)</span>.</li>
@@ -585,27 +587,27 @@ s=s[<span class="dv">1</span><span class="op">:</span>n,]
 <span class="kw">rownames</span>(s)=<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span>n)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
-<pre><code>##      i        aleat
-## 1  315 0.0001471755
-## 2  322 0.0007739223
-## 3  134 0.0027478084
-## 4  595 0.0028676575
-## 5  534 0.0032734189
-## 6  725 0.0038186968
-## 7    6 0.0040870693
-## 8  504 0.0043413187
-## 9  238 0.0048037150
-## 10 954 0.0050867554
-## 11 657 0.0051585671
-## 12 507 0.0051748406
-## 13 628 0.0056293390
-## 14 193 0.0067838177
-## 15  81 0.0080182799
-## 16 606 0.0096310780
-## 17 939 0.0100055905
-## 18 699 0.0100810146
-## 19 410 0.0102819121
-## 20 637 0.0110490399</code></pre>
+<pre><code>##      i       aleat
+## 1  874 0.002247082
+## 2   51 0.002465228
+## 3  487 0.002687143
+## 4  307 0.002833599
+## 5  370 0.002881594
+## 6  686 0.003133813
+## 7   49 0.003718087
+## 8  448 0.005363993
+## 9  138 0.005699249
+## 10 805 0.007792385
+## 11 459 0.009244455
+## 12 328 0.011736167
+## 13  13 0.012481697
+## 14 504 0.015581612
+## 15 388 0.016070278
+## 16 178 0.016300239
+## 17 625 0.017630435
+## 18 420 0.017678147
+## 19 837 0.018276326
+## 20 563 0.018801083</code></pre>
 </div>
 <div id="algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</h3>
@@ -656,26 +658,26 @@ s=<span class="kw">data.frame</span>(s)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i
-## 1   31
-## 2   57
-## 3  119
-## 4  168
-## 5  190
-## 6  191
-## 7  223
-## 8  230
-## 9  482
-## 10 524
-## 11 606
-## 12 717
-## 13 759
-## 14 765
-## 15 780
-## 16 815
-## 17 836
-## 18 920
-## 19 960
-## 20 977</code></pre>
+## 1  139
+## 2  155
+## 3  166
+## 4  285
+## 5  307
+## 6  407
+## 7  434
+## 8  445
+## 9  461
+## 10 600
+## 11 700
+## 12 705
+## 13 732
+## 14 762
+## 15 789
+## 16 928
+## 17 938
+## 18 941
+## 19 946
+## 20 965</code></pre>
 </div>
 <div id="probabilidades-de-inclusão-sob-aas" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Probabilidades de inclusão sob AAS</h3>
@@ -688,7 +690,7 @@ s</code></pre></div>
 <li>Estimação de variância sem vício requer <span class="math inline">\(\pi_{ij} &gt; 0\)</span>, <span class="math inline">\(\forall\, i,j \in U\)</span>. Sob AAS, <span class="math inline">\(\pi_{ij} = \displaystyle \frac{n(n-1)}{N(N-1)} &gt; 0, \,\,\, \forall\, i \ne j \in U\)</span>.</li>
 <li>Sob AAS, as probabilidades de inclusão <span class="math inline">\(\pi_i\)</span> e <span class="math inline">\(\pi_{ij}\)</span> não dependem de <span class="math inline">\(i\)</span> ou <span class="math inline">\(j\)</span>, e essa é a razão da simplicidade desse plano amostral.</li>
 </ol>
-<p>Sob AAS de tamanho <span class="math inline">\(n\)</span> de população com <span class="math inline">\(N\)</span>, para a variável <span class="math inline">\(\delta_i\)</span> indicadora do evento ‘inclusão da unidade <span class="math inline">\(i\)</span> na amostra <span class="math inline">\(s\)</span>’, tem-se:</p>
+<p>Sob AAS de tamanho <span class="math inline">\(n\)</span> de população com <span class="math inline">\(N\)</span>, para a variável <span class="math inline">\(\delta_i\)</span> indicadora do evento 'inclusão da unidade <span class="math inline">\(i\)</span> na amostra <span class="math inline">\(s\)</span>', tem-se:</p>
 <p><span class="math inline">\(E_{AAS} [{\delta_i}] = \displaystyle\frac{n}{N}\)</span></p>
 <p><span class="math inline">\(V_{AAS} [{\delta_i}] = \displaystyle\frac{n}{N} \left(1-\frac{n}{N}\right)\)</span></p>
 <p><span class="math inline">\(COV_{AAS} [{\delta_i},{\delta_j} ] = \displaystyle\frac{n(n-1)}{N(N-1)} - \left(\frac{n}{N}\right)^2 = \frac{n}{N}\left(1-\frac{n}{N}\right)\left(-\frac{1}{N-1}\right)\)</span></p>
@@ -845,7 +847,7 @@ IC_{AAS} (\overline{Y} ; 1 - \alpha) = \left [ \overline {y} \mp z_{\alpha/2} \s
 </ol>
 <p><strong>O caso geral</strong></p>
 <p>Seja <span class="math inline">\(D\)</span> a <em>precisão desejada</em>, a <em>margem de erro máximo admissível</em> na estimação de <span class="math inline">\(\overline Y\)</span>, a <em>semiamplitude</em> desejada para o intervalo de confiança de <span class="math inline">\(\overline Y\)</span>. Seja <span class="math inline">\(1-\alpha\)</span> o <em>coeficiente de confiança</em> desejado para o procedimento. Para <em>intervalos de confiança</em> de 95% usamos <span class="math inline">\(z_{\alpha/2} = 1,96\)</span>.</p>
-<p>Um intervalo de confiança não é uma especificação sobre uma particular amostra, mas sobre o desempenho do procedimento sob todas as possíveis amostras. Quando se usa um intervalo de confiança de 95% para um parâmetro, isto quer dizer que os intervalos construídos com cerca de 95 de cada 100 amostras selecionadas (sob idênticas condições) cobririam o “verdadeiro” valor do parâmetro de interesse. Para uma amostra específica, selecionada pelo método escolhido, acredita-se que é de 95% a chance que o “verdadeiro” valor seja coberto pelo intervalo: <span class="math display">\[[\text{Estimativa} - 1,96 \times \text{desvio padrão;  Estimativa} + 1,96 \times \text{desvio padrão}]\]</span></p>
+<p>Um intervalo de confiança não é uma especificação sobre uma particular amostra, mas sobre o desempenho do procedimento sob todas as possíveis amostras. Quando se usa um intervalo de confiança de 95% para um parâmetro, isto quer dizer que os intervalos construídos com cerca de 95 de cada 100 amostras selecionadas (sob idênticas condições) cobririam o &quot;verdadeiro&quot; valor do parâmetro de interesse. Para uma amostra específica, selecionada pelo método escolhido, acredita-se que é de 95% a chance que o &quot;verdadeiro&quot; valor seja coberto pelo intervalo: <span class="math display">\[[\text{Estimativa} - 1,96 \times \text{desvio padrão;  Estimativa} + 1,96 \times \text{desvio padrão}]\]</span></p>
 <p>Assim:</p>
 <p><span class="math display">\[\left( \frac{1}{n} - \frac{1}{N} \right) S_y^2 = \left( \frac{D}{z_{\alpha/2}} \right)^2\]</span></p>
 <p>Portanto, o tamanho de uma AAS que assegura precisão <span class="math inline">\(D\)</span> com nível de confiança <span class="math inline">\(1 - \alpha\)</span> é:</p>
@@ -860,7 +862,7 @@ n = \displaystyle\frac{1}{\displaystyle\left( \frac{D}{z_{\alpha/2}} \right)^2 \
 </li>
 <li>Para planos amostrais mais complexos, é mais difícil resolver equações do tipo acima para determinar tamanhos amostrais, e sua alocação em estratos e conglomerados. Entretanto, a ideia de <em>Efeito do Plano Amostral</em> - EPA vai ser útil neste contexto. Ver discussão no Capítulo <a href="cong.html#cong">12</a>.</li>
 </ol>
-<p><strong>Exemplo 4.4 </strong> Considere a população formada pelos municípios brasileiros, conforme consta do arquivo ‘MunicBR_dat.rds’. Tendo esta população em mente, imagine que seria usada para seleção de uma amostra AAS de <span class="math inline">\(n=200\)</span> municípios. Imagine que tal amostra seria usada para estimar a <em>média populacional</em> da variável <em>área</em> dos municípios.</p>
+<p><strong>Exemplo 4.4 </strong> Considere a população formada pelos municípios brasileiros, conforme consta do arquivo 'MunicBR_dat.rds'. Tendo esta população em mente, imagine que seria usada para seleção de uma amostra AAS de <span class="math inline">\(n=200\)</span> municípios. Imagine que tal amostra seria usada para estimar a <em>média populacional</em> da variável <em>área</em> dos municípios.</p>
 <ol style="list-style-type: decimal">
 <li>Com esta perspectiva, use os <em>dados populacionais</em> para:
 <ol style="list-style-type: lower-alpha">
@@ -938,31 +940,31 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 
 <span class="co"># a. Média amostral</span>
 (med_amo &lt;-<span class="st"> </span><span class="kw">mean</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 2323.914</code></pre>
+<pre><code>## [1] 981.6161</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># b. Estimativas da dispersão do estimador de média sob AAS</span>
 (var_med_amo &lt;-<span class="st"> </span>((<span class="dv">1</span><span class="op">/</span>n) <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>N)) <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 708927.4</code></pre>
+<pre><code>## [1] 19511.06</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(dp_med_amo &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VAR_med_amo))</code></pre></div>
 <pre><code>## [1] 389.4654</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cv_med_amo &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>DP_med_amo <span class="op">/</span><span class="st"> </span>med_amo)</code></pre></div>
-<pre><code>## [1] 16.75902</code></pre>
+<pre><code>## [1] 39.67594</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># c. Margem de erro relativo do estimador de média sob AAS</span>
 (me_med_amo &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>cv_med_amo)</code></pre></div>
-<pre><code>## [1] 32.84708</code></pre>
+<pre><code>## [1] 77.76341</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%</span>
 (D &lt;-<span class="st"> </span><span class="dv">150</span>)</code></pre></div>
 <pre><code>## [1] 150</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span>(N <span class="op">*</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)) <span class="op">/</span>
 <span class="st">              </span>(N <span class="op">*</span><span class="st"> </span>D<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)))</code></pre></div>
-<pre><code>## [1] 4558.719</code></pre>
+<pre><code>## [1] 614.7717</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span><span class="kw">ceiling</span>(n_amo_est))</code></pre></div>
-<pre><code>## [1] 4559</code></pre>
+<pre><code>## [1] 615</code></pre>
 </div>
 </div>
 <div id="exerc4" class="section level2">
 <h2><span class="header-section-number">4.5</span> Exercícios</h2>
 <p><strong>Exercício 4.1 </strong> Mostre que o estimador <span class="math inline">\(\widehat{Y}_{AASC}\)</span> para o total não é um estimador tipo Horvitz-Thompson.</p>
-<p><strong>Exercício 4.2 </strong> Considere a população de 338 fazendas produtoras de cana-de-açúcar fornecida no arquivo ‘fazendas_dat.rds’. Esse arquivo contém os dados de algumas variáveis econômicas medidas para cada uma das fazendas dessa população, tais como área plantada com cana-de-açúcar (Area), quantidade colhida de cana (Quant), receita (Receita) e despesa com a produção de cana (Despesa), e algumas variáveis de contexto sobre as fazendas, tais como região de localização (Regiao) e classe de tamanho da fazenda (Classe).</p>
+<p><strong>Exercício 4.2 </strong> Considere a população de 338 fazendas produtoras de cana-de-açúcar fornecida no arquivo 'fazendas_dat.rds'. Esse arquivo contém os dados de algumas variáveis econômicas medidas para cada uma das fazendas dessa população, tais como área plantada com cana-de-açúcar (Area), quantidade colhida de cana (Quant), receita (Receita) e despesa com a produção de cana (Despesa), e algumas variáveis de contexto sobre as fazendas, tais como região de localização (Regiao) e classe de tamanho da fazenda (Classe).</p>
 <p>Imagine que há interesse em pesquisar por amostragem essa população de fazendas, visando estimar medidas descritivas da população, tais como os totais das variáveis Quant, Receita e Despesa. O objetivo do exercício é usar os dados fornecidos para estudar o comportamento esperado de um plano amostral. Considere a ideia de selecionar uma amostra de <span class="math inline">\(n=50\)</span> fazendas da população usando AAS.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Use os valores populacionais das variáveis de interesse (Area, Quant e Receita) para calcular os totais populacionais de interesse. Calcule também o desvio padrão - DP e o coeficiente de variação - CV esperados para os estimadores dos totais populacionais de interesse, supondo que o estimador Horvitz-Thompson para o total seria empregado. Compare os resultados para as diversas variáveis.</li>
@@ -1188,7 +1190,7 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 <li>Usando o peso amostral, estime o total populacional de <span class="math inline">\(y\)</span>.</li>
 <li>Construa um intervalo de 95% de confiança para o total populacional.</li>
 </ol>
-<p><strong>Exercício 4.9 </strong> Seja a população formada pelos 450 municípios da Região Norte que aparecem no arquivo ‘MunicBR_dat.rds’.</p>
+<p><strong>Exercício 4.9 </strong> Seja a população formada pelos 450 municípios da Região Norte que aparecem no arquivo 'MunicBR_dat.rds'.</p>
 <p>Calcule os seguintes parâmetros populacionais da variável de interesse população (Pop): média populacional e variância populacional.</p>
 <p>Supondo desconhecidos os valores da população dos municípios, selecione uma AAS de tamanho <span class="math inline">\(n=40\)</span> e estime os seguintes parâmetros populacionais:</p>
 <ol style="list-style-type: lower-alpha">

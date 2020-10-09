@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="Este é o livro de Amostragem elaborado pelos autores." />
-  <meta name="github-repo" content="PedroNSilva/amotepur" />
+  <meta name="github-repo" content="Amotepur/livro" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 9 Outros Métodos de Amostragem com Equiprobabilidade | Amostragem: Teoria e Prática Usando R" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
@@ -473,7 +475,7 @@ A Tabela <a href="binom.html#tab:tabbin1">9.1</a> resume os resultados para esti
 <div id="exemplos-de-aplicação-da-amostragem-binomial" class="section level3">
 <h3><span class="header-section-number">9.1.5</span> Exemplos de aplicação da amostragem binomial</h3>
 <p>Um exemplo clássico ocorre na inspeção alfandegária praticada na saída de passageiros chegando de vôos internacionais num aeroporto. Quando cada passageiro aperta o botão para saber se sua bagagem será ou não inspecionada pela autoridade aduaneira, está em ação um processo de Amostragem Binomial. Não sabemos o valor da fração amostral estabelecida pela autoridade aduaneira, mas este é o único parâmetro necessário para especificar completamente o processo de amostragem em questão.</p>
-<p>A Amostragem Sistemática também seria viável nesse caso, mas poderia ser mais facilmente burlada por pessoas interessadas em não ter sua bagagem inspecionada, caso fossem capazes de detectar qual é o valor do pulo <span class="math inline">\(K\)</span> sendo praticado. O emprego de Amostragem Binomial impede essa prática, ao tornar imprevisível o resultado de cada sorteio que define se o passageiro terá ou não sua bagagem inspecionada. Esta ‘proteção’ se aplica tanto a comportamentos inadequados dos passageiros alvo da inspeção quanto de agentes encarregados da inspeção, já que nenhum dos dois poderia predizer o resultado do sorteio que define se a bagagem de um passageiro deve ou não ser inspecionada.</p>
+<p>A Amostragem Sistemática também seria viável nesse caso, mas poderia ser mais facilmente burlada por pessoas interessadas em não ter sua bagagem inspecionada, caso fossem capazes de detectar qual é o valor do pulo <span class="math inline">\(K\)</span> sendo praticado. O emprego de Amostragem Binomial impede essa prática, ao tornar imprevisível o resultado de cada sorteio que define se o passageiro terá ou não sua bagagem inspecionada. Esta 'proteção' se aplica tanto a comportamentos inadequados dos passageiros alvo da inspeção quanto de agentes encarregados da inspeção, já que nenhum dos dois poderia predizer o resultado do sorteio que define se a bagagem de um passageiro deve ou não ser inspecionada.</p>
 <p>Aplicações de Amostragem Binomial para populações em fluxo são convenientes, pois dispensam lista ou cadastro prévios. Como desvantagem, deve-se evitar seu uso sempre que <span class="math inline">\(P(n=0)\)</span> for ‘grande’, pois no caso em que o tamanho efetivo da amostra for nulo é impossível fazer inferência sobre quaisquer parâmetros populacionais de interesse.</p>
 </div>
 </div>
@@ -828,7 +830,7 @@ V({\overline y}_M)=\frac1{N^2}\sum_{i\in U}\sum_{(j&lt;i)\in U}\left(1-\sum_{s\n
 <li>Uma AAS de tamanho <span class="math inline">\(n=6\)</span>?</li>
 <li>Uma amostra de Bernoulli com <span class="math inline">\(\pi=0,2\)</span>?</li>
 </ol>
-<p><strong>Exercício 9.4 </strong> Acesse <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9662-censo-demografico-2010.html?=&amp;t=downloads" class="uri">https://www.ibge.gov.br/estatisticas/sociais/populacao/9662-censo-demografico-2010.html?=&amp;t=downloads</a>, que é uma área de <em><strong>Downloads</strong></em> do <em>site</em> do IBGE. Busque na área referente ao Censo 2010 e, em <em>resultados</em>, o arquivo ‘total_populacao_minas_gerais.zip’. Esse arquivo é uma planilha contendo os resultados para os totais populacionais de cada um dos municípios de Minas Gerais. Selecione uma amostra Binomial dos municípios, com <span class="math inline">\(\pi=0,10\)</span> e, com ela:</p>
+<p><strong>Exercício 9.4 </strong> Acesse <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9662-censo-demografico-2010.html?=&amp;t=downloads" class="uri">https://www.ibge.gov.br/estatisticas/sociais/populacao/9662-censo-demografico-2010.html?=&amp;t=downloads</a>, que é uma área de <em><strong>Downloads</strong></em> do <em>site</em> do IBGE. Busque na área referente ao Censo 2010 e, em <em>resultados</em>, o arquivo 'total_populacao_minas_gerais.zip'. Esse arquivo é uma planilha contendo os resultados para os totais populacionais de cada um dos municípios de Minas Gerais. Selecione uma amostra Binomial dos municípios, com <span class="math inline">\(\pi=0,10\)</span> e, com ela:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Calcule a estimativa do total populacional para Minas Gerais em 2010, baseada na amostra selecionada.</li>
 <li>Construa o <span class="math inline">\(IC_{95\%}\)</span> para a estimativa.</li>
