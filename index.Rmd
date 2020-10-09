@@ -17,7 +17,7 @@ bibliography: [book.bib]
 csl: Modified-apa.csl
 suppress-bibliography: false
 link-citations: no
-github-repo: Amotepur/livro
+github-repo: AmostragemcomR/livro
 description: "Este é o livro de Amostragem elaborado pelos autores."
 ---
 
