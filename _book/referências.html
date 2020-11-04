@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html  lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Amostragem: Teoria e Prática Usando R</title>
+  <meta name="description" content="Este é o livro de Amostragem elaborado pelos autores.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Amostragem: Teoria e Prática Usando R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este é o livro de Amostragem elaborado pelos autores." />
+  <meta name="github-repo" content="AmostragemcomR/livro" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Amostragem: Teoria e Prática Usando R" />
+  
+  <meta name="twitter:description" content="Este é o livro de Amostragem elaborado pelos autores." />
+  
+
+<meta name="author" content="Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="calib.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
+<li class="chapter" data-level="" data-path="agradecimentos.html"><a href="agradecimentos.html"><i class="fa fa-check"></i>Agradecimentos</a></li>
+<li class="chapter" data-level="" data-path="lista-de-figuras.html"><a href="lista-de-figuras.html"><i class="fa fa-check"></i>Lista de Figuras</a></li>
+<li class="chapter" data-level="" data-path="lista-de-siglas.html"><a href="lista-de-siglas.html"><i class="fa fa-check"></i>Lista de Siglas</a></li>
+<li class="chapter" data-level="" data-path="lista-de-tabelas.html"><a href="lista-de-tabelas.html"><i class="fa fa-check"></i>Lista de Tabelas</a></li>
+<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
+<li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="conceitos.html"><a href="conceitos.html"><i class="fa fa-check"></i><b>2</b> Conceitos e Cadastros</a><ul>
+<li class="chapter" data-level="2.1" data-path="conceitos.html"><a href="conceitos.html#fontes-de-dados-e-tipos-de-pesquisas"><i class="fa fa-check"></i><b>2.1</b> Fontes de dados e tipos de pesquisas</a></li>
+<li class="chapter" data-level="2.2" data-path="conceitos.html"><a href="conceitos.html#alguns-conceitos-fundamentais"><i class="fa fa-check"></i><b>2.2</b> Alguns conceitos fundamentais</a></li>
+<li class="chapter" data-level="2.3" data-path="conceitos.html"><a href="conceitos.html#abordalt"><i class="fa fa-check"></i><b>2.3</b> Abordagens alternativas para pesquisas por amostragem</a></li>
+<li class="chapter" data-level="2.4" data-path="conceitos.html"><a href="conceitos.html#planejamento-e-execução-de-pesquisas-por-amostragem"><i class="fa fa-check"></i><b>2.4</b> Planejamento e execução de pesquisas por amostragem</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="conceitos.html"><a href="conceitos.html#especificação-das-necessidades-da-pesquisa"><i class="fa fa-check"></i><b>2.4.1</b> Especificação das necessidades da pesquisa</a></li>
+<li class="chapter" data-level="2.4.2" data-path="conceitos.html"><a href="conceitos.html#planejamento-da-pesquisa"><i class="fa fa-check"></i><b>2.4.2</b> Planejamento da pesquisa</a></li>
+<li class="chapter" data-level="2.4.3" data-path="conceitos.html"><a href="conceitos.html#elaboração-dos-instrumentos-de-coleta-e-dos-sistemas"><i class="fa fa-check"></i><b>2.4.3</b> Elaboração dos instrumentos de coleta e dos sistemas</a></li>
+<li class="chapter" data-level="2.4.4" data-path="conceitos.html"><a href="conceitos.html#coleta-dos-dados"><i class="fa fa-check"></i><b>2.4.4</b> Coleta dos dados</a></li>
+<li class="chapter" data-level="2.4.5" data-path="conceitos.html"><a href="conceitos.html#processamento-da-pesquisa"><i class="fa fa-check"></i><b>2.4.5</b> Processamento da pesquisa</a></li>
+<li class="chapter" data-level="2.4.6" data-path="conceitos.html"><a href="conceitos.html#análise-dos-dados-da-pesquisa"><i class="fa fa-check"></i><b>2.4.6</b> Análise dos dados da pesquisa</a></li>
+<li class="chapter" data-level="2.4.7" data-path="conceitos.html"><a href="conceitos.html#disseminação-dos-resultados-da-pesquisa"><i class="fa fa-check"></i><b>2.4.7</b> Disseminação dos resultados da pesquisa</a></li>
+<li class="chapter" data-level="2.4.8" data-path="conceitos.html"><a href="conceitos.html#arquivamento-das-informações-da-pesquisa"><i class="fa fa-check"></i><b>2.4.8</b> Arquivamento das informações da pesquisa</a></li>
+<li class="chapter" data-level="2.4.9" data-path="conceitos.html"><a href="conceitos.html#avaliação-da-pesquisa"><i class="fa fa-check"></i><b>2.4.9</b> Avaliação da pesquisa</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="conceitos.html"><a href="conceitos.html#cadastros"><i class="fa fa-check"></i><b>2.5</b> Cadastros</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="conceitos.html"><a href="conceitos.html#cadIBGE"><i class="fa fa-check"></i><b>2.5.1</b> Cadastros importantes no IBGE</a></li>
+<li class="chapter" data-level="2.5.2" data-path="conceitos.html"><a href="conceitos.html#defeitos-de-cadastros"><i class="fa fa-check"></i><b>2.5.2</b> Defeitos de cadastros</a></li>
+<li class="chapter" data-level="2.5.3" data-path="conceitos.html"><a href="conceitos.html#regras-de-associação-das-unidades-da-população-à-unidade-cadastral"><i class="fa fa-check"></i><b>2.5.3</b> Regras de associação das unidades da população à unidade cadastral</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="conceitos.html"><a href="conceitos.html#exerc2"><i class="fa fa-check"></i><b>2.6</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visger.html"><a href="visger.html"><i class="fa fa-check"></i><b>3</b> Visão Geral da Amostragem e Estimação</a><ul>
+<li class="chapter" data-level="3.1" data-path="visger.html"><a href="visger.html#definições-e-notação-para-população-de-pesquisa-e-parâmetros-selecionados"><i class="fa fa-check"></i><b>3.1</b> Definições e notação para população de pesquisa e parâmetros selecionados</a></li>
+<li class="chapter" data-level="3.2" data-path="visger.html"><a href="visger.html#amostra"><i class="fa fa-check"></i><b>3.2</b> Amostra</a></li>
+<li class="chapter" data-level="3.3" data-path="visger.html"><a href="visger.html#amostragem-probabilística"><i class="fa fa-check"></i><b>3.3</b> Amostragem probabilística</a></li>
+<li class="chapter" data-level="3.4" data-path="visger.html"><a href="visger.html#estatísticas-estimadores-e-estimativas"><i class="fa fa-check"></i><b>3.4</b> Estatísticas, estimadores e estimativas</a></li>
+<li class="chapter" data-level="3.5" data-path="visger.html"><a href="visger.html#a-distribuição-de-aleatorização"><i class="fa fa-check"></i><b>3.5</b> A distribuição de aleatorização</a></li>
+<li class="chapter" data-level="3.6" data-path="visger.html"><a href="visger.html#estimadores-não-viciados-para-o-total-populacional"><i class="fa fa-check"></i><b>3.6</b> Estimadores não viciados para o total populacional</a></li>
+<li class="chapter" data-level="3.7" data-path="visger.html"><a href="visger.html#teoria-básica"><i class="fa fa-check"></i><b>3.7</b> Teoria básica</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="visger.html"><a href="visger.html#estimador-linear-de-total"><i class="fa fa-check"></i><b>3.7.1</b> Estimador linear de total</a></li>
+<li class="chapter" data-level="3.7.2" data-path="visger.html"><a href="visger.html#propHT"><i class="fa fa-check"></i><b>3.7.2</b> Propriedades do estimador de Horvitz-Thompson</a></li>
+<li class="chapter" data-level="3.7.3" data-path="visger.html"><a href="visger.html#estimação-da-média-populacional"><i class="fa fa-check"></i><b>3.7.3</b> Estimação da média populacional</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="visger.html"><a href="visger.html#exerc3"><i class="fa fa-check"></i><b>3.8</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="aas.html"><a href="aas.html"><i class="fa fa-check"></i><b>4</b> Amostragem Aleatória Simples</a><ul>
+<li class="chapter" data-level="4.1" data-path="aas.html"><a href="aas.html#planos-amostrais-e-algoritmos-de-seleção"><i class="fa fa-check"></i><b>4.1</b> Planos amostrais e algoritmos de seleção</a></li>
+<li class="chapter" data-level="4.2" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-com-reposição"><i class="fa fa-check"></i><b>4.2</b> Amostragem aleatória simples com reposição</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="aas.html"><a href="aas.html#estimação-do-total-e-média-populacionais-sob-aasc"><i class="fa fa-check"></i><b>4.2.1</b> Estimação do total e média populacionais sob AASC</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-sem-reposição"><i class="fa fa-check"></i><b>4.3</b> Amostragem aleatória simples sem reposição</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="aas.html"><a href="aas.html#algoritmo-convencional-para-selecionar-uma-aas"><i class="fa fa-check"></i><b>4.3.1</b> Algoritmo “convencional” para selecionar uma AAS</a></li>
+<li class="chapter" data-level="4.3.2" data-path="aas.html"><a href="aas.html#Hajek"><i class="fa fa-check"></i><b>4.3.2</b> Algoritmo de Hàjek para selecionar AAS</a></li>
+<li class="chapter" data-level="4.3.3" data-path="aas.html"><a href="aas.html#algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas"><i class="fa fa-check"></i><b>4.3.3</b> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</a></li>
+<li class="chapter" data-level="4.3.4" data-path="aas.html"><a href="aas.html#probabilidades-de-inclusão-sob-aas"><i class="fa fa-check"></i><b>4.3.4</b> Probabilidades de inclusão sob AAS</a></li>
+<li class="chapter" data-level="4.3.5" data-path="aas.html"><a href="aas.html#estimador-não-viciado-do-total-e-média-populacionais-sob-aas"><i class="fa fa-check"></i><b>4.3.5</b> Estimador não viciado do total e média populacionais sob AAS</a></li>
+<li class="chapter" data-level="4.3.6" data-path="aas.html"><a href="aas.html#distribuição-da-média-amostral"><i class="fa fa-check"></i><b>4.3.6</b> Distribuição da média amostral</a></li>
+<li class="chapter" data-level="4.3.7" data-path="aas.html"><a href="aas.html#comparação-dos-planos-de-amostragem-aleatória-simples-com-e-sem-reposição"><i class="fa fa-check"></i><b>4.3.7</b> Comparação dos planos de amostragem aleatória simples com e sem reposição</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="aas.html"><a href="aas.html#determinação-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>4.4</b> Determinação do tamanho da amostra</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="aas.html"><a href="aas.html#tamanho-amostral-para-custo-fixado"><i class="fa fa-check"></i><b>4.4.1</b> Tamanho amostral para custo fixado</a></li>
+<li class="chapter" data-level="4.4.2" data-path="aas.html"><a href="aas.html#tamanho-amostral-para-precisão-fixada"><i class="fa fa-check"></i><b>4.4.2</b> Tamanho amostral para precisão fixada</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="aas.html"><a href="aas.html#exerc4"><i class="fa fa-check"></i><b>4.5</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="proporc.html"><a href="proporc.html"><i class="fa fa-check"></i><b>5</b> Estimação de Proporções</a><ul>
+<li class="chapter" data-level="5.1" data-path="proporc.html"><a href="proporc.html#parâmetros-populacionais"><i class="fa fa-check"></i><b>5.1</b> Parâmetros populacionais</a></li>
+<li class="chapter" data-level="5.2" data-path="proporc.html"><a href="proporc.html#estimação-sob-amostragem-aleatória-simples-com-reposição"><i class="fa fa-check"></i><b>5.2</b> Estimação sob amostragem aleatória simples com reposição</a></li>
+<li class="chapter" data-level="5.3" data-path="proporc.html"><a href="proporc.html#estimação-sob-amostragem-aleatória-simples-sem-reposição"><i class="fa fa-check"></i><b>5.3</b> Estimação sob amostragem aleatória simples sem reposição</a></li>
+<li class="chapter" data-level="5.4" data-path="proporc.html"><a href="proporc.html#distribuição-amostral-exata-de-estimadores-de-proporção-sob-aasc-e-aas"><i class="fa fa-check"></i><b>5.4</b> Distribuição amostral exata de estimadores de proporção sob AASC e AAS</a></li>
+<li class="chapter" data-level="5.5" data-path="proporc.html"><a href="proporc.html#intervalos-de-confiança-para-proporções-na-amostragem-aleatória-simples"><i class="fa fa-check"></i><b>5.5</b> Intervalos de confiança para proporções na amostragem aleatória simples</a></li>
+<li class="chapter" data-level="5.6" data-path="proporc.html"><a href="proporc.html#intervalos-de-confiança-utilizando-a-aproximação-normal"><i class="fa fa-check"></i><b>5.6</b> Intervalos de confiança utilizando a aproximação Normal</a></li>
+<li class="chapter" data-level="5.7" data-path="proporc.html"><a href="proporc.html#cálculo-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>5.7</b> Cálculo do tamanho da amostra</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="proporc.html"><a href="proporc.html#cálculo-do-n-utilizando-outras-formas-de-representar-o-erro-amostral"><i class="fa fa-check"></i><b>5.7.1</b> Cálculo do <span class="math inline">\(n\)</span> utilizando outras formas de representar o erro amostral</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="proporc.html"><a href="proporc.html#estimação-de-proporções-para-variáveis-com-mais-de-duas-categorias"><i class="fa fa-check"></i><b>5.8</b> Estimação de proporções para variáveis com mais de duas categorias</a></li>
+<li class="chapter" data-level="5.9" data-path="proporc.html"><a href="proporc.html#exerc5"><i class="fa fa-check"></i><b>5.9</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="razao.html"><a href="razao.html"><i class="fa fa-check"></i><b>6</b> Estimação de Razões e Funções de Totais</a><ul>
+<li class="chapter" data-level="6.1" data-path="razao.html"><a href="razao.html#razões-populacionais-como-parâmetros-de-interesse"><i class="fa fa-check"></i><b>6.1</b> Razões populacionais como parâmetros de interesse</a></li>
+<li class="chapter" data-level="6.2" data-path="razao.html"><a href="razao.html#razão-de-médias-versus-média-de-razões"><i class="fa fa-check"></i><b>6.2</b> Razão de médias <em>versus</em> média de razões</a></li>
+<li class="chapter" data-level="6.3" data-path="razao.html"><a href="razao.html#outras-funções-de-totais"><i class="fa fa-check"></i><b>6.3</b> Outras funções de totais</a></li>
+<li class="chapter" data-level="6.4" data-path="razao.html"><a href="razao.html#estimadores-de-razões-de-totais"><i class="fa fa-check"></i><b>6.4</b> Estimadores de razões de totais</a></li>
+<li class="chapter" data-level="6.5" data-path="razao.html"><a href="razao.html#estoft"><i class="fa fa-check"></i><b>6.5</b> Estimadores para outras funções de totais</a></li>
+<li class="chapter" data-level="6.6" data-path="razao.html"><a href="razao.html#vicioraz"><i class="fa fa-check"></i><b>6.6</b> Análise do vício do estimador da razão</a></li>
+<li class="chapter" data-level="6.7" data-path="razao.html"><a href="razao.html#erro-quadrático-médio-de-widehatr"><i class="fa fa-check"></i><b>6.7</b> Erro quadrático médio de <span class="math inline">\(\widehat{R}\)</span></a></li>
+<li class="chapter" data-level="6.8" data-path="razao.html"><a href="razao.html#exerc6"><i class="fa fa-check"></i><b>6.8</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="domin.html"><a href="domin.html"><i class="fa fa-check"></i><b>7</b> Estimação para Domínios de Estudo</a><ul>
+<li class="chapter" data-level="7.1" data-path="domin.html"><a href="domin.html#domin1"><i class="fa fa-check"></i><b>7.1</b> Domínios de estudo</a></li>
+<li class="chapter" data-level="7.2" data-path="domin.html"><a href="domin.html#domin2"><i class="fa fa-check"></i><b>7.2</b> Parâmetros de interesse para domínios</a></li>
+<li class="chapter" data-level="7.3" data-path="domin.html"><a href="domin.html#estimação-de-parâmetros-para-domínios-sob-aas"><i class="fa fa-check"></i><b>7.3</b> Estimação de parâmetros para domínios sob AAS</a></li>
+<li class="chapter" data-level="7.4" data-path="domin.html"><a href="domin.html#intervalos-de-confiança-para-os-parâmetros-para-o-domínio"><i class="fa fa-check"></i><b>7.4</b> Intervalos de confiança para os parâmetros para o domínio</a></li>
+<li class="chapter" data-level="7.5" data-path="domin.html"><a href="domin.html#propriedades-condicionais-fixando-n_c"><i class="fa fa-check"></i><b>7.5</b> Propriedades condicionais (fixando <span class="math inline">\(n_c\)</span>)</a></li>
+<li class="chapter" data-level="7.6" data-path="domin.html"><a href="domin.html#estimação-do-total-no-domínio-quando-tamanho-do-domínio-é-conhecido"><i class="fa fa-check"></i><b>7.6</b> Estimação do total no domínio quando tamanho do domínio é conhecido</a></li>
+<li class="chapter" data-level="7.7" data-path="domin.html"><a href="domin.html#comparação-da-eficiência-dos-estimadores-de-total-no-domínio"><i class="fa fa-check"></i><b>7.7</b> Comparação da eficiência dos estimadores de total no domínio</a></li>
+<li class="chapter" data-level="7.8" data-path="domin.html"><a href="domin.html#estimação-de-proporções-dentro-do-domínio"><i class="fa fa-check"></i><b>7.8</b> Estimação de proporções dentro do domínio</a></li>
+<li class="chapter" data-level="7.9" data-path="domin.html"><a href="domin.html#exerc7"><i class="fa fa-check"></i><b>7.9</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="AS.html"><a href="AS.html"><i class="fa fa-check"></i><b>8</b> Amostragem Sistemática Simples</a><ul>
+<li class="chapter" data-level="8.1" data-path="AS.html"><a href="AS.html#ideia-básica"><i class="fa fa-check"></i><b>8.1</b> Ideia básica</a></li>
+<li class="chapter" data-level="8.2" data-path="AS.html"><a href="AS.html#método-de-seleção-da-amostra"><i class="fa fa-check"></i><b>8.2</b> Método de seleção da amostra</a></li>
+<li class="chapter" data-level="8.3" data-path="AS.html"><a href="AS.html#composição-das-amostras-sistemáticas-simples"><i class="fa fa-check"></i><b>8.3</b> Composição das amostras sistemáticas simples</a></li>
+<li class="chapter" data-level="8.4" data-path="AS.html"><a href="AS.html#probabilidades-de-inclusão-na-amostragem-sistemática-simples"><i class="fa fa-check"></i><b>8.4</b> Probabilidades de inclusão na amostragem sistemática simples</a></li>
+<li class="chapter" data-level="8.5" data-path="AS.html"><a href="AS.html#variáveis-aleatórias-indicadoras---propriedades"><i class="fa fa-check"></i><b>8.5</b> Variáveis aleatórias indicadoras - propriedades</a></li>
+<li class="chapter" data-level="8.6" data-path="AS.html"><a href="AS.html#estimação-de-totais-sob-amostragem-sistemática-simples"><i class="fa fa-check"></i><b>8.6</b> Estimação de totais sob amostragem sistemática simples</a></li>
+<li class="chapter" data-level="8.7" data-path="AS.html"><a href="AS.html#estimação-de-médias-sob-amostragem-sistemática-simples"><i class="fa fa-check"></i><b>8.7</b> Estimação de médias sob amostragem sistemática simples</a></li>
+<li class="chapter" data-level="8.8" data-path="AS.html"><a href="AS.html#estimação-de-uma-proporção-na-amostragem-sistemática-simples"><i class="fa fa-check"></i><b>8.8</b> Estimação de uma proporção na amostragem sistemática simples</a></li>
+<li class="chapter" data-level="8.9" data-path="AS.html"><a href="AS.html#variância-dos-estimadores-sob-amostragem-sistemática-simples"><i class="fa fa-check"></i><b>8.9</b> Variância dos estimadores sob amostragem sistemática simples</a></li>
+<li class="chapter" data-level="8.10" data-path="AS.html"><a href="AS.html#estimação-de-variâncias-dos-estimadores-na-amostragem-sistemática-simples"><i class="fa fa-check"></i><b>8.10</b> Estimação de variâncias dos estimadores na amostragem sistemática simples</a></li>
+<li class="chapter" data-level="8.11" data-path="AS.html"><a href="AS.html#alternativas-para-seleção-com-amostragem-sistemática-simples"><i class="fa fa-check"></i><b>8.11</b> Alternativas para seleção com amostragem sistemática simples</a></li>
+<li class="chapter" data-level="8.12" data-path="AS.html"><a href="AS.html#exerc8"><i class="fa fa-check"></i><b>8.12</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="binom.html"><a href="binom.html"><i class="fa fa-check"></i><b>9</b> Outros Métodos de Amostragem com Equiprobabilidade</a><ul>
+<li class="chapter" data-level="9.1" data-path="binom.html"><a href="binom.html#binom2"><i class="fa fa-check"></i><b>9.1</b> Amostragem binomial ou de Bernoulli</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="binom.html"><a href="binom.html#binom3"><i class="fa fa-check"></i><b>9.1.1</b> Método de seleção da amostra</a></li>
+<li class="chapter" data-level="9.1.2" data-path="binom.html"><a href="binom.html#probabilidades-de-inclusão-na-amostragem-binomial"><i class="fa fa-check"></i><b>9.1.2</b> Probabilidades de inclusão na amostragem binomial</a></li>
+<li class="chapter" data-level="9.1.3" data-path="binom.html"><a href="binom.html#estAB"><i class="fa fa-check"></i><b>9.1.3</b> Estimação do total sob amostragem binomial</a></li>
+<li class="chapter" data-level="9.1.4" data-path="binom.html"><a href="binom.html#estimação-da-média-sob-amostragem-binomial"><i class="fa fa-check"></i><b>9.1.4</b> Estimação da média sob amostragem binomial</a></li>
+<li class="chapter" data-level="9.1.5" data-path="binom.html"><a href="binom.html#exemplos-de-aplicação-da-amostragem-binomial"><i class="fa fa-check"></i><b>9.1.5</b> Exemplos de aplicação da amostragem binomial</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="binom.html"><a href="binom.html#inversa"><i class="fa fa-check"></i><b>9.2</b> Amostragem inversa simples</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="binom.html"><a href="binom.html#método-de-seleção-da-amostra-inversa-simples"><i class="fa fa-check"></i><b>9.2.1</b> Método de seleção da amostra inversa simples</a></li>
+<li class="chapter" data-level="9.2.2" data-path="binom.html"><a href="binom.html#amostragem-inversa-simples-para-varredura-por-amostragem"><i class="fa fa-check"></i><b>9.2.2</b> Amostragem inversa simples para varredura por amostragem</a></li>
+<li class="chapter" data-level="9.2.3" data-path="binom.html"><a href="binom.html#estimação-de-horvitz-thompson-na-amostragem-inversa-simples"><i class="fa fa-check"></i><b>9.2.3</b> Estimação de Horvitz-Thompson na amostragem inversa simples</a></li>
+<li class="chapter" data-level="9.2.4" data-path="binom.html"><a href="binom.html#estimação-baseada-no-estimador-de-murthy-na-amostragem-inversa-simples"><i class="fa fa-check"></i><b>9.2.4</b> Estimação baseada no estimador de Murthy na amostragem inversa simples</a></li>
+<li class="chapter" data-level="9.2.5" data-path="binom.html"><a href="binom.html#exemplos-de-aplicação-da-amostragem-inversa-simples"><i class="fa fa-check"></i><b>9.2.5</b> Exemplos de aplicação da amostragem inversa simples</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="binom.html"><a href="binom.html#exerc9"><i class="fa fa-check"></i><b>9.3</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ppt.html"><a href="ppt.html"><i class="fa fa-check"></i><b>10</b> Amostragem com Probabilidades Proporcionais ao Tamanho</a><ul>
+<li class="chapter" data-level="10.1" data-path="ppt.html"><a href="ppt.html#motivação-1"><i class="fa fa-check"></i><b>10.1</b> Motivação</a></li>
+<li class="chapter" data-level="10.2" data-path="ppt.html"><a href="ppt.html#estimação-do-total-populacional"><i class="fa fa-check"></i><b>10.2</b> Estimação do total populacional</a></li>
+<li class="chapter" data-level="10.3" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-com-reposição"><i class="fa fa-check"></i><b>10.3</b> Amostragem PPT com reposição</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="ppt.html"><a href="ppt.html#estimação-do-total-sob-amostragem-ppt-com-reposição"><i class="fa fa-check"></i><b>10.3.1</b> Estimação do total sob amostragem PPT com reposição</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-poisson"><i class="fa fa-check"></i><b>10.4</b> Amostragem PPT de Poisson</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="ppt.html"><a href="ppt.html#estimação-do-total-sob-amostragem-de-poisson"><i class="fa fa-check"></i><b>10.4.1</b> Estimação do total sob amostragem de Poisson</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ppt.html"><a href="ppt.html#ASP"><i class="fa fa-check"></i><b>10.5</b> Amostragem sequencial de Poisson</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="ppt.html"><a href="ppt.html#estimação-com-amostragem-sequencial-de-poisson"><i class="fa fa-check"></i><b>10.5.1</b> Estimação com amostragem sequencial de Poisson</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="ppt.html"><a href="ppt.html#amostragem-sistemática-com-ppt"><i class="fa fa-check"></i><b>10.6</b> Amostragem sistemática com PPT</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-sistemática-com-ordenação"><i class="fa fa-check"></i><b>10.6.1</b> Amostragem PPT sistemática com ordenação</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-pareto"><i class="fa fa-check"></i><b>10.7</b> Amostragem PPT de Pareto</a><ul>
+<li class="chapter" data-level="10.7.1" data-path="ppt.html"><a href="ppt.html#estimação-do-total-sob-amostragem-ppt-de-pareto"><i class="fa fa-check"></i><b>10.7.1</b> Estimação do total sob amostragem PPT de Pareto</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="ppt.html"><a href="ppt.html#exerc10"><i class="fa fa-check"></i><b>10.8</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="estrat.html"><a href="estrat.html"><i class="fa fa-check"></i><b>11</b> Amostragem Estratificada</a><ul>
+<li class="chapter" data-level="11.1" data-path="estrat.html"><a href="estrat.html#o-método-geral"><i class="fa fa-check"></i><b>11.1</b> O método geral</a></li>
+<li class="chapter" data-level="11.2" data-path="estrat.html"><a href="estrat.html#amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.2</b> Amostragem estratificada simples</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="estrat.html"><a href="estrat.html#método-de-seleção"><i class="fa fa-check"></i><b>11.2.1</b> Método de seleção</a></li>
+<li class="chapter" data-level="11.2.2" data-path="estrat.html"><a href="estrat.html#parâmetros-populacionais-1"><i class="fa fa-check"></i><b>11.2.2</b> Parâmetros populacionais</a></li>
+<li class="chapter" data-level="11.2.3" data-path="estrat.html"><a href="estrat.html#estimação-do-total-e-da-média-populacional"><i class="fa fa-check"></i><b>11.2.3</b> Estimação do total e da média populacional</a></li>
+<li class="chapter" data-level="11.2.4" data-path="estrat.html"><a href="estrat.html#intervalos-de-confiança"><i class="fa fa-check"></i><b>11.2.4</b> Intervalos de confiança</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="estrat.html"><a href="estrat.html#alocação-da-amostra-nos-estratos"><i class="fa fa-check"></i><b>11.3</b> Alocação da amostra nos estratos</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="estrat.html"><a href="estrat.html#alocação-proporcional"><i class="fa fa-check"></i><b>11.3.1</b> Alocação proporcional</a></li>
+<li class="chapter" data-level="11.3.2" data-path="estrat.html"><a href="estrat.html#alocação-ótima"><i class="fa fa-check"></i><b>11.3.2</b> Alocação ótima</a></li>
+<li class="chapter" data-level="11.3.3" data-path="estrat.html"><a href="estrat.html#tamanho-da-amostra-estratificada-simples"><i class="fa fa-check"></i><b>11.3.3</b> Tamanho da amostra estratificada simples</a></li>
+<li class="chapter" data-level="11.3.4" data-path="estrat.html"><a href="estrat.html#comparação-de-alternativas-de-alocação-da-amostra"><i class="fa fa-check"></i><b>11.3.4</b> Comparação de alternativas de alocação da amostra</a></li>
+<li class="chapter" data-level="11.3.5" data-path="estrat.html"><a href="estrat.html#alocação-potência"><i class="fa fa-check"></i><b>11.3.5</b> Alocação potência</a></li>
+<li class="chapter" data-level="11.3.6" data-path="estrat.html"><a href="estrat.html#alguns-problemas-com-alocação-ótima"><i class="fa fa-check"></i><b>11.3.6</b> Alguns problemas com alocação ótima</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="estrat.html"><a href="estrat.html#definição-dos-limites-dos-estratos"><i class="fa fa-check"></i><b>11.4</b> Definição dos limites dos estratos</a></li>
+<li class="chapter" data-level="11.5" data-path="estrat.html"><a href="estrat.html#número-de-estratos-na-amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.5</b> Número de estratos na amostragem estratificada simples</a></li>
+<li class="chapter" data-level="11.6" data-path="estrat.html"><a href="estrat.html#exerc11"><i class="fa fa-check"></i><b>11.6</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="cong.html"><a href="cong.html"><i class="fa fa-check"></i><b>12</b> Amostragem Conglomerada</a><ul>
+<li class="chapter" data-level="12.1" data-path="cong.html"><a href="cong.html#conceituação-básica"><i class="fa fa-check"></i><b>12.1</b> Conceituação básica</a></li>
+<li class="chapter" data-level="12.2" data-path="cong.html"><a href="cong.html#amostragem-de-áreas"><i class="fa fa-check"></i><b>12.2</b> Amostragem de áreas</a></li>
+<li class="chapter" data-level="12.3" data-path="cong.html"><a href="cong.html#definições-básicas-e-notação"><i class="fa fa-check"></i><b>12.3</b> Definições básicas e notação</a></li>
+<li class="chapter" data-level="12.4" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-um-estágio"><i class="fa fa-check"></i><b>12.4</b> Amostragem conglomerada em um estágio</a></li>
+<li class="chapter" data-level="12.5" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-vários-estágios"><i class="fa fa-check"></i><b>12.5</b> Amostragem conglomerada em vários estágios</a></li>
+<li class="chapter" data-level="12.6" data-path="cong.html"><a href="cong.html#notação-na-amostragem-conglomerada-em-um-estágio"><i class="fa fa-check"></i><b>12.6</b> Notação na amostragem conglomerada em um estágio</a></li>
+<li class="chapter" data-level="12.7" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-um-estágio-simples"><i class="fa fa-check"></i><b>12.7</b> Amostragem conglomerada em um estágio simples</a><ul>
+<li class="chapter" data-level="12.7.1" data-path="cong.html"><a href="cong.html#estimação-do-total-sob-ac1s"><i class="fa fa-check"></i><b>12.7.1</b> Estimação do total sob AC1S</a></li>
+<li class="chapter" data-level="12.7.2" data-path="cong.html"><a href="cong.html#estimação-da-média-sob-ac1s"><i class="fa fa-check"></i><b>12.7.2</b> Estimação da média sob AC1S</a></li>
+</ul></li>
+<li class="chapter" data-level="12.8" data-path="cong.html"><a href="cong.html#efeito-do-plano-amostral"><i class="fa fa-check"></i><b>12.8</b> Efeito do plano amostral</a></li>
+<li class="chapter" data-level="12.9" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-com-ppt-em-um-estágio"><i class="fa fa-check"></i><b>12.9</b> Amostragem conglomerada com PPT em um estágio</a></li>
+<li class="chapter" data-level="12.10" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-dois-estágios"><i class="fa fa-check"></i><b>12.10</b> Amostragem conglomerada em dois estágios</a><ul>
+<li class="chapter" data-level="12.10.1" data-path="cong.html"><a href="cong.html#ac2-com-aas-nos-2-estágios"><i class="fa fa-check"></i><b>12.10.1</b> AC2 com AAS nos 2 estágios</a></li>
+<li class="chapter" data-level="12.10.2" data-path="cong.html"><a href="cong.html#ac2-com-ppt-com-reposição-no-primeiro-estágio-e-aas-no-segundo-estágio"><i class="fa fa-check"></i><b>12.10.2</b> AC2 com PPT com reposição no primeiro estágio e AAS no segundo estágio</a></li>
+<li class="chapter" data-level="12.10.3" data-path="cong.html"><a href="cong.html#ac2-com-ppt-de-poisson-sequencial-no-primeiro-estágio-e-aas-no-segundo-estágio"><i class="fa fa-check"></i><b>12.10.3</b> AC2 com PPT de Poisson sequencial no primeiro estágio e AAS no segundo estágio</a></li>
+<li class="chapter" data-level="12.10.4" data-path="cong.html"><a href="cong.html#tamanho-de-amostra-na-amostragem-conglomerada-em-dois-estágios"><i class="fa fa-check"></i><b>12.10.4</b> Tamanho de amostra na amostragem conglomerada em dois estágios</a></li>
+</ul></li>
+<li class="chapter" data-level="12.11" data-path="cong.html"><a href="cong.html#ideias-básicas-na-escolha-de-unidades-compostas"><i class="fa fa-check"></i><b>12.11</b> Ideias básicas na escolha de unidades compostas</a></li>
+<li class="chapter" data-level="12.12" data-path="cong.html"><a href="cong.html#exerc12"><i class="fa fa-check"></i><b>12.12</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="calib.html"><a href="calib.html"><i class="fa fa-check"></i><b>13</b> Estimadores de Calibração</a><ul>
+<li class="chapter" data-level="13.1" data-path="calib.html"><a href="calib.html#motiva13"><i class="fa fa-check"></i><b>13.1</b> Motivação</a></li>
+<li class="chapter" data-level="13.2" data-path="calib.html"><a href="calib.html#problema"><i class="fa fa-check"></i><b>13.2</b> O problema</a></li>
+<li class="chapter" data-level="13.3" data-path="calib.html"><a href="calib.html#estreg"><i class="fa fa-check"></i><b>13.3</b> Estimadores de regressão como estimadores de calibração</a></li>
+<li class="chapter" data-level="13.4" data-path="calib.html"><a href="calib.html#propriedades-dos-estimadores-de-calibração"><i class="fa fa-check"></i><b>13.4</b> Propriedades dos estimadores de calibração</a><ul>
+<li class="chapter" data-level="13.4.1" data-path="calib.html"><a href="calib.html#propriedades-dos-estimadores-para-grandes-amostras"><i class="fa fa-check"></i><b>13.4.1</b> Propriedades dos estimadores para grandes amostras</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="calib.html"><a href="calib.html#razCS"><i class="fa fa-check"></i><b>13.5</b> Estimadores de razão como casos particulares da calibração</a><ul>
+<li class="chapter" data-level="13.5.1" data-path="calib.html"><a href="calib.html#estimador-de-razão-combinada-sob-aes"><i class="fa fa-check"></i><b>13.5.1</b> Estimador de razão combinada sob AES</a></li>
+<li class="chapter" data-level="13.5.2" data-path="calib.html"><a href="calib.html#estimador-de-razão-separada-sob-aes"><i class="fa fa-check"></i><b>13.5.2</b> Estimador de razão separada sob AES</a></li>
+<li class="chapter" data-level="13.5.3" data-path="calib.html"><a href="calib.html#comparação-dos-estimadores-de-razão-combinada-e-separada"><i class="fa fa-check"></i><b>13.5.3</b> Comparação dos estimadores de razão combinada e separada</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="calib.html"><a href="calib.html#alguns-problemas-práticos-com-calibração"><i class="fa fa-check"></i><b>13.6</b> Alguns problemas práticos com calibração</a><ul>
+<li class="chapter" data-level="13.6.1" data-path="calib.html"><a href="calib.html#tamanhos-de-amostra-pequenos"><i class="fa fa-check"></i><b>13.6.1</b> Tamanhos de amostra pequenos</a></li>
+<li class="chapter" data-level="13.6.2" data-path="calib.html"><a href="calib.html#pesos-negativos-ou-extremos"><i class="fa fa-check"></i><b>13.6.2</b> Pesos negativos ou extremos</a></li>
+<li class="chapter" data-level="13.6.3" data-path="calib.html"><a href="calib.html#grande-número-de-variáveis-de-pesquisa-ou-de-grupos-de-modelagem"><i class="fa fa-check"></i><b>13.6.3</b> Grande número de variáveis de pesquisa ou de grupos de modelagem</a></li>
+<li class="chapter" data-level="13.6.4" data-path="calib.html"><a href="calib.html#gvaraux"><i class="fa fa-check"></i><b>13.6.4</b> Grande número de variáveis auxiliares</a></li>
+<li class="chapter" data-level="13.6.5" data-path="calib.html"><a href="calib.html#não-resposta-e-calibração"><i class="fa fa-check"></i><b>13.6.5</b> Não resposta e calibração</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="calib.html"><a href="calib.html#seleção-de-variáveis-para-calibração-com-não-resposta"><i class="fa fa-check"></i><b>13.7</b> Seleção de variáveis para calibração com não resposta</a></li>
+<li class="chapter" data-level="13.8" data-path="calib.html"><a href="calib.html#indicadores-de-qualidade-da-calibração"><i class="fa fa-check"></i><b>13.8</b> Indicadores de qualidade da calibração</a></li>
+<li class="chapter" data-level="13.9" data-path="calib.html"><a href="calib.html#um-guia-para-aplicação-de-calibração"><i class="fa fa-check"></i><b>13.9</b> Um guia para aplicação de calibração</a></li>
+<li class="chapter" data-level="13.10" data-path="calib.html"><a href="calib.html#observações-finais"><i class="fa fa-check"></i><b>13.10</b> Observações finais</a></li>
+<li class="chapter" data-level="13.11" data-path="calib.html"><a href="calib.html#exerc13"><i class="fa fa-check"></i><b>13.11</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Amostragem: Teoria e Prática Usando R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="referências" class="section level1 unnumbered">
+<h1>Referências</h1>
+<div style="text-align: justify">
+
+
+<div id="refs" class="references">
+<div>
+<p>Aires, N. e Rosén, B. (2005). On inclusion probabilities and relative estimator bias for Pareto <span class="math inline">\(\pi\)</span>ps sampling. <em>Journal of Statistical Planning and Inference</em>, <em>128</em>(2), 543–567.</p>
+</div>
+<div>
+<p>Albieri, S. (2017). Evolução dos aspectos metodológicos na investigação por amostragem dos Censos Demográficos. In S. Albieri e A. J. R. Dias (orgs.), <em>40 Anos da Unidade de Métodos Estatísticos do IBGE: alguns passos</em> (p. 92–97). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv101284.pdf" class="uri">https://biblioteca.ibge.gov.br/visualizacao/livros/liv101284.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Albieri, S. e Bianchini, Z. M. (2015). <em>Principais Aspectos de Amostragem das Pesquisas Domiciliares do IBGE</em> (p. 50). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv94403.pdf" class="uri">https://biblioteca.ibge.gov.br/visualizacao/livros/liv94403.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Backstrom, C. H. e Hursh-César, G. (1981). <em>Survey Research, second edition</em> (p. 436). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Bankier, M. D. (1988). Power allocations: Determining sample sizes for subnational areas. <em>American Statistician</em>, <em>42</em>(3), 174–177.</p>
+</div>
+<div>
+<p>Bankier, M. D. (1989). Generalized least squares estimation under poststratification. <em>Proceedings of the Section on Survey Research Methods</em>, 730–735.</p>
+</div>
+<div>
+<p>Bankier, M. D.; Rathwel, S. e Majkowski, M. (1992). <em>Two step generalized least squares estimation in the 1991 Canadian Census</em> (p. 62). Statistics Canada.</p>
+</div>
+<div>
+<p>Berger, Y. G. (2003). <em>A Modified Hájek Variance Estimator for Systematic Sampling</em> (p. 1–13). University of Southampton.</p>
+</div>
+<div>
+<p>Bernier, N. e Lavallée, P. (1994). <em>The SAS macro: CALJACK</em> (p. 11). Statistics Canada, Social Survey Methods Division.</p>
+</div>
+<div>
+<p>Bethlehem, J. (1988). Reduction of nonresponse bias through regression estimation. <em>Journal of Official Statistics</em>, <em>4</em>(3), 251–260. Disponível em: <a href="https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/reduction-of-nonresponse-bias-through-regression-estimation.pdf" class="uri">https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/reduction-of-nonresponse-bias-through-regression-estimation.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Bethlehem, J. e Keller, W. J. (1987). Linear weighting of sample survey data. <em>Journal of Official Statistics</em>, <em>3</em>(2), 141–153. Disponível em: <a href="https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/linear-weighting-of-sample-survey-data.pdf" class="uri">https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/linear-weighting-of-sample-survey-data.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Biemer, P. e Lyberg, L. (2003). <em>Introduction to survey quality</em> (p. 402). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Bolfarine, H. e Bussab, W. O. (2005). <em>Elementos de Amostragem</em> (p. 274). Editora Edgard Blücher.</p>
+</div>
+<div>
+<p>Brewer, K. R. W. e Hanif, M. (1983). <em>Sampling With Unequal Probabilities</em> (p. 164). Springer-Verlag.</p>
+</div>
+<div>
+<p>Brito, J. A. M.; Maculan, N.; Lila, M. F. e Montenegro, F. T. (2010). An exact algorithm for the stratification problem with proportional allocation. <em>Optimization Letters</em>, <em>4</em>, 185–195.</p>
+</div>
+<div>
+<p>Brito, J. A. M.; Silva, P. L. N.; Semaan, G. S. e Maculan, N. (2015). Integer programming formulations applied to optimal allocation in stratified sampling. <em>Survey Methodology</em>, <em>41</em>(2), 427–442.</p>
+</div>
+<div>
+<p>Brito, J. A. M.; Veiga, T. M. e Silva, P. L. N. (2019). An optimisation algorithm applied to the one-dimensional stratification problem. <em>Survey Methodology</em>, <em>45</em>(2), 295–315.</p>
+</div>
+<div>
+<p>Bussab, W. O.; Andrade, D. F.; Silva, P. L. N. e Freitas, M. P. S. (1999). <em>Plano Amostral SAEB-99 - Definição do Plano Amostral</em> (p. 18). MEC/INEP.</p>
+</div>
+<div>
+<p>Chambers, R. L. (1997). Weighting and Calibration in Sample Survey Estimation. In C. Malaguerra; S. Morgenthaler; e E. Ronchetti (orgs.), <em>Conference on Statistical Science Honouring the Bicentennial of Stefano Franscini’s Birth</em> (p. 23). Springer Basel AG.</p>
+</div>
+<div>
+<p>Chambers, R. L. e Clark, R. G. (2012). <em>An Introduction to Model-Based Survey Sampling with Applications</em> (p. 265). Oxford University Press.</p>
+</div>
+<div>
+<p>Clark, R. G. (2002). <em>Sample design and estimation for household surveys</em> (p. 397) [Tese de doutorado]. University of Woolongong.</p>
+</div>
+<div>
+<p>Cochran, W. G. (1977). <em>Sampling Techniques</em> (3rd ed, p. 428). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Dalenius, T. e Hodges, J. L. (1959). Minimum Variance Stratification. <em>Journal of the American Statistical Association</em>, <em>54</em>(285), 88–101.</p>
+</div>
+<div>
+<p>Deville, J. C. e Särndal, C. E. (1992). Calibration estimators in survey sampling. <em>Journal of the American Statistical Association</em>, <em>87</em>, 376–382.</p>
+</div>
+<div>
+<p>Donoho, D. (2017). 50 Years of Data Science. <em>Journal of Computational and Graphical Statistics</em>, <em>26</em>(4), 745–766.</p>
+</div>
+<div>
+<p>Estevao, V. M. e Hidiroglou, M. A. (1995). Methodological principles for a generalized estimation system at Statistics Canada. <em>Journal of Official Statistics</em>, <em>11</em>(2), 181–204.</p>
+</div>
+<div>
+<p>Fan, C. T.; Muller, M. E. e Rezucha, I. (1962). Development of Sampling Plans by Using Sequential (Item by Item) Selection Techniques and Digital Computers. <em>Journal of the American Statistical Association</em>, <em>57</em>(298), 387–402.</p>
+</div>
+<div>
+<p>Freitas, M. P. S. e Antonaci, G. (2014). <em>Sistema Integrado de Pesquisa Domiciliares: Amostra Mestra 2010 e Amostra da PNAD Contínua</em> (p. 43). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv86747.pdf" class="uri">https://biblioteca.ibge.gov.br/visualizacao/livros/liv86747.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Fuller, W. A. (2009). <em>Sampling Statistics</em> (p. 454). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Gambino, J. (1999). Discussion of “Issues in weighting household and business surveys”. In I. S. Institute (org.), <em>52nd Session of the International Statistical Institute</em> (Vol. 3, p. 187–188). International Statistical Institute.</p>
+</div>
+<div>
+<p>Glasser, G. (1962). On the complete coverage of large units in a statistical study. <em>International Statistical Review</em>, <em>30</em>, 28–32.</p>
+</div>
+<div>
+<p>Groves, R. M. (2011). Three eras of survey research. <em>Public Opinion Quarterly</em>, <em>75</em>(5 SPEC. ISSUE), 861–871.</p>
+</div>
+<div>
+<p>Groves, R. M.; Fowler, F. J.; Couper, M. P.; Lepkowski, J. M.; Singer, E. e Tourangeau, R. (2009). <em>Survey Methodology, 2nd edition</em> (p. 461). John Wiley &amp; Sons Inc.</p>
+</div>
+<div>
+<p>GSBPM. (2013). <em>Generic Statistical Business Process Model: GSBPM: version 5.1</em> (p. 30). United Nations Economic Commission for Europe - UNECE. Disponível em: <a href="https://statswiki.unece.org/display/GSBPM/GSBPM+v5.0" class="uri">https://statswiki.unece.org/display/GSBPM/GSBPM+v5.0</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Gunning, P. e Horgan, J. (2004). A new algorithm for the construction of stratum boundaries. <em>Survey Methodology</em>, <em>30</em>(2), 159–166.</p>
+</div>
+<div>
+<p>Haldane, J. B. S. (1945). On a method of estimating frequencies. <em>Biometrika</em>, <em>33</em>, 222–225.</p>
+</div>
+<div>
+<p>Hansen, M. H. e Hurwitz, W. N. (1943). On the theory of sampling from finite populations. <em>Annals of Mathematical Statistics</em>, <em>14</em>, 333–362.</p>
+</div>
+<div>
+<p>Hàjek, J. (1960). Limiting distributions in simple random sampling from a finite population. <em>Publ. Math. Inst. Hung. Acad. Sci.</em>, <em>5</em>, 361–374.</p>
+</div>
+<div>
+<p>Hedlin, D. (2000). A procedure for stratification based on an extended Ekman rule. <em>Journal of Official Statistics</em>, <em>16</em>, 15–29.</p>
+</div>
+<div>
+<p>Hedlin, D.; Falvey, H.; Chambers, R. L. e Kokic, P. (2001). Does the model matter for GREG estimation? A business survey example. <em>Journal of Official Statistics</em>, <em>17</em>(4), 527–544.</p>
+</div>
+<div>
+<p>Hidiroglou, M. A. (1986). The construction of a self-representing stratum of large units in survey design. <em>The American Statistician</em>, <em>40</em>(1), 27–31.</p>
+</div>
+<div>
+<p>Holmes, D. J. e Skinner, C. J. (2000). <em>Variance Estimation for Labour Force Survey Estimates of Level and Change</em> (p. 1–40). University of Southampton.</p>
+</div>
+<div>
+<p>Horsfield, G. (2017). <em>International Passenger Survey methodological information</em> (p. 1–5). UK Office for National Statistics.</p>
+</div>
+<div>
+<p>Horvitz, D. G. e Thompson, D. J. (1952). A generalization of sampling without replacement from a finite universe. <em>Journal of the American Statistical Association</em>, <em>47</em>, 663–685.</p>
+</div>
+<div>
+<p>Huang, E. T. e Fuller, W. A. (1978). Nonnegative regression estimation for sample survey data. <em>Proceedings of the Social Statistics Section, American Statistical Association</em>, 300–304.</p>
+</div>
+<div>
+<p>IBGE. (2000). <em>Pesquisa Anual de Comércio - Série Relatórios Metodológicos</em> (2a edição, Vol. 12, p. 55). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv7052.pdf" class="uri">https://biblioteca.ibge.gov.br/visualizacao/livros/liv7052.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>IBGE. (2003a). <em>Metodologia do Censo Demográfico 2000</em> (p. 568). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv5295.pdf" class="uri">https://biblioteca.ibge.gov.br/visualizacao/livros/liv5295.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>IBGE. (2003b). <em>Pesquisa da Economia Informal Urbana</em> (p. 158). Instituto Brasileiro de Geografia e Estatística - IBGE.</p>
+</div>
+<div>
+<p>IBGE. (2004). <em>Pesquisa Nacional por Amostra de Domicílios 2004</em> (Vol. 25, p. 1–116). Instituto Brasileiro de Geografia e Estatística - IBGE.</p>
+</div>
+<div>
+<p>IBGE. (2014). <em>Pesquisa Nacional por Amostra de Domicílios Contínua - Notas Metodológicas - volume 1</em> (p. 47). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Notas_metodologicas/notas_metodologicas.pdf" class="uri">ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Notas_metodologicas/notas_metodologicas.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>IBGE. (2016a). <em>Metodologia do Censo Demográfico 2010, 2a edição</em> (p. 711). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="http://biblioteca.ibge.gov.br/visualizacao/livros/liv95987.pdf" class="uri">http://biblioteca.ibge.gov.br/visualizacao/livros/liv95987.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>IBGE. (2016b). <em>Pesquisa Nacional de Saúde do Escolar - PeNSE : 2015</em> (p. 132). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv97870.pdf" class="uri">https://biblioteca.ibge.gov.br/visualizacao/livros/liv97870.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>IBGE. (2019). <em>Quadro geográfico de referência para produção, análise e disseminação de estatísticas</em> (p. 178). Instituto Brasileiro de Geografia e Estatística - IBGE.</p>
+</div>
+<div>
+<p>IBGE. (2020). <em>Pesquisa Nacional por Amostra de Domicílios Contínua - Notas técnicas - Versão 1.7</em> (p. 124). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv101708_notas_tecnicas.pdf" class="uri">https://biblioteca.ibge.gov.br/visualizacao/livros/liv101708_notas_tecnicas.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Jordão, P. H. R. e Veloso, L. J. P. (2012). <em>Estimadores de Murthy e Horvitz-Thompson e suas aplicações em amostragem inversa simples</em> (p. 53). Escola Nacional de Ciencias Estatisticas- ENCE.</p>
+</div>
+<div>
+<p>Kish, L. (1965). <em>Survey Sampling</em> (p. 643). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Lavallée, P. e Hidiroglou, M. A. (1988). On the stratification of skewed populations. <em>Survey Methodology</em>, <em>14</em>, 33–43.</p>
+</div>
+<div>
+<p>Little, R. J. A. e Rubin, D. B. (2002). <em>Statistical analysis with missing data, 2nd edition</em> (p. 278). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Lohr, S. (2010). <em>Sampling Design and Analysis</em> (2nd ed, p. 596). Brooks/Cole.</p>
+</div>
+<div>
+<p>Lumley, T. (2010). <em>Complex Surveys: A Guide to Analysis Using R</em> (p. 276). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Lundström, S. (1997). <em>Calibration as a standard method for treatment of nonresponse</em> (p. 185). Stockholm University.</p>
+</div>
+<div>
+<p>Magalhães, M. N. (2006). <em>Probabilidade e Variáveis Aleatórias</em> (Segunda ed, p. 411). EDUSP.</p>
+</div>
+<div>
+<p>Magalhães, M. N. e Lima, A. C. P. (2004). <em>Noções de Probabilidade e Estatística</em> (6a. edição, p. 392). EDUSP.</p>
+</div>
+<div>
+<p>Mohammadi, M. e Salehi, M. M. (2012). Horvitz-Thompson estimator of population mean under inverse sampling designs. <em>Bulletin of the Iranian Mathematical Society</em>, <em>38</em>(2), 333–347.</p>
+</div>
+<div>
+<p>Murthy, M. N. (1957). Ordered and Unordered Estimators in Sampling without Replacement. <em>Sankhya: The Indian Journal of Statistics</em>, <em>18</em>(3/4), 379–390.</p>
+</div>
+<div>
+<p>Murthy, M. N. (1967). <em>Sampling Theory and Methods</em>. Statistical Publishing Society, Calcutta, India.</p>
+</div>
+<div>
+<p>Neyman, J. (1934). On the Two Different Aspects of the Representative Method: The Method of Stratified Sampling and the Method of Purposive Selection. <em>Journal of the Royal Statistical Society</em>, <em>97</em>(4), 558–625.</p>
+</div>
+<div>
+<p>Nieuwenbroek, N. e Boonstra, H. J. (2002). Bascula 4.0 for Weighting Sample Survey Data with Estimation of Variances. <em>The Survey Statistician</em>, <em>46</em>, 6–11.</p>
+</div>
+<div>
+<p>Ohlsson, E. (1998). Sequential Poisson Sampling. <em>Journal of Official Statistics</em>, <em>14</em>(2), 149–162.</p>
+</div>
+<div>
+<p>ONS. (2001). <em>Labour Force Survey - User Guide - Volume 1: Background and Methodology</em> (p. 1–55). Office for National Statistics.</p>
+</div>
+<div>
+<p>R Core Team. (2018). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Disponível em: <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Raj, D. (1956). Some Estimators in Sampling with Varying Probabilities without Replacement. <em>Journal of the American Statistical Association</em>, <em>51</em>(274), 269–284.</p>
+</div>
+<div>
+<p>Rao, J. N. K. e Singh, A. C. (2009). Range restricted weight calibration for survey data using ridge regression. <em>Pakistan Journal of Statistics</em>, <em>25</em>(4), 371–384.</p>
+</div>
+<div>
+<p>Rosén, B. (2000). <em>A User’s Guide to Pareto <span class="math inline">\(\pi\)</span>-ps Sampling</em> (p. 10). Statistics Sweden.</p>
+</div>
+<div>
+<p>Rubin, D. B. (1987). <em>Multiple imputation for nonresponse in surveys</em> (p. 258). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Salehi, M. M. e Seber, G. A. F. (2001). A New Proof of Murthy’s Estimator which Applies to Sequential Sampling. <em>The Australian and New Zealand Journal of Statistics</em>, <em>43</em>(3), 281–286.</p>
+</div>
+<div>
+<p>Sautory, O. (2003). CALMAR 2: A new version of the CALMAR calibration adjustment program. In S. Canada (org.), <em>Symposium 2003: Challenges in Survey Taking for the Next Decade</em>. Statistics Canada.</p>
+</div>
+<div>
+<p>Särndal, C. E. e Lundström, S. (1999). Calibration as a standard method for treatment of nonresponse. <em>Journal of Official Statistics</em>, <em>15</em>(2), 305–327.</p>
+</div>
+<div>
+<p>Särndal, C. E. e Lundström, S. (2005). <em>Estimation in surveys with nonresponse</em> (R. M. Groves; G. Kalton; J. N. K. Rao; N. Schwarz; e C. J. Skinner, orgs.). John Wiley &amp; Sons Ltd.</p>
+</div>
+<div>
+<p>Särndal, C. E. e Lundström, S. (2008). Assessing auxiliary vectors for control of nonresponse bias in the calibration estimator. <em>Journal of Official Statistics</em>, <em>24</em>(2), 167–191.</p>
+</div>
+<div>
+<p>Särndal, C. E. e Lundström, S. (2010). Design for estimation: Identifying auxiliary vectors to reduce nonresponse bias. <em>Survey Methodology</em>, <em>36</em>(2), 131–144.</p>
+</div>
+<div>
+<p>Särndal, C. E.; Swensson, B. e Wretman, J. H. (1989). The Weighted Residual Technique for Estimating the Variance of the General Regression Estimator of the Finite Population Total. <em>Biometrika</em>, <em>76</em>(3), 527–537.</p>
+</div>
+<div>
+<p>Särndal, C. E.; Swensson, B. e Wretman, J. H. (1992). <em>Model Assisted Survey Sampling</em>. Springer-Verlag.</p>
+</div>
+<div>
+<p>Schafer, J. L. (1997). <em>Analysis of Incomplete Multivariate Data</em> (p. 430). Chapman &amp; Hall / CRC.</p>
+</div>
+<div>
+<p>Scheaffer, R. L.; Mendenhall, W. e Ott, R. L. (1990). <em>Elementary Survey Sampling, 4th edition</em>. PWS-KENT Publishing Company.</p>
+</div>
+<div>
+<p>Scheaffer, R. L.; Mendenhall, W.; Ott, R. L. e Gerow, K. G. (2011). <em>Elementary Survey Sampling, 7th edition</em>. Cengage Learning.</p>
+</div>
+<div>
+<p>Sen, A. R. (1953). On the estimate of the variance in sampling with varying probabilities. <em>Journal of the Indian Society of Agricultural Statistics</em>, <em>5</em>, 119–127.</p>
+</div>
+<div>
+<p>Silva, P. L. N. (1996). <em>Utilizing auxiliary information in sample survey estimation and analysis</em> (p. 246) [Tese de doutorado]. University of Southampton.</p>
+</div>
+<div>
+<p>Silva, P. L. N. (2004). <em>Calibration Estimation: When and Why, How Much and How</em> (p. 35). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv66414.pdf" class="uri">https://biblioteca.ibge.gov.br/visualizacao/livros/liv66414.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Silva, P. L. N. e Moura, F. A. S. (1990). <em>Efeito de conglomeração da malha setorial do Censo Demográfico de 1980</em> (Vol. 32, p. 115). Instituto Brasileiro de Geografia e Estatística - IBGE. Disponível em: <a href="http://biblioteca.ibge.gov.br/visualizacao/livros/liv66426.pdf" class="uri">http://biblioteca.ibge.gov.br/visualizacao/livros/liv66426.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Silva, P. L. N. e Skinner, C. J. (1997). Variable selection for regression estimation in finite populations. <em>Survey Methodology</em>, <em>23</em>(1), 23–32.</p>
+</div>
+<div>
+<p>Skinner, C. J. (1999). Calibration Weighting And Non-Sampling Errors. <em>Research in Official Statistics</em>, <em>2</em>, 33–43. Disponível em: <a href="http://eprints.soton.ac.uk/34683/1/013s.pdf" class="uri">http://eprints.soton.ac.uk/34683/1/013s.pdf</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Statistics Canada. (2020). <em>Guide to the Labour Force Survey</em>. Disponível em: <a href="https://www150.statcan.gc.ca/n1/pub/71-543-g/71-543-g2020001-eng.htm" class="uri">https://www150.statcan.gc.ca/n1/pub/71-543-g/71-543-g2020001-eng.htm</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Thompson, S. K. (2012). <em>Sampling, third edition</em> (p. 343). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Tille, Y. (2016). Unequal probability inverse sampling. <em>Survey Methodology</em>, <em>42</em>(2), 283–295.</p>
+</div>
+<div>
+<p>Valliant, R.; Dorfman, A. H. e Royall, R. M. (2000). <em>Finite Population Sampling and Inference: A Prediction Approach</em> (p. 504). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Vanderhoeft, C. (2000). <em>Generalised Calibration at Statistics Belgium: SPSS Module G-CALIB-S and Current Practices</em>. Inst. National de Statistique. Disponível em: <a href="https://books.google.com.br/books?id=uSSfPgAACAAJ" class="uri">https://books.google.com.br/books?id=uSSfPgAACAAJ</a> (Acesso: set. 2020.)</p>
+</div>
+<div>
+<p>Vasconcellos, M. T. L.; Silva, P. L. N. e Szwarcwald, C. L. (2005). Sampling design for the World Health Survey in Brazil. <em>Cadernos de Saúde Pública</em>, <em>21</em>(S), S89–S99.</p>
+</div>
+<div>
+<p>Waal, T.; Pannekoek, J. e Scholtus, S. (2011). <em>Handbook of statistical data editing and imputation</em> (p. 439). John Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Wild, C. J. e Seber, G. A. F. (2004). <em>Encontros com o acaso: um primeiro curso de análise de dados e inferência</em> (p. 411). LTC - Livros Técnicos e Científicos Editora S.A.</p>
+</div>
+<div>
+<p>Yates, F. e Grundy, P. M. (1953). Selection Without Replacement from Within Strata with Probability Proportional to Size. <em>Journal of the Royal Statistical Society. Series B (Methodological)</em>, <em>15</em>(2), 253–261.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="calib.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

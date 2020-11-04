@@ -1,0 +1,45 @@
+k_filename: "bookdown-amotepur"
+language:
+  tables: yes
+  label:
+
+    fig:  "Figura "
+
+    tab:  "Tabela "
+
+    qua:  "Quadro "
+
+    eq :  "Equação "
+
+    thm:  "Teorema "
+
+    lem:  "Lema "
+
+    def:  "Definição "
+
+    cor: "Corolário "
+
+    prp: "Proposição "
+
+    exm: "Exemplo "
+
+    exr: "Exercício "
+
+    proof: "Prova. "
+
+    remark: "Observação. "
+
+  ui:
+
+    chapter_name: "Capítulo "
+
+
+output_dir: "docs"
+output_file: "docs/_main.pdf"
+
+rmd_files: ["index.Rmd", "00-agradecimentos.Rmd", "00-Siglas.Rmd","00-Tabelas.Rmd","00-Figuras.Rmd", 
+ "01-intro.Rmd", "02-conceitos.Rmd"]
+clean: [bookdown.bbl]
+new_session: yes
+delete_merged_file: TRUE
+
