@@ -46,7 +46,7 @@ Nos dois casos é fundamental ter acesso a cadastro(s) com informações complet
 
 Particione (divida) a população $U$ em $H$ subconjuntos (grupos) mutuamente exclusivos e exaustivos, chamados *estratos*, denotados por $U_1, ..., U_h, ..., U_H$, de modo que: 
 $$
-\small U = U_1 \cup \dots \cup U_h \cup \dots \cup U_H = \displaystyle \bigcup_{h=1}^H U_h\quad\text {e}\quad U_h \cap U_k = \emptyset, \, h \ne k
+U = U_1 \cup \dots \cup U_h \cup \dots \cup U_H = \displaystyle \bigcup_{h=1}^H U_h\quad\text {e}\quad U_h \cap U_k = \emptyset, \, h \ne k
 $$
 
 Então $U_h = \textrm {\{unidades pertencentes ao estrato h}\}$, para $h=1, 2, ...,H$.
@@ -92,20 +92,20 @@ Esta seção apresenta os resultados para AES, método que considera sorteio por
 Para cada estrato $h = 1, 2, \dots, H$, selecione por AAS uma amostra $s_h$ de tamanho $1 \le n_h \le N_h$ das $N_h$ unidades do estrato $U_h$, sempre de forma independente da seleção feita nos outros estratos. Qualquer um dos algoritmos descritos no Capítulo \@ref(aas) pode ser empregado para a seleção das amostras nos estratos. Segue-se então que o conjunto de todas as amostras possíveis $S_{AES}$ é formado por amostras da forma: 
 
 $$
-\small s = s_1 \cup \dots \cup s_h \cup \dots \cup s_H
+s = s_1 \cup \dots \cup s_h \cup \dots \cup s_H
 $$
 
 e seu tamanho é dado pelo produto dos tamanhos dos conjuntos de amostras possíveis em cada um dos estratos. Como em cada estrato usamos AAS, esses tamanhos são iguais a $\binom {N_h}{n_h}$ e, portanto, em cada estrato temos:
 
-\begin{equation}\small 
+$$
 p_h(s_h) = 1 \Big/ \binom {N_h}{n_h} = \binom {N_h}{n_h}^{-1} ,\,\,\, h = 1, 2, \dots, H \,\,  (\#eq:eqest1)
-\end{equation}
+$$
 
 Em consequência, o plano amostral $p_{AES}(s)$ é dado por:
 
-\begin{equation}\small 
+$$
 p_{AES}(s) = \prod_{h=1}^H p_h(s_h) = \prod_{h=1}^H \binom {N_h}{n_h}^{-1} \,\, (\#eq:eqest2) 
-\end{equation}
+$$
 
 onde $s \in S_{AES}$.
 
@@ -120,46 +120,45 @@ Seguem as definições de alguns parâmetros populacionais de uma variável de i
 A seguir são apresentadas definições para o total $Y_h$, a média $\overline {Y_h}$ e a variância $S_h^2(y)$ do estrato $h$:
 
 $$
-\small Y_h = \displaystyle \sum_{i \in U_h} y_{i}
+Y_h = \displaystyle \sum_{i \in U_h} y_{i}
 $$
 
 $$
-\small \overline {Y_h} = Y_h / N_h = \frac {1} {N_h} \displaystyle \sum_{i \in U_h} y_{i}
+\overline {Y_h} = Y_h / N_h = \frac {1} {N_h} \displaystyle \sum_{i \in U_h} y_{i}
 $$ 
 
 $$
-\small S_{h,y}^2 = \displaystyle \frac {1} {N_h-1} \sum_{i \in U_h}  (y_i - \overline {Y_h})^2
+S_{h,y}^2 = \displaystyle \frac {1} {N_h-1} \sum_{i \in U_h}  (y_i - \overline {Y_h})^2
 $$
 
 **Parâmetros populacionais (globais):**
 
 O total populacional é dado por: 
 
-\begin{equation}\small 
+$$
 Y = \displaystyle \sum_{h=1}^H Y_h = \displaystyle \sum_{h=1}^H N_h \overline {Y_h} (\#eq:eqest3)
-\end{equation}
+$$
 
 A média populacional é definida como:
 
-\begin{equation}\small 
+$$
 \overline Y = Y/N = \frac {1} {N}\displaystyle \sum_{h=1}^H N_h \overline {Y_h} = \sum_{h=1}^H W_h\overline {Y_h} (\#eq:eqest4)
-\end{equation}
+$$
 
 onde $W_h = N_h/N$ é o *peso* da média do estrato $h$, $h=1, 2, ..., H$, na composição da média populacional global.
 
 A variância populacional pode ser escrita como:
 
-\begin{equation}\small 
-\begin{aligned} 
-S_y^2 & =  \frac {1} {N-1} \sum_{h=1}^H \sum_{i \in U_h} \left( y_i - \overline Y \right)^2 \\ 
-& =  \frac {1} {N-1} \sum_{h=1}^H \sum_{i \in U_h} \left[ \left(y_i - \overline {Y_h} \right) + \left(\overline {Y_h} - \overline Y \right) \right]^2 \\ 
-& =  \frac {1} {N-1} \sum_{h=1}^H (N_h - 1) S_{h,y}^2 + \frac {1} {N-1} \sum_{h=1}^{H} {N_h} \left( \overline {Y_h} - \overline Y \right)^2 \\ 
- & =  S_D^2 + S_E^2 \end{aligned} (\#eq:eqest5)
-\end{equation}
-
+$$
+\begin{eqnarray} 
+S_y^2 & = & \frac {1} {N-1} \sum_{h=1}^H \sum_{i \in U_h} \left( y_i - \overline Y \right)^2 \\ 
+& = & \frac {1} {N-1} \sum_{h=1}^H \sum_{i \in U_h} \left[ \left(y_i - \overline {Y_h} \right) + \left(\overline {Y_h} - \overline Y \right) \right]^2 \\ 
+& = & \frac {1} {N-1} \sum_{h=1}^H (N_h - 1) S_{h,y}^2 + \frac {1} {N-1} \sum_{h=1}^{H} {N_h} \left( \overline {Y_h} - \overline Y \right)^2 \\ 
+ & = & S_D^2 + S_E^2 \end{eqnarray} (\#eq:eqest5)
+$$
 onde: 
 
-$$\small S_D^2 = \displaystyle  \sum_{h=1}^H  \frac {N_h - 1}{N - 1} S_{h,y}^2\;\;\;\text{e}\;\;\; S_E^2 = \displaystyle \sum_{h=1}^{H} \frac {N_h}{N - 1} \left( \overline {Y_h} - \overline Y \right)^2$$
+$$S_D^2 = \displaystyle  \sum_{h=1}^H  \frac {N_h - 1}{N - 1} S_{h,y}^2\;\;\;\text{e}\;\;\; S_E^2 = \displaystyle \sum_{h=1}^{H} \frac {N_h}{N - 1} \left( \overline {Y_h} - \overline Y \right)^2$$
 
 A Expressão \@ref(eq:eqest5) mostra uma decomposição útil da variância total da variável $y$ na população, com duas componentes que são conhecidas como *Variância Dentro* e *Variância Entre* estratos, respectivamente. Como se vê na sequência, por selecionar amostras de forma independente em *todos* os estratos definidos, a *amostragem estratificada* elimina a componente de variação *entre* os estratos ao estimar parâmetros do conjunto da população, tais como o total ou a média. Além disso, note que para uma variância total $S_y^2$ fixada, minimizar a *Variância Dentro* $S_D^2$, mediante a definição de estratos homogêneos em relação à variável de interesse, deve permitir eliminar grande parte da variação relevante para a estimação de totais e médias populacionais. 
 
@@ -169,19 +168,19 @@ A Expressão \@ref(eq:eqest5) mostra uma decomposição útil da variância tota
 Como a amostragem é feita independentemente por estrato, podemos estimar separadamente os parâmetros de cada estrato. Sob AES, os estimadores usuais dos parâmetros nos estratos são descritos a seguir:
 
 $$
-\small \widehat Y_h = \displaystyle \sum_{i \in s_h} d_i y_i = \frac{N_h}{n_h} \sum_{i \in s_h} y_i = N_h \overline y_h
+\widehat Y_h = \displaystyle \sum_{i \in s_h} d_i y_i = \frac{N_h}{n_h} \sum_{i \in s_h} y_i = N_h \overline y_h
 $$  
 
 é o estimador do total do estrato $h$ da variável $y$, onde $d_i = N_h / n_h$ é o peso da unidade i quando ela pertence ao estrato $h$. Note que o peso $d_i$ é o inverso da probabilidade de inclusão para unidades dentro de cada estrato $h$ sob AES. 
 
 $$
-\small \overline y_h = \frac{1}{n_h} \displaystyle \sum_{i \in s_h} y_i
+\overline y_h = \frac{1}{n_h} \displaystyle \sum_{i \in s_h} y_i
 $$ 
 
 é o estimador da média da variável $y$ no estrato $h$; e 
 
 $$
-\small \widehat S_{h,y}^2 = \frac{1}{n_h - 1} \displaystyle \sum_{i \in s_h} \left( y_i - \overline y_h \right)^2
+\widehat S_{h,y}^2 = \frac{1}{n_h - 1} \displaystyle \sum_{i \in s_h} \left( y_i - \overline y_h \right)^2
 $$ 
 
 é o estimador da variância $S_{h,y}^2$ da variável $y$ no estrato $h$. 
@@ -189,91 +188,91 @@ $$
 Como temos AAS de $n_h$ unidades dentro do estrato $h$, são válidas as seguintes propriedades: 
 
 $$
-\small E_{AES} \left( \overline y_h\right) = \overline {Y_h}
+E_{AES} \left( \overline y_h\right) = \overline {Y_h}
 $$
 
 $$
-\small E_{AES} \left(\widehat Y_h \right) = Y_h
+E_{AES} \left(\widehat Y_h \right) = Y_h
 $$ 
 
 $$
-\small E_{AES} \left(\widehat S_{h,y}^2 \right) = S_{h,y}^2
+E_{AES} \left(\widehat S_{h,y}^2 \right) = S_{h,y}^2
 $$
 
 Todos estes resultados decorrem das propriedades já descritas no Capítulo \@ref(aas) para estimadores de média, total e variância sob AAS. Temos também os seguintes resultados para as variâncias de estimadores de média e total por estrato:
 
 $$
-\small V_{AES} \left( \overline y_h \right) = \left( \frac{1}{n_h} - \frac{1}{N_h} \right) S_{h,y}^2
+V_{AES} \left( \overline y_h \right) = \left( \frac{1}{n_h} - \frac{1}{N_h} \right) S_{h,y}^2
 $$ 
 
 é a variância do estimador da média da variável $y$ no estrato $h$;
 
 $$
-V_{AES} \left( \widehat Y_h \right) = N_h^2 V_{AES} \left( \overline y_h \right) = N_h^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \small \right) S_{h,y}^2
+V_{AES} \left( \widehat Y_h \right) = N_h^2 V_{AES} \left( \overline y_h \right) = N_h^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right) S_{h,y}^2
 $$ 
 
 é a variância do estimador de total da variável $y$ no estrato $h$;
 
 $$
-\small \widehat V_{AES} \left( \overline y_h \right) = \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2
+\widehat V_{AES} \left( \overline y_h \right) = \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2
 $$ 
 
 é o estimador da variância do estimador da média da variável $y$ no estrato $h$; e 
 
 $$
-\small \widehat V_{AES} \left( \widehat Y_h \right) = N_h^2 \widehat V_{AES} \left( \overline y_h \right) = N_h^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2
+\widehat V_{AES} \left( \widehat Y_h \right) = N_h^2 \widehat V_{AES} \left( \overline y_h \right) = N_h^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2
 $$ 
 
 é o estimador da variância do estimador de total da variável $y$ no estrato $h$.
 
 Para a estimação de parâmetros populacionais globais, ou seja, para o conjunto da população temos: 
 
-\begin{equation}\small 
+$$
 \widehat Y_{AES} = \displaystyle \sum_{h=1}^{H} \widehat Y_h  = \sum_{h=1}^{H} N_h \overline y_h \,\,  (\#eq:eqest6)
-\end{equation} 
+$$ 
 
 é o estimador do total $Y$;
 
-\begin{equation}\small 
+$$
 \overline y_{AES} = \displaystyle \sum_{h=1}^{H}W_h \overline y_h = \sum_{h=1}^{H} \frac{N_h}{N} \overline y_h \,\, (\#eq:eqest7)
-\end{equation}
+$$
 é o estimador da média $\overline Y$.
 
 O estimador da média populacional sob AES é não viciado, isto é: 
 
 $$
-\small E_{AES} \left( \overline y_{AES} \right) = \overline Y
+E_{AES} \left( \overline y_{AES} \right) = \overline Y
 $$
 
 Isto segue porque $E_{AES} \left (\overline y_h\right) = \overline {Y_h}$, $\forall \,h=1,...,H$, e
 
 $$
-\small E_{AES} \left( \displaystyle \sum_{h=1}^{H} W_h \overline y_h \right) = \displaystyle \sum_{h=1}^{H} W_h E_{AES} (\overline y_h) = \sum_{h=1}^{H} W_h \overline {Y_h} = \overline Y
+E_{AES} \left( \displaystyle \sum_{h=1}^{H} W_h \overline y_h \right) = \displaystyle \sum_{h=1}^{H} W_h E_{AES} (\overline y_h) = \sum_{h=1}^{H} W_h \overline {Y_h} = \overline Y
 $$
 
 Devido à independência da amostragem nos estratos, a variância do estimador $\overline y_{AES}$ pode ser obtida como:
 
-\begin{equation}\small 
+$$
 V_{AES} \left( \overline y_{AES} \right) = \displaystyle \sum_{h=1}^{H} W_h^2 V_{AES} \left( \overline y_h\right ) = \displaystyle \sum_{h=1}^{H} \frac {N_h^2}{N^2} \left( \frac{1}{n_h} - \frac {1}{N_h} \right) S_{h,y}^2 \,\, (\#eq:eqest8)
-\end{equation}
+$$
 
 De forma similar se pode obter a variância do estimador do total populacional como:
 
-\begin{equation}\small 
+$$
 V_{AES} \left( \widehat Y_{AES} \right) = \displaystyle \sum_{h=1}^{H} {N_h^2} \left( \frac{1}{n_h} - \frac {1}{N_h} \right) S_{h,y}^2 \,\, (\#eq:eqest9)
-\end{equation}
+$$
 
 Um estimador não viciado da variância de $\overline y_{AES}$ é dado por:
 
-\begin{equation}\small 
+$$
 \widehat V_{AES} \left( \overline y_{AES} \right) = \displaystyle \sum_{h=1}^{H} \frac {N_h^2}{N^2} \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2 \,\, (\#eq:eqest10)
-\end{equation}
+$$
 
 No caso da estimação de total $\widehat Y_{AES}$, um estimador não viciado da variância é dado por:
 
-\begin{equation}\small 
+$$
 \widehat V_{AES }\left( \widehat Y_{AES} \right) = \displaystyle\sum_{h=1}^{H} N_h^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2 \,\, (\#eq:eqest11)
-\end{equation}
+$$
 
 A Tabela \@ref(tab:tabestr1) apresenta um resumo dos estimadores do total, média e respectivas variâncias da variável $y$ sob AES. 
 
@@ -284,13 +283,13 @@ cat("<table>",paste0("<caption>", "(#tab:tabestr1)", "Estimadores do total, méd
 ---------
 Estimador
 ----------------------------------------
-$\small \widehat Y_{AES} = \displaystyle \sum_{h=1}^{H} \widehat Y_h = \sum_{h=1}^{H} N_h \overline y_h$
+$\widehat Y_{AES} = \displaystyle \sum_{h=1}^{H} \widehat Y_h = \sum_{h=1}^{H} N_h \overline y_h$
 
-$\small \displaystyle \overline y_{AES} = \sum_{h=1}^{H} \frac{N_h}{N} \overline y_h = \displaystyle \sum_{h=1}^{H} W_h \overline y_h$
+$\displaystyle \overline y_{AES} = \sum_{h=1}^{H} \frac{N_h}{N} \overline y_h = \displaystyle \sum_{h=1}^{H} W_h \overline y_h$
 
-$\small \widehat V_{AES} \left( \widehat Y_{AES} \right) = \displaystyle\sum_{h=1}^{H} N_h^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2$
+$\widehat V_{AES} \left( \widehat Y_{AES} \right) = \displaystyle\sum_{h=1}^{H} N_h^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2$
 
-$\small \widehat V_{AES} \left( \overline y_{AES} \right) = \displaystyle \sum_{h=1}^{H} W_h^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2$
+$\widehat V_{AES} \left( \overline y_{AES} \right) = \displaystyle \sum_{h=1}^{H} W_h^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right)\widehat S_{h,y}^2$
 ---------------
 </center>
 
@@ -301,25 +300,25 @@ Na Seção \@ref(razCS) são apresentados, como casos particulares de calibraç�
 Se $n = \displaystyle \sum_{h=1}^{H} n_h$ for grande, então o Teorema Central do Limite também se aplica. Portanto:
 
 $$
-\small \frac{\overline y_{AES} - \overline Y}{\sqrt{\widehat V_{AES} \left( \overline y_{AES} \right)}} \approx N(0;1)
+\frac{\overline y_{AES} - \overline Y}{\sqrt{\widehat V_{AES} \left( \overline y_{AES} \right)}} \approx N(0;1)
 $$
 
 Logo, um intervalo de confiança de nível $1-\alpha$ para $\overline Y$ é dado por:
 
-\begin{equation}\small 
+$$
 IC_{AES} (\overline Y; 1-\alpha) = \left[ \overline y_{AES} \mp z_{\alpha/2} \sqrt{\widehat V_{AES} \left( \overline y_{AES} \right)} \right] \,\,\, (\#eq:eqest12)
-\end{equation}
+$$
 
 Para médias dentro de estratos, $\overline y_h$, os tamanhos de amostras *por estratos* $n_h$ sendo suficientemente grandes, o Teorema Central do Limite indica que:
 
 $$
-\small \frac{\overline y_h - \overline {Y_h}}{\sqrt{\widehat V_{AES}\left(\overline y_h\right)}} \approx N(0;1)
+\frac{\overline y_h - \overline {Y_h}}{\sqrt{\widehat V_{AES}\left(\overline y_h\right)}} \approx N(0;1)
 $$
  
 e então um intervalo de confiança de nível $1-\alpha$ para $\overline {Y_h}$ é dado por:
 
 $$
-\small IC_{AES} (\overline {Y_h}; 1-\alpha) = \left[ \overline y_h \mp z_{\alpha/2} \sqrt{\widehat V_{AES} \left( \overline y_h \right)} \right]
+IC_{AES} (\overline {Y_h}; 1-\alpha) = \left[ \overline y_h \mp z_{\alpha/2} \sqrt{\widehat V_{AES} \left( \overline y_h \right)} \right]
 $$
 
 
@@ -349,22 +348,22 @@ Uma amostra ‘representativa’ deveria ‘imitar’ ou se parecer bastante com
 Nesse método, as unidades populacionais são distribuídas nos estratos segundo as proporções: 
 
 $$
-\small W_h = N_h/N , \,\, h=1,\dots,H, \;\; \text{com} \;\; \displaystyle \sum_{h=1}^{H} W_h = 1
+W_h = N_h/N , \,\, h=1,\dots,H, \;\; \text{com} \;\; \displaystyle \sum_{h=1}^{H} W_h = 1
 $$
 
 As proporções amostrais nos estratos são definidas como:
 
 $$
-\small \lambda_h = n_h/n , \,\, h = 1, \dots , H \;\; \text{com} \; \;\displaystyle \sum_{h=1}^{H} \lambda_h = 1
+\lambda_h = n_h/n , \,\, h = 1, \dots , H \;\; \text{com} \; \;\displaystyle \sum_{h=1}^{H} \lambda_h = 1
 $$.
 
 Então, o critério de *alocação proporcional* implica tentar fazer $\lambda_h = W_h, \,\, \forall\, h = 1, 2, \dots, H$. 
 
 Logo:
 
-\begin{equation}\small 
+$$
 \displaystyle \frac{n_h}{n} = \frac{N_h}{N} \Rightarrow \displaystyle n_h = n \frac{N_h}{N} = n W_h, \,\, \forall\, h = 1, 2, \dots, H \,\, (\#eq:eqest13)
-\end{equation}.
+$$.
 
 Esta distribuição da amostra nos estratos é chamada *Alocação Proporcional*.
 
@@ -374,15 +373,15 @@ Vale notar, de imediato, que a solução indicada não fornecerá resultados exa
 
 Sob AESP, como $n_h = n W_h$, a *média amostral simples* é o estimador não viciado da média populacional:
 
-\begin{equation}\small 
+$$
 \overline y_{AESP} = \displaystyle \sum_{h=1}^{H} W_h \overline y_h = \sum_{h=1}^{H} W_h \frac{1}{n_h} \sum_{i \in s_h} y_i = \frac{1}{n} \sum_{h=1}^{H} \sum_{i \in s_h} y_i = \overline y \,\, (\#eq:eqest14)
-\end{equation} 
+$$ 
 
 A variância de $\overline y_{AESP}$ simplifica para: 
 
-\begin{equation}\small 
+$$
 V_{AESP} \left( \overline y_{AESP} \right) = \left( \frac{1}{n} - \frac{1}{N} \right) \sum_{h=1}^{H} W_h S_{h,y}^2 \doteq  \left( \frac{1}{n} - \frac{1}{N} \right) S_D^2 \,\, (\#eq:eqest15)
-\end{equation} 
+$$ 
 
 onde a aproximação envolvida para obtenção do último termo decorre do uso de pesos $N_h/N$ em lugar dos pesos $(N_h - 1) / (N - 1)$ usados na definição da *variância dentro* dos estratos. 
 
@@ -394,26 +393,26 @@ A maioria das pesquisas convive com restrições orçamentárias. Já se mostrou
 
 Se o custo total da pesquisa é fixado em $C$ unidades monetárias, então é necessário especificar uma *função custo* que descreva como esse custo varia para diferentes tamanhos amostrais e alternativas de alocação da amostra nos estratos. Vamos considerar aqui que uma função custo linear dada por: 
 
-\begin{equation}\small 
+$$
 C = c_0 + \displaystyle \sum_{h=1}^{H} n_h c_h \,\,\, (\#eq:eqest16)
-\end{equation}
+$$
 é adequada para descrever os custos de pesquisa num cenário onde AES vai ser empregada. 
 
 Note que na Expressão \@ref(eq:eqest16), $c_0$ representa os custos fixos da pesquisa e $n_hc_h$ os custos que dependem efetivamente de cada estrato $h$. 
 
 A ideia é minimizar a $V_{AES} \left( \overline y_{AES} \right)$ sujeita à restrição de que o custo da pesquisa não ultrapasse o orçamento disponível, isto é, não ultrapasse o custo total $C$. Para resolver este problema, note que a variância do estimador da média populacional pode ser escrita como:
 
-\begin{equation}\small 
+$$
 V_{AES} \left( \overline y_{AES} \right) = \displaystyle \sum_{h=1}^{H} W_h^2 S_{h,y}^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right) = \sum_{h=1}^{H} W_h^2 S_{h,y}^2 / n_h - V_0 \,\,\, (\#eq:eqest17)
-\end{equation}
+$$
 
 onde $V_0 = \displaystyle \sum_{h=1}^{H} W_h^2 S_{h,y}^2 / N_h$.
 
 Como $V_0$ não depende de $n_h$, para minimizar $V_{AES} \left( \overline y_{AES} \right)$ basta calcular os valores de $n_h$ que minimizem o primeiro termo na última expressão à direita na Expressão \@ref(eq:eqest17), desprezando o componente $V_0$. Isto pode ser feito empregando as técnicas usuais de minimização de funções sujeitas a restrições lineares, empregando o método dos multiplicadores de Lagrange. O resultado da minimização corresponde à *alocação ótima* dada por:
 
-\begin{equation}\small 
+$$
 n_h = n \times \frac {W_h S_{h,y} / \sqrt c_h} {\displaystyle \sum_{k=1}^{H} W_k S_{k,y} / \sqrt c_k}, \,\, \forall \, h = 1, \dots, H \,\,\, (\#eq:eqest18)
-\end{equation} 
+$$ 
 
 Este método de alocação foi proposto por @Neyman1934, em seu artigo seminal que introduziu as bases da amostragem probabilística, definiu a amostragem estratificada e já indicava a maneira ótima de alocar amostras nos estratos no contexto da AES. Note que, sob *alocação ótima*, uma amostra maior será selecionada num estrato $h$ sempre que:
 
@@ -424,7 +423,7 @@ c. O custo de amostragem no estrato for menor ($c_h$ pequeno).
 Note também que, quando $S_h = S^*$ e $c_h = c^*, \,\, \forall \, h = 1, 2, \dots, H$, ambos constantes, então $n_h = n N_h / N$, isto é, a *alocação ótima* coincide com a *alocação proporcional*. Entretanto, se apenas os custos de amostragem forem constantes ao longo dos estratos, isto é, quando $c_h = c^*, \, \forall \, h = 1, 2, \dots, H$, então: 
 
 $$
-\small n_h = n \times \frac {N_h S_{h,y}} {\displaystyle \sum_{k=1}^{H} N_k S_{k,y}}
+n_h = n \times \frac {N_h S_{h,y}} {\displaystyle \sum_{k=1}^{H} N_k S_{k,y}}
 $$
 gerando a chamada *Alocação (Ótima) de Neyman*.
 
@@ -437,27 +436,27 @@ Dado um tipo de alocação e fixando a variância que se deseja para a estimativ
 Seja uma alocação $a_h$ e um valor fixado para a variância da média populacional máximo de $V$. Tem-se, então:
 
 $$
-\small V\le V_{AES} \left( \overline y_{AES} \right) = \displaystyle \sum_{h=1}^{H} W_h^2 S_{h,y}^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right) = \frac1n\sum_{h=1}^{H} \frac {W_h^2 S_{h,y}^2}{a_h} - \frac1N\sum_{h=1}^{H}{ W_h S_{h,y}^2}
+V\le V_{AES} \left( \overline y_{AES} \right) = \displaystyle \sum_{h=1}^{H} W_h^2 S_{h,y}^2 \left( \frac{1}{n_h} - \frac{1}{N_h} \right) = \frac1n\sum_{h=1}^{H} \frac {W_h^2 S_{h,y}^2}{a_h} - \frac1N\sum_{h=1}^{H}{ W_h S_{h,y}^2}
 $$
 Logo:
 
-\begin{equation}\small 
+$$
 n \ge \frac {\sum_{h=1}^{H} \frac {W_h^2 S_{h,y}^2}{a_h}}{V+\frac1N\sum_{h=1}^{H}{ W_h S_{h,y}^2}}\;\;(\#eq:eqest19)
-\end{equation}
+$$
 
 Para obter a expressão para uma alocação particular basta substituir $a_h$ de forma adequada. Por exemplo, no caso da alocação proporcional basta substituir $a_h$ por $W_h$ e obter a expressão para o cálculo do tamanho da amostra.
 
 No caso da alocação ótima, para um custo fixado $C$, basta substituir o valor de $n_h$, dado pela Expressão \@ref(eq:eqest18), na função de custo linear, Expressão \@ref(eq:eqest16), para se obter o tamanho total da amostra sob *amostragem estratificada simples com alocação ótima - AESO*:
 
-\begin{equation}\small 
+$$
 n_{AESO} = \left( C - c_0 \right) \times \frac{\displaystyle \sum_{h=1}^{H} N_h S_{h,y} / \sqrt c_h} {\displaystyle \sum_{h=1}^{H} N_h S_{h,y} \sqrt c_h} \,\,\, (\#eq:eqest20)
-\end{equation}
+$$
 
 Se *amostragem estratificada simples com alocação de Neyman - AESN* é usada, então o valor da variância minimizada para o estimador da média populacional é dado por:
 
-\begin{equation}\small 
+$$
 V_{AESN} \left( \overline y_{AES} \right) = \frac{1}{n} \left( \displaystyle \sum_{h=1}^{H} W_h S_{h,y} \right)^2 - \frac{1}{N} \left( \sum_{h=1}^{H }W_h S_{h,y}^2 \right) \,\,\, (\#eq:eqest21)
-\end{equation}
+$$
 O segundo termo à direita corresponde à *correção de população finita*.
 
 A Expressão \@ref(eq:eqest21) é obtida pela substituição de $n_h$ na Expressão \@ref(eq:eqest8) pela expressão do $n_h$ da alocação de Neyman.
@@ -470,7 +469,7 @@ As soluções aqui apresentadas para alocação ótima ou de Neyman são aproxim
 Usando a partição da soma de quadrados total em parcelas devidas à variação dentro e entre estratos e ignorando termos de ordem $1/N_h$, então sob *alocação de Neyman*, isto é, com $n_h \propto N_h S_{h,y}$ pode-se mostrar que (@Cochran1977, página 99):
 
 $$
-\small V_{AESN} \left( \overline y_{AES} \right) \le V_{AESP} \left( \overline y_{AES} \right) \le V_{AAS} \left( \overline y \right)
+V_{AESN} \left( \overline y_{AES} \right) \le V_{AESP} \left( \overline y_{AES} \right) \le V_{AAS} \left( \overline y \right)
 $$
 
 ou seja, AES com alocação de Neyman é mais eficiente que AES com alocação proporcional, ambas superando AAS como plano amostral para um mesmo tamanho especificado de amostra. 
@@ -484,20 +483,20 @@ Este método de alocação da amostra foi proposto por @Bankier1988 num contexto
 
 A alocação proposta é dada por:
 
-\begin{equation}\small 
+$$
 n_{AESPo} = n \times \frac{ X_h^q (S_{h,y} / \overline {Y_h})} {\displaystyle \sum_{k=1}^{H} X_k^q (S_{k,y} / \overline Y_k) } \,\,\, (\#eq:eqest22)
-\end{equation}
+$$
 onde $X_h = \sum_{i \in U_h} x_i$ é o total de alguma variável de tamanho das unidades do estrato $h$, e $0 \le q \le 1$ é uma potência a ser escolhida pelo responsável pelo planejamento da pesquisa. As quantidades $S_{h,y} / \overline {Y_h}$ representam os *coeficientes de variação* da variável de interesse dentro de cada um dos estratos definidos. Em muitas aplicações práticas, os estratos são construídos tentando fazer com que estes coeficientes de variação fiquem aproximadamente iguais ao longo dos vários estratos definidos. Nesse caso, a alocação potência se resume à forma simplificada:
 
-\begin{equation}\small 
+$$
 n_{AESPo} = n \times \frac{ X_h^q } {\displaystyle \sum_{k=1}^{H} X_k^q } \,\,\, (\#eq:eqest23)
-\end{equation}
+$$
 
 Um caso particular de interesse ocorre quando o número de unidades no estrato $h$ é usado como medida de tamanho, resultando na alocação:
 
-\begin{equation}\small 
+$$
 n_{AESPo} = n \times \frac{ N_h^q } {\displaystyle \sum_{k=1}^{H} N_k^q } \,\,\, (\#eq:eqest24)
-\end{equation}
+$$
 
 Quando se faz $q=1$ nesta última expressão, obtem-se a *alocação proporcional*, que pode assim ser vista como um caso particular da *alocação potência*.
 
@@ -529,7 +528,7 @@ A implementação de amostragem estratificada simples com alocação ótima pode
     Se a estimação de variâncias for importante, então forçar $n_h \geq 2$ para todos os estratos. Na prática, costuma-se fazer $n_h \geq 5$ devido à possibilidade de ocorrência de não resposta. Para estimação sem viés do total ou média, é essencial que $n_h \geq 2$ para todos os estratos. Quando ocorrem situações de estratos com $n_h = 1$, é necessário utilizar métodos aproximados para estimação de variâncias, tais como agregação de estratos ou similares (ver @Cochran1977, Seção 5A.12).    
     
 5. Ganhos de eficiência podem ser modestos, particularmente para estimação de proporções.     
-    @Cochran1977, página 99, mostra que: $$\small V_{AESN} \left( \overline y_{AES} \right) \le V_{AESP} \left( \overline y_{AES} \right) \le V_{AAS} \left( \overline y \right)$$ 
+    @Cochran1977, página 99, mostra que: $$V_{AESN} \left( \overline y_{AES} \right) \le V_{AESP} \left( \overline y_{AES} \right) \le V_{AAS} \left( \overline y \right)$$ 
     Os ganhos de precisão possíveis dependem da relação entre a(s) variável(is) de estratificação e as variáveis de pesquisa. Em geral, os ganhos são pequenos para amostras de pessoas e variáveis ligadas a atitudes, opiniões, comportamentos, etc. Para pesquisas amostrais de estabelecimentos ou instituições, os ganhos podem ser maiores.     
     Quando os ganhos de precisão alcançados com a estratificação não são grandes, o responsável pelo planejamento da pesquisa precisa avaliar se a estratificação proposta vale a pena ou se pode ser melhorada. Caso possa ser melhorada, o trabalho de alocação deve ser refeito após a redefinição.
 
@@ -576,7 +575,7 @@ Considere as hipóteses aqui indicadas:
 Sob as hipóteses enumeradas, pode-se mostrar que: 
 
 $$
-\small EPA \left( \overline y_{AES} \, ; \, \overline y \right) = V_{AES} \left( \overline y_{AES} \right) / V_{AAS} \left( \overline y \right) \doteq \rho_{x,y}^2 / H^2 + \left( 1 - \rho_{x,y}^2 \right)
+EPA \left( \overline y_{AES} \, ; \, \overline y \right) = V_{AES} \left( \overline y_{AES} \right) / V_{AAS} \left( \overline y \right) \doteq \rho_{x,y}^2 / H^2 + \left( 1 - \rho_{x,y}^2 \right)
 $$ 
 
 onde $\rho_{x,y}$ é correlação entre $x$ e $y$ conforme o modelo linear assumido para a população.
@@ -600,7 +599,7 @@ $\rho=0,95$         0,323        0,198         0,154        0,134        0,123  
 A análise dos resultados acima evidencia que ganhos adicionais de eficiência para casos com mais de seis estratos seriam modestos. Na Figura \@ref(fig:precisaovsestratos) temos o gráfico dos ganhos de precisão *versus* número de estratos para $\rho_{x,y}=0,85$ e $\rho_{x,y}=0,95$. 
 
 <center>
-```{r, precisaovsestratos,echo=FALSE, fig.cap="Ganhos de precisão *versus* número de estratos", out.width = '60%',fig.align='center'}
+```{r, precisaovsestratos,echo=FALSE, fig.cap="Ganhos de precisão *versus* número de estratos", out.width = '60%'}
 knitr::include_graphics("Figuras/precisaovsestratos.png")
 ```
 </center>

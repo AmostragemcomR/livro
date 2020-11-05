@@ -529,8 +529,8 @@ munic_amo <- getdata(MunicBR_dat, srswor(n, N))
 
 # b. Estimativas da dispersão do estimador de média sob AAS
 (var_med_amo <- ((1/n) - (1/N)) * var(munic_amo$Area))
-(dp_med_amo <- sqrt(VAR_med_amo))
-(cv_med_amo <- 100 * DP_med_amo / med_amo)
+(dp_med_amo <- sqrt(var_med_amo))
+(cv_med_amo <- 100 * dp_med_amo / med_amo)
 
 # c. Margem de erro relativo do estimador de média sob AAS
 (me_med_amo <- qnorm(0.975)*cv_med_amo)

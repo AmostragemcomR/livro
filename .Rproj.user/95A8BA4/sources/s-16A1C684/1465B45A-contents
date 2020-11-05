@@ -4,9 +4,9 @@
 
 Muitas vezes, na prática de pesquisas por amostragem, o *parâmetro* populacional de interesse é uma razão entre os totais (ou médias) de duas variáveis de pesquisa definidas para cada unidade da população. Nesse caso, o *parâmetro* é denominado *razão de totais (ou de médias)* ou simplesmente *razão*. Chamando de $y$ e $x$ as variáveis cujos totais aparecem no numerador e denominador da razão, respectivamente, define-se a *razão* $R$ como:
 
-\begin{equation}\small 
+$$
 R = \frac{\sum_{i\in U}y_i}{\sum_{i\in U}x_i} = \frac{Y}{X}=\frac{\overline{Y}}{\overline{X}} (\#eq:eqraz1)
-\end{equation}
+$$
  
 Alguns exemplos de razões de interesse incluem:
 
@@ -18,7 +18,7 @@ Alguns exemplos de razões de interesse incluem:
 No caso da razão entre o total dos gastos com transporte $(y)$ e o total da renda das famílias $(x)$, a razão fica definida como:
 
 $$
-\small \frac{\textrm {Total dos gastos com transporte}}{\textrm{Total da renda}} = \frac{\sum_{i\in U}y_i}{\sum_{i\in U}x_i}=\frac{Y}{X} = R 
+\frac{\textrm {Total dos gastos com transporte}}{\textrm{Total da renda}} = \frac{\sum_{i\in U}y_i}{\sum_{i\in U}x_i}=\frac{Y}{X} = R 
 $$
  
 ## Razão de médias *versus* média de razões
@@ -78,23 +78,23 @@ Os dados apurados na última linha da Tabela \@ref(tab:tabrazao1) ilustram bem a
 Neste capítulo, já definimos as *razões de totais* populacionais, e agora vamos apresentar mais alguns parâmetros que podem ser definidos como funções de totais populacionais. Para introduzir o caso mais geral, considere um parâmetro $\theta$ que pode ser definido como uma função de $K$ totais populacionais, isto é:
 
 $$ 
- \small \theta = f(Y_1, Y_2, ..., Y_K) 
+ \theta = f(Y_1, Y_2, ..., Y_K) 
 $$
 
 onde $Y_k$ é o total populacional da variável de pesquisa $y_k$, para $k=1,...,K$, e $f$ é uma função real que especifica como obter o valor de $\theta$ a partir dos totais das variáveis de pesquisa.
 
 Um caso geral de interesse é o das funções lineares de totais populacionais, dadas por:
 
-\begin{equation}\small 
+$$
  \theta = f(Y_1, Y_2, ..., Y_K) = \sum_{k=1}^K a_k \, Y_k (\#eq:eqraz2)
-\end{equation}
+$$
 
 onde $a_k$ são constantes conhecidas, para $k=1,...,K$.
 
 Um exemplo simples de função linear é a *diferença* entre dois totais populacionais especificados, dada por:
 
 $$
- \small D = \sum_{i\in U} y_{2i} - \sum_{i\in U} y_{1i} = Y_2 - Y_1
+ D = \sum_{i\in U} y_{2i} - \sum_{i\in U} y_{1i} = Y_2 - Y_1
 $$
 
 Nesse caso, temos uma situação envolvendo $K=2$ totais populacionais, com $a_1 = 1$ e $a_2 = -1$. 
@@ -102,7 +102,7 @@ Nesse caso, temos uma situação envolvendo $K=2$ totais populacionais, com $a_1
 Outro exemplo de parâmetro que pode ser escrito como função de totais é o caso da *função de distribuição cumulativa* num ponto, dada por:
 
 $$
- \small F_y(a) = \displaystyle \frac{1}{N} \sum_{i\in U} I(y_i \le a) \quad
+ F_y(a) = \displaystyle \frac{1}{N} \sum_{i\in U} I(y_i \le a) \quad
 $$
 
 Nesse caso, a situação envolve apenas dois totais populacionais $(K=2)$, sendo a primeira definida como $y_{1i} = I(y_i \le a)$ e a segunda $y_{2i} = 1$, e a função definida como $f(Y_1, Y_2) = Y_1 / Y_2$.
@@ -110,7 +110,7 @@ Nesse caso, a situação envolve apenas dois totais populacionais $(K=2)$, sendo
 A *variância* de uma variável de pesquisa $y$, dada por
 
 $$
- \small S^2_y = \frac{1}{N-1} \left[ \sum_{i\in U} {y_i}^2 - N \overline{Y}^2 \right] = \frac{1}{N-1} \left[ \sum_{i\in U} {y_i}^2 -  {Y}^2/N \right]
+ S^2_y = \frac{1}{N-1} \left[ \sum_{i\in U} {y_i}^2 - N \overline{Y}^2 \right] = \frac{1}{N-1} \left[ \sum_{i\in U} {y_i}^2 -  {Y}^2/N \right]
 $$
 
 também pode ser vista como uma função envolvendo três totais populacionais $(K=3)$, sendo o primeiro definido como total da variável $y_{1i} = y_i^2$, o segundo $y_{2i} = y_i$ e o terceiro como $y_{3i} = 1$. A função que retorna a variância $S^2_y$ é definida como 
@@ -119,13 +119,13 @@ $f(Y_1, Y_2, Y_3) = \frac {1} {Y_3 - 1} \left[ Y_1 - (Y_2^2/Y_3) \right]$.
 De maneira similar, a *covariância* e a *correlação* das variáveis $y$ e $z$ podem ser definidas como:
 
 $$
-\small S_{y , z} = \displaystyle \frac{1}{N-1} \sum_{i\in U} \left({y_{i} - \overline{Y}} \right)  \left({z_{i} - \overline{Z}} \right) = \frac{1}{N-1} \left[ \sum_{i\in U} {y_{i}} {z_{i}} - \, Y Z / {N} \right] \quad  
+S_{y , z} = \displaystyle \frac{1}{N-1} \sum_{i\in U} \left({y_{i} - \overline{Y}} \right)  \left({z_{i} - \overline{Z}} \right) = \frac{1}{N-1} \left[ \sum_{i\in U} {y_{i}} {z_{i}} - \, Y Z / {N} \right] \quad  
 $$
 
 e
 
 $$
-\small {\rho}_{y , z} = \frac{S_{y , z}} {S_{y} S_{z}}
+{\rho}_{y , z} = \frac{S_{y , z}} {S_{y} S_{z}}
 $$
 
 A covariância pode ser vista como uma função envolvendo quatro totais populacionais $(K=4)$, sendo o primeiro definido como o total $Y_1$ da variável $y_{1i} = y$, o segundo o total $Y_2$ da variável $y_{2i} = z$, o terceiro o total da variável definida como $y_{3i} = y_{i} z_{i}$ e o quarto o total da variável definida como $y_{4i} = 1$. Por simplicidade, a função que define a correlação foi definida em função da covariância e dos desvios-padrão das duas variáveis de interesse, mas também poderia ser escrita como função de totais como já ilustrado nos demais casos.
@@ -138,113 +138,105 @@ Essa ideia pode ser aplicada de maneira bastante geral para obter estimadores pa
 
 Para estimar *razões de totais* (ou de médias) como $R$, o estimador “natural” é a *razão dos estimadores Horwitz-Thompson de total*:
 
-\begin{equation}\small 
+$$
 \widehat{R} = \frac{ \sum_{i\in s} w_i y_i} {\sum_{i\in s} w_i x_i} = \frac{ \widehat{Y}_{HT} } {\widehat{X}_{HT}} (\#eq:eqraz3)
-\end{equation}
+$$
 
 **Notas:**
 
 1. Tanto o numerador como o denominador do estimador $\widehat{R}$ da razão $R$ podem variar com a amostra selecionada, $s$.    
 2. Apesar de termos estimadores não viciados para os totais populacionais $\widehat{Y}_{HT}$ e $\widehat{X}_{HT}$, em geral,  $E(Z/W) \ne E(Z)E(W)$, e portanto:     
 $$
-\small E(\widehat{R}) = E(\widehat{Y}_{HT}/ \widehat{X}_{HT}) \ne E(\widehat{Y}_{HT})/E(\widehat{X}_{HT})= {Y} / {X} = R
+E(\widehat{R}) = E(\widehat{Y}_{HT}/ \widehat{X}_{HT}) \ne E(\widehat{Y}_{HT})/E(\widehat{X}_{HT})= {Y} / {X} = R
 $$    
 3. Logo $\widehat{R}$ é um *estimador viciado* de $R$.    
 4. O vício de $\widehat{R}$ é pequeno e chamado de *vício técnico*, para distingui-lo de outros vícios potencialmente causados por problemas tais como erros de cobertura, não resposta e outros. Para amostras grandes (isto é, com $n$ grande), este vício é geralmente desprezível do ponto de vista prático. Ver discussão na Seção \@ref(vicioraz).    
 5. Sob AAS, como os pesos amostrais são constantes (e iguais a $N/n$ para todas as unidades da amostra), o estimador $\widehat{R}$ simplifica para:
-\begin{equation}\small 
+$$
 \widehat{R}_{AAS} = \frac{\sum_{i\in s} y_i} {\sum_{i\in s} x_i} = \frac{\overline{y}} {\overline{x}} (\#eq:eqraz4)
-\end{equation}
+$$
 
 
 ## Estimadores para outras funções de totais {#estoft}
 
 Quando o parâmetro de interesse é uma função de totais populacionais $\theta = f(Y_1, Y_2, ..., Y_K)$, o método mais simples para estimar esse parâmetro é aplicar a mesma função a estimadores não viciados dos totais, isto é, usar o estimador:
 
-\begin{equation}
-\small \widehat{\theta} = f(\widehat{Y}_1, \widehat{Y}_2, ..., \widehat{Y}_K) (\#eq:eqraz5)
-\end{equation}
+$$
+\widehat{\theta} = f(\widehat{Y}_1, \widehat{Y}_2, ..., \widehat{Y}_K) (\#eq:eqraz5)
+$$
 
 onde $\widehat{Y}_k$ é o estimador HT do total populacional da variável de pesquisa $y_k$, para $k=1,...,K$.
 
 Para o caso de *funções lineares*, o estimador resultante será dado por:
 
-\begin{equation}
- \small \widehat{\theta} = \sum_{k=1}^K a_k \, \widehat{Y}_k (\#eq:eqraz6)
-\end{equation}
+$$
+ \widehat{\theta} = \sum_{k=1}^K a_k \, \widehat{Y}_k (\#eq:eqraz6)
+$$
 
 e será um estimador não viciado do parâmetro $\theta$. 
 
 Neste caso, a variância do estimador também é relativamente simples de obter, e dada por:
 
-\begin{equation}\small 
-\begin{aligned}
-V_p \left( \widehat{\theta} \right) & =  
+\begin{eqnarray}
+V_p \left( \widehat{\theta} \right) & = & 
 \sum_{k=1}^K \sum_{j = 1}^K a_k \, a_j COV_p \left( \widehat{Y}_k ,  \widehat{Y}_j \right) \\
- &= \sum_{k=1}^K a^2_k \, V_p \left( \widehat{Y}_k \right) +  \sum_{k=1}^K \sum_{j \ne k = 1}^K a_k \, a_j COV_p \left( \widehat{Y}_k ,  \widehat{Y}_j \right)
-\end{aligned} (\#eq:eqraz7)
-\end{equation}
+ &=& \sum_{k=1}^K a^2_k \, V_p \left( \widehat{Y}_k \right) +  \sum_{k=1}^K \sum_{j \ne k = 1}^K a_k \, a_j COV_p \left( \widehat{Y}_k ,  \widehat{Y}_j \right) \\ \hfill(\#eq:eqraz7)
+\end{eqnarray}
 
 e um estimador dessa variância pode ser facilmente construído usando:
 
-\begin{equation}\small 
-\begin{aligned}
-\widehat{V}_p \left( \widehat{\theta} \right) & = \sum_{k=1}^K \sum_{j = 1}^K a_k \, a_j \widehat{COV}_p \left( \widehat{Y}_k ,  \widehat{Y}_j \right) \\
-& = \sum_{k=1}^K a^2_k \, \widehat{V}_p \left( \widehat{Y}_k \right) +  \sum_{k=1}^K \sum_{j \ne k = 1}^K a_k \, a_j \widehat{COV}_p \left( \widehat{Y}_k ,  \widehat{Y}_j \right) 
-\end{aligned}(\#eq:eqraz8)
-\end{equation}
+\begin{eqnarray}
+\widehat{V}_p \left( \widehat{\theta} \right) & = & \sum_{k=1}^K \sum_{j = 1}^K a_k \, a_j \widehat{COV}_p \left( \widehat{Y}_k ,  \widehat{Y}_j \right) \\
+& = & \sum_{k=1}^K a^2_k \, \widehat{V}_p \left( \widehat{Y}_k \right) +  \sum_{k=1}^K \sum_{j \ne k = 1}^K a_k \, a_j \widehat{COV}_p \left( \widehat{Y}_k ,  \widehat{Y}_j \right) \\ \hfill(\#eq:eqraz8)
+\end{eqnarray}
 
 Um resultado bastante útil é mostrado a seguir. Quando $\theta = \sum_{k=1}^K a_k \, Y_k$, então sua variância pode ser escrita como:
 
-\begin{equation}\small 
-\begin{aligned}
-V_p \left( \widehat{\theta} \right) & = E_p \left( \widehat{\theta} -\theta \right)^2 \\ 
-& = E_p \left( \sum_{k=1}^K a_k \widehat{Y_k} -  \sum_{k=1}^K a_k Y_k \right)^2 \\
-& = E_p \left( \sum_{k=1}^K a_k \sum_{i \in s} \pi_i^{-1} y_{ki} - \sum_{k=1}^K a_k \sum_{i \in U} y_{ki} \right)^2 \\
-& = E_p \left[ \sum_{i \in s} \pi_i^{-1} \left( \sum_{k=1}^K a_k y_{ki} \right) - \sum_{i \in U} \left( \sum_{k=1}^K a_k y_{ki} \right) \right]^2 \\
-& = E_p \left( \sum_{i \in s} \pi_i^{-1} z_i - \sum_{i \in U} z_i \right)^2 \\
-& = E_p \left( \widehat{Z}_{HT} - Z \right)^2 \\
-& = V_p \left( \widehat{Z}_{HT} \right) \\ \hfill 
-\end{aligned}(\#eq:eqraz9)
-\end{equation}
+\begin{eqnarray}
+V_p \left( \widehat{\theta} \right) & = & E_p \left( \widehat{\theta} -\theta \right)^2 \\ 
+& = & E_p \left( \sum_{k=1}^K a_k \widehat{Y_k} -  \sum_{k=1}^K a_k Y_k \right)^2 \\
+& = & E_p \left( \sum_{k=1}^K a_k \sum_{i \in s} \pi_i^{-1} y_{ki} - \sum_{k=1}^K a_k \sum_{i \in U} y_{ki} \right)^2 \\
+& = & E_p \left[ \sum_{i \in s} \pi_i^{-1} \left( \sum_{k=1}^K a_k y_{ki} \right) - \sum_{i \in U} \left( \sum_{k=1}^K a_k y_{ki} \right) \right]^2 \\
+& = & E_p \left( \sum_{i \in s} \pi_i^{-1} z_i - \sum_{i \in U} z_i \right)^2 \\
+& = & E_p \left( \widehat{Z}_{HT} - Z \right)^2 \\
+& = & V_p \left( \widehat{Z}_{HT} \right)\\ \hfill (\#eq:eqraz9)
+\end{eqnarray}
 
-onde $\small z_i = \sum _{k=1} ^K a_k y_{ki}$.
+onde $z_i = \sum _{k=1} ^K a_k y_{ki}$.
 
 Verifica-se assim que a variância do estimador para $\theta$ pode ser obtida como a variância de um estimador de total para uma *variável derivada* $z$ definida de maneira apropriada, tornando assim a obtenção da variância do estimador do parâmetro uma tarefa mais simples, já que a variância de estimadores de total foi apresentada no Capítulo \@ref(visger). Isso leva também à obtenção de estimadores da variância de forma simples, usando a mesma variável derivada:
 
-\begin{equation}
-\small \widehat{V}_p \left( \widehat{\theta} \right) = \widehat V_{HT}(\widehat{Z}_{HT}) = \displaystyle \sum_{i \in s} \sum_{j \in s} \left( {d_i d_j} - {d_{ij}} \right) {z_i} {z_j}  (\#eq:eqraz10)
-\end{equation}
+$$
+\widehat{V}_p \left( \widehat{\theta} \right) = \widehat V_{HT}(\widehat{Z}_{HT}) = \displaystyle \sum_{i \in s} \sum_{j \in s} \left( {d_i d_j} - {d_{ij}} \right) {z_i} {z_j}  (\#eq:eqraz10)
+$$
 
 Este resultado tem utilidade também quando $\theta$ é uma função não linear de totais, mas essa função é contínua e diferenciável. Neste caso, é possível usar a técnica de *linearização de Taylor* para obter a variância aproximada do estimador e também um estimador para essa variância. A ideia dessa técnica é simples: aproximar o estimador não linear por uma quantidade linearizada, obtida a partir da expansão em Série de Taylor do estimador $\widehat{\theta}$ ao redor do ponto $\theta$. A expansão é dada por:
 
-\begin{equation}\small 
-\begin{aligned}
- \widehat{\theta} & = f(\widehat{Y}_1, \widehat{Y}_2, ..., \widehat{Y}_K) \\
- & = f(Y_1, Y_2, ..., Y_K) + \sum_{k=1}^K \left[ \frac {\partial {f(Y_1, Y_2, ..., Y_K)}}   {\partial{Y_k}} \right] \left( \widehat{Y}_k - Y_k \right) +\\ 
- & \quad + \sum_{q=2}^\infty \frac {1} {q!} \sum_{k=1}^K \left[ \frac {\partial ^q {f(Y_1, Y_2, ..., Y_K)}} {\partial {Y^q_k}} \right] \left( \widehat{Y}_k - Y_k \right)^q \\
- & \doteq  f(Y_1, Y_2, ..., Y_K) + \sum_{k=1}^K \left[ \frac {\partial {f(Y_1, Y_2, ..., Y_K)}}   {\partial{Y_k}} \right] \left( \widehat{Y}_k - Y_k \right) \\ \hfill 
-\end{aligned}(\#eq:eqraz11)
-\end{equation}
-
+$$
+\begin{eqnarray}
+ \widehat{\theta} & = & f(\widehat{Y}_1, \widehat{Y}_2, ..., \widehat{Y}_K) \\
+ & = & f(Y_1, Y_2, ..., Y_K) + \sum_{k=1}^K \left[ \frac {\partial {f(Y_1, Y_2, ..., Y_K)}}   {\partial{Y_k}} \right] \left( \widehat{Y}_k - Y_k \right) + \\
+ & \, & +\sum_{q=2}^\infty \frac {1} {q!} \sum_{k=1}^K \left[ \frac {\partial ^q {f(Y_1, Y_2, ..., Y_K)}} {\partial {Y^q_k}} \right] \left( \widehat{Y}_k - Y_k \right)^q \\
+ & \doteq & f(Y_1, Y_2, ..., Y_K) + \sum_{k=1}^K \left[ \frac {\partial {f(Y_1, Y_2, ..., Y_K)}}   {\partial{Y_k}} \right] \left( \widehat{Y}_k - Y_k \right)\\ \hfill (\#eq:eqraz11)
+\end{eqnarray}
+$$
 onde a aproximação da última linha advém da exclusão de todos os termos de ordem igual ou superior a 2.
 
 É comum chamar de $\widehat{\theta}_L$ a quantidade:
 
 $$
-\begin{aligned}
- \widehat{\theta}_L & =  f(Y_1, Y_2, ..., Y_K) + \sum_{k=1}^K \left[ \frac {\partial {f(Y_1, Y_2, ..., Y_K)}} {\partial{Y_k}} \right] \left( \widehat{Y}_k - Y_k \right) \\
- & =  \theta + \sum_{k=1}^K a_k \left( \widehat{Y}_k - Y_k \right) 
-\end{aligned}
-$$
-
-onde agora $\small a_k = \displaystyle\frac {\partial {f(Y_1, Y_2, ..., Y_K)}} {\partial{Y_k}}$, $k=1, 2, ..., K$.
+\begin{eqnarray}
+ \widehat{\theta}_L & = & f(Y_1, Y_2, ..., Y_K) + \sum_{k=1}^K \left[ \frac {\partial {f(Y_1, Y_2, ..., Y_K)}} {\partial{Y_k}} \right] \left( \widehat{Y}_k - Y_k \right) \\
+ & = & \theta + \sum_{k=1}^K a_k \left( \widehat{Y}_k - Y_k \right) 
+\end{eqnarray}
+$$ 
+onde agora $a_k = \displaystyle\frac {\partial {f(Y_1, Y_2, ..., Y_K)}} {\partial{Y_k}}$, $k=1, 2, ..., K$.
 
 Assim sendo, a obtenção da variância aproximada para o estimador não linear $\widehat{\theta}$ é feita calculando-se a variância do *estimador linearizado* $\widehat{\theta}_L$, que é dada por:
 
-\begin{equation}
-\small \widehat{V}_p \left( \widehat{\theta} \right) \doteq \widehat{V}_p \left( \widehat{\theta}_L \right) = \widehat V_{HT} (\widehat{Z}_{HT}) = \displaystyle \sum_{i \in s} \sum_{j \in s} \left( {d_i d_j} - {d_{ij}} \right) {z_i} {z_j} (\#eq:eqraz12)
-\end{equation}
+$$
+\widehat{V}_p \left( \widehat{\theta} \right) \doteq \widehat{V}_p \left( \widehat{\theta}_L \right) = \widehat V_{HT} (\widehat{Z}_{HT}) = \displaystyle \sum_{i \in s} \sum_{j \in s} \left( {d_i d_j} - {d_{ij}} \right) {z_i} {z_j} (\#eq:eqraz12)
+$$
 
 onde $z_i =\displaystyle\sum_{k=1}^K \frac{\partial {f(Y_1, Y_2, ..., Y_K)}} {\partial{Y_k}} \, y_{ki}$.
 
@@ -253,37 +245,33 @@ onde $z_i =\displaystyle\sum_{k=1}^K \frac{\partial {f(Y_1, Y_2, ..., Y_K)}} {\p
 Para analisar o vício do estimador da razão, note que:
 
 $$
-\begin{aligned}
-COV_p \left( \widehat{R} , \widehat{X} \right) & = E_p \left( \widehat{R}  \widehat{X} \right) - E_p \left( \widehat{R} \right)  E_p \left( \widehat{X} \right) \\
- & = E_p \left( \frac{ \widehat{Y} } { \widehat{X} }  \widehat{X} \right) - E_p \left( \widehat{R} \right)  E_p \left( \widehat{X} \right) \\
- & = E_p \left( \widehat{Y} \right) - E_p \left( \widehat{R} \right)  E_p \left( \widehat{X} \right) \\ 
- & = Y - E_p \left( \widehat{R} \right)  X
-\end{aligned}
+\begin{eqnarray}
+COV_p \left( \widehat{R} , \widehat{X} \right) & = & E_p \left( \widehat{R}  \widehat{X} \right) - E_p \left( \widehat{R} \right)  E_p \left( \widehat{X} \right) \\
+ & = &  E_p \left( \frac{ \widehat{Y} } { \widehat{X} }  \widehat{X} \right) - E_p \left( \widehat{R} \right)  E_p \left( \widehat{X} \right) \\
+ & = &  E_p \left( \widehat{Y} \right) - E_p \left( \widehat{R} \right)  E_p \left( \widehat{X} \right) \\ 
+ & = & Y - E_p \left( \widehat{R} \right)  X
+\end{eqnarray}
 $$
 
 Segue-se então que:
 
-$$
-\begin{aligned}
-E_p \left( \widehat{R} \right) & = \frac{Y}{X} - \frac{1}{X}  COV_p \left( \widehat{R} , \widehat{X} \right) \\
- & = R - \frac{1}{X}  COV_p \left( \widehat{R} , \widehat{X} \right)
-\end{aligned}
-$$
+\begin{eqnarray}
+E_p \left( \widehat{R} \right) & = & \frac{Y}{X} - \frac{1}{X}  COV_p \left( \widehat{R} , \widehat{X} \right) \\
+ & = & R - \frac{1}{X}  COV_p \left( \widehat{R} , \widehat{X} \right)
+\end{eqnarray}
 
 Chamando agora de $B_p( \widehat{R} ) = E_p \left( \widehat{R} \right) - R$, o vício do estimador $\widehat{R}$, mostrou-se que este pode ser obtido como:
 
-\begin{equation}
-\small B_p( \widehat{R} ) = - \frac{1}{X}  COV_p \left( \widehat{R} , \widehat{X} \right) (\#eq:eqraz13)
-\end{equation}
+$$
+B_p( \widehat{R} ) = - \frac{1}{X}  COV_p \left( \widehat{R} , \widehat{X} \right) (\#eq:eqraz13)
+$$
 
 Esta expressão fornece um caminho para estabelecer um limite superior para o valor absoluto do vício dividido pelo desvio padrão do estimador da razão. Notando que: $COV_p \left( \widehat{R} , \widehat{X} \right) = CORR_p \left( \widehat{R} , \widehat{X} \right)  DP_p(\widehat{R})  DP_p(\widehat{X})$, segue-se que:
 
-\begin{equation}\small 
-\begin{aligned}
- \left| \frac {B_p( \widehat{R} )}{DP_p(\widehat{R})} \right| & = \frac{1}{X}  \left| \frac{CORR_p \left( \widehat{R} , \widehat{X} \right)  DP_p(\widehat{R})  DP_p(\widehat{X})} {DP_p(\widehat{R})} \right| \\ 
- & = \left| CORR_p \left( \widehat{R} , \widehat{X} \right) \right|  \frac {DP_p(\widehat{X})}{X} \le CV_p(\widehat{X}) \\ \hfill
-\end{aligned}(\#eq:eqraz14)
-\end{equation}
+\begin{eqnarray}
+ \left| \frac {B_p( \widehat{R} )}{DP_p(\widehat{R})} \right| & = & \frac{1}{X}  \left| \frac{CORR_p \left( \widehat{R} , \widehat{X} \right)  DP_p(\widehat{R})  DP_p(\widehat{X})} {DP_p(\widehat{R})} \right| \\ 
+ & = & \left| CORR_p \left( \widehat{R} , \widehat{X} \right) \right|  \frac {DP_p(\widehat{X})}{X} \le CV_p(\widehat{X}) \\ \hfill(\#eq:eqraz14)
+\end{eqnarray}
  
 Assim, quando o tamanho da amostra for grande o suficiente para tornar o CV do estimador do total $\widehat{X}$ no denominador da razão $\widehat{R}$ pequeno (digamos, menor que 0,1 ou 10%), então o vício do estimador da razão será pequeno quando comparado com o desvio padrão desse estimador. Vícios desse tipo são geralmente desprezados na prática, a menos que se tenha amostra *muito pequena*.
 
@@ -292,11 +280,9 @@ Assim, quando o tamanho da amostra for grande o suficiente para tornar o CV do e
 
 Como $\widehat{R}$ tem um pequeno vício técnico, a avaliação de sua precisão deve ser feita considerando seu *Erro Quadrático Médio* - *EQM*. Entretanto, sempre que a amostra for grande o suficiente (o que pode ser avaliado calculando o coeficiente de variação da estimativa de total do denominador da razão), o EQM poderá ser bem aproximado pela variância, como indicado:
 
-\begin{equation}\small 
-\begin{aligned}
- \small EQM_p(\widehat{R}) & = & V_p(\widehat{R}) + \left[ B_p( \widehat{R} ) \right]^2 & \doteq & V_p(\widehat{R}) 
-\end{aligned}(\#eq:eqraz15)
-\end{equation}
+\begin{eqnarray}
+ EQM_p(\widehat{R}) & = & V_p(\widehat{R}) + \left[ B_p( \widehat{R} ) \right]^2 & \doteq & V_p(\widehat{R}) (\#eq:eqraz15)
+\end{eqnarray}
 
 já que o termo $\left[ B_p( \widehat{R} ) \right]^2$ fica menor que 1% da variância $V_p(\widehat{R})$ sempre que $CV_p(\widehat{X}) \le 0,1$.
 
@@ -305,42 +291,42 @@ Usando ainda o resultado da Seção \@ref(estoft) quanto à linearização de es
 Nesse caso, a variável linearizada $z_i$ pode ser obtida notando que:
 
 $$
-\small \frac {\partial {f(Y_1, Y_2)}} {\partial{Y_1}} = \frac {1}{Y_2} = \frac {1}{X}
+\frac {\partial {f(Y_1, Y_2)}} {\partial{Y_1}} = \frac {1}{Y_2} = \frac {1}{X}
 $$
 
 e 
 $$
-\small \frac {\partial {f(Y_1, Y_2)}} {\partial{Y_2}} = \frac {-Y_1}{Y^2_2} = \frac {-Y}{X^2}
+\frac {\partial {f(Y_1, Y_2)}} {\partial{Y_2}} = \frac {-Y_1}{Y^2_2} = \frac {-Y}{X^2}
 $$
 
 levando a:
 $$
-\small z_i = \frac {1}{X} y_i - \frac {Y}{X^2} x_i = \frac {1}{X} \left( y_i - R x_i \right)
+z_i = \frac {1}{X} y_i - \frac {Y}{X^2} x_i = \frac {1}{X} \left( y_i - R x_i \right)
 $$
 
 Sendo assim, a variância aproximada do estimador $\widehat{R}$ pode ser obtida calculando a variância do estimador de total da variável linearizada $z_i$:
 
-\begin{equation}
-\small  V_p ( \widehat{R} ) \doteq V_p(\widehat{Z}_{HT}) = \displaystyle \sum_{i \in U} \sum_{j \in U} \left( \frac{d_i d_j}{d_{ij}} - 1 \right) {z_i} {z_j} (\#eq:eqraz16)
-\end{equation}
+$$
+ V_p ( \widehat{R} ) \doteq V_p(\widehat{Z}_{HT}) = \displaystyle \sum_{i \in U} \sum_{j \in U} \left( \frac{d_i d_j}{d_{ij}} - 1 \right) {z_i} {z_j} (\#eq:eqraz16)
+$$
 
 e um estimador dessa variância aproximada é dado por:
 
-\begin{equation}
-\small \widehat{V}_p ( \widehat{R} ) = \widehat{V}_p(\widehat{Z}_{HT}) = \displaystyle \sum_{i \in s} \sum_{j \in s} \left( {d_i d_j} - {d_{ij}} \right) {z_i} {z_j} (\#eq:eqraz17)
-\end{equation}
+$$
+\widehat{V}_p ( \widehat{R} ) = \widehat{V}_p(\widehat{Z}_{HT}) = \displaystyle \sum_{i \in s} \sum_{j \in s} \left( {d_i d_j} - {d_{ij}} \right) {z_i} {z_j} (\#eq:eqraz17)
+$$
 
 Sob AAS, as expressões acima simplificam para as expressões a seguir. Para mais detalhes, ver @Cochran1977. A variância aproximada do estimador da razão é dada por:
 
-\begin{equation}\small 
+$$
 V_{AAS} (\widehat{R}) \doteq \frac{1}{\overline{X}^2} \left( \frac{1}{n} -  \frac{1}{N}\right)  \frac{1}{N-1} \displaystyle \sum_{i \in U} \left( y_i - R x_i \right)^2 (\#eq:eqraz18)
-\end{equation}
+$$
 
 e o estimador da variância fica igual a:
 
-\begin{equation}
-\small \widehat{V}_{AAS}(\widehat{R}) = \frac{1}{\overline{x}^2}  \left( \frac{1}{n} -  \frac{1}{N}  \right)  \frac{1}{n-1} \displaystyle\sum_{i\in s} \left( y_i - \widehat{R} x_i \right)^2 (\#eq:eqraz19)
-\end{equation}
+$$
+\widehat{V}_{AAS}(\widehat{R}) = \frac{1}{\overline{x}^2}  \left( \frac{1}{n} -  \frac{1}{N}  \right)  \frac{1}{n-1} \displaystyle\sum_{i\in s} \left( y_i - \widehat{R} x_i \right)^2 (\#eq:eqraz19)
+$$
 
 A Tabela \@ref(tab:tabrazao2) apresenta os estimadores de uma razão e da respectiva variância sob AAS.
 
@@ -351,9 +337,9 @@ cat("<table>",paste0("<caption>", "(#tab:tabrazao2)", "Estimadores de uma razão
 ---------
 Estimador                     
 ---------------------------------------------
-$\small \widehat{R}=\displaystyle\frac{\sum_{i\in s} y_i} {\sum_{i\in s} x_i} = \frac{\overline{y}} {\overline{x}}$
+$\widehat{R}=\displaystyle\frac{\sum_{i\in s} y_i} {\sum_{i\in s} x_i} = \frac{\overline{y}} {\overline{x}}$
                  
-$\small \widehat{V}_{AAS}(\widehat{R}) =\displaystyle\frac{1}{\overline{x}^2}\left(\frac{1}{n}-\frac{1}{N}\right)\frac{1}{n-1}\displaystyle\sum_{i\in s}\left(y_i-\widehat{R}x_i\right)^2$  
+$\widehat{V}_{AAS}(\widehat{R}) =\displaystyle\frac{1}{\overline{x}^2}\left(\frac{1}{n}-\frac{1}{N}\right)\frac{1}{n-1}\displaystyle\sum_{i\in s}\left(y_i-\widehat{R}x_i\right)^2$  
 
 ------------
 </center>
@@ -471,7 +457,7 @@ cat("<table>",paste0("<caption>", "(#tab:tabrazao3)", "Informações coletadas n
 
 ----------
 </center>
-Supondo que $(N-n)/N \doteq 1$,
+Considerando que $(N − n)/ N \dot= 1$:
 
   a) Identifique as unidades de amostragem, a variável de interesse e alguma informação auxiliar associada com as unidades.
   b) Descreva dois tipos de estimadores para estimar a despesa média por domicílio para a alimentação por uma semana na cidade. Sumarize algumas propriedades de cada estimador.

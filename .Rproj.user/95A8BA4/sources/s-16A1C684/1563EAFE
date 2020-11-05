@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "843592959",
+    "hash" : "0",
     "id" : "1563EAFE",
-    "lastKnownWriteTime" : 1603925495,
-    "last_content_update" : 1603925496001,
+    "lastKnownWriteTime" : 1604509516,
+    "last_content_update" : 1604509516,
     "path" : "~/GitHub/amostragem/05-proporcoes.Rmd",
     "project_path" : "05-proporcoes.Rmd",
     "properties" : {
-        "cursorPosition" : "537,100",
-        "scrollLine" : "0"
+        "cursorPosition" : "537,17",
+        "scrollLine" : "16"
     },
     "relative_order" : 15,
     "source_on_save" : false,

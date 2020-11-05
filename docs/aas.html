@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR">
+<html  lang="pt-BR">
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 4 Amostragem Aleatória Simples | Amostragem: Teoria e Prática Usando R</title>
-  <meta name="description" content="Este é o livro de Amostragem elaborado pelos autores." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Amostragem: Teoria e Prática Usando R</title>
+  <meta name="description" content="Este é o livro de Amostragem elaborado pelos autores.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Capítulo 4 Amostragem Aleatória Simples | Amostragem: Teoria e Prática Usando R" />
+  <meta property="og:title" content="Amostragem: Teoria e Prática Usando R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,32 +17,28 @@
   <meta name="github-repo" content="AmostragemcomR/livro" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 4 Amostragem Aleatória Simples | Amostragem: Teoria e Prática Usando R" />
+  <meta name="twitter:title" content="Amostragem: Teoria e Prática Usando R" />
   
   <meta name="twitter:description" content="Este é o livro de Amostragem elaborado pelos autores." />
   
 
-<meta name="author" content="Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias" />
+<meta name="author" content="Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias">
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="visger.html"/>
-<link rel="next" href="proporc.html"/>
+<link rel="prev" href="visger.html">
+<link rel="next" href="proporc.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
 
 
 
@@ -588,26 +585,26 @@ s=s[<span class="dv">1</span><span class="op">:</span>n,]
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i       aleat
-## 1  128 0.001897093
-## 2  152 0.002329518
-## 3   32 0.004845388
-## 4  503 0.006276464
-## 5   25 0.006981514
-## 6  704 0.007812530
-## 7  212 0.008481927
-## 8   91 0.008793774
-## 9  416 0.010253442
-## 10 173 0.013370482
-## 11 693 0.014445147
-## 12 414 0.015465754
-## 13 378 0.015976258
-## 14 541 0.016785028
-## 15 427 0.017157901
-## 16 391 0.018751547
-## 17 256 0.019609731
-## 18 218 0.020119034
-## 19 743 0.021114314
-## 20 327 0.021292154</code></pre>
+## 1  237 0.001785361
+## 2  315 0.002718420
+## 3   52 0.002953516
+## 4  594 0.003558578
+## 5  412 0.005221318
+## 6  844 0.007234396
+## 7   19 0.008150977
+## 8  926 0.010425411
+## 9  330 0.011707007
+## 10  30 0.011715596
+## 11 784 0.012054598
+## 12 212 0.012102731
+## 13 307 0.012267436
+## 14 325 0.012914441
+## 15  82 0.014155590
+## 16 529 0.015102895
+## 17 343 0.015936021
+## 18 714 0.018586604
+## 19 230 0.019057280
+## 20 196 0.019115220</code></pre>
 </div>
 <div id="algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</h3>
@@ -658,26 +655,26 @@ s=<span class="kw">data.frame</span>(s)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i
-## 1  167
-## 2  357
-## 3  367
-## 4  462
-## 5  471
-## 6  489
-## 7  511
-## 8  543
-## 9  599
-## 10 636
-## 11 642
-## 12 649
-## 13 713
-## 14 714
-## 15 736
-## 16 769
-## 17 798
-## 18 812
-## 19 842
-## 20 906</code></pre>
+## 1  101
+## 2  388
+## 3  404
+## 4  467
+## 5  523
+## 6  528
+## 7  562
+## 8  566
+## 9  602
+## 10 608
+## 11 623
+## 12 714
+## 13 810
+## 14 841
+## 15 844
+## 16 869
+## 17 933
+## 18 938
+## 19 960
+## 20 991</code></pre>
 </div>
 <div id="probabilidades-de-inclusão-sob-aas" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Probabilidades de inclusão sob AAS</h3>
@@ -940,25 +937,25 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 
 <span class="co"># a. Média amostral</span>
 (med_amo &lt;-<span class="st"> </span><span class="kw">mean</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 1112.197</code></pre>
+<pre><code>## [1] 1352.486</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># b. Estimativas da dispersão do estimador de média sob AAS</span>
 (var_med_amo &lt;-<span class="st"> </span>((<span class="dv">1</span><span class="op">/</span>n) <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>N)) <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 21305.64</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(dp_med_amo &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VAR_med_amo))</code></pre></div>
-<pre><code>## [1] 389.4654</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cv_med_amo &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>DP_med_amo <span class="op">/</span><span class="st"> </span>med_amo)</code></pre></div>
-<pre><code>## [1] 35.01766</code></pre>
+<pre><code>## [1] 53851.1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(dp_med_amo &lt;-<span class="st"> </span><span class="kw">sqrt</span>(var_med_amo))</code></pre></div>
+<pre><code>## [1] 232.0584</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cv_med_amo &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>dp_med_amo <span class="op">/</span><span class="st"> </span>med_amo)</code></pre></div>
+<pre><code>## [1] 17.15792</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># c. Margem de erro relativo do estimador de média sob AAS</span>
 (me_med_amo &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>cv_med_amo)</code></pre></div>
-<pre><code>## [1] 68.63335</code></pre>
+<pre><code>## [1] 33.62891</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%</span>
 (D &lt;-<span class="st"> </span><span class="dv">150</span>)</code></pre></div>
 <pre><code>## [1] 150</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span>(N <span class="op">*</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)) <span class="op">/</span>
 <span class="st">              </span>(N <span class="op">*</span><span class="st"> </span>D<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)))</code></pre></div>
-<pre><code>## [1] 664.5703</code></pre>
+<pre><code>## [1] 1420.789</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span><span class="kw">ceiling</span>(n_amo_est))</code></pre></div>
-<pre><code>## [1] 665</code></pre>
+<pre><code>## [1] 1421</code></pre>
 </div>
 </div>
 <div id="exerc4" class="section level2">
@@ -1231,13 +1228,11 @@ Figura 4.1: Mapa esquemático da reserva com o número de animais encontrados no
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1248,7 +1243,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -1261,11 +1256,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"history": {
-"link": null,
-"text": null
-},
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "subsection"
 }
@@ -1279,10 +1270,9 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
