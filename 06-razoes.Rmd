@@ -445,7 +445,7 @@ munic_amo <- cbind(munic_amo, r_chapeu)
 cat("<table>",paste0("<caption>", "(#tab:tabrazao3)", "Informações coletadas na amostra de domicílios", "</caption>"),"</table>", sep ="\n")
 ```
 ----------
- Domicílio   Moradores   Custo com alimentos (Reais)
+ Domicílio   Moradores   Custo dos alimentos (Reais)
 ----------- ----------- ----------------------------- 
 1                   4               150,00
 

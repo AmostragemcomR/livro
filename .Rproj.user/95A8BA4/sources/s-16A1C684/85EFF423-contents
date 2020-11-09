@@ -1,4 +1,0 @@
-`r if (knitr:::is_html_output()) '
-# Referências {-}
-'`
-<div style="text-align: justify">

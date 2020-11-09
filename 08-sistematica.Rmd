@@ -106,7 +106,7 @@ cat("<table>",paste0("<caption>", "(#tab:tabsis1)","Unidades que compõem as pos
 
 **$...$**      ...         ...         ...               ...         ...      
 
-**$s_K$**       K          2K          3k                ...         - 
+**$s_K$**       K          2K          3K                ...         - 
 ----------
 </center>
 
