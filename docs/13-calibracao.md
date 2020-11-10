@@ -191,12 +191,12 @@ Usando uma amostra aleatória simples com $n=50$ fazendas, estimamos os totais p
 
 Table: (\#tab:tabcalib2)Estimativas de total de fazendas de cana-de-açúcar, dos erros padrão e coeficientes de variação (CV) usando os estimadores HT e GREG para variáveis selecionadas
 
-Variável      Total HT   Total GREG   Erro Padrão HT   Erro Padrão GREG   CV HT   CV GREG
----------  -----------  -----------  ---------------  -----------------  ------  --------
-Area            18.015       20.364            1.699                  0    9,43      0,00
-Quant        1.236.046    1.375.931          111.997             55.658    9,06      4,05
-Receita     29.957.792   33.915.479        3.123.624          1.439.641   10,43      4,24
-Despesa     18.480.035   20.785.241        1.835.615            866.154    9,93      4,17
+|Variável |   Total HT| Total GREG| Erro Padrão HT| Erro Padrão GREG| CV HT| CV GREG|
+|:--------|----------:|----------:|--------------:|----------------:|-----:|-------:|
+|Area     |     18.015|     20.364|          1.699|                0|  9,43|    0,00|
+|Quant    |  1.236.046|  1.375.931|        111.997|           55.658|  9,06|    4,05|
+|Receita  | 29.957.792| 33.915.479|      3.123.624|        1.439.641| 10,43|    4,24|
+|Despesa  | 18.480.035| 20.785.241|      1.835.615|          866.154|  9,93|    4,17|
 
 Os resultados mostram a superioridade do estimador de regressão usando a variável Area como variável auxiliar, com redução substancial dos erros padrão (ou CVs).
 
@@ -216,12 +216,12 @@ Comandos relevantes do R
 
 Table: (\#tab:tabcalib3)Estimativas de total de fazendas de cana-de-açucar, dos erros padrão e coeficientes de variação (CV) usando os estimadores HT e pós-estratificação (PS-Região) para variáveis selecionadas
 
-Variável     Total  HT   Total PS-Região   Erro Padrão HT   Erro Padrão PS-Região   CV HT   CV PS-Região
----------  -----------  ----------------  ---------------  ----------------------  ------  -------------
-Area            18.015            18.059            1.699                   1.501    9,43           8,31
-Quant        1.236.046         1.234.739          111.997                 104.861    9,06           8,49
-Receita     29.957.792        29.719.944        3.123.624               2.788.930   10,43           9,38
-Despesa     18.480.035        18.690.411        1.835.615               1.715.898    9,93           9,18
+|Variável |  Total  HT| Total PS-Região| Erro Padrão HT| Erro Padrão PS-Região| CV HT| CV PS-Região|
+|:--------|----------:|---------------:|--------------:|---------------------:|-----:|------------:|
+|Area     |     18.015|          18.059|          1.699|                 1.501|  9,43|         8,31|
+|Quant    |  1.236.046|       1.234.739|        111.997|               104.861|  9,06|         8,49|
+|Receita  | 29.957.792|      29.719.944|      3.123.624|             2.788.930| 10,43|         9,38|
+|Despesa  | 18.480.035|      18.690.411|      1.835.615|             1.715.898|  9,93|         9,18|
 
 Os resultados mostram pequena redução do CV para o estimador de pós-estratificação com variável auxiliar Regiao, quando comparado com o estimador HT. Portanto, concluímos que a variável auxiliar Area leva a estimativas mais precisas, com ganhos de eficiência bem maiores que os alcançados com uso da pós-estratificação com a variável auxiliar Regiao.   
 
@@ -703,6 +703,11 @@ A *redução de vício* pretendida com uso de calibração somente será alcanç
 Isto sugere que a escolha das variáveis $\bf x$ a serem consideradas para a calibração deve levar em conta os prováveis efeitos da não resposta e, em particular, deve-se incorporar todas as variáveis $\bf x$ para as quais dados populacionais auxiliares estão disponíveis e que contêm informações sobre as probabilidades desconhecidas de responder à pesquisa. Sob um modelo simplificado onde $\psi_i$ denota a probabilidade de que uma unidade responderá à pesquisa, dado que ela é selecionada para a amostra e a resposta é independente para unidades distintas, uma condição para o estimador de calibração ser aproximadamente não viciado sob a distribuição de aleatorização e a distribuição de resposta é que $\psi_i^{-1} = 1 + q_i{ \bf x}_i {\bf  λ}$, para todo $i$ e algum vetor de constantes ${\bf  λ}$ (ver @Lundstrom1997, página 46). No entanto, os pesos de calibração $w_i$ são sempre da forma $w_i = d_i F(q_i {\bf x}_i {\bf  λ})$ (ver Expressão \@ref(eq:eqcal48)). Por esse motivo, verifica-se que a calibração levará a estimativas aproximadamente não viciadas quando $w_i = d_i \psi_i^{-1}$, uma condição que depende tanto da escolha das variáveis $\bf x$ quanto da forma da função de distância (ou calibração) usada para obter os pesos de calibração.
 
 **(#exm:exmcalib3)** Um exemplo em que esta questão pode ser bem ilustrada vem da ponderação realizada para a pesquisa de força de trabalho do Reino Unido (UK-LFS) (ver @ONS2001, Seção 9). A não resposta foi da ordem de 22% na primavera de 1998, sendo 16% de recusas e 6% de falhas de contacto. Há evidência de *não resposta diferencial detectada* usando estudo de ligação com dados do Censo de 1991 (@ONS2001). A tabela \@ref(tab:tabcalib6) ilustra grupos sub-representados e super-representados na UK-LFS. 
+
+
+```
+## Warning: package 'kableExtra' was built under R version 3.6.3
+```
 
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tabcalib6)Identificação dos grupos sub-representados e super-representados na pesquisa de força de trabalho do Reino Unido</caption>

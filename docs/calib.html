@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html  lang="pt-BR">
-
+<html lang="pt-BR" xml:lang="pt-BR">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Amostragem: Teoria e Prática Usando R</title>
-  <meta name="description" content="Este é o livro de Amostragem elaborado pelos autores.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 13 Estimadores de Calibração | Amostragem: Teoria e Prática Usando R</title>
+  <meta name="description" content="Este é o livro de Amostragem elaborado pelos autores." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Amostragem: Teoria e Prática Usando R" />
+  <meta property="og:title" content="Capítulo 13 Estimadores de Calibração | Amostragem: Teoria e Prática Usando R" />
   <meta property="og:type" content="book" />
   
   
@@ -17,28 +16,32 @@
   <meta name="github-repo" content="AmostragemcomR/livro" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Amostragem: Teoria e Prática Usando R" />
+  <meta name="twitter:title" content="Capítulo 13 Estimadores de Calibração | Amostragem: Teoria e Prática Usando R" />
   
   <meta name="twitter:description" content="Este é o livro de Amostragem elaborado pelos autores." />
   
 
-<meta name="author" content="Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias">
+<meta name="author" content="Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="cong.html">
-<link rel="next" href="referências.html">
+<link rel="prev" href="cong.html"/>
+<link rel="next" href="referências.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -49,6 +52,7 @@
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -559,8 +563,17 @@ Figura 13.2: Regressão linear para a população de fazendas de cana-de-açúca
 <p>Totais.GREG = svytotal(design=fazendas.calib1, ~Area + Quant + Receita + Despesa)</p>
 </blockquote>
 <p><strong>Exemplo 13.2 </strong> Usando a mesma amostra aleatória simples com <span class="math inline">\(n=50\)</span> fazendas e considerando agora a variável Regiao como variável auxiliar, estimamos novamente os totais populacionais usando agora os estimadores HT e de pós-estratificação (PS-Região). A Tabela <a href="calib.html#tab:tabcalib3">13.3</a> apresenta as estimativas de total, respectivos erros padrão e coeficientes de variação (CV) para as variáveis selecionadas.</p>
-<table>
+<table style="width:100%;">
 <caption><span id="tab:tabcalib3">Tabela 13.3: </span>Estimativas de total de fazendas de cana-de-açucar, dos erros padrão e coeficientes de variação (CV) usando os estimadores HT e pós-estratificação (PS-Região) para variáveis selecionadas</caption>
+<colgroup>
+<col width="10%" />
+<col width="12%" />
+<col width="17%" />
+<col width="16%" />
+<col width="23%" />
+<col width="7%" />
+<col width="14%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Variável</th>
@@ -1000,6 +1013,7 @@ B \left( \widehat T_{y_j}^R \right) \doteq N^{-1} \displaystyle \sum_{i \in U} \
 <p>A <em>redução de vício</em> pretendida com uso de calibração somente será alcançada, no entanto, se o mecanismo combinado de resposta e amostragem for <em>ignorável</em> dadas as variáveis <span class="math inline">\(\bf x\)</span> consideradas na calibração, isto é, se a seleção dos respondentes for condicionalmente independente de <span class="math inline">\(y_{ij} \, | \, {\bf {x}_i}, \,\, \forall \, i \in U\)</span>. Alternativamente, o vício se anula quando <span class="math inline">\({\bf c}&#39;{\bf x}_i = {1/r_i},\,\, \forall \, i\, \in U\)</span>, sendo <span class="math inline">\({\bf c}\)</span> um vetor de constantes.</p>
 <p>Isto sugere que a escolha das variáveis <span class="math inline">\(\bf x\)</span> a serem consideradas para a calibração deve levar em conta os prováveis efeitos da não resposta e, em particular, deve-se incorporar todas as variáveis <span class="math inline">\(\bf x\)</span> para as quais dados populacionais auxiliares estão disponíveis e que contêm informações sobre as probabilidades desconhecidas de responder à pesquisa. Sob um modelo simplificado onde <span class="math inline">\(\psi_i\)</span> denota a probabilidade de que uma unidade responderá à pesquisa, dado que ela é selecionada para a amostra e a resposta é independente para unidades distintas, uma condição para o estimador de calibração ser aproximadamente não viciado sob a distribuição de aleatorização e a distribuição de resposta é que <span class="math inline">\(\psi_i^{-1} = 1 + q_i{ \bf x}_i {\bf λ}\)</span>, para todo <span class="math inline">\(i\)</span> e algum vetor de constantes <span class="math inline">\({\bf λ}\)</span> (ver <span class="citation">Lundström (1997)</span>, página 46). No entanto, os pesos de calibração <span class="math inline">\(w_i\)</span> são sempre da forma <span class="math inline">\(w_i = d_i F(q_i {\bf x}_i {\bf λ})\)</span> (ver Expressão <a href="calib.html#eq:eqcal48">(13.48)</a>). Por esse motivo, verifica-se que a calibração levará a estimativas aproximadamente não viciadas quando <span class="math inline">\(w_i = d_i \psi_i^{-1}\)</span>, uma condição que depende tanto da escolha das variáveis <span class="math inline">\(\bf x\)</span> quanto da forma da função de distância (ou calibração) usada para obter os pesos de calibração.</p>
 <p><strong>Exemplo 13.3 </strong> Um exemplo em que esta questão pode ser bem ilustrada vem da ponderação realizada para a pesquisa de força de trabalho do Reino Unido (UK-LFS) (ver <span class="citation">ONS (2001)</span>, Seção 9). A não resposta foi da ordem de 22% na primavera de 1998, sendo 16% de recusas e 6% de falhas de contacto. Há evidência de <em>não resposta diferencial detectada</em> usando estudo de ligação com dados do Censo de 1991 (<span class="citation">ONS (2001)</span>). A tabela <a href="calib.html#tab:tabcalib6">13.6</a> ilustra grupos sub-representados e super-representados na UK-LFS.</p>
+<pre><code>## Warning: package &#39;kableExtra&#39; was built under R version 3.6.3</code></pre>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tabcalib6">Tabela 13.6: </span>Identificação dos grupos sub-representados e super-representados na pesquisa de força de trabalho do Reino Unido
@@ -2085,16 +2099,18 @@ IQ8 = 100 \times \left({\widehat T}_{y_j}^C - {\widehat T}_{y_j}\right)\big /{\w
         </div>
       </div>
 <a href="cong.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referÃªncias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="referências.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -2102,12 +2118,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -2115,6 +2130,14 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -2132,9 +2155,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

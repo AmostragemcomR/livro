@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html  lang="pt-BR">
-
+<html lang="pt-BR" xml:lang="pt-BR">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Amostragem: Teoria e Prática Usando R</title>
-  <meta name="description" content="Este é o livro de Amostragem elaborado pelos autores.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 5 Estimação de Proporções | Amostragem: Teoria e Prática Usando R</title>
+  <meta name="description" content="Este é o livro de Amostragem elaborado pelos autores." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Amostragem: Teoria e Prática Usando R" />
+  <meta property="og:title" content="Capítulo 5 Estimação de Proporções | Amostragem: Teoria e Prática Usando R" />
   <meta property="og:type" content="book" />
   
   
@@ -17,28 +16,32 @@
   <meta name="github-repo" content="AmostragemcomR/livro" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Amostragem: Teoria e Prática Usando R" />
+  <meta name="twitter:title" content="Capítulo 5 Estimação de Proporções | Amostragem: Teoria e Prática Usando R" />
   
   <meta name="twitter:description" content="Este é o livro de Amostragem elaborado pelos autores." />
   
 
-<meta name="author" content="Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias">
+<meta name="author" content="Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="aas.html">
-<link rel="next" href="razao.html">
+<link rel="prev" href="aas.html"/>
+<link rel="next" href="razao.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -49,6 +52,7 @@
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -609,13 +613,16 @@ E_{AASC}(n_A) = n p {\quad \text e \quad} V_{AASC}(n_A) = n p (1-p) \,\, \tag{5.
 <p><strong>Exemplo 5.2 </strong> Voltando ao exemplo da escola com <span class="math inline">\(N=1.000\)</span> alunos, suponha que foi selecionada uma amostra aleatória simples de tamanho <span class="math inline">\(n=125\)</span> e foi investigado o sexo de cada um desses alunos, sendo que 60 são do sexo feminino. Construir um intervalo de aproximadamente 95% de confiança para a proporção de alunos do sexo feminino, utilizando os vários métodos da linguagem R sugeridos acima.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">     <span class="co"># Carregando pacotes necessários</span>
 <span class="kw">suppressMessages</span>(<span class="kw">require</span>(Hmisc,     <span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))</code></pre></div>
-<pre><code>## Warning: package &#39;Hmisc&#39; was built under R version 3.5.3</code></pre>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.5.3</code></pre>
+<pre><code>## Warning: package &#39;Hmisc&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## Warning: package &#39;survival&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## Warning: package &#39;Formula&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.6.3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressMessages</span>(<span class="kw">require</span>(survey,    <span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))</code></pre></div>
-<pre><code>## Warning: package &#39;survey&#39; was built under R version 3.5.3</code></pre>
+<pre><code>## Warning: package &#39;survey&#39; was built under R version 3.6.3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressMessages</span>(<span class="kw">require</span>(prevalence,<span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))</code></pre></div>
-<pre><code>## Warning: package &#39;rjags&#39; was built under R version 3.5.3</code></pre>
-<pre><code>## Warning: package &#39;coda&#39; was built under R version 3.5.3</code></pre>
+<pre><code>## Warning: package &#39;prevalence&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## Warning: package &#39;rjags&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## Warning: package &#39;coda&#39; was built under R version 3.6.3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">     <span class="co"># Definição do arquivo da amostra para a função svyciprop</span>
 s=<span class="kw">as.data.frame</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">60</span>),<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">125</span><span class="op">-</span><span class="dv">60</span>)))
 <span class="kw">names</span>(s)=<span class="kw">c</span>(<span class="st">&quot;y&quot;</span>)
@@ -1221,11 +1228,13 @@ p_c=\frac {N_c} {N} \tag{5.44}
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1233,12 +1242,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -1246,6 +1254,14 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -1263,9 +1279,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

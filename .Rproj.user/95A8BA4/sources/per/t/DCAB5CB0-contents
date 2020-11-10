@@ -64,9 +64,9 @@ Amostragem PPT com reposição é um método muito simples de implementar, mas q
 **(#exm:exmppt1)** Considere a população de $N=6$ fazendas com as respectivas áreas, conforme apresentada na Tabela \@ref(tab:tabppt1). Este exemplo mostra como extrair uma amostra de $n=3$ fazendas usando PPT com reposição, tomando a variável Área como medida de tamanho, usando o *método dos totais cumulativos*.
 
 <center>
-<table>
-<caption>(#tab:tabppt1)Informações das áreas, em hectares, de uma população de $N=6$ fazendas</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabppt1)", "Informações das áreas, em hectares, de uma população de $N=6$ fazendas", "</caption>"),"</table>", sep ="\n")
+```
 ----------
  Fazenda    Área (ha)  Tamanho Acumulado   Limite inferior do intervalo   Limite superior do intervalo
 --------- ----------- ------------------ ------------------------------ ------------------------------
@@ -88,8 +88,7 @@ Caso os 3 números aleatórios sorteados de forma independente e com distribuiç
 
 Pode-se programar no R o algoritmo apresentado ou utilizar a função *ppswr* do pacote *pps* que disponibiliza várias funções para seleção de amostras PPT de vários tipos.
 
-
-```r
+```{r,echo=T}
 #Algoritmo de seleção PPT
 # Inicializando variáveis
 N=6
@@ -120,46 +119,16 @@ for (i in 1:n){
 tabela=data.frame(cbind(fazenda,area,acum,linf,lsup,sel))
 # Aleatórios selecionados
 s
-```
-
-```
-## [1]  342 1795 1666
-```
-
-```r
 # Tabela com os dados e marcação do número de vezes que cada fazenda foi selecionada
 tabela
-```
 
-```
-##   fazenda area acum linf lsup sel
-## 1       1   50   50    1   50   0
-## 2       2 1000 1050   51 1050   1
-## 3       3  125 1175 1051 1175   0
-## 4       4  300 1475 1176 1475   0
-## 5       5  500 1975 1476 1975   2
-## 6       6   25 2000 1976 2000   0
-```
-
-```r
 # Resolvendo o mesmo problema utilizando função de um pacote do R
 # Carregando o pacote pps, para seleção proporcional ao tamanho
 require(pps)
-```
-
-```
-## Carregando pacotes exigidos: pps
-```
-
-```r
 # Selecionando fazendas com a função de seleção proporcional ao tamanho com reposição
 fazendas_sel=ppswr(area,n)
 # Identificação das fazendas selecionadas
 fazendas_sel
-```
-
-```
-## [1] 2 4 1
 ```
 
 Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados números pseudoaleatórios distintos nas duas soluções.
@@ -211,8 +180,7 @@ A seguir mostramos uma implementação em R do algoritmo de seleção para *Amos
 
 **(#exm:exmppt2)** Vamos utilizar os dados do arquivo 'MunicBR_dat.rds' para selecionar uma amostra de municípios do Amazonas, de tamanho esperado $n=20$, utilizando *Amostragem PPT de Poisson*.
 
-
-```r
+```{r,eccho=T}
 #Algoritmo de seleção PPT de Poisson com seleção certa das unidades
 # muito grandes, se for o caso
 # Lendo a identificação e população dos municípios do Amazonas
@@ -250,32 +218,6 @@ tabela$pii=pii
 tabela$sel=sel
 # Amostra com os dados das unidades selecionadas certas(sel=1) e aleatórias(sel=2)
 tabela[tabela$sel>0,]
-```
-
-```
-##     CodMunic     Pop          ai       pii sel
-## 112  1302603 1982177 0.000000000 1.0000000   1
-## 120  1303403  109225 0.000000000 1.0000000   1
-## 103  1301902   94278 0.411860310 0.9886311   2
-## 110  1302504   91795 0.146258435 0.9625935   2
-## 94   1301209   81325 0.175253877 0.8528015   2
-## 130  1304062   58314 0.361326233 0.6115004   2
-## 115  1302900   57663 0.600700718 0.6046738   2
-## 113  1302702   51331 0.217811668 0.5382743   2
-## 102  1301852   44503 0.241491467 0.4666735   2
-## 109  1302405   41600 0.367200647 0.4362317   2
-## 117  1303106   33829 0.128257805 0.3547424   2
-## 96   1301407   33127 0.248600745 0.3473809   2
-## 123  1303569   28999 0.200665060 0.3040933   2
-## 91   1301001   27405 0.178363553 0.2873781   2
-## 95   1301308   25696 0.021319037 0.2694570   2
-## 119  1303304   23486 0.067190409 0.2462822   2
-## 98   1301605   21859 0.013387233 0.2292209   2
-## 136  1304401   20091 0.131855389 0.2106810   2
-## 97   1301506   18051 0.034442395 0.1892889   2
-## 135  1304302   17367 0.101967554 0.1821162   2
-## 80   1300201   17174 0.145479373 0.1800924   2
-## 77   1300086   11636 0.009789294 0.1220190   2
 ```
 
 A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981. 
@@ -332,8 +274,7 @@ Um algoritmo baseado em processamento sequencial de lista para implementar o mé
 
 **(#exm:exmppt3)** Seleção de uma amostra de $n=10$ municípios do Acre, a partir do arquivo 'MunicBR_dat.rds', por *Amostragem Sequencial de Poisson*, utilizando o R.
 
-
-```r
+```{r,echo=T}
 # Algoritmo para Amostragem sequencial de Poisson
 # Lendo a identificação e a população dos municípios do Acre
 tabela <- readRDS(file="Dados/MunicBR_dat.rds")[53:74,c(1, 4)]
@@ -352,20 +293,6 @@ tabela=tabela[order(tabela$ci),]
 # como a amostra desejada
 amostra=tabela[1:n,]
 amostra
-```
-
-```
-##    CodMunic    Pop          ai         pi         ci
-## 67  1200401 357194 0.055466408 0.46002707  0.1205721
-## 57  1200179   9836 0.006494167 0.01266770  0.5126556
-## 71  1200500  40311 0.035310951 0.05191619  0.6801530
-## 72  1200609  37571 0.210401770 0.04838737  4.3482790
-## 68  1200427  15968 0.106146170 0.02056505  5.1614838
-## 58  1200203  80377 0.865373662 0.10351684  8.3597376
-## 62  1200336  16410 0.197439964 0.02113430  9.3421589
-## 63  1200344   8386 0.102553181 0.01080026  9.4954389
-## 60  1200302  32411 0.528025570 0.04174185 12.6497892
-## 55  1200104  22899 0.391669604 0.02949142 13.2807963
 ```
 
 ### Estimação com amostragem sequencial de Poisson
@@ -416,8 +343,7 @@ Apresentamos uma implementação do algoritmo para seleção Sistemática com PP
 
 **(#exm:exmppt4)**  O arquivo 'MunicBR_dat.rds' apresenta alguns dados sobre os municípios brasileiros. Vamos tomar os dados de Rondônia e selecionar uma amostra de tamanho $n=10$ municípios, com probabilidades proporcionais à população de cada município.
 
-
-```r
+```{r,echo=T}
 # Seleção Sistemática com PPT e seleção das unidades certas se for o caso
 # Inicializando variáveis
 # Lendo a identificação e população dos municípios de Rondônia
@@ -480,20 +406,6 @@ tabela$sel=c(selc,sel)
 tabela[tabela$sel>0,]
 ```
 
-```
-##    CodMunic    Pop sel
-## 17  1100205 484992   1
-## 12  1100122 128026   2
-## 2   1100023 101269   2
-## 4   1100049  85863   2
-## 20  1100288  55357   2
-## 16  1100189  36939   2
-## 24  1100338  26227   2
-## 27  1100403  19459   2
-## 31  1100700  13939   2
-## 7   1100072   9036   2
-```
-
 Esta forma de implementar a Amostragem Sistemática PPT confere um efeito de ‘estratificação implícita’ pela variável (ou variáveis) usada(s) na ordenação. 
 
 **(#exm:exmppt5)** Nas pesquisas domiciliares por amostragem do IBGE, anteriores à adoção da amostra mestra para o Sistema Integrado de Pesquisas Domiciliares - SIPD,  tais como na PNAD, POF e PME, era usual adotar a seleção sistemática com PPT. No caso da PNAD, o plano amostral incluía a seleção de municípios, que eram estratificados por tamanho em termos de população e selecionados sistematicamente com probabilidade proporcional à população residente obtida no último Censo Demográfico. Antes da seleção dos setores, arrolava-se em cada município selecionado, primeiramente, os setores urbanos em ordem crescente de numeração e, posteriormente, os setores rurais. Os setores eram selecionados, em cada município da amostra, também sistematicamente com probabilidade proporcional utilizando como medida de tamanho o número de unidades domiciliares existentes por ocasião do último Censo Demográfico. Nas demais pesquisas domiciliares, onde a unidade primária de seleção era o setor, era feita a seleção dos setores em cada estrato sistematicamente com PPT (medido em número de domicílios ou domicílios particulares ocupados). Detalhes sobre os principais aspectos de amostragem das pesquisas domiciliares do IBGE podem ser vistos em @Albieri2015. Cabe registrar que, para a estimação da precisão das estimativas, eram adotados estimadores das variâncias como se o plano amostral fosse de seleção PPT com reposição.  
@@ -514,8 +426,7 @@ A seleção com *Amostragem PPT de Pareto - AP*, de acordo com @Rosen2000, segue
 
 **(#exm:exmppt6)** Vamos repetir o Exemplo \@ref(exm:exmppt3), agora utilizando seleção por *Amostragem PPT de Pareto*.
 
-
-```r
+```{r,echo=T}
 # Algoritmo para Amostragem PPT de Pareto
 # Lendo a identificação e a população dos municípios do Acre
 tabela <- readRDS(file="Dados/MunicBR_dat.rds")[53:74,c(1, 4)]
@@ -534,20 +445,6 @@ tabela=tabela[order(tabela$ci),]
 # como a amostra desejada
 amostra=tabela[1:n,]
 amostra
-```
-
-```
-##    CodMunic    Pop         ai    lambdai         ci
-## 67  1200401 357194 0.61483993 4.60027071 -1.2493168
-## 58  1200203  80377 0.79554829 1.03516845 -0.1321959
-## 68  1200427  15968 0.09145218 0.20565049  0.3888017
-## 64  1200351  15857 0.15869901 0.20422094  0.7350469
-## 54  1200054   6480 0.06373178 0.08345536  0.7475757
-## 71  1200500  40311 0.53980024 0.51916189  1.0863825
-## 73  1200708  17021 0.24741886 0.21921199  1.1709768
-## 59  1200252  16099 0.27262895 0.20733763  1.4329336
-## 72  1200609  37571 0.65378712 0.48387367  2.0142676
-## 61  1200328   7147 0.32725180 0.09204560  4.7983344
 ```
 
 A *Amostragem PPT de Pareto* é o método empregado para sorteio de unidades primárias de amostragem da PNAD Contínua - ver @Freitas2014.
@@ -574,9 +471,10 @@ $$
 
 A Tabela \@ref(tab:tabppt2) apresenta um resumo de estimadores do total e  respectivas variâncias sob os diversos métodos de seleção com PPT apresentados neste capítulo. 
 
-<table>
-<caption>(#tab:tabppt2)Estimadores do total e respectivas variâncias sob PPT</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabppt2)", "Estimadores do total e respectivas variâncias sob PPT", "</caption>"),"</table>", sep ="\n")
+
+```
 <center>
 ----------
 Estimador
@@ -611,9 +509,9 @@ $\widehat V_{AP} \left(\widehat Y_{AP}\right) =\displaystyle \frac{n}{n-1} \disp
 **(#exr:exrppt2)** Uma amostra foi selecionada usando o método PPT com reposição. As informações dessa amostra aparecem na Tabela \@ref(tab:tabppt3).
   
 <center>
-<table>
-<caption>(#tab:tabppt3)Informações obtidas na amostra selecionada</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabppt3)", "Informações obtidas na amostra selecionada", "</caption>"),"</table>", sep ="\n")
+```
 ----------
  Unidade    $p_i$   $y_i$   $\pi _i$
 --------- ------- ------- ----------
@@ -647,9 +545,9 @@ c) Compare os resultados com a despesa média verdadeira das 338 fazendas e teç
 Nos lagos selecionados foi medido o nível de poluição. Os resultados estão na Tabela \@ref(tab:tabppt4):
 
 <center>
-<table>
-<caption>(#tab:tabppt4)Informações obtidas para os lagos selecionados</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabppt4)", "Informações obtidas para os lagos selecionados", "</caption>"),"</table>", sep ="\n")
+```
 -----------             
  Lago          Poluição   Tamanho do lago 
         (partes/milhão)  (km<sup>2</sup>)
@@ -682,9 +580,9 @@ d)  Use a amostra selecionada no item c para estimar a Receita média das empres
 e)  Compare os resultados das duas amostras com os valores verdadeiros e comente esses resultados.
   
 <center>
-<table>
-<caption>(#tab:tabppt5)Dados populacionais das empresas</caption>
-</table>
+```{r, results="asis", echo=FALSE}
+cat("<table>",paste0("<caption>", "(#tab:tabppt5)", "Dados populacionais das empresas", "</caption>"),"</table>", sep ="\n")
+```
 ----------
  Empresa   Pessoal            Receita\
            Ocupado       (1.000 Reais)

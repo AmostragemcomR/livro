@@ -232,17 +232,17 @@ $\displaystyle\widehat{p}_c=\frac{n_c} n, \,\, N_c \,\,\text{desconhecido}$
 
 $\displaystyle\overline{y}_c=\frac{\widehat{Y}_c}{\widehat{N}_c}=\displaystyle\frac 1{n_c}\sum_{i\in s}y_{ic},\,\, N_c \,\,\text{desconhecido}$
 
-$\widehat{V}_{AAS}(\widehat{Y}_c)=N^2\displaystyle\left(\frac{1}{n}-\frac{1}{N}\right)\frac{1}{N-1}\sum_{i\in s}                                    \left(y_{id}-\frac{t_c}{n}\right)^2,\,\, N_c\,\,\text{desconhecido}$
+$\widehat{V}_{AAS}(\widehat{Y}_c)=N^2\displaystyle\left(\frac{1}{n}-\frac{1}{N}\right)\frac{1}{N-1}\sum_{i\in s} \left(y_{id}-\frac{t_c}{n}\right)^2,\,\, N_c\,\,\text{desconhecido}$
 
-$\widehat V_{AAS}\left(\widehat{Y}_c^R\mid n_c>0 \right)= \displaystyle N_c^2\left(1-\frac{n_c}{N_c}\right)\frac{\widehat S_c^2}{n_c},\,\, N_c\,\,\text{conhecido}$
+$\widehat V_{AAS}\left(\widehat{Y}_c^R\mid n_c\ge 1\right)= \displaystyle N_c^2\left(1-\frac{n_c}{N_c}\right)\frac{\widehat S_c^2}{n_c},\,\, N_c\,\,\text{conhecido}$
 
 $\widehat V_{AAS}(\widehat p_c)=\displaystyle\left(\frac 1 n-\frac 1 N\right)\frac n {n-1}\widehat p_c(1-\widehat p_c),\,\, N_c\,\,\text{desconhecido}$
 
-$\widehat V_{AAS}(\overline{y}_c) = \displaystyle\frac{1}{\widehat p_c^2}\left(\frac1 n-\frac{1}{N}\right)\frac{1}{n-1}\displaystyle\sum_{i\in s}                                                             c_i\left(y_i-\overline{y}_c\right)^2,\,N_c\,\text{desconhecido}$
+$\widehat V_{AAS}(\overline{y}_c) = \displaystyle\frac{1}{\widehat p_c^2}\left(\frac1 n-\frac{1}{N}\right)\frac{1}{n-1}\displaystyle\sum_{i\in s} c_i\left(y_i-\overline{y}_c\right)^2,\,N_c\,\text{desconhecido}$
 
-$\widehat V_{AAS}(\overline{y}_c\mid n_c>0)=\displaystyle \left(1-\frac{n_c}{N_c}\right)\frac{\widehat S_c^2}{n_c} ,\,\, N_c\,\,\text{conhecido}$   
+$\widehat V_{AAS}(\overline{y}_c\mid n_c\ge 1)=\displaystyle \left(1-\frac{n_c}{N_c}\right)\frac{\widehat S_c^2}{n_c} ,\,\, N_c\,\,\text{conhecido}$   
 
-$\widehat V_{AAS}^*(\overline{y}_c\mid n_c>0)=\displaystyle\left(1-\frac{n}{N}\right)\frac{\widehat S_c^2}{n_c},\,N_c\,\text{desconhecido}$
+$\widehat V_{AAS}^*(\overline{y}_c\mid n_c\ge 1)=\displaystyle\left(1-\frac{n}{N}\right)\frac{\widehat S_c^2}{n_c},\,N_c\,\text{desconhecido}$
 -----------
 </center>
 
@@ -271,18 +271,18 @@ library(tidyverse)
 ```
 
 ```
-## -- Attaching packages -----------------
+## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --
 ```
 
 ```
-## v ggplot2 3.2.1     v purrr   0.3.2
-## v tibble  2.1.3     v dplyr   0.8.3
-## v tidyr   1.0.0     v stringr 1.4.0
-## v readr   1.3.1     v forcats 0.4.0
+## v ggplot2 3.3.2     v purrr   0.3.4
+## v tibble  3.0.4     v dplyr   1.0.2
+## v tidyr   1.1.2     v stringr 1.4.0
+## v readr   1.4.0     v forcats 0.5.0
 ```
 
 ```
-## -- Conflicts --------------------------
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
 ```
@@ -294,13 +294,13 @@ str(MunicBR_dat)
 ```
 
 ```
-## Classes 'tbl_df', 'tbl' and 'data.frame':	5570 obs. of  6 variables:
-##  $ CodMunic : chr  "1100015" "1100023" "1100031" "1100049" ...
-##  $ SiglaUF  : chr  "RO" "RO" "RO" "RO" ...
-##  $ CodUF    : chr  "11" "11" "11" "11" ...
-##  $ Pop      : num  25728 101269 6495 85863 18041 ...
-##  $ Area     : num  7067 4427 1314 3793 2783 ...
-##  $ Densidade: num  3.64 22.88 4.94 22.64 6.48 ...
+## tibble [5,570 x 6] (S3: tbl_df/tbl/data.frame)
+##  $ CodMunic : chr [1:5570] "1100015" "1100023" "1100031" "1100049" ...
+##  $ SiglaUF  : chr [1:5570] "RO" "RO" "RO" "RO" ...
+##  $ CodUF    : chr [1:5570] "11" "11" "11" "11" ...
+##  $ Pop      : num [1:5570] 25728 101269 6495 85863 18041 ...
+##  $ Area     : num [1:5570] 7067 4427 1314 3793 2783 ...
+##  $ Densidade: num [1:5570] 3.64 22.88 4.94 22.64 6.48 ...
 ```
 
 ```r
@@ -348,13 +348,13 @@ str(munic_amo)
 
 ```
 ## 'data.frame':	250 obs. of  8 variables:
-##  $ ID_unit  : int  4 57 137 234 253 254 256 283 313 332 ...
-##  $ CodMunic : chr  "1100049" "1200179" "1400027" "1505205" ...
-##  $ SiglaUF  : chr  "RO" "AC" "RR" "PA" ...
-##  $ CodUF    : chr  "11" "12" "14" "15" ...
-##  $ Pop      : num  85863 9836 10432 30088 17774 ...
-##  $ Area     : num  3793 1703 28472 3852 4115 ...
-##  $ Densidade: num  22.638 5.777 0.366 7.81 4.32 ...
+##  $ ID_unit  : int  41 151 166 185 195 217 277 279 294 316 ...
+##  $ CodMunic : chr  "1101435" "1400704" "1501105" "1502202" ...
+##  $ SiglaUF  : chr  "RO" "RR" "PA" "PA" ...
+##  $ CodUF    : chr  "11" "14" "15" "15" ...
+##  $ Pop      : num  7883 9127 26666 65498 13097 ...
+##  $ Area     : num  807 8066 4397 615 1431 ...
+##  $ Densidade: num  9.77 1.13 6.06 106.55 9.15 ...
 ##  $ Regiao   : Factor w/ 5 levels "Norte","Nordeste",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
@@ -365,7 +365,7 @@ table(munic_amo$Regiao)
 ```
 ## 
 ##        Norte     Nordeste      Sudeste          Sul Centro-Oeste 
-##           11           87           81           46           25
+##           16           91           73           51           19
 ```
 
 ```r
@@ -376,6 +376,10 @@ table(munic_amo$Regiao)
         group_by(Regiao) %>%
         summarise(N_d = n()) %>%
         select(Regiao, N_d) )
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -399,14 +403,18 @@ table(munic_amo$Regiao)
 ```
 
 ```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
 ## # A tibble: 5 x 3
 ##   Regiao       ybar_d     t_d
 ##   <fct>         <dbl>   <dbl>
-## 1 Norte        24506.  269567
-## 2 Nordeste     32776. 2851482
-## 3 Sudeste      53116. 4302358
-## 4 Sul          23934. 1100956
-## 5 Centro-Oeste  9297.  232419
+## 1 Norte        30394.  486298
+## 2 Nordeste     20726. 1886067
+## 3 Sudeste      30399. 2219148
+## 4 Sul          18384.  937564
+## 5 Centro-Oeste 21624.  410847
 ```
 
 ```r
@@ -422,11 +430,11 @@ resumo_regiao <- left_join(N_d, ybar_d, by=c("Regiao"))
 ## # A tibble: 5 x 2
 ##   Regiao       Total_reg_est1
 ##   <fct>                 <dbl>
-## 1 Norte             11027741.
-## 2 Nordeste          58799525.
-## 3 Sudeste           88596705.
-## 4 Sul               28505187.
-## 5 Centro-Oeste       4341587.
+## 1 Norte             13677131.
+## 2 Nordeste          37182464.
+## 3 Sudeste           50706012.
+## 4 Sul               21894877.
+## 5 Centro-Oeste      10098187.
 ```
 
 ```r
@@ -440,11 +448,11 @@ resumo_regiao <- left_join(N_d, ybar_d, by=c("Regiao"))
 ## # A tibble: 5 x 2
 ##   Regiao       Total_reg_est2
 ##   <fct>                 <dbl>
-## 1 Norte              6005953.
-## 2 Nordeste          63531019.
-## 3 Sudeste           95856536.
-## 4 Sul               24529300.
-## 5 Centro-Oeste       5178295.
+## 1 Norte             10834719.
+## 2 Nordeste          42021573.
+## 3 Sudeste           49442617.
+## 4 Sul               20888926.
+## 5 Centro-Oeste       9153671.
 ```
 
 ```r
@@ -453,6 +461,10 @@ resumo_regiao <- left_join(N_d, ybar_d, by=c("Regiao"))
     group_by(Regiao) %>%    
     summarise(Total_reg_pop = sum(Pop)) %>%
     select(Regiao, Total_reg_pop))
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -477,7 +489,7 @@ resumo_regiao <- left_join(N_d, ybar_d, by=c("Regiao"))
 
 ```
 ##      Densm
-## 1 34.16426
+## 1 24.19436
 ```
 
 ```r
@@ -488,7 +500,7 @@ resumo_regiao <- left_join(N_d, ybar_d, by=c("Regiao"))
 
 ```
 ##      Densm
-## 1 135.0281
+## 1 128.4233
 ```
 
 ```r
@@ -508,7 +520,7 @@ munic_amo <- cbind(munic_amo, r_chapeu)
 
 ```
 ##   dp.r_chapeu cv.r_chapeu
-## 1    7.630939    22.33603
+## 1    3.150193    13.02036
 ```
 
 ```r
@@ -523,7 +535,7 @@ munic_amo <- cbind(munic_amo, r_chapeu)
 
 ```
 ##   dp.media.dens cv.media.dens
-## 1      38.14405      28.24896
+## 1      52.42499      40.82201
 ```
 
 ```r
