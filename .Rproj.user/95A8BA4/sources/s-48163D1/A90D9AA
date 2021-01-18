@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1605012792307.000,
+    "created" : 1610974174359.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2548218837",
-    "id" : "DCAB5CB0",
-    "lastKnownWriteTime" : 1604509516,
-    "last_content_update" : 1604509516,
+    "hash" : "0",
+    "id" : "A90D9AA",
+    "lastKnownWriteTime" : 1610974586,
+    "last_content_update" : 1610974586664,
     "path" : "C:/Users/Vermelho/OneDrive/GitHub/amostragem/10-ppt.Rmd",
     "project_path" : "10-ppt.Rmd",
     "properties" : {
-        "cursorPosition" : "92,25",
+        "cursorPosition" : "1,33",
         "scrollLine" : "0"
     },
-    "relative_order" : 7,
+    "relative_order" : 1,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"

@@ -466,7 +466,7 @@ V_{AP} \left(\widehat Y_{AP}\right) \doteq \frac{N}{N-1} \displaystyle \sum_{i \
 $$
 
 $$
-\widehat V_{AP} \left(\widehat Y_{AP}\right) = \frac{n}{n-1} \displaystyle\sum_{i \in s} \left(\frac{y_i}{\lambda_i} - \frac{\sum_{k \in s} y_k(1-\lambda_k)} {\sum_{k \in s} (1-\lambda_k)}\right)^2 (1-\lambda_i) \,\,\, (\#eq:eqppt18) 
+\widehat V_{AP} \left(\widehat Y_{AP}\right) = \frac{n}{n-1} \displaystyle\sum_{i \in s} \left(\frac{y_i}{\lambda_i} - \frac{\sum_{k \in s} y_k(1-\lambda_k)/\lambda_k} {\sum_{k \in s} (1-\lambda_k)}\right)^2 (1-\lambda_i) \,\,\, (\#eq:eqppt18) 
 $$
 
 A Tabela \@ref(tab:tabppt2) apresenta um resumo de estimadores do total e  respectivas variâncias sob os diversos métodos de seleção com PPT apresentados neste capítulo. 
@@ -497,7 +497,7 @@ $\widehat V_{PO}\left(\widehat Y_{PO}^R \right) = \displaystyle\frac{1}{n(m-1)} 
 
 $\widehat V_{ASP}\left(\widehat Y_{ASP}\right) = \displaystyle\frac{1}{n(n-1)} \displaystyle\sum_{i \in s}\left(\frac{y_i}{p_i} - \widehat Y_{ASP}\right)^2 (1-np_i)p_i$
 
-$\widehat V_{AP} \left(\widehat Y_{AP}\right) =\displaystyle \frac{n}{n-1} \displaystyle\sum_{i \in s} \left(\frac{y_i}{\lambda_i} - \frac{\sum_{k \in s} y_k(1-\lambda_k)} {\sum_{k \in s} (1-\lambda_k)}\right)^2 (1-\lambda_i)$
+$\widehat V_{AP} \left(\widehat Y_{AP}\right) =\displaystyle \frac{n}{n-1} \displaystyle\sum_{i \in s} \left(\frac{y_i}{\lambda_i} - \frac{\sum_{k \in s} y_k(1-\lambda_k)/\lambda_k} {\sum_{k \in s} (1-\lambda_k)}\right)^2 (1-\lambda_i)$
 
 ----------
 </center>

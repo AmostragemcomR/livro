@@ -110,6 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="lista-de-siglas.html"><a href="lista-de-siglas.html"><i class="fa fa-check"></i>Lista de Siglas</a></li>
 <li class="chapter" data-level="" data-path="lista-de-tabelas.html"><a href="lista-de-tabelas.html"><i class="fa fa-check"></i>Lista de Tabelas</a></li>
 <li class="chapter" data-level="" data-path="lista-de-figuras.html"><a href="lista-de-figuras.html"><i class="fa fa-check"></i>Lista de Figuras</a></li>
+<li class="chapter" data-level="" data-path="errata.html"><a href="errata.html"><i class="fa fa-check"></i>Errata</a></li>
 <li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
 <li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
@@ -612,18 +613,11 @@ E_{AASC}(n_A) = n p {\quad \text e \quad} V_{AASC}(n_A) = n p (1-p) \,\, \tag{5.
 <p>Além disso, há outros programas prontos facilmente utilizávies como, por exemplo, as funções <em>binconf</em> e <em>confCI</em> incluídas, respectivamente, nos pacotes <em>Hmisc</em> e <em>prevalence</em> do R. Essas funções estimam intervalos de confiança para vários métodos além do mostrado acima, como o da aproximação Normal, apresentado na próxima seção, além de outras abordagens. Há, também, no pacote <em>survey</em> uma função específica, <em>svyciprop</em>, para calcular intervalos de confiança para proporções. Uma característica interessante do pacote <em>survey</em> é que é possível determinar a utilização do fator de correção para populações finitas, quando a seleção é sem reposição.</p>
 <p><strong>Exemplo 5.2 </strong> Voltando ao exemplo da escola com <span class="math inline">\(N=1.000\)</span> alunos, suponha que foi selecionada uma amostra aleatória simples de tamanho <span class="math inline">\(n=125\)</span> e foi investigado o sexo de cada um desses alunos, sendo que 60 são do sexo feminino. Construir um intervalo de aproximadamente 95% de confiança para a proporção de alunos do sexo feminino, utilizando os vários métodos da linguagem R sugeridos acima.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">     <span class="co"># Carregando pacotes necessários</span>
-<span class="kw">suppressMessages</span>(<span class="kw">require</span>(Hmisc,     <span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))</code></pre></div>
-<pre><code>## Warning: package &#39;Hmisc&#39; was built under R version 3.6.3</code></pre>
-<pre><code>## Warning: package &#39;survival&#39; was built under R version 3.6.3</code></pre>
-<pre><code>## Warning: package &#39;Formula&#39; was built under R version 3.6.3</code></pre>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.6.3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressMessages</span>(<span class="kw">require</span>(survey,    <span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))</code></pre></div>
-<pre><code>## Warning: package &#39;survey&#39; was built under R version 3.6.3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressMessages</span>(<span class="kw">require</span>(prevalence,<span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))</code></pre></div>
-<pre><code>## Warning: package &#39;prevalence&#39; was built under R version 3.6.3</code></pre>
-<pre><code>## Warning: package &#39;rjags&#39; was built under R version 3.6.3</code></pre>
-<pre><code>## Warning: package &#39;coda&#39; was built under R version 3.6.3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">     <span class="co"># Definição do arquivo da amostra para a função svyciprop</span>
+<span class="kw">suppressMessages</span>(<span class="kw">require</span>(Hmisc,     <span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))
+<span class="kw">suppressMessages</span>(<span class="kw">require</span>(survey,    <span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))
+<span class="kw">suppressMessages</span>(<span class="kw">require</span>(prevalence,<span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))
+
+     <span class="co"># Definição do arquivo da amostra para a função svyciprop</span>
 s=<span class="kw">as.data.frame</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">60</span>),<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">125</span><span class="op">-</span><span class="dv">60</span>)))
 <span class="kw">names</span>(s)=<span class="kw">c</span>(<span class="st">&quot;y&quot;</span>)
 s<span class="op">$</span>N=<span class="dv">1000</span>                <span class="co"># tamanho da população (número de alunos da escola)</span>
@@ -1265,7 +1259,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }

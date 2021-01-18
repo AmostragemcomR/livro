@@ -704,11 +704,6 @@ Isto sugere que a escolha das variáveis $\bf x$ a serem consideradas para a cal
 
 **(#exm:exmcalib3)** Um exemplo em que esta questão pode ser bem ilustrada vem da ponderação realizada para a pesquisa de força de trabalho do Reino Unido (UK-LFS) (ver @ONS2001, Seção 9). A não resposta foi da ordem de 22% na primavera de 1998, sendo 16% de recusas e 6% de falhas de contacto. Há evidência de *não resposta diferencial detectada* usando estudo de ligação com dados do Censo de 1991 (@ONS2001). A tabela \@ref(tab:tabcalib6) ilustra grupos sub-representados e super-representados na UK-LFS. 
 
-
-```
-## Warning: package 'kableExtra' was built under R version 3.6.3
-```
-
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tabcalib6)Identificação dos grupos sub-representados e super-representados na pesquisa de força de trabalho do Reino Unido</caption>
  <thead>

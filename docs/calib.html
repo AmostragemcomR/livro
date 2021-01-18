@@ -110,6 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="lista-de-siglas.html"><a href="lista-de-siglas.html"><i class="fa fa-check"></i>Lista de Siglas</a></li>
 <li class="chapter" data-level="" data-path="lista-de-tabelas.html"><a href="lista-de-tabelas.html"><i class="fa fa-check"></i>Lista de Tabelas</a></li>
 <li class="chapter" data-level="" data-path="lista-de-figuras.html"><a href="lista-de-figuras.html"><i class="fa fa-check"></i>Lista de Figuras</a></li>
+<li class="chapter" data-level="" data-path="errata.html"><a href="errata.html"><i class="fa fa-check"></i>Errata</a></li>
 <li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
 <li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
@@ -1013,7 +1014,6 @@ B \left( \widehat T_{y_j}^R \right) \doteq N^{-1} \displaystyle \sum_{i \in U} \
 <p>A <em>redução de vício</em> pretendida com uso de calibração somente será alcançada, no entanto, se o mecanismo combinado de resposta e amostragem for <em>ignorável</em> dadas as variáveis <span class="math inline">\(\bf x\)</span> consideradas na calibração, isto é, se a seleção dos respondentes for condicionalmente independente de <span class="math inline">\(y_{ij} \, | \, {\bf {x}_i}, \,\, \forall \, i \in U\)</span>. Alternativamente, o vício se anula quando <span class="math inline">\({\bf c}&#39;{\bf x}_i = {1/r_i},\,\, \forall \, i\, \in U\)</span>, sendo <span class="math inline">\({\bf c}\)</span> um vetor de constantes.</p>
 <p>Isto sugere que a escolha das variáveis <span class="math inline">\(\bf x\)</span> a serem consideradas para a calibração deve levar em conta os prováveis efeitos da não resposta e, em particular, deve-se incorporar todas as variáveis <span class="math inline">\(\bf x\)</span> para as quais dados populacionais auxiliares estão disponíveis e que contêm informações sobre as probabilidades desconhecidas de responder à pesquisa. Sob um modelo simplificado onde <span class="math inline">\(\psi_i\)</span> denota a probabilidade de que uma unidade responderá à pesquisa, dado que ela é selecionada para a amostra e a resposta é independente para unidades distintas, uma condição para o estimador de calibração ser aproximadamente não viciado sob a distribuição de aleatorização e a distribuição de resposta é que <span class="math inline">\(\psi_i^{-1} = 1 + q_i{ \bf x}_i {\bf λ}\)</span>, para todo <span class="math inline">\(i\)</span> e algum vetor de constantes <span class="math inline">\({\bf λ}\)</span> (ver <span class="citation">Lundström (1997)</span>, página 46). No entanto, os pesos de calibração <span class="math inline">\(w_i\)</span> são sempre da forma <span class="math inline">\(w_i = d_i F(q_i {\bf x}_i {\bf λ})\)</span> (ver Expressão <a href="calib.html#eq:eqcal48">(13.48)</a>). Por esse motivo, verifica-se que a calibração levará a estimativas aproximadamente não viciadas quando <span class="math inline">\(w_i = d_i \psi_i^{-1}\)</span>, uma condição que depende tanto da escolha das variáveis <span class="math inline">\(\bf x\)</span> quanto da forma da função de distância (ou calibração) usada para obter os pesos de calibração.</p>
 <p><strong>Exemplo 13.3 </strong> Um exemplo em que esta questão pode ser bem ilustrada vem da ponderação realizada para a pesquisa de força de trabalho do Reino Unido (UK-LFS) (ver <span class="citation">ONS (2001)</span>, Seção 9). A não resposta foi da ordem de 22% na primavera de 1998, sendo 16% de recusas e 6% de falhas de contacto. Há evidência de <em>não resposta diferencial detectada</em> usando estudo de ligação com dados do Censo de 1991 (<span class="citation">ONS (2001)</span>). A tabela <a href="calib.html#tab:tabcalib6">13.6</a> ilustra grupos sub-representados e super-representados na UK-LFS.</p>
-<pre><code>## Warning: package &#39;kableExtra&#39; was built under R version 3.6.3</code></pre>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tabcalib6">Tabela 13.6: </span>Identificação dos grupos sub-representados e super-representados na pesquisa de força de trabalho do Reino Unido
@@ -2141,7 +2141,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }

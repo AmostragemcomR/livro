@@ -370,18 +370,7 @@ rm(list = ls())
 
 # Carrega biblioteca(s) requerida(s)
 library(sampling)
-```
-
-```
-## Warning: package 'sampling' was built under R version 3.6.3
-```
-
-```r
 library(tidyverse)
-```
-
-```
-## Warning: package 'tidyverse' was built under R version 3.6.3
 ```
 
 ```
@@ -393,34 +382,6 @@ library(tidyverse)
 ## v tibble  3.0.4     v dplyr   1.0.2
 ## v tidyr   1.1.2     v stringr 1.4.0
 ## v readr   1.4.0     v forcats 0.5.0
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.6.3
-```
-
-```
-## Warning: package 'tibble' was built under R version 3.6.3
-```
-
-```
-## Warning: package 'tidyr' was built under R version 3.6.3
-```
-
-```
-## Warning: package 'readr' was built under R version 3.6.3
-```
-
-```
-## Warning: package 'purrr' was built under R version 3.6.3
-```
-
-```
-## Warning: package 'dplyr' was built under R version 3.6.3
-```
-
-```
-## Warning: package 'forcats' was built under R version 3.6.3
 ```
 
 ```

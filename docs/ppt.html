@@ -110,6 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="lista-de-siglas.html"><a href="lista-de-siglas.html"><i class="fa fa-check"></i>Lista de Siglas</a></li>
 <li class="chapter" data-level="" data-path="lista-de-tabelas.html"><a href="lista-de-tabelas.html"><i class="fa fa-check"></i>Lista de Tabelas</a></li>
 <li class="chapter" data-level="" data-path="lista-de-figuras.html"><a href="lista-de-figuras.html"><i class="fa fa-check"></i>Lista de Figuras</a></li>
+<li class="chapter" data-level="" data-path="errata.html"><a href="errata.html"><i class="fa fa-check"></i>Errata</a></li>
 <li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
 <li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
@@ -486,7 +487,7 @@ s=<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</sp
 tabela=<span class="kw">data.frame</span>(<span class="kw">cbind</span>(fazenda,area,acum,linf,lsup,sel))
 <span class="co"># Aleatórios selecionados</span>
 s</code></pre></div>
-<pre><code>## [1]  342 1795 1666</code></pre>
+<pre><code>## [1] 1767 1673  669</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Tabela com os dados e marcação do número de vezes que cada fazenda foi selecionada</span>
 tabela</code></pre></div>
 <pre><code>##   fazenda area acum linf lsup sel
@@ -504,7 +505,7 @@ tabela</code></pre></div>
 fazendas_sel=<span class="kw">ppswr</span>(area,n)
 <span class="co"># Identificação das fazendas selecionadas</span>
 fazendas_sel</code></pre></div>
-<pre><code>## [1] 2 4 1</code></pre>
+<pre><code>## [1] 5 2 5</code></pre>
 <p>Nas duas seleções apresentadas no programa R, os resultados são diferentes pois são selecionados números pseudoaleatórios distintos nas duas soluções.</p>
 <div id="estimação-do-total-sob-amostragem-ppt-com-reposição" class="section level3">
 <h3><span class="header-section-number">10.3.1</span> Estimação do total sob amostragem PPT com reposição</h3>
@@ -577,29 +578,20 @@ tabela<span class="op">$</span>pii=pii
 tabela<span class="op">$</span>sel=sel
 <span class="co"># Amostra com os dados das unidades selecionadas certas(sel=1) e aleatórias(sel=2)</span>
 tabela[tabela<span class="op">$</span>sel<span class="op">&gt;</span><span class="dv">0</span>,]</code></pre></div>
-<pre><code>##     CodMunic     Pop          ai       pii sel
-## 112  1302603 1982177 0.000000000 1.0000000   1
-## 120  1303403  109225 0.000000000 1.0000000   1
-## 103  1301902   94278 0.411860310 0.9886311   2
-## 110  1302504   91795 0.146258435 0.9625935   2
-## 94   1301209   81325 0.175253877 0.8528015   2
-## 130  1304062   58314 0.361326233 0.6115004   2
-## 115  1302900   57663 0.600700718 0.6046738   2
-## 113  1302702   51331 0.217811668 0.5382743   2
-## 102  1301852   44503 0.241491467 0.4666735   2
-## 109  1302405   41600 0.367200647 0.4362317   2
-## 117  1303106   33829 0.128257805 0.3547424   2
-## 96   1301407   33127 0.248600745 0.3473809   2
-## 123  1303569   28999 0.200665060 0.3040933   2
-## 91   1301001   27405 0.178363553 0.2873781   2
-## 95   1301308   25696 0.021319037 0.2694570   2
-## 119  1303304   23486 0.067190409 0.2462822   2
-## 98   1301605   21859 0.013387233 0.2292209   2
-## 136  1304401   20091 0.131855389 0.2106810   2
-## 97   1301506   18051 0.034442395 0.1892889   2
-## 135  1304302   17367 0.101967554 0.1821162   2
-## 80   1300201   17174 0.145479373 0.1800924   2
-## 77   1300086   11636 0.009789294 0.1220190   2</code></pre>
+<pre><code>##     CodMunic     Pop          ai        pii sel
+## 112  1302603 1982177 0.000000000 1.00000000   1
+## 120  1303403  109225 0.000000000 1.00000000   1
+## 103  1301902   94278 0.311633543 0.98863106   2
+## 110  1302504   91795 0.272272711 0.96259348   2
+## 132  1304203   62885 0.151407565 0.65943342   2
+## 109  1302405   41600 0.049473508 0.43623170   2
+## 126  1303809   41575 0.162916103 0.43596954   2
+## 122  1303536   30978 0.102768033 0.32484581   2
+## 119  1303304   23486 0.050119061 0.24628216   2
+## 124  1303601   20986 0.095023752 0.22006631   2
+## 116  1303007   19792 0.204572110 0.20754562   2
+## 134  1304260   12801 0.129026635 0.13423562   2
+## 104  1301951    8232 0.006643055 0.08632354   2</code></pre>
 <p>A amostragem PPT de Poisson é o método que foi empregado para a seleção da amostra da Pesquisa Industrial Anual - Produção Física, do IBGE, de 1981.</p>
 <p>A <em>Amostragem PPT de Poisson</em> é pouco usada na prática devido à variabilidade do tamanho efetivo da amostra. É um método menos eficiente que outros métodos de seleção PPT sem reposição. Um método moderno que corrige este defeito é <em>Amostragem Sequencial de Poisson - ASP</em> - ver <span class="citation">Ohlsson (1998)</span> - descrito na Seção <a href="ppt.html#ASP">10.5</a>.</p>
 <div id="estimação-do-total-sob-amostragem-de-poisson" class="section level3">
@@ -658,17 +650,17 @@ tabela=tabela[<span class="kw">order</span>(tabela<span class="op">$</span>ci),]
 <span class="co"># como a amostra desejada</span>
 amostra=tabela[<span class="dv">1</span><span class="op">:</span>n,]
 amostra</code></pre></div>
-<pre><code>##    CodMunic    Pop          ai         pi         ci
-## 67  1200401 357194 0.055466408 0.46002707  0.1205721
-## 57  1200179   9836 0.006494167 0.01266770  0.5126556
-## 71  1200500  40311 0.035310951 0.05191619  0.6801530
-## 72  1200609  37571 0.210401770 0.04838737  4.3482790
-## 68  1200427  15968 0.106146170 0.02056505  5.1614838
-## 58  1200203  80377 0.865373662 0.10351684  8.3597376
-## 62  1200336  16410 0.197439964 0.02113430  9.3421589
-## 63  1200344   8386 0.102553181 0.01080026  9.4954389
-## 60  1200302  32411 0.528025570 0.04174185 12.6497892
-## 55  1200104  22899 0.391669604 0.02949142 13.2807963</code></pre>
+<pre><code>##    CodMunic    Pop        ai          pi         ci
+## 67  1200401 357194 0.3531107 0.460027071  0.7675868
+## 60  1200302  32411 0.1096290 0.041741847  2.6263566
+## 72  1200609  37571 0.1888059 0.048387367  3.9019665
+## 58  1200203  80377 0.4924058 0.103516845  4.7567694
+## 68  1200427  15968 0.1706429 0.020565049  8.2977143
+## 73  1200708  17021 0.2115305 0.021921199  9.6495875
+## 71  1200500  40311 0.5950427 0.051916189 11.4616020
+## 55  1200104  22899 0.4585188 0.029491425 15.5475301
+## 56  1200138   9003 0.2317453 0.011594886 19.9868547
+## 54  1200054   6480 0.1787895 0.008345536 21.4233728</code></pre>
 <div id="estimação-com-amostragem-sequencial-de-poisson" class="section level3">
 <h3><span class="header-section-number">10.5.1</span> Estimação com amostragem sequencial de Poisson</h3>
 <p>O estimador tipo HT do total sob <em>Amostragem Sequencial de Poisson</em> é dado por:</p>
@@ -815,17 +807,17 @@ tabela=tabela[<span class="kw">order</span>(tabela<span class="op">$</span>ci),]
 <span class="co"># como a amostra desejada</span>
 amostra=tabela[<span class="dv">1</span><span class="op">:</span>n,]
 amostra</code></pre></div>
-<pre><code>##    CodMunic    Pop         ai    lambdai         ci
-## 67  1200401 357194 0.61483993 4.60027071 -1.2493168
-## 58  1200203  80377 0.79554829 1.03516845 -0.1321959
-## 68  1200427  15968 0.09145218 0.20565049  0.3888017
-## 64  1200351  15857 0.15869901 0.20422094  0.7350469
-## 54  1200054   6480 0.06373178 0.08345536  0.7475757
-## 71  1200500  40311 0.53980024 0.51916189  1.0863825
-## 73  1200708  17021 0.24741886 0.21921199  1.1709768
-## 59  1200252  16099 0.27262895 0.20733763  1.4329336
-## 72  1200609  37571 0.65378712 0.48387367  2.0142676
-## 61  1200328   7147 0.32725180 0.09204560  4.7983344</code></pre>
+<pre><code>##    CodMunic    Pop         ai   lambdai           ci
+## 67  1200401 357194 0.80228978 4.6002707 -3.175805511
+## 58  1200203  80377 0.05414227 1.0351684 -0.001944701
+## 61  1200328   7147 0.03624647 0.0920456  0.370988740
+## 72  1200609  37571 0.30801241 0.4838737  0.474781654
+## 73  1200708  17021 0.14163163 0.2192120  0.587699584
+## 55  1200104  22899 0.36336180 0.2949142  1.364560371
+## 65  1200385  17795 0.34540773 0.2291803  1.774748346
+## 68  1200427  15968 0.33396913 0.2056505  1.936840417
+## 64  1200351  15857 0.37255984 0.2042209  2.313747582
+## 59  1200252  16099 0.52248963 0.2073376  4.183164752</code></pre>
 <p>A <em>Amostragem PPT de Pareto</em> é o método empregado para sorteio de unidades primárias de amostragem da PNAD Contínua - ver <span class="citation">Freitas e Antonaci (2014)</span>.</p>
 <p>Para tamanhos de amostra iguais, AP é mais eficiente que ASP. A implementação deste método requer os mesmos cuidados com relação a unidades muito grandes que com outros métodos PPT sem reposição. As probabilidades exatas de inclusão não são estritamente proporcionais ao tamanho e são difíceis de calcular. Porém, resultados sugerem que as aproximações consideradas no passo 2 são suficientemente boas para a maioria das situações de interesse prático, como pode ser visto em <span class="citation">Aires e Rosén (2005)</span>.</p>
 <div id="estimação-do-total-sob-amostragem-ppt-de-pareto" class="section level3">
@@ -839,7 +831,7 @@ amostra</code></pre></div>
 V_{AP} \left(\widehat Y_{AP}\right) \doteq \frac{N}{N-1} \displaystyle \sum_{i \in U} \left(\frac{y_i}{\lambda_i} - \frac{\sum_{k \in U} y_k(1 - \lambda_k)} {\sum_{k \in U} \lambda_k(1 - \lambda_k)}\right)^2 \lambda_i(1 - \lambda_i) \,\, \tag{10.17}
 \]</span></p>
 <p><span class="math display" id="eq:eqppt18">\[
-\widehat V_{AP} \left(\widehat Y_{AP}\right) = \frac{n}{n-1} \displaystyle\sum_{i \in s} \left(\frac{y_i}{\lambda_i} - \frac{\sum_{k \in s} y_k(1-\lambda_k)} {\sum_{k \in s} (1-\lambda_k)}\right)^2 (1-\lambda_i) \,\,\, \tag{10.18} 
+\widehat V_{AP} \left(\widehat Y_{AP}\right) = \frac{n}{n-1} \displaystyle\sum_{i \in s} \left(\frac{y_i}{\lambda_i} - \frac{\sum_{k \in s} y_k(1-\lambda_k)/\lambda_k} {\sum_{k \in s} (1-\lambda_k)}\right)^2 (1-\lambda_i) \,\,\, \tag{10.18} 
 \]</span></p>
 <p>A Tabela <a href="ppt.html#tab:tabppt2">10.2</a> apresenta um resumo de estimadores do total e respectivas variâncias sob os diversos métodos de seleção com PPT apresentados neste capítulo.</p>
 <table>
@@ -886,7 +878,7 @@ V_{AP} \left(\widehat Y_{AP}\right) \doteq \frac{N}{N-1} \displaystyle \sum_{i \
 <td align="left"><span class="math inline">\(\widehat V_{ASP}\left(\widehat Y_{ASP}\right) = \displaystyle\frac{1}{n(n-1)} \displaystyle\sum_{i \in s}\left(\frac{y_i}{p_i} - \widehat Y_{ASP}\right)^2 (1-np_i)p_i\)</span></td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(\widehat V_{AP} \left(\widehat Y_{AP}\right) =\displaystyle \frac{n}{n-1} \displaystyle\sum_{i \in s} \left(\frac{y_i}{\lambda_i} - \frac{\sum_{k \in s} y_k(1-\lambda_k)} {\sum_{k \in s} (1-\lambda_k)}\right)^2 (1-\lambda_i)\)</span></td>
+<td align="left"><span class="math inline">\(\widehat V_{AP} \left(\widehat Y_{AP}\right) =\displaystyle \frac{n}{n-1} \displaystyle\sum_{i \in s} \left(\frac{y_i}{\lambda_i} - \frac{\sum_{k \in s} y_k(1-\lambda_k)/\lambda_k} {\sum_{k \in s} (1-\lambda_k)}\right)^2 (1-\lambda_i)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1152,7 +1144,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }

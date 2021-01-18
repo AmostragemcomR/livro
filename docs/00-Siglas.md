@@ -54,7 +54,7 @@ ASP               Amostragem Sequencial de Poisson
 
 B                 Vício 
 
-BASCULA           Survey Software desenvolvido pelo Statistics Netherlands 
+BASCULA           Software de amostragem desenvolvido pelo Statistics Netherlands 
 
 BLAISE            Sistema desenvolvido pelo Statistics Netherlands (Computer assisted interviewing system and survey processing tool) 
 

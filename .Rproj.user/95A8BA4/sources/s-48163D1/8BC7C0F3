@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1602264271811.000,
+    "created" : 1610979820436.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2249426350",
-    "id" : "86C0EC3C",
-    "lastKnownWriteTime" : 1604509517,
-    "last_content_update" : 1604509517,
+    "hash" : "0",
+    "id" : "8BC7C0F3",
+    "lastKnownWriteTime" : 1610980355,
+    "last_content_update" : 1610980355349,
     "path" : "C:/Users/Vermelho/OneDrive/GitHub/amostragem/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "10,7",
+        "cursorPosition" : "11,29",
         "scrollLine" : "0"
     },
-    "relative_order" : 6,
+    "relative_order" : 4,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"
