@@ -1,6 +1,7 @@
 # Errata {-}
 <div style="text-align: justify">
-Na tabela abaixo são apresentadas algumas correções feitas no texto do livro, tanto em erros localizados pelos autores como por leitores que tiveram a gentileza de nos comunicar. Os erros podem aparecer em versões que, eventualmente, possam ter sido baixadas por leitores antes das datas que aparecem na coluna "Data".
+Na tabela abaixo são apresentadas algumas correções feitas no texto do livro, tanto em erros localizados pelos autores como por leitores que tiveram a gentileza de nos comunicar. Os erros podem aparecer em versões que, eventualmente, possam ter sido baixadas por leitores antes das datas que aparecem na coluna "Data".    
+Caso deseje comunicar algum problema encontrado ou sugestão, favor enviar e-mail para Pedro Luis do Nascimento Silva: <pedronsilva@gmail.com> ou Antonio José Ribeiro Dias: <vermelho2@gmail.com>.
 
 ---------------
 Item            Data       Versão corrigida
