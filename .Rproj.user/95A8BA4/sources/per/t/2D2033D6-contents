@@ -1,6 +1,4 @@
-#  {-}
-
-Arquivos  de dados utilizados em Exemplos e Exercícios
+# Arquivos de dados usados no livro {-}
 
 Dê um *click* no nome do arquivo que deseja baixar   
 
@@ -18,5 +16,5 @@ Nome do arquivo
 [MunicBR_dat.rds](Dados\MunicBR_dat.rds)
 
 ----------
-Obs.: No caso dos arquivos *CSV*, após visualisá-los, *click* o    
-botão direito do *mouse* e utilize o comando *Salvar como*.
+Obs.: No caso dos arquivos *CSV*, após visualisá-los, *click*    
+no botão direito do *mouse* e utilize o comando *Salvar como*
