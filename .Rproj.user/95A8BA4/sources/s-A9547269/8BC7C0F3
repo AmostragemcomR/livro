@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3043079010",
+    "hash" : "996970477",
     "id" : "8BC7C0F3",
-    "lastKnownWriteTime" : 1618154896,
-    "last_content_update" : 1618154896567,
+    "lastKnownWriteTime" : 1620225540,
+    "last_content_update" : 1620225540460,
     "path" : "C:/Users/Vermelho/OneDrive/GitHub/amostragem/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "51,636",
-        "scrollLine" : "22"
+        "cursorPosition" : "24,29",
+        "scrollLine" : "0"
     },
     "relative_order" : 4,
     "source_on_save" : false,

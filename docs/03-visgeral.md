@@ -342,7 +342,7 @@ O primeiro problema é que o número total de amostras possíveis cresce muito r
  
  1.000      20    3,39482811302458e+41
 
-1.0000     100   6,52084692454763e+241
+10.000     100   6,52084692454763e+241
 ---------
 </center>
 
