@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1007462695",
+    "hash" : "0",
     "id" : "DD9F76D",
     "lastKnownWriteTime" : 1620221420,
     "last_content_update" : 1620221420914,
     "path" : "C:/Users/Vermelho/OneDrive/GitHub/amostragem/03-visgeral.Rmd",
     "project_path" : "03-visgeral.Rmd",
     "properties" : {
-        "cursorPosition" : "344,3",
-        "scrollLine" : "315"
+        "cursorPosition" : "344,38",
+        "scrollLine" : "314"
     },
     "relative_order" : 8,
     "source_on_save" : false,
