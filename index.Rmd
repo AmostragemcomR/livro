@@ -3,7 +3,10 @@ lang: pt-BR
 title: |
   <center>Amostragem: Teoria e Prática Usando R</center>
 author: <center>Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini e Antonio José Ribeiro Dias</center>
-date: <center>`r format(Sys.time(), "%d de %B de %Y")`</center>
+
+date: |
+  <center>Publicado em 15 de outubro de 2020</center>
+  <center>`r format(Sys.time(), "Atualizado em %d de %B de %Y")`</center>
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -21,7 +24,7 @@ link-citations: no
 github-repo: AmostragemcomR/livro
 description: "Este é o livro de Amostragem elaborado pelos autores."
 ---
-#{-}
+# {-}
 <center>![](Figuras/Capa2.png)</center>
 # Bem-vindo {-}
 <div style="text-align: justify">
