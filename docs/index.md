@@ -1,14 +1,9 @@
 ---
 lang: pt-BR
 title: |
-  <center>Amostragem: Teoria e Prática Usando R</center>
-author: |
-  <center><div style="font-size: 20px">Pedro Luis do Nascimento Silva, Zélia Magalhães Bianchini</center>
-  <center><div style="font-size: 20px">e Antonio José Ribeiro Dias</center>
-  <center>![](Figuras/Capa2.png)</center>
+  <center></center>
 date: |
-  <center>Publicado em 15 de outubro de 2020</center>
-  <center>Atualizado em 07 de maio de 2021</center>
+    <center>![](Figuras/Amostragem_ok_210X240.png)</center>
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -16,6 +11,7 @@ site: bookdown::bookdown_site
 
 output:
    bookdown::gitbook: default
+#   bookdown::pdf_book: default
 documentclass: book                   
 
 bibliography: [book.bib]
@@ -26,7 +22,30 @@ link-citations: no
 github-repo: AmostragemcomR/livro
 description: "Este é o livro de Amostragem elaborado pelos autores."
 ---
-# {-}
+# Capa{-}
+
+# Informações editoriais {-}
+<div style="font-style:normal">
+<left>
+    **Publicação** <br> 15 de outubro de 2020    
+    <p>**Última atualização** <br> 22 de junho de 2021
+    
+Permitida a reprodução total ou parcial com a devida citação de fonte.
+
+**Comunicação com os autores**   
+Pedro Luís do Nascimento Silva - pedronsilva@gmail.com <br> Antonio José Ribeiro Dias - vermelho2@gmail.com
+
+**Revisão**    
+Sonia Albieri
+
+**Capa**    
+Ubiratã Oliveira
+
+<span style="font-size:22px">**Ficha catalográfica**</span>
+</left>
+
+![](Figuras/Ficha_Catal.jpg)
+</center>
 
 # Bem-vindo {-}
 <div style="text-align: justify">

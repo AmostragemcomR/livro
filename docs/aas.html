@@ -104,7 +104,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Capa</a></li>
+<li class="chapter" data-level="" data-path="informações-editoriais.html"><a href="informações-editoriais.html"><i class="fa fa-check"></i>Informações editoriais</a></li>
 <li class="chapter" data-level="" data-path="bem-vindo.html"><a href="bem-vindo.html"><i class="fa fa-check"></i>Bem-vindo</a></li>
 <li class="chapter" data-level="" data-path="agradecimentos.html"><a href="agradecimentos.html"><i class="fa fa-check"></i>Agradecimentos</a></li>
 <li class="chapter" data-level="" data-path="lista-de-siglas.html"><a href="lista-de-siglas.html"><i class="fa fa-check"></i>Lista de Siglas</a></li>
@@ -335,7 +336,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <div class="book-header" role="navigation">
           <h1>
             <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><center>
-Amostragem: Teoria e Prática Usando R
 </center></a>
           </h1>
         </div>
@@ -592,27 +592,27 @@ s=s[<span class="dv">1</span><span class="op">:</span>n,]
 <span class="kw">rownames</span>(s)=<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span>n)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
-<pre><code>##      i       aleat
-## 1  657 0.003541384
-## 2  815 0.003928513
-## 3  380 0.004354423
-## 4  939 0.007107534
-## 5   92 0.007184525
-## 6  682 0.007329401
-## 7  670 0.007641580
-## 8  655 0.007845450
-## 9  130 0.008985408
-## 10 134 0.010362897
-## 11 935 0.013556042
-## 12 320 0.014479987
-## 13 709 0.017078194
-## 14 964 0.017112760
-## 15 444 0.018082480
-## 16 808 0.018619992
-## 17 462 0.019570116
-## 18 551 0.019799955
-## 19 485 0.022520317
-## 20 546 0.024294677</code></pre>
+<pre><code>##      i        aleat
+## 1  767 5.936041e-05
+## 2  562 1.179473e-03
+## 3  521 1.864273e-03
+## 4  512 4.069453e-03
+## 5   20 4.789066e-03
+## 6  452 4.902084e-03
+## 7   99 5.591376e-03
+## 8  137 6.598280e-03
+## 9  431 7.744402e-03
+## 10 405 9.043737e-03
+## 11 240 1.083368e-02
+## 12 111 1.122811e-02
+## 13 827 1.126246e-02
+## 14 903 1.310406e-02
+## 15 142 1.325971e-02
+## 16 756 1.337598e-02
+## 17 100 1.411276e-02
+## 18 230 1.965676e-02
+## 19 933 1.978645e-02
+## 20 322 2.010989e-02</code></pre>
 </div>
 <div id="algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</h3>
@@ -663,26 +663,26 @@ s=<span class="kw">data.frame</span>(s)
 <span class="co"># A amostra será formada pelas unidades seguintes</span>
 s</code></pre></div>
 <pre><code>##      i
-## 1   52
-## 2   74
-## 3   81
-## 4  135
-## 5  198
-## 6  350
-## 7  383
-## 8  427
-## 9  462
-## 10 545
-## 11 589
-## 12 660
-## 13 665
-## 14 682
-## 15 697
-## 16 763
-## 17 840
-## 18 918
-## 19 929
-## 20 957</code></pre>
+## 1   14
+## 2   29
+## 3   64
+## 4  134
+## 5  188
+## 6  201
+## 7  323
+## 8  324
+## 9  360
+## 10 592
+## 11 616
+## 12 632
+## 13 734
+## 14 755
+## 15 763
+## 16 801
+## 17 881
+## 18 896
+## 19 931
+## 20 948</code></pre>
 </div>
 <div id="probabilidades-de-inclusão-sob-aas" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Probabilidades de inclusão sob AAS</h3>
@@ -945,25 +945,25 @@ munic_amo &lt;-<span class="st"> </span><span class="kw">getdata</span>(MunicBR_
 
 <span class="co"># a. Média amostral</span>
 (med_amo &lt;-<span class="st"> </span><span class="kw">mean</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 1088.83</code></pre>
+<pre><code>## [1] 2117.54</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># b. Estimativas da dispersão do estimador de média sob AAS</span>
 (var_med_amo &lt;-<span class="st"> </span>((<span class="dv">1</span><span class="op">/</span>n) <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>N)) <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area))</code></pre></div>
-<pre><code>## [1] 25020.36</code></pre>
+<pre><code>## [1] 164988.6</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(dp_med_amo &lt;-<span class="st"> </span><span class="kw">sqrt</span>(var_med_amo))</code></pre></div>
-<pre><code>## [1] 158.1783</code></pre>
+<pre><code>## [1] 406.1878</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cv_med_amo &lt;-<span class="st"> </span><span class="dv">100</span> <span class="op">*</span><span class="st"> </span>dp_med_amo <span class="op">/</span><span class="st"> </span>med_amo)</code></pre></div>
-<pre><code>## [1] 14.52736</code></pre>
+<pre><code>## [1] 19.18206</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># c. Margem de erro relativo do estimador de média sob AAS</span>
 (me_med_amo &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>cv_med_amo)</code></pre></div>
-<pre><code>## [1] 28.47311</code></pre>
+<pre><code>## [1] 37.59616</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># d. Tamanho de amostra para obter margem de erro de 150 ao nível 95%</span>
 (D &lt;-<span class="st"> </span><span class="dv">150</span>)</code></pre></div>
 <pre><code>## [1] 150</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span>(N <span class="op">*</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)) <span class="op">/</span>
 <span class="st">              </span>(N <span class="op">*</span><span class="st"> </span>D<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">^</span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw">var</span>(munic_amo<span class="op">$</span>Area)))</code></pre></div>
-<pre><code>## [1] 764.5365</code></pre>
+<pre><code>## [1] 2851.754</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_amo_est &lt;-<span class="st"> </span><span class="kw">ceiling</span>(n_amo_est))</code></pre></div>
-<pre><code>## [1] 765</code></pre>
+<pre><code>## [1] 2852</code></pre>
 </div>
 </div>
 <div id="exerc4" class="section level2">
@@ -1273,7 +1273,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "subsection"
 }

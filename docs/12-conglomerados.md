@@ -238,7 +238,7 @@ Valor da variável de pesquisa para unidade $j$ do conglomerado $i$   $y_{ij}$
 
 Total no conglomerado $i$                                            $Y_i = \displaystyle \sum_{j \in C_i} y_{ij}$
 
-Média no conglomerado $i$                                            $\overline {Y_i} = {Y_i}/{N_i} = \displaystyle \frac 1 N_i \sum_{j \in C_i} y_{ij}$
+Média no conglomerado $i$                                            $\overline {Y_i} = {Y_i}/{N_i} = \displaystyle \frac 1 {N_i} \sum_{j \in C_i} y_{ij}$
 
 Total populacional                                                   $Y = \displaystyle \sum_{i=1}^{M} Y_i = \sum_{i \in C} Y_i$
 

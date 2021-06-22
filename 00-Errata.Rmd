@@ -15,4 +15,6 @@ Equação 10.18   18/01/2021 $\widehat V_{AP} \left(\widehat Y_{AP}\right) =\dis
 GSBPM (2013)    29/01/2021  Generic Statistical Business Process Model: GSBPM: version 5.0 
 
 Tabela 3.5      05/05/2021  10.000     100   6,52084692454763e+241 (última linha)
+
+Tabela 12.3     22/06/2021  $\overline {Y_i} = {Y_i}/{N_i} = \displaystyle \frac 1 {N_i} \sum_{j \in C_i} y_{ij}$
 ---------------
