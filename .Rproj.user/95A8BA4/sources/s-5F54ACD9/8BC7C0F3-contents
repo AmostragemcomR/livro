@@ -33,7 +33,7 @@ description: "Este é o livro de Amostragem elaborado pelos autores."
 Permitida a reprodução total ou parcial com a devida citação de fonte.
 
 **Comunicação com os autores**   
-Pedro Luís do Nascimento Silva - pedronsilva@gmail.com <br> Antonio José Ribeiro Dias - vermelho2@gmail.com
+Pedro Luis do Nascimento Silva - pedronsilva@gmail.com <br> Antonio José Ribeiro Dias - vermelho2@gmail.com
 
 **Revisão**    
 Sonia Albieri
