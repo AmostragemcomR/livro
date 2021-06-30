@@ -3,7 +3,7 @@ lang: pt-BR
 title: |
   <center></center>
 date: |
-    <center>![](Figuras/Amostragem_ok_210X240.png)</center>
+    <center>![](Figuras/Amostragem_210X240.png)</center>
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -39,7 +39,7 @@ Pedro Luis do Nascimento Silva - pedronsilva@gmail.com <br> Antonio José Ribeir
 Sonia Albieri
 
 **Capa**    
-Ubiratã Oliveira
+Ubiratã Oliveira dos Santos
 
 <span style="font-size:22px">**Ficha catalográfica**</span>
 </left>

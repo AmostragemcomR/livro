@@ -3,7 +3,7 @@ lang: pt-BR
 title: |
   <center></center>
 date: |
-    <center>![](Figuras/Amostragem_ok_210X240.png)</center>
+    <center>![](Figuras/Amostragem_210X240.png)</center>
 summary_depth: 3
 summary_float:
    collapsed: false
@@ -28,7 +28,7 @@ description: "Este é o livro de Amostragem elaborado pelos autores."
 <div style="font-style:normal">
 <left>
     **Publicação** <br> 15 de outubro de 2020    
-    <p>**Última atualização** <br> 22 de junho de 2021
+    <p>**Última atualização** <br> 29 de junho de 2021
     
 Permitida a reprodução total ou parcial com a devida citação de fonte.
 
@@ -39,7 +39,7 @@ Pedro Luis do Nascimento Silva - pedronsilva@gmail.com <br> Antonio José Ribeir
 Sonia Albieri
 
 **Capa**    
-Ubiratã Oliveira
+Ubiratã Oliveira dos Santos
 
 <span style="font-size:22px">**Ficha catalográfica**</span>
 </left>
