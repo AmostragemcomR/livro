@@ -1,0 +1,29 @@
+h1:calib Estimadores de Calibração
+h2:motiva13 Motivação
+h2:problema O problema
+h2:estreg Estimadores de regressão como estimadores de calibração
+h2:propriedades-dos-estimadores-de-calibração Propriedades dos estimadores de calibração
+fig:figcalib1 Residuos para o modelo de regressão da população para os estimadores de HT (esquerda) e de calibração (direita)
+fig:figcalib2 Regressão linear para a população de fazendas de cana-de-açúcar
+tab:echo Estimativas de total de fazendas de cana-de-açúcar, dos erros padrão e coeficientes de variação (CV) usando os estimadores HT e GREG para variáveis selecionadas
+tab:echo Estimativas de total de fazendas de cana-de-açucar, dos erros padrão e coeficientes de variação (CV) usando os estimadores HT e pós-estratificação (PS-Região) para variáveis selecionadas
+h3:propriedades-dos-estimadores-para-grandes-amostras Propriedades dos estimadores para grandes amostras
+h2:razCS Estimadores de razão como casos particulares da calibração
+h3:estimador-de-razão-combinada-sob-aes Estimador de razão combinada sob AES
+h3:estimador-de-razão-separada-sob-aes Estimador de razão separada sob AES
+h3:comparação-dos-estimadores-de-razão-combinada-e-separada Comparação dos estimadores de razão combinada e separada
+h2:alguns-problemas-práticos-com-calibração Alguns problemas práticos com calibração
+h3:tamanhos-de-amostra-pequenos Tamanhos de amostra pequenos
+h3:pesos-negativos-ou-extremos Pesos negativos ou extremos
+h3:grande-número-de-variáveis-de-pesquisa-ou-de-grupos-de-modelagem Grande número de variáveis de pesquisa ou de grupos de modelagem
+h3:gvaraux Grande número de variáveis auxiliares
+fig:figcalib3 $EQM$ do estimador de regressão *versus* número de variáveis auxiliares
+h3:não-resposta-e-calibração Não resposta e calibração
+tab:echo Identificação dos grupos sub-representados e super-representados na pesquisa de força de trabalho do Reino Unido
+h2:seleção-de-variáveis-para-calibração-com-não-resposta Seleção de variáveis para calibração com não resposta
+tab:echo Estimativas do rendimento médio domiciliar por esquema de ponderação da pesquisa domiciliar da Holanda 1977/1978
+h2:indicadores-de-qualidade-da-calibração Indicadores de qualidade da calibração
+h2:um-guia-para-aplicação-de-calibração Um guia para aplicação de calibração
+h2:observações-finais Observações finais
+h2:exerc13 Exercícios
+

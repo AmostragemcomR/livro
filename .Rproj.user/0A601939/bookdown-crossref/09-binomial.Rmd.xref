@@ -1,0 +1,50 @@
+h1:binom Outros Métodos de Amostragem com Equiprobabilidade
+h2:binom2 Amostragem binomial ou de Bernoulli
+h3:binom3 Método de seleção da amostra
+h3:probabilidades-de-inclusão-na-amostragem-binomial Probabilidades de inclusão na amostragem binomial
+h3:estAB Estimação do total sob amostragem binomial
+eq:eqbin1
+eq:eqbin2
+onde  é a variável indicadora que assume o valor 1 se a unidade  da população foi selecionada para a amostra e o valor 0 caso contrário.eq:eqbin3
+eq:eqbin4
+eq:eqbin5
+eq:eqbin6
+eq:eqbin7
+eq:eqbin8
+h3:estimação-da-média-sob-amostragem-binomial Estimação da média sob amostragem binomial
+eq:eqbin9
+eq:eqbin10
+eq:eqbin11
+eq:eqbin12
+eq:eqbin13
+eq:eqbin14
+A Tabela @ref(tab:tabbin1) resume os resultados para estimação do total e média sob amostragem Binomial ou Bernoulli.h3:exemplos-de-aplicação-da-amostragem-binomial Exemplos de aplicação da amostragem binomial
+h2:inversa Amostragem inversa simples
+h3:método-de-seleção-da-amostra-inversa-simples Método de seleção da amostra inversa simples
+h3:amostragem-inversa-simples-para-varredura-por-amostragem Amostragem inversa simples para varredura por amostragem
+eq:eqinv3
+para . Uma hipótese necessária para obter essa distribuição de probabilidades é que .eq:eqinv4
+eq:eqinv5
+h3:estimação-de-horvitz-thompson-na-amostragem-inversa-simples Estimação de Horvitz-Thompson na amostragem inversa simples
+eq:eqinv6
+As probabilidades de inclusão conjunta das unidades  e  na amostra são dadas por:eq:eqinv7
+O estimador HT para o total populacional utilizando as probabilidades calculadas acima é dado por:eq:eqinv8
+onde  é o conjunto da amostra de  e .eq:eqinv9
+onde: eq:eqinv10
+onde: eq:eqinv11
+Sua variância é calculada pela expressão:eq:eqinv12
+Um estimador para a variância do estimador da média é dado pela expressão:eq:eqinv13
+h3:estimação-baseada-no-estimador-de-murthy-na-amostragem-inversa-simples Estimação baseada no estimador de Murthy na amostragem inversa simples
+eq:eqinv14
+eq:eqinv15
+eq:eqinv16
+eq:eqinv17
+eq:eqinv18
+eq:eqinv19
+eq:eqinv20
+Cuja variância pode ser obtida obtida através da Expressão @ref(eq:eqinv15).eq:eqinv21
+eq:eqinv22
+O estimador da variância do estimador da média é dado pela expressão:eq:eqinv23
+A Tabela @ref(tab:tabbin2) resume os resultados para estimação sob AIS.h3:exemplos-de-aplicação-da-amostragem-inversa-simples Exemplos de aplicação da amostragem inversa simples
+h2:exerc9 Exercícios
+

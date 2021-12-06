@@ -1,0 +1,24 @@
+h1:cong Amostragem Conglomerada
+h2:conceituação-básica Conceituação básica
+fig:hierar1 Ilustração da hierarquia com vários níveis (vários para um)
+h2:amostragem-de-áreas Amostragem de áreas
+h2:definições-básicas-e-notação Definições básicas e notação
+h2:amostragem-conglomerada-em-um-estágio Amostragem conglomerada em um estágio
+fig:baralho Ilustração de unidades elementares “naturalmente” agrupadas
+fig:baralhoAC1 Ilustração da seleção de amostragem conglomerada em um estágio
+h2:amostragem-conglomerada-em-vários-estágios Amostragem conglomerada em vários estágios
+fig:baralhoAC2 Ilustração da seleção de amostragem conglomerada em 2 estágios 
+h2:notação-na-amostragem-conglomerada-em-um-estágio Notação na amostragem conglomerada em um estágio
+h2:amostragem-conglomerada-em-um-estágio-simples Amostragem conglomerada em um estágio simples
+h3:estimação-do-total-sob-ac1s Estimação do total sob AC1S
+h3:estimação-da-média-sob-ac1s Estimação da média sob AC1S
+h2:efeito-do-plano-amostral Efeito do plano amostral
+h2:amostragem-conglomerada-com-ppt-em-um-estágio Amostragem conglomerada com PPT em um estágio
+h2:amostragem-conglomerada-em-dois-estágios Amostragem conglomerada em dois estágios
+h3:ac2-com-aas-nos-2-estágios AC2 com AAS nos 2 estágios
+h3:ac2-com-ppt-com-reposição-no-primeiro-estágio-e-aas-no-segundo-estágio AC2 com PPT com reposição no primeiro estágio e AAS no segundo estágio
+h3:ac2-com-ppt-de-poisson-sequencial-no-primeiro-estágio-e-aas-no-segundo-estágio AC2 com PPT de Poisson sequencial no primeiro estágio e AAS no segundo estágio
+h3:tamanho-de-amostra-na-amostragem-conglomerada-em-dois-estágios Tamanho de amostra na amostragem conglomerada em dois estágios
+h2:ideias-básicas-na-escolha-de-unidades-compostas Ideias básicas na escolha de unidades compostas
+h2:exerc12 Exercícios
+

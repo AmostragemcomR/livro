@@ -11,12 +11,13 @@ site: bookdown::bookdown_site
 
 output:
    bookdown::gitbook: default
-#   bookdown::pdf_book: default
+
 documentclass: book                   
 
 bibliography: [book.bib]
-#csl: Modified-alternatives-to-animal-experimentation.csl
+
 csl: Modified-apa.csl
+
 suppress-bibliography: false
 link-citations: no
 github-repo: AmostragemcomR/livro
@@ -28,7 +29,7 @@ description: "Este é o livro de Amostragem elaborado pelos autores."
 <div style="font-style:normal">
 <left>
     **Publicação** <br> 15 de outubro de 2020    
-    <p>**Última atualização** <br> 29 de junho de 2021
+    <p>**Última atualização** <br> 06 de dezembro de 2021
     
 Permitida a reprodução total ou parcial com a devida citação de fonte.
 

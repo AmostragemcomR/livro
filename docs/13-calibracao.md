@@ -1171,13 +1171,13 @@ c) Compare e comente os resultados.
 <table>
 <caption>(#tab:tabcalib9)Contagem das árvores mortas na amostra, por aerofotogrametria $(x_i)$ e localmente $(y_i)$</caption>
 </table>
------- --- --- --- --- --- --- --- --- --- ---- 
-Área    1   2   3   4   5   6   7   8   9   10
+------------
+Área      1    2    3    4    5    6    7    8    9   10
+------ ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+$x_i$    12   30   24   24   18   30   12    6   36   42
 
-$x_i$  12  30  24  24  18  30  12   6  36  42
-
-$y_i$  18  42  24  36  24  36  14  10  48  54
-----------
+$y_i$    18   42   24   36   24   36   14   10   48   54
+------------
 </center>
 
 Estime o número total de árvores mortas na reserva usando:
@@ -1204,12 +1204,14 @@ g)  Compare e comente os resultados.
 <table>
 <caption>(#tab:tabcalib10)Quantias declaradas $(x_i)$ e contadas $(y_i)$ pelos alunos da amostra</caption>
 </table>
------ ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-$x_i$  1,91  7,41  3,03  8,63  4,76  8,12  3,89  2,75  8,66  0,85
+------------
+Aluno      1     2     3     4     5     6     7     8     9    10
+------ ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+$x_i$   1,91  7,41  3,03  8,63  4,76  8,12  3,89  2,75  8,66  0,85
 
-$y_i$  3,65  7,56  4,24 11,93  5,86  8,05  6,55  2,95  8,63  1,44
+$y_i$   3,65  7,56  4,24 11,93  5,86  8,05  6,55  2,95  8,63  1,44
 
-----------
+------------------------------------------------------------------
 </center>
 
 a)  Estime o total do dinheiro dos 50 alunos do grupo e a variância da estimativa.

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title></title>
+  <title>Capítulo 2 Conceitos e Cadastros | _main</title>
   <meta name="description" content="Este é o livro de Amostragem elaborado pelos autores." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="" />
+  <meta property="og:title" content="Capítulo 2 Conceitos e Cadastros | _main" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="AmostragemcomR/livro" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="Capítulo 2 Conceitos e Cadastros | _main" />
   
   <meta name="twitter:description" content="Este é o livro de Amostragem elaborado pelos autores." />
   
@@ -31,7 +31,9 @@
   
 <link rel="prev" href="introduc.html"/>
 <link rel="next" href="visger.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -47,49 +49,98 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 </head>
@@ -113,15 +164,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="lista-de-figuras.html"><a href="lista-de-figuras.html"><i class="fa fa-check"></i>Lista de Figuras</a></li>
 <li class="chapter" data-level="" data-path="arquivos-de-dados-usados-no-livro.html"><a href="arquivos-de-dados-usados-no-livro.html"><i class="fa fa-check"></i>Arquivos de dados usados no livro</a></li>
 <li class="chapter" data-level="" data-path="errata.html"><a href="errata.html"><i class="fa fa-check"></i>Errata</a></li>
-<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
 <li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="conceitos.html"><a href="conceitos.html"><i class="fa fa-check"></i><b>2</b> Conceitos e Cadastros</a><ul>
+<li class="chapter" data-level="2" data-path="conceitos.html"><a href="conceitos.html"><i class="fa fa-check"></i><b>2</b> Conceitos e Cadastros</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="conceitos.html"><a href="conceitos.html#fontes-de-dados-e-tipos-de-pesquisas"><i class="fa fa-check"></i><b>2.1</b> Fontes de dados e tipos de pesquisas</a></li>
 <li class="chapter" data-level="2.2" data-path="conceitos.html"><a href="conceitos.html#alguns-conceitos-fundamentais"><i class="fa fa-check"></i><b>2.2</b> Alguns conceitos fundamentais</a></li>
 <li class="chapter" data-level="2.3" data-path="conceitos.html"><a href="conceitos.html#abordalt"><i class="fa fa-check"></i><b>2.3</b> Abordagens alternativas para pesquisas por amostragem</a></li>
-<li class="chapter" data-level="2.4" data-path="conceitos.html"><a href="conceitos.html#planejamento-e-execução-de-pesquisas-por-amostragem"><i class="fa fa-check"></i><b>2.4</b> Planejamento e execução de pesquisas por amostragem</a><ul>
+<li class="chapter" data-level="2.4" data-path="conceitos.html"><a href="conceitos.html#planejamento-e-execução-de-pesquisas-por-amostragem"><i class="fa fa-check"></i><b>2.4</b> Planejamento e execução de pesquisas por amostragem</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="conceitos.html"><a href="conceitos.html#especificação-das-necessidades-da-pesquisa"><i class="fa fa-check"></i><b>2.4.1</b> Especificação das necessidades da pesquisa</a></li>
 <li class="chapter" data-level="2.4.2" data-path="conceitos.html"><a href="conceitos.html#planejamento-da-pesquisa"><i class="fa fa-check"></i><b>2.4.2</b> Planejamento da pesquisa</a></li>
 <li class="chapter" data-level="2.4.3" data-path="conceitos.html"><a href="conceitos.html#elaboração-dos-instrumentos-de-coleta-e-dos-sistemas"><i class="fa fa-check"></i><b>2.4.3</b> Elaboração dos instrumentos de coleta e dos sistemas</a></li>
@@ -132,33 +186,39 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.4.8" data-path="conceitos.html"><a href="conceitos.html#arquivamento-das-informações-da-pesquisa"><i class="fa fa-check"></i><b>2.4.8</b> Arquivamento das informações da pesquisa</a></li>
 <li class="chapter" data-level="2.4.9" data-path="conceitos.html"><a href="conceitos.html#avaliação-da-pesquisa"><i class="fa fa-check"></i><b>2.4.9</b> Avaliação da pesquisa</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="conceitos.html"><a href="conceitos.html#cadastros"><i class="fa fa-check"></i><b>2.5</b> Cadastros</a><ul>
+<li class="chapter" data-level="2.5" data-path="conceitos.html"><a href="conceitos.html#cadastros"><i class="fa fa-check"></i><b>2.5</b> Cadastros</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="conceitos.html"><a href="conceitos.html#cadIBGE"><i class="fa fa-check"></i><b>2.5.1</b> Cadastros importantes no IBGE</a></li>
 <li class="chapter" data-level="2.5.2" data-path="conceitos.html"><a href="conceitos.html#defeitos-de-cadastros"><i class="fa fa-check"></i><b>2.5.2</b> Defeitos de cadastros</a></li>
 <li class="chapter" data-level="2.5.3" data-path="conceitos.html"><a href="conceitos.html#regras-de-associação-das-unidades-da-população-à-unidade-cadastral"><i class="fa fa-check"></i><b>2.5.3</b> Regras de associação das unidades da população à unidade cadastral</a></li>
 </ul></li>
 <li class="chapter" data-level="2.6" data-path="conceitos.html"><a href="conceitos.html#exerc2"><i class="fa fa-check"></i><b>2.6</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="visger.html"><a href="visger.html"><i class="fa fa-check"></i><b>3</b> Visão Geral da Amostragem e Estimação</a><ul>
+<li class="chapter" data-level="3" data-path="visger.html"><a href="visger.html"><i class="fa fa-check"></i><b>3</b> Visão Geral da Amostragem e Estimação</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="visger.html"><a href="visger.html#definições-e-notação-para-população-de-pesquisa-e-parâmetros-selecionados"><i class="fa fa-check"></i><b>3.1</b> Definições e notação para população de pesquisa e parâmetros selecionados</a></li>
 <li class="chapter" data-level="3.2" data-path="visger.html"><a href="visger.html#amostra"><i class="fa fa-check"></i><b>3.2</b> Amostra</a></li>
 <li class="chapter" data-level="3.3" data-path="visger.html"><a href="visger.html#amostragem-probabilística"><i class="fa fa-check"></i><b>3.3</b> Amostragem probabilística</a></li>
 <li class="chapter" data-level="3.4" data-path="visger.html"><a href="visger.html#estatísticas-estimadores-e-estimativas"><i class="fa fa-check"></i><b>3.4</b> Estatísticas, estimadores e estimativas</a></li>
 <li class="chapter" data-level="3.5" data-path="visger.html"><a href="visger.html#a-distribuição-de-aleatorização"><i class="fa fa-check"></i><b>3.5</b> A distribuição de aleatorização</a></li>
 <li class="chapter" data-level="3.6" data-path="visger.html"><a href="visger.html#estimadores-não-viciados-para-o-total-populacional"><i class="fa fa-check"></i><b>3.6</b> Estimadores não viciados para o total populacional</a></li>
-<li class="chapter" data-level="3.7" data-path="visger.html"><a href="visger.html#teoria-básica"><i class="fa fa-check"></i><b>3.7</b> Teoria básica</a><ul>
+<li class="chapter" data-level="3.7" data-path="visger.html"><a href="visger.html#teoria-básica"><i class="fa fa-check"></i><b>3.7</b> Teoria básica</a>
+<ul>
 <li class="chapter" data-level="3.7.1" data-path="visger.html"><a href="visger.html#estimador-linear-de-total"><i class="fa fa-check"></i><b>3.7.1</b> Estimador linear de total</a></li>
 <li class="chapter" data-level="3.7.2" data-path="visger.html"><a href="visger.html#propHT"><i class="fa fa-check"></i><b>3.7.2</b> Propriedades do estimador de Horvitz-Thompson</a></li>
 <li class="chapter" data-level="3.7.3" data-path="visger.html"><a href="visger.html#estimação-da-média-populacional"><i class="fa fa-check"></i><b>3.7.3</b> Estimação da média populacional</a></li>
 </ul></li>
 <li class="chapter" data-level="3.8" data-path="visger.html"><a href="visger.html#exerc3"><i class="fa fa-check"></i><b>3.8</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="aas.html"><a href="aas.html"><i class="fa fa-check"></i><b>4</b> Amostragem Aleatória Simples</a><ul>
+<li class="chapter" data-level="4" data-path="aas.html"><a href="aas.html"><i class="fa fa-check"></i><b>4</b> Amostragem Aleatória Simples</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="aas.html"><a href="aas.html#planos-amostrais-e-algoritmos-de-seleção"><i class="fa fa-check"></i><b>4.1</b> Planos amostrais e algoritmos de seleção</a></li>
-<li class="chapter" data-level="4.2" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-com-reposição"><i class="fa fa-check"></i><b>4.2</b> Amostragem aleatória simples com reposição</a><ul>
+<li class="chapter" data-level="4.2" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-com-reposição"><i class="fa fa-check"></i><b>4.2</b> Amostragem aleatória simples com reposição</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="aas.html"><a href="aas.html#estimação-do-total-e-média-populacionais-sob-aasc"><i class="fa fa-check"></i><b>4.2.1</b> Estimação do total e média populacionais sob AASC</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-sem-reposição"><i class="fa fa-check"></i><b>4.3</b> Amostragem aleatória simples sem reposição</a><ul>
+<li class="chapter" data-level="4.3" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-sem-reposição"><i class="fa fa-check"></i><b>4.3</b> Amostragem aleatória simples sem reposição</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="aas.html"><a href="aas.html#algoritmo-convencional-para-selecionar-uma-aas"><i class="fa fa-check"></i><b>4.3.1</b> Algoritmo “convencional” para selecionar uma AAS</a></li>
 <li class="chapter" data-level="4.3.2" data-path="aas.html"><a href="aas.html#Hajek"><i class="fa fa-check"></i><b>4.3.2</b> Algoritmo de Hàjek para selecionar AAS</a></li>
 <li class="chapter" data-level="4.3.3" data-path="aas.html"><a href="aas.html#algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas"><i class="fa fa-check"></i><b>4.3.3</b> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</a></li>
@@ -167,26 +227,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.3.6" data-path="aas.html"><a href="aas.html#distribuição-da-média-amostral"><i class="fa fa-check"></i><b>4.3.6</b> Distribuição da média amostral</a></li>
 <li class="chapter" data-level="4.3.7" data-path="aas.html"><a href="aas.html#comparação-dos-planos-de-amostragem-aleatória-simples-com-e-sem-reposição"><i class="fa fa-check"></i><b>4.3.7</b> Comparação dos planos de amostragem aleatória simples com e sem reposição</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="aas.html"><a href="aas.html#determinação-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>4.4</b> Determinação do tamanho da amostra</a><ul>
+<li class="chapter" data-level="4.4" data-path="aas.html"><a href="aas.html#determinação-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>4.4</b> Determinação do tamanho da amostra</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="aas.html"><a href="aas.html#tamanho-amostral-para-custo-fixado"><i class="fa fa-check"></i><b>4.4.1</b> Tamanho amostral para custo fixado</a></li>
 <li class="chapter" data-level="4.4.2" data-path="aas.html"><a href="aas.html#tamanho-amostral-para-precisão-fixada"><i class="fa fa-check"></i><b>4.4.2</b> Tamanho amostral para precisão fixada</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="aas.html"><a href="aas.html#exerc4"><i class="fa fa-check"></i><b>4.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proporc.html"><a href="proporc.html"><i class="fa fa-check"></i><b>5</b> Estimação de Proporções</a><ul>
+<li class="chapter" data-level="5" data-path="proporc.html"><a href="proporc.html"><i class="fa fa-check"></i><b>5</b> Estimação de Proporções</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="proporc.html"><a href="proporc.html#parâmetros-populacionais"><i class="fa fa-check"></i><b>5.1</b> Parâmetros populacionais</a></li>
 <li class="chapter" data-level="5.2" data-path="proporc.html"><a href="proporc.html#estimação-sob-amostragem-aleatória-simples-com-reposição"><i class="fa fa-check"></i><b>5.2</b> Estimação sob amostragem aleatória simples com reposição</a></li>
 <li class="chapter" data-level="5.3" data-path="proporc.html"><a href="proporc.html#estimação-sob-amostragem-aleatória-simples-sem-reposição"><i class="fa fa-check"></i><b>5.3</b> Estimação sob amostragem aleatória simples sem reposição</a></li>
 <li class="chapter" data-level="5.4" data-path="proporc.html"><a href="proporc.html#distribuição-amostral-exata-de-estimadores-de-proporção-sob-aasc-e-aas"><i class="fa fa-check"></i><b>5.4</b> Distribuição amostral exata de estimadores de proporção sob AASC e AAS</a></li>
 <li class="chapter" data-level="5.5" data-path="proporc.html"><a href="proporc.html#intervalos-de-confiança-para-proporções-na-amostragem-aleatória-simples"><i class="fa fa-check"></i><b>5.5</b> Intervalos de confiança para proporções na amostragem aleatória simples</a></li>
 <li class="chapter" data-level="5.6" data-path="proporc.html"><a href="proporc.html#intervalos-de-confiança-utilizando-a-aproximação-normal"><i class="fa fa-check"></i><b>5.6</b> Intervalos de confiança utilizando a aproximação Normal</a></li>
-<li class="chapter" data-level="5.7" data-path="proporc.html"><a href="proporc.html#cálculo-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>5.7</b> Cálculo do tamanho da amostra</a><ul>
+<li class="chapter" data-level="5.7" data-path="proporc.html"><a href="proporc.html#cálculo-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>5.7</b> Cálculo do tamanho da amostra</a>
+<ul>
 <li class="chapter" data-level="5.7.1" data-path="proporc.html"><a href="proporc.html#cálculo-do-n-utilizando-outras-formas-de-representar-o-erro-amostral"><i class="fa fa-check"></i><b>5.7.1</b> Cálculo do <span class="math inline">\(n\)</span> utilizando outras formas de representar o erro amostral</a></li>
 </ul></li>
 <li class="chapter" data-level="5.8" data-path="proporc.html"><a href="proporc.html#estimação-de-proporções-para-variáveis-com-mais-de-duas-categorias"><i class="fa fa-check"></i><b>5.8</b> Estimação de proporções para variáveis com mais de duas categorias</a></li>
 <li class="chapter" data-level="5.9" data-path="proporc.html"><a href="proporc.html#exerc5"><i class="fa fa-check"></i><b>5.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="razao.html"><a href="razao.html"><i class="fa fa-check"></i><b>6</b> Estimação de Razões e Funções de Totais</a><ul>
+<li class="chapter" data-level="6" data-path="razao.html"><a href="razao.html"><i class="fa fa-check"></i><b>6</b> Estimação de Razões e Funções de Totais</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="razao.html"><a href="razao.html#razões-populacionais-como-parâmetros-de-interesse"><i class="fa fa-check"></i><b>6.1</b> Razões populacionais como parâmetros de interesse</a></li>
 <li class="chapter" data-level="6.2" data-path="razao.html"><a href="razao.html#razão-de-médias-versus-média-de-razões"><i class="fa fa-check"></i><b>6.2</b> Razão de médias <em>versus</em> média de razões</a></li>
 <li class="chapter" data-level="6.3" data-path="razao.html"><a href="razao.html#outras-funções-de-totais"><i class="fa fa-check"></i><b>6.3</b> Outras funções de totais</a></li>
@@ -196,7 +260,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.7" data-path="razao.html"><a href="razao.html#erro-quadrático-médio-de-widehatr"><i class="fa fa-check"></i><b>6.7</b> Erro quadrático médio de <span class="math inline">\(\widehat{R}\)</span></a></li>
 <li class="chapter" data-level="6.8" data-path="razao.html"><a href="razao.html#exerc6"><i class="fa fa-check"></i><b>6.8</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="domin.html"><a href="domin.html"><i class="fa fa-check"></i><b>7</b> Estimação para Domínios de Estudo</a><ul>
+<li class="chapter" data-level="7" data-path="domin.html"><a href="domin.html"><i class="fa fa-check"></i><b>7</b> Estimação para Domínios de Estudo</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="domin.html"><a href="domin.html#domin1"><i class="fa fa-check"></i><b>7.1</b> Domínios de estudo</a></li>
 <li class="chapter" data-level="7.2" data-path="domin.html"><a href="domin.html#domin2"><i class="fa fa-check"></i><b>7.2</b> Parâmetros de interesse para domínios</a></li>
 <li class="chapter" data-level="7.3" data-path="domin.html"><a href="domin.html#estimação-de-parâmetros-para-domínios-sob-aas"><i class="fa fa-check"></i><b>7.3</b> Estimação de parâmetros para domínios sob AAS</a></li>
@@ -207,7 +272,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.8" data-path="domin.html"><a href="domin.html#estimação-de-proporções-dentro-do-domínio"><i class="fa fa-check"></i><b>7.8</b> Estimação de proporções dentro do domínio</a></li>
 <li class="chapter" data-level="7.9" data-path="domin.html"><a href="domin.html#exerc7"><i class="fa fa-check"></i><b>7.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="AS.html"><a href="AS.html"><i class="fa fa-check"></i><b>8</b> Amostragem Sistemática Simples</a><ul>
+<li class="chapter" data-level="8" data-path="AS.html"><a href="AS.html"><i class="fa fa-check"></i><b>8</b> Amostragem Sistemática Simples</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="AS.html"><a href="AS.html#ideia-básica"><i class="fa fa-check"></i><b>8.1</b> Ideia básica</a></li>
 <li class="chapter" data-level="8.2" data-path="AS.html"><a href="AS.html#método-de-seleção-da-amostra"><i class="fa fa-check"></i><b>8.2</b> Método de seleção da amostra</a></li>
 <li class="chapter" data-level="8.3" data-path="AS.html"><a href="AS.html#composição-das-amostras-sistemáticas-simples"><i class="fa fa-check"></i><b>8.3</b> Composição das amostras sistemáticas simples</a></li>
@@ -221,15 +287,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.11" data-path="AS.html"><a href="AS.html#alternativas-para-seleção-com-amostragem-sistemática-simples"><i class="fa fa-check"></i><b>8.11</b> Alternativas para seleção com amostragem sistemática simples</a></li>
 <li class="chapter" data-level="8.12" data-path="AS.html"><a href="AS.html#exerc8"><i class="fa fa-check"></i><b>8.12</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="binom.html"><a href="binom.html"><i class="fa fa-check"></i><b>9</b> Outros Métodos de Amostragem com Equiprobabilidade</a><ul>
-<li class="chapter" data-level="9.1" data-path="binom.html"><a href="binom.html#binom2"><i class="fa fa-check"></i><b>9.1</b> Amostragem binomial ou de Bernoulli</a><ul>
+<li class="chapter" data-level="9" data-path="binom.html"><a href="binom.html"><i class="fa fa-check"></i><b>9</b> Outros Métodos de Amostragem com Equiprobabilidade</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="binom.html"><a href="binom.html#binom2"><i class="fa fa-check"></i><b>9.1</b> Amostragem binomial ou de Bernoulli</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="binom.html"><a href="binom.html#binom3"><i class="fa fa-check"></i><b>9.1.1</b> Método de seleção da amostra</a></li>
 <li class="chapter" data-level="9.1.2" data-path="binom.html"><a href="binom.html#probabilidades-de-inclusão-na-amostragem-binomial"><i class="fa fa-check"></i><b>9.1.2</b> Probabilidades de inclusão na amostragem binomial</a></li>
 <li class="chapter" data-level="9.1.3" data-path="binom.html"><a href="binom.html#estAB"><i class="fa fa-check"></i><b>9.1.3</b> Estimação do total sob amostragem binomial</a></li>
 <li class="chapter" data-level="9.1.4" data-path="binom.html"><a href="binom.html#estimação-da-média-sob-amostragem-binomial"><i class="fa fa-check"></i><b>9.1.4</b> Estimação da média sob amostragem binomial</a></li>
 <li class="chapter" data-level="9.1.5" data-path="binom.html"><a href="binom.html#exemplos-de-aplicação-da-amostragem-binomial"><i class="fa fa-check"></i><b>9.1.5</b> Exemplos de aplicação da amostragem binomial</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="binom.html"><a href="binom.html#inversa"><i class="fa fa-check"></i><b>9.2</b> Amostragem inversa simples</a><ul>
+<li class="chapter" data-level="9.2" data-path="binom.html"><a href="binom.html#inversa"><i class="fa fa-check"></i><b>9.2</b> Amostragem inversa simples</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="binom.html"><a href="binom.html#método-de-seleção-da-amostra-inversa-simples"><i class="fa fa-check"></i><b>9.2.1</b> Método de seleção da amostra inversa simples</a></li>
 <li class="chapter" data-level="9.2.2" data-path="binom.html"><a href="binom.html#amostragem-inversa-simples-para-varredura-por-amostragem"><i class="fa fa-check"></i><b>9.2.2</b> Amostragem inversa simples para varredura por amostragem</a></li>
 <li class="chapter" data-level="9.2.3" data-path="binom.html"><a href="binom.html#estimação-de-horvitz-thompson-na-amostragem-inversa-simples"><i class="fa fa-check"></i><b>9.2.3</b> Estimação de Horvitz-Thompson na amostragem inversa simples</a></li>
@@ -238,35 +307,44 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="binom.html"><a href="binom.html#exerc9"><i class="fa fa-check"></i><b>9.3</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="ppt.html"><a href="ppt.html"><i class="fa fa-check"></i><b>10</b> Amostragem com Probabilidades Proporcionais ao Tamanho</a><ul>
+<li class="chapter" data-level="10" data-path="ppt.html"><a href="ppt.html"><i class="fa fa-check"></i><b>10</b> Amostragem com Probabilidades Proporcionais ao Tamanho</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="ppt.html"><a href="ppt.html#motivação-1"><i class="fa fa-check"></i><b>10.1</b> Motivação</a></li>
 <li class="chapter" data-level="10.2" data-path="ppt.html"><a href="ppt.html#estimação-do-total-populacional"><i class="fa fa-check"></i><b>10.2</b> Estimação do total populacional</a></li>
-<li class="chapter" data-level="10.3" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-com-reposição"><i class="fa fa-check"></i><b>10.3</b> Amostragem PPT com reposição</a><ul>
+<li class="chapter" data-level="10.3" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-com-reposição"><i class="fa fa-check"></i><b>10.3</b> Amostragem PPT com reposição</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="ppt.html"><a href="ppt.html#estimação-do-total-sob-amostragem-ppt-com-reposição"><i class="fa fa-check"></i><b>10.3.1</b> Estimação do total sob amostragem PPT com reposição</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-poisson"><i class="fa fa-check"></i><b>10.4</b> Amostragem PPT de Poisson</a><ul>
+<li class="chapter" data-level="10.4" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-poisson"><i class="fa fa-check"></i><b>10.4</b> Amostragem PPT de Poisson</a>
+<ul>
 <li class="chapter" data-level="10.4.1" data-path="ppt.html"><a href="ppt.html#estimação-do-total-sob-amostragem-de-poisson"><i class="fa fa-check"></i><b>10.4.1</b> Estimação do total sob amostragem de Poisson</a></li>
 </ul></li>
-<li class="chapter" data-level="10.5" data-path="ppt.html"><a href="ppt.html#ASP"><i class="fa fa-check"></i><b>10.5</b> Amostragem sequencial de Poisson</a><ul>
+<li class="chapter" data-level="10.5" data-path="ppt.html"><a href="ppt.html#ASP"><i class="fa fa-check"></i><b>10.5</b> Amostragem sequencial de Poisson</a>
+<ul>
 <li class="chapter" data-level="10.5.1" data-path="ppt.html"><a href="ppt.html#estimação-com-amostragem-sequencial-de-poisson"><i class="fa fa-check"></i><b>10.5.1</b> Estimação com amostragem sequencial de Poisson</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="ppt.html"><a href="ppt.html#amostragem-sistemática-com-ppt"><i class="fa fa-check"></i><b>10.6</b> Amostragem sistemática com PPT</a><ul>
+<li class="chapter" data-level="10.6" data-path="ppt.html"><a href="ppt.html#amostragem-sistemática-com-ppt"><i class="fa fa-check"></i><b>10.6</b> Amostragem sistemática com PPT</a>
+<ul>
 <li class="chapter" data-level="10.6.1" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-sistemática-com-ordenação"><i class="fa fa-check"></i><b>10.6.1</b> Amostragem PPT sistemática com ordenação</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-pareto"><i class="fa fa-check"></i><b>10.7</b> Amostragem PPT de Pareto</a><ul>
+<li class="chapter" data-level="10.7" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-pareto"><i class="fa fa-check"></i><b>10.7</b> Amostragem PPT de Pareto</a>
+<ul>
 <li class="chapter" data-level="10.7.1" data-path="ppt.html"><a href="ppt.html#estimação-do-total-sob-amostragem-ppt-de-pareto"><i class="fa fa-check"></i><b>10.7.1</b> Estimação do total sob amostragem PPT de Pareto</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="ppt.html"><a href="ppt.html#exerc10"><i class="fa fa-check"></i><b>10.8</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="estrat.html"><a href="estrat.html"><i class="fa fa-check"></i><b>11</b> Amostragem Estratificada</a><ul>
+<li class="chapter" data-level="11" data-path="estrat.html"><a href="estrat.html"><i class="fa fa-check"></i><b>11</b> Amostragem Estratificada</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="estrat.html"><a href="estrat.html#o-método-geral"><i class="fa fa-check"></i><b>11.1</b> O método geral</a></li>
-<li class="chapter" data-level="11.2" data-path="estrat.html"><a href="estrat.html#amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.2</b> Amostragem estratificada simples</a><ul>
+<li class="chapter" data-level="11.2" data-path="estrat.html"><a href="estrat.html#amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.2</b> Amostragem estratificada simples</a>
+<ul>
 <li class="chapter" data-level="11.2.1" data-path="estrat.html"><a href="estrat.html#método-de-seleção"><i class="fa fa-check"></i><b>11.2.1</b> Método de seleção</a></li>
 <li class="chapter" data-level="11.2.2" data-path="estrat.html"><a href="estrat.html#parâmetros-populacionais-1"><i class="fa fa-check"></i><b>11.2.2</b> Parâmetros populacionais</a></li>
 <li class="chapter" data-level="11.2.3" data-path="estrat.html"><a href="estrat.html#estimação-do-total-e-da-média-populacional"><i class="fa fa-check"></i><b>11.2.3</b> Estimação do total e da média populacional</a></li>
 <li class="chapter" data-level="11.2.4" data-path="estrat.html"><a href="estrat.html#intervalos-de-confiança"><i class="fa fa-check"></i><b>11.2.4</b> Intervalos de confiança</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="estrat.html"><a href="estrat.html#alocação-da-amostra-nos-estratos"><i class="fa fa-check"></i><b>11.3</b> Alocação da amostra nos estratos</a><ul>
+<li class="chapter" data-level="11.3" data-path="estrat.html"><a href="estrat.html#alocação-da-amostra-nos-estratos"><i class="fa fa-check"></i><b>11.3</b> Alocação da amostra nos estratos</a>
+<ul>
 <li class="chapter" data-level="11.3.1" data-path="estrat.html"><a href="estrat.html#alocação-proporcional"><i class="fa fa-check"></i><b>11.3.1</b> Alocação proporcional</a></li>
 <li class="chapter" data-level="11.3.2" data-path="estrat.html"><a href="estrat.html#alocação-ótima"><i class="fa fa-check"></i><b>11.3.2</b> Alocação ótima</a></li>
 <li class="chapter" data-level="11.3.3" data-path="estrat.html"><a href="estrat.html#tamanho-da-amostra-estratificada-simples"><i class="fa fa-check"></i><b>11.3.3</b> Tamanho da amostra estratificada simples</a></li>
@@ -278,20 +356,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.5" data-path="estrat.html"><a href="estrat.html#número-de-estratos-na-amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.5</b> Número de estratos na amostragem estratificada simples</a></li>
 <li class="chapter" data-level="11.6" data-path="estrat.html"><a href="estrat.html#exerc11"><i class="fa fa-check"></i><b>11.6</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="cong.html"><a href="cong.html"><i class="fa fa-check"></i><b>12</b> Amostragem Conglomerada</a><ul>
+<li class="chapter" data-level="12" data-path="cong.html"><a href="cong.html"><i class="fa fa-check"></i><b>12</b> Amostragem Conglomerada</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="cong.html"><a href="cong.html#conceituação-básica"><i class="fa fa-check"></i><b>12.1</b> Conceituação básica</a></li>
 <li class="chapter" data-level="12.2" data-path="cong.html"><a href="cong.html#amostragem-de-áreas"><i class="fa fa-check"></i><b>12.2</b> Amostragem de áreas</a></li>
 <li class="chapter" data-level="12.3" data-path="cong.html"><a href="cong.html#definições-básicas-e-notação"><i class="fa fa-check"></i><b>12.3</b> Definições básicas e notação</a></li>
 <li class="chapter" data-level="12.4" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-um-estágio"><i class="fa fa-check"></i><b>12.4</b> Amostragem conglomerada em um estágio</a></li>
 <li class="chapter" data-level="12.5" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-vários-estágios"><i class="fa fa-check"></i><b>12.5</b> Amostragem conglomerada em vários estágios</a></li>
 <li class="chapter" data-level="12.6" data-path="cong.html"><a href="cong.html#notação-na-amostragem-conglomerada-em-um-estágio"><i class="fa fa-check"></i><b>12.6</b> Notação na amostragem conglomerada em um estágio</a></li>
-<li class="chapter" data-level="12.7" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-um-estágio-simples"><i class="fa fa-check"></i><b>12.7</b> Amostragem conglomerada em um estágio simples</a><ul>
+<li class="chapter" data-level="12.7" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-um-estágio-simples"><i class="fa fa-check"></i><b>12.7</b> Amostragem conglomerada em um estágio simples</a>
+<ul>
 <li class="chapter" data-level="12.7.1" data-path="cong.html"><a href="cong.html#estimação-do-total-sob-ac1s"><i class="fa fa-check"></i><b>12.7.1</b> Estimação do total sob AC1S</a></li>
 <li class="chapter" data-level="12.7.2" data-path="cong.html"><a href="cong.html#estimação-da-média-sob-ac1s"><i class="fa fa-check"></i><b>12.7.2</b> Estimação da média sob AC1S</a></li>
 </ul></li>
 <li class="chapter" data-level="12.8" data-path="cong.html"><a href="cong.html#efeito-do-plano-amostral"><i class="fa fa-check"></i><b>12.8</b> Efeito do plano amostral</a></li>
 <li class="chapter" data-level="12.9" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-com-ppt-em-um-estágio"><i class="fa fa-check"></i><b>12.9</b> Amostragem conglomerada com PPT em um estágio</a></li>
-<li class="chapter" data-level="12.10" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-dois-estágios"><i class="fa fa-check"></i><b>12.10</b> Amostragem conglomerada em dois estágios</a><ul>
+<li class="chapter" data-level="12.10" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-dois-estágios"><i class="fa fa-check"></i><b>12.10</b> Amostragem conglomerada em dois estágios</a>
+<ul>
 <li class="chapter" data-level="12.10.1" data-path="cong.html"><a href="cong.html#ac2-com-aas-nos-2-estágios"><i class="fa fa-check"></i><b>12.10.1</b> AC2 com AAS nos 2 estágios</a></li>
 <li class="chapter" data-level="12.10.2" data-path="cong.html"><a href="cong.html#ac2-com-ppt-com-reposição-no-primeiro-estágio-e-aas-no-segundo-estágio"><i class="fa fa-check"></i><b>12.10.2</b> AC2 com PPT com reposição no primeiro estágio e AAS no segundo estágio</a></li>
 <li class="chapter" data-level="12.10.3" data-path="cong.html"><a href="cong.html#ac2-com-ppt-de-poisson-sequencial-no-primeiro-estágio-e-aas-no-segundo-estágio"><i class="fa fa-check"></i><b>12.10.3</b> AC2 com PPT de Poisson sequencial no primeiro estágio e AAS no segundo estágio</a></li>
@@ -300,19 +381,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12.11" data-path="cong.html"><a href="cong.html#ideias-básicas-na-escolha-de-unidades-compostas"><i class="fa fa-check"></i><b>12.11</b> Ideias básicas na escolha de unidades compostas</a></li>
 <li class="chapter" data-level="12.12" data-path="cong.html"><a href="cong.html#exerc12"><i class="fa fa-check"></i><b>12.12</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="calib.html"><a href="calib.html"><i class="fa fa-check"></i><b>13</b> Estimadores de Calibração</a><ul>
+<li class="chapter" data-level="13" data-path="calib.html"><a href="calib.html"><i class="fa fa-check"></i><b>13</b> Estimadores de Calibração</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="calib.html"><a href="calib.html#motiva13"><i class="fa fa-check"></i><b>13.1</b> Motivação</a></li>
 <li class="chapter" data-level="13.2" data-path="calib.html"><a href="calib.html#problema"><i class="fa fa-check"></i><b>13.2</b> O problema</a></li>
 <li class="chapter" data-level="13.3" data-path="calib.html"><a href="calib.html#estreg"><i class="fa fa-check"></i><b>13.3</b> Estimadores de regressão como estimadores de calibração</a></li>
-<li class="chapter" data-level="13.4" data-path="calib.html"><a href="calib.html#propriedades-dos-estimadores-de-calibração"><i class="fa fa-check"></i><b>13.4</b> Propriedades dos estimadores de calibração</a><ul>
+<li class="chapter" data-level="13.4" data-path="calib.html"><a href="calib.html#propriedades-dos-estimadores-de-calibração"><i class="fa fa-check"></i><b>13.4</b> Propriedades dos estimadores de calibração</a>
+<ul>
 <li class="chapter" data-level="13.4.1" data-path="calib.html"><a href="calib.html#propriedades-dos-estimadores-para-grandes-amostras"><i class="fa fa-check"></i><b>13.4.1</b> Propriedades dos estimadores para grandes amostras</a></li>
 </ul></li>
-<li class="chapter" data-level="13.5" data-path="calib.html"><a href="calib.html#razCS"><i class="fa fa-check"></i><b>13.5</b> Estimadores de razão como casos particulares da calibração</a><ul>
+<li class="chapter" data-level="13.5" data-path="calib.html"><a href="calib.html#razCS"><i class="fa fa-check"></i><b>13.5</b> Estimadores de razão como casos particulares da calibração</a>
+<ul>
 <li class="chapter" data-level="13.5.1" data-path="calib.html"><a href="calib.html#estimador-de-razão-combinada-sob-aes"><i class="fa fa-check"></i><b>13.5.1</b> Estimador de razão combinada sob AES</a></li>
 <li class="chapter" data-level="13.5.2" data-path="calib.html"><a href="calib.html#estimador-de-razão-separada-sob-aes"><i class="fa fa-check"></i><b>13.5.2</b> Estimador de razão separada sob AES</a></li>
 <li class="chapter" data-level="13.5.3" data-path="calib.html"><a href="calib.html#comparação-dos-estimadores-de-razão-combinada-e-separada"><i class="fa fa-check"></i><b>13.5.3</b> Comparação dos estimadores de razão combinada e separada</a></li>
 </ul></li>
-<li class="chapter" data-level="13.6" data-path="calib.html"><a href="calib.html#alguns-problemas-práticos-com-calibração"><i class="fa fa-check"></i><b>13.6</b> Alguns problemas práticos com calibração</a><ul>
+<li class="chapter" data-level="13.6" data-path="calib.html"><a href="calib.html#alguns-problemas-práticos-com-calibração"><i class="fa fa-check"></i><b>13.6</b> Alguns problemas práticos com calibração</a>
+<ul>
 <li class="chapter" data-level="13.6.1" data-path="calib.html"><a href="calib.html#tamanhos-de-amostra-pequenos"><i class="fa fa-check"></i><b>13.6.1</b> Tamanhos de amostra pequenos</a></li>
 <li class="chapter" data-level="13.6.2" data-path="calib.html"><a href="calib.html#pesos-negativos-ou-extremos"><i class="fa fa-check"></i><b>13.6.2</b> Pesos negativos ou extremos</a></li>
 <li class="chapter" data-level="13.6.3" data-path="calib.html"><a href="calib.html#grande-número-de-variáveis-de-pesquisa-ou-de-grupos-de-modelagem"><i class="fa fa-check"></i><b>13.6.3</b> Grande número de variáveis de pesquisa ou de grupos de modelagem</a></li>
@@ -344,19 +429,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conceitos" class="section level1">
+<div id="conceitos" class="section level1" number="2">
 <h1><span class="header-section-number">Capítulo 2</span> Conceitos e Cadastros</h1>
 <div style="text-align: justify">
-<div id="fontes-de-dados-e-tipos-de-pesquisas" class="section level2">
+<div id="fontes-de-dados-e-tipos-de-pesquisas" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Fontes de dados e tipos de pesquisas</h2>
 <p>Uma importante decisão em qualquer estudo ou projeto de pesquisa diz respeito ao levantamento das <em>fontes de dados</em> com potencial para atender às necessidades de informações de interesse. Um primeiro critério de classificação distingue as <em>fontes primárias</em>, cujos dados ainda não foram coletados, das <em>fontes secundárias</em>, cujos dados já foram coletados, possivelmente com outro(s) propósito(s), e estão disponíveis ou poderiam ser obtidos para uso imediato.</p>
 <p>No caso da <em>fonte primária</em>, a obtenção dos dados pode ser feita através de um <em>estudo de caso</em>, de uma <em>pesquisa</em> (<em>survey</em>) ou de um <em>experimento</em>. Para uma discussão mais extensa a esse respeito, ver, por exemplo, o excelente Capítulo 1 de <span class="citation">Wild e Seber (2004)</span>. Neste livro, nosso foco será sobre fontes primárias do tipo <em>pesquisa</em>.</p>
 <p>Por definição, <em>pesquisa</em> é uma <em>operação estatística</em> de coleta de informações sobre características de interesse de unidades de uma população, usando conceitos, métodos e procedimentos bem definidos, de modo que permita a compilação dessas informações numa forma resumida útil.</p>
 <p>Dependendo da amplitude da coleta dos dados, há dois tipos de <em>pesquisa</em>: censos e pesquisas amostrais. Um <em>censo</em> é uma pesquisa baseada numa enumeração exaustiva das unidades componentes de uma população, realizada com o propósito de coletar informações sobre aspectos relevantes dessa população. Num <em>censo</em>, a intenção é ter dados referentes a todas as unidades da população. Alternativamente, quando as informações vão ser coletadas somente para um subconjunto selecionado das unidades da população, se diz então que a <em>pesquisa</em> é <em>por amostragem</em> ou <em>amostral</em>.</p>
-<p>De acordo com <span class="citation">S. K. Thompson (2012)</span> tem-se a seguinte definição: &quot;<em>Amostragem</em> consiste em selecionar parte de uma população para observar, de modo que seja possível estimar alguma coisa sobre toda a população.”</p>
+<p>De acordo com <span class="citation">Thompson (2012)</span> tem-se a seguinte definição: “<em>Amostragem</em> consiste em selecionar parte de uma população para observar, de modo que seja possível estimar alguma coisa sobre toda a população.”</p>
 <p>Neste livro, o principal tipo de pesquisa a ser considerado é a <em>Pesquisa Amostral</em>, que busca conhecer a população com base numa amostra. Mas algumas vezes fazemos referência a censos que poderiam, teoricamente, ser conduzidos nas mesmas populações das quais tratamos de tirar amostras para fazer inferência.</p>
 </div>
-<div id="alguns-conceitos-fundamentais" class="section level2">
+<div id="alguns-conceitos-fundamentais" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Alguns conceitos fundamentais</h2>
 <p>Antes de avançar na apresentação da teoria relevante para <em>pesquisas por amostragem</em>, vamos introduzir vários conceitos relevantes e necessários para sustentar a discussão posterior.</p>
 <p><em>Unidade</em> é um único indivíduo, entidade ou objeto a ser medido ou observado na pesquisa.</p>
@@ -374,24 +459,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><em>Domínio de análise / interesse</em> é um conjunto de unidades de análise especificado como de interesse para fins de sumarização de dados, tabulação, inferência ou análise.</p>
 <p>Para dar concretude aos vários conceitos aqui introduzidos, vamos considerar alguns exemplos de situações de pesquisa, buscando destacar, em cada uma delas, a aplicação de alguns dos conceitos apresentados.</p>
 <p><strong>Exemplo 2.1 </strong> Pesquisa Nacional por Amostra de Domicílios Contínua - PNAD Contínua</p>
-<p>A PNAD Contínua é hoje a principal pesquisa domiciliar realizada pelo IBGE para acompanhamento das condições de vida da população brasileira. Conforme o IBGE &quot;O principal objetivo é produzir informações contínuas sobre a inserção da população no mercado de trabalho e de características tais como idade, sexo e nível de instrução, bem como permitir o estudo do desenvolvimento socioeconômico do País através da produção de dados anuais sobre outras formas de trabalho, trabalho infantil, migração, entre outros temas.&quot; Maiores informações sobre a pesquisa e seus métodos podem ser encontradas em <span class="citation">Freitas e Antonaci (2014)</span> e também no endereço: <a href="https://www.ibge.gov.br/estatisticas-novoportal/sociais/populacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?edicao=20106&amp;t=conceitos-e-metodos" class="uri">https://www.ibge.gov.br/estatisticas-novoportal/sociais/populacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?edicao=20106&amp;t=conceitos-e-metodos</a>.</p>
-<p>A <em>população alvo</em> da pesquisa é &quot;... constituída por todas as pessoas moradoras em domicílios particulares permanentes da área de abrangência da pesquisa.&quot; Segundo <span class="citation">Freitas e Antonaci (2014)</span>, a área de abrangência geográfica da pesquisa é definida como &quot;... todo o território nacional, dividido nos setores censitários da Base Operacional Geográfica de 2010, excluídas áreas com características especiais classificadas pelo IBGE como setores censitários de: aldeias indígenas, quartéis, bases militares, alojamentos, acampamentos, embarcações, penitenciárias, colônias penais, presídios, cadeias, asilos, orfanatos, conventos, hospitais e agrovilas de projetos de assentamentos rurais. ... também foram excluídos os setores censitários localizados em Terras Indígenas.&quot;</p>
+<p>A PNAD Contínua é hoje a principal pesquisa domiciliar realizada pelo IBGE para acompanhamento das condições de vida da população brasileira. Conforme o IBGE “O principal objetivo é produzir informações contínuas sobre a inserção da população no mercado de trabalho e de características tais como idade, sexo e nível de instrução, bem como permitir o estudo do desenvolvimento socioeconômico do País através da produção de dados anuais sobre outras formas de trabalho, trabalho infantil, migração, entre outros temas.” Maiores informações sobre a pesquisa e seus métodos podem ser encontradas em <span class="citation">Freitas e Antonaci (2014)</span> e também no endereço: <a href="https://www.ibge.gov.br/estatisticas-novoportal/sociais/populacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?edicao=20106&amp;t=conceitos-e-metodos" class="uri">https://www.ibge.gov.br/estatisticas-novoportal/sociais/populacao/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?edicao=20106&amp;t=conceitos-e-metodos</a>.</p>
+<p>A <em>população alvo</em> da pesquisa é “… constituída por todas as pessoas moradoras em domicílios particulares permanentes da área de abrangência da pesquisa.” Segundo <span class="citation">Freitas e Antonaci (2014)</span>, a área de abrangência geográfica da pesquisa é definida como “… todo o território nacional, dividido nos setores censitários da Base Operacional Geográfica de 2010, excluídas áreas com características especiais classificadas pelo IBGE como setores censitários de: aldeias indígenas, quartéis, bases militares, alojamentos, acampamentos, embarcações, penitenciárias, colônias penais, presídios, cadeias, asilos, orfanatos, conventos, hospitais e agrovilas de projetos de assentamentos rurais. … também foram excluídos os setores censitários localizados em Terras Indígenas.”</p>
 <p>Não há na documentação da pesquisa indicação de que a <em>população de pesquisa</em> é distinta da <em>população alvo</em>. Nessa pesquisa, ficam de fora da <em>população alvo</em> moradores institucionalizados, isto é, moradores em instituições tais como hotéis e pensões, abrigos e asilos, instalações militares, hospitais, presídios, etc. Também ficam de fora moradores em domicílios improvisados (por exemplo, acampamentos ou áreas de ocupação precária) e pessoas em situação de rua, isto é, que não residem em domicílios de qualquer tipo ou em instituições. Fosse o conjunto da população residente no Brasil declarado como <em>população alvo</em>, a <em>população de pesquisa</em> da PNAD Contínua teria um déficit de cobertura devido à exclusão destas partes da população.</p>
-<p>Nessa pesquisa, as pessoas são definidas como <em>unidades de referência</em>, <em>unidades informantes</em> e <em>unidades de análise</em>. Apesar disso, há duas perguntas no questionário da pesquisa que se referem à habitação (domicílio) - uma é a condição de ocupação do domicílio e, para os domicílios alugados, é levantado o valor do aluguel mensal pago. Logo seria correto identificar que os domicílios também são <em>unidades de referência</em>. Além disso, os domicílios são <em>unidades de amostragem</em> pois são objeto de sorteio na última etapa do plano amostral empregado na pesquisa e, também são <em>unidades de análise</em> pois são construídas variáveis em nível de domicílio que fazem parte da tabulação da pesquisa, tais como o rendimento domiciliar per capita. Seria também necessário definir uma <em>população de pesquisa</em> correspondente a esse conjunto de unidades adicionais, que poderia ser caracterizada como &quot;o conjunto de todos os domicílios particulares permanentes da área de abrangência da pesquisa.&quot;</p>
+<p>Nessa pesquisa, as pessoas são definidas como <em>unidades de referência</em>, <em>unidades informantes</em> e <em>unidades de análise</em>. Apesar disso, há duas perguntas no questionário da pesquisa que se referem à habitação (domicílio) - uma é a condição de ocupação do domicílio e, para os domicílios alugados, é levantado o valor do aluguel mensal pago. Logo seria correto identificar que os domicílios também são <em>unidades de referência</em>. Além disso, os domicílios são <em>unidades de amostragem</em> pois são objeto de sorteio na última etapa do plano amostral empregado na pesquisa e, também são <em>unidades de análise</em> pois são construídas variáveis em nível de domicílio que fazem parte da tabulação da pesquisa, tais como o rendimento domiciliar per capita. Seria também necessário definir uma <em>população de pesquisa</em> correspondente a esse conjunto de unidades adicionais, que poderia ser caracterizada como “o conjunto de todos os domicílios particulares permanentes da área de abrangência da pesquisa.”</p>
 <p>Os níveis de divulgação da pesquisa (<em>domínios de interesse</em>) incluem os seguintes grupos definidos em função da localização geográfica dos domicílios: Brasil (1); Grandes Regiões (5); Unidades da Federação (27); Regiões Metropolitanas que contêm Municípios das Capitais (20); Municípios das Capitais (27); e a Região Integrada de Desenvolvimento da Grande Teresina (1). Os números entre parênteses se referem à contagem de domínios definidos em cada uma das situações. Como se pode verificar, ao todo há 81 domínios de interesse definidos com base na localização geográfica que precisam ser contemplados na apresentação de resultados da PNAD Contínua. Vale também notar que há domínios de interesse sobrepostos, tais como as Capitais e as Regiões Metropolitanas que as contêm, para citar um exemplo.</p>
-<p>A definição dos <em>domínios de interesse</em> foi uma das etapas cruciais para o planejamento da pesquisa, pois condicionou de forma importante a determinação do tamanho e também a alocação e a distribuição espacial da amostra, entre outros aspectos da metodologia. Conforme <span class="citation">IBGE (2014)</span>, &quot;o tamanho da amostra da PNAD Contínua foi calculado como o necessário para estimar o total de pessoas desocupadas de 14 anos ou mais de idade ... com um nível de precisão pré-determinado ... para cada uma das Unidades da Federação, por ciclo de acumulação trimestral&quot;. Ao final, a amostra total resultante deveria ser de cerca de 211.000 domicílios distribuídos em cerca de 15.100 setores censitários, a cada trimestre. Em cada trimestre, a amostra de setores é distribuída para coleta ao longo das 12 semanas, resultando na coleta de cerca de 1.258 setores por semana.</p>
+<p>A definição dos <em>domínios de interesse</em> foi uma das etapas cruciais para o planejamento da pesquisa, pois condicionou de forma importante a determinação do tamanho e também a alocação e a distribuição espacial da amostra, entre outros aspectos da metodologia. Conforme <span class="citation">IBGE (2014)</span>, “o tamanho da amostra da PNAD Contínua foi calculado como o necessário para estimar o total de pessoas desocupadas de 14 anos ou mais de idade … com um nível de precisão pré-determinado … para cada uma das Unidades da Federação, por ciclo de acumulação trimestral”. Ao final, a amostra total resultante deveria ser de cerca de 211.000 domicílios distribuídos em cerca de 15.100 setores censitários, a cada trimestre. Em cada trimestre, a amostra de setores é distribuída para coleta ao longo das 12 semanas, resultando na coleta de cerca de 1.258 setores por semana.</p>
 <p>Verifica-se da descrição acima que a determinação dos tamanhos de amostra privilegiou os domínios de interesse definidos pelas <em>Unidades da Federação</em>, não tendo sido estabelecidos tamanhos de amostra capazes de dar precisão controlada para indicadores dos domínios que correspondem a áreas menores (as capitais ou as regiões metropolitanas, quando consideradas individualmente, por exemplo).</p>
 <p><strong>Exemplo 2.2 </strong> Pesquisa de Orçamentos Familiares - POF 2008/2009</p>
-<p>Segundo o IBGE, a <em>população alvo</em> da pesquisa é composta por &quot;Domicílios particulares permanentes ocupados e seus moradores, na área de abrangência da pesquisa nas situações urbana e rural. Foram excuídas as áreas definidas pelo IBGE como sendo quartéis, bases militares, alojamentos, acampamentos, embarcações, penitenciárias, colônias penais, presídios, cadeias, asilos, orfanatos, conventos e hospitais.&quot; Ver detalhes no link: <a href="https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html?=&amp;t=conceitos-e-metodos" class="uri">https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html?=&amp;t=conceitos-e-metodos</a></p>
-<p>Essa definição da <em>população alvo</em> estaria melhor caracterizada como <em>população de pesquisa</em>. Ao explicitar exclusões como as citadas, fica implícita a ideia de que a população alvo seria a população definida pela condição afirmativa &quot;Domicílios particulares permanentes ocupados e seus moradores, na área de abrangência da pesquisa nas situações urbana e rural.&quot; As exclusões são feitas para explicitar que parte dessa população não será coberta pela pesquisa, por razões tipicamente operacionais e associadas aos custos e prazos.</p>
-<p>Ainda segundo o IBGE, &quot;A Pesquisa de Orçamentos Familiares 2008-2009 teve por objetivo fornecer informações sobre a composição dos orçamentos domésticos, a partir da investigação dos hábitos de consumo, da alocação de gastos e da distribuição dos rendimentos, segundo as características dos domicílios e das pessoas. A POF investigou, também, a autopercepção da qualidade de vida e as características do perfil nutricional da população brasileira.&quot;</p>
-<p>O plano amostral empregado na pesquisa é descrito como &quot;... conglomerado em dois estágios de seleção, com estratificação geográfica e estatística das unidades de primeiro estágio. Os setores correspondem às unidades do primeiro estágio de seleção e os domicílios particulares permanentes, às unidades do segundo estágio.&quot; Sendo assim, a pesquisa identificou duas <em>unidades de amostragem</em>: setores censitários (selecionados no primeiro estágio de amostragem), e domicílios (selecionados no segundo estágio de amostragem). Uma vez que um domicílio era selecionado para a amostra no segundo estágio, todos os moradores do mesmo deviam ser pesquisados. Note então que as pessoas moradoras não são <em>unidades de amostragem</em>, pois não participam de qualquer etapa de sorteio.</p>
-<p>Para fins do dimensionamento da amostra, &quot;Foram fixados diferentes coeficientes de variação para estimar com a precisão desejada o total da renda dos responsáveis pelos domicílios, segundo os diferentes domínios de estimação.&quot; &quot;Para estimar o total nas Unidades da Federação da Região Norte, foram fixados coeficientes de variação que variaram de 10% a 15%.&quot;... Ver detalhes em: <a href="https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html?=&amp;t=notas-tecnicas" class="uri">https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html?=&amp;t=notas-tecnicas</a>.</p>
+<p>Segundo o IBGE, a <em>população alvo</em> da pesquisa é composta por “Domicílios particulares permanentes ocupados e seus moradores, na área de abrangência da pesquisa nas situações urbana e rural. Foram excuídas as áreas definidas pelo IBGE como sendo quartéis, bases militares, alojamentos, acampamentos, embarcações, penitenciárias, colônias penais, presídios, cadeias, asilos, orfanatos, conventos e hospitais.” Ver detalhes no link: <a href="https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html?=&amp;t=conceitos-e-metodos" class="uri">https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html?=&amp;t=conceitos-e-metodos</a></p>
+<p>Essa definição da <em>população alvo</em> estaria melhor caracterizada como <em>população de pesquisa</em>. Ao explicitar exclusões como as citadas, fica implícita a ideia de que a população alvo seria a população definida pela condição afirmativa “Domicílios particulares permanentes ocupados e seus moradores, na área de abrangência da pesquisa nas situações urbana e rural.” As exclusões são feitas para explicitar que parte dessa população não será coberta pela pesquisa, por razões tipicamente operacionais e associadas aos custos e prazos.</p>
+<p>Ainda segundo o IBGE, “A Pesquisa de Orçamentos Familiares 2008-2009 teve por objetivo fornecer informações sobre a composição dos orçamentos domésticos, a partir da investigação dos hábitos de consumo, da alocação de gastos e da distribuição dos rendimentos, segundo as características dos domicílios e das pessoas. A POF investigou, também, a autopercepção da qualidade de vida e as características do perfil nutricional da população brasileira.”</p>
+<p>O plano amostral empregado na pesquisa é descrito como “… conglomerado em dois estágios de seleção, com estratificação geográfica e estatística das unidades de primeiro estágio. Os setores correspondem às unidades do primeiro estágio de seleção e os domicílios particulares permanentes, às unidades do segundo estágio.” Sendo assim, a pesquisa identificou duas <em>unidades de amostragem</em>: setores censitários (selecionados no primeiro estágio de amostragem), e domicílios (selecionados no segundo estágio de amostragem). Uma vez que um domicílio era selecionado para a amostra no segundo estágio, todos os moradores do mesmo deviam ser pesquisados. Note então que as pessoas moradoras não são <em>unidades de amostragem</em>, pois não participam de qualquer etapa de sorteio.</p>
+<p>Para fins do dimensionamento da amostra, “Foram fixados diferentes coeficientes de variação para estimar com a precisão desejada o total da renda dos responsáveis pelos domicílios, segundo os diferentes domínios de estimação.”
+“Para estimar o total nas Unidades da Federação da Região Norte, foram fixados coeficientes de variação que variaram de 10% a 15%.”… Ver detalhes em:
+<a href="https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html?=&amp;t=notas-tecnicas" class="uri">https://www.ibge.gov.br/estatisticas/sociais/rendimento-despesa-e-consumo/9050-pesquisa-de-orcamentos-familiares.html?=&amp;t=notas-tecnicas</a>.</p>
 <p><strong>Exemplo 2.3 </strong> <em>Canadian Labour Force Survey</em></p>
-<p>Conforme o <em>Statistics Canada</em>, agência responsável pela pesquisa: &quot;The target population is the non-institutionalised population 15 years of age and over. The survey is conducted nationwide, in both the provinces and the territories. Excluded from the survey's coverage are: persons living on reserves and other Aboriginal settlements in the provinces; full-time members of the Canadian Armed Forces, the institutionalized population, and households in extremely remote areas with very low population density. These groups together represent an exclusion of less than 2% of the Canadian population aged 15 and over.&quot; Mais detalhes disponíveis em: <a href="http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=3701&amp;lang=en&amp;db=imdb&amp;adm=8&amp;dis=2#a3" class="uri">http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=3701&amp;lang=en&amp;db=imdb&amp;adm=8&amp;dis=2#a3</a>.</p>
+<p>Conforme o <em>Statistics Canada</em>, agência responsável pela pesquisa: “The target population is the non-institutionalised population 15 years of age and over. The survey is conducted nationwide, in both the provinces and the territories. Excluded from the survey’s coverage are: persons living on reserves and other Aboriginal settlements in the provinces; full-time members of the Canadian Armed Forces, the institutionalized population, and households in extremely remote areas with very low population density. These groups together represent an exclusion of less than 2% of the Canadian population aged 15 and over.” Mais detalhes disponíveis em: <a href="http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=3701&amp;lang=en&amp;db=imdb&amp;adm=8&amp;dis=2#a3" class="uri">http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=3701&amp;lang=en&amp;db=imdb&amp;adm=8&amp;dis=2#a3</a>.</p>
 <p>Nesse exemplo também aparece a ideia de uma <em>população alvo</em> que seria maior que a <em>população de pesquisa</em> de fato considerada na pesquisa e inclusive há uma estimativa do déficit de cobertura representado pelas exclusões indicadas: 2% da população canadense de 15 anos e mais. Também é interessante notar que a pesquisa foca apenas na população de 15 anos e mais.</p>
 <p>A citação a esta pesquisa é útil também porque contém uma explicitação mais complexa dos objetivos que devem ser cumpridos em termos da qualidade com que certas estimativas deveriam ser produzidas. O motivo é que há conjuntos de <em>domínios de interesse</em> mais variados. A publicação <span class="citation">Statistics Canada (2020)</span> explicita os seguintes objetivos quanto à precisão de estimativas para diferentes domínios:</p>
-<p>&quot;For monthly estimates of unemployment at the Canada level:</p>
+<p>“For monthly estimates of unemployment at the Canada level:</p>
 <ul>
 <li>a CV lower than 2%.</li>
 </ul>
@@ -402,7 +489,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>For three-month moving average estimates at the sub-provincial level:</p>
 <ul>
 <li>a CV lower than 25% for the unemployment estimate at the Economic Region - ER level.</li>
-<li>a CV lower than 15% for the unemployment rate estimate at the Employment Insurance Economic Regions - EIER level if the unemployment rate is higher than 5%, or a fixed confidence interval width equivalent to that of an unemployment rate of 5% with a CV of 15%.&quot;</li>
+<li>a CV lower than 15% for the unemployment rate estimate at the Employment Insurance Economic Regions - EIER level if the unemployment rate is higher than 5%, or a fixed confidence interval width equivalent to that of an unemployment rate of 5% with a CV of 15%.”</li>
 </ul>
 <p>Assim os objetivos especificados para guiar o dimensionamento da amostra incluíram não só níveis diferenciados de precisão para domínios de diferentes tamanhos, como também envolveram a consideração de períodos de acumulação de amostras (a pesquisa é repetida mensalmente) necessários para permitir obter estimativas para os domínios mais detalhados ou desagregados.</p>
 <p><strong>Exemplo 2.4 </strong> Pesquisa Nacional por Amostra de Domicílios - PNAD 2003</p>
@@ -411,7 +498,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Nessa pesquisa, conforme as definições acima, havia uma diferença entre a <em>população alvo</em> e a <em>população de pesquisa</em> consideradas nas PNADs anteriores ao ano de 2004. Nas pesquisas mais antigas, a população residente nos setores rurais da Região Norte (exceção do Tocantins) era excluída. O déficit de cobertura era modesto (estima-se que cerca de apenas 2% da população brasileira residia nos setores excluídos). Entretanto, analistas interessados em comparar resultados de PNADs anteriores a 2004 com os de PNADs mais recentes devem avaliar com cuidado se seria ou não necessário excluir das PNADs mais recentes os dados das partes que eram excluídas das PNADs mais antigas.</p>
 <p>Na série de pesquisas PNAD, encerrada em 2015, os <em>domínios de análise</em> (principais) eram as Unidades da Federação (27), as Regiões Metropolitanas (9) situadas em torno de capitais, o total do país (1), e os totais das áreas urbana e rural (2). Para detalhes, consulte, por exemplo, <span class="citation">IBGE (2004)</span>.</p>
 <p><strong>Exemplo 2.5 </strong> População de pesquisa para a Pesquisa de Economia Informal Urbana - ECINF</p>
-<p>Segundo <span class="citation">IBGE (2003b)</span>, trata-se de “Pesquisa por amostragem de domicílios situados em áreas urbanas, onde se busca identificar os trabalhadores por conta própria e empregadores com até 5 empregados que desenvolvam atividades não agrícolas.” Além disso, “... pertencem ao informal cada uma das unidades econômicas de propriedade de trabalhadores por conta própria e de empregadores com até 5 empregados, moradores de áreas urbanas, sejam elas a atividade principal de seus proprietários ou atividades secundárias.” Ver <span class="citation">IBGE (2003b)</span>, página 16.</p>
+<p>Segundo <span class="citation">IBGE (2003b)</span>, trata-se de “Pesquisa por amostragem de domicílios situados em áreas urbanas, onde se busca identificar os trabalhadores por conta própria e empregadores com até 5 empregados que desenvolvam atividades não agrícolas.” Além disso, “… pertencem ao informal cada uma das unidades econômicas de propriedade de trabalhadores por conta própria e de empregadores com até 5 empregados, moradores de áreas urbanas, sejam elas a atividade principal de seus proprietários ou atividades secundárias.” Ver <span class="citation">IBGE (2003b)</span>, página 16.</p>
 <p>Nesta pesquisa a caracterização da população de pesquisa é mais complexa, pois envolve aplicação de perguntas para identificar a situação ocupacional (só trabalhadores por conta própria e empregadores são elegíveis), bem como o porte e a atividade do estabelecimento onde o trabalho é exercido. Pesquisas assim costumam ter a missão de estimar também o tamanho da população de pesquisa.</p>
 <p><strong>Exemplo 2.6 </strong> Definindo populações de pesquisa</p>
 <p>Para melhor ilustrar o conceito da definição da <em>população de pesquisa</em>, a Tabela <a href="conceitos.html#tab:tabconc1">2.1</a> apresenta diversos exemplos de definição para populações de pesquisa com as seguintes especificações: as unidades a serem pesquisadas; características definidoras das unidades; localização espacial das unidades; e período de referência considerado. Esta separação de componentes da definição ajuda a identificar quais são os elementos essenciais que devem compor a definição de uma <em>população de pesquisa</em>.</p>
@@ -426,7 +513,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <col width="21%" />
 <col width="29%" />
 <col width="21%" />
-<col width="26%" />
+<col width="27%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -473,12 +560,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Este conjunto de exemplos buscou ilustrar os conceitos mais importantes necessários à especificação de populações que serão objeto de pesquisas por amostragem. Como o alvo da inferência a partir da amostra é sempre uma população que não se vai conhecer por inteiro através da pesquisa, é importante que a definição da população de pesquisa seja a mais clara possível, para permitir análises corretas das estimativas que serão produzidas a partir da amostra.</p>
 <p>Uma rica fonte de informações sobre as definições conceituais de uma vasta coleção de pesquisas é a base de metadados das pesquisas do IBGE, acessível através de <a href="https://metadados.ibge.gov.br/" class="uri">https://metadados.ibge.gov.br/</a>. Outra boa fonte de exemplos de definições conceituais de pesquisas bem apresentadas são as pesquisas realizadas pelo NIC.br: <a href="https://cetic.br/pesquisas/" class="uri">https://cetic.br/pesquisas/</a>.</p>
 </div>
-<div id="abordalt" class="section level2">
+<div id="abordalt" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Abordagens alternativas para pesquisas por amostragem</h2>
 <p>Pesquisas por amostragem dependem criticamente da qualidade da amostra selecionada para coleta ou obtenção dos dados. Para cumprir bem seu papel na pesquisa, são características desejáveis da amostra:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Permitir generalizar estimativas dela derivadas para o conjunto da população de pesquisa.</li>
-<li>'Imparcialidade'.</li>
+<li>‘Imparcialidade’.</li>
 <li>Fornecer estimativas com o menor erro amostral possível, dados os recursos disponíveis (financeiros, tempo, pessoal e outros) e considerando as restrições operacionais.</li>
 <li>Assegurar a capacidade de medir a precisão das estimativas dela provenientes.</li>
 </ol>
@@ -490,16 +577,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <p>Procedimentos de amostragem que satisfazem as condições 1 a 3 formam a base da abordagem denominada de <em>Amostragem Probabilística</em>, que é a mais usada para a amostragem de populações finitas e para a elaboração de estatísticas oficiais e públicas ao redor do mundo. Essa abordagem fornece as condições para fazer inferências seguras para os parâmetros da população de pesquisa, com margem de erro conhecida e controlada.</p>
 <p>Até este ponto do livro, o termo <em>Amostragem</em> vinha sendo usado num sentido amplo. Deve ficar claro, porém, que é a <em>Amostragem Probabilística</em>, com suas regras objetivas e precisas para a escolha da amostra baseadas na teoria das probabilidades, que torna possível estimar os parâmetros desejados e avaliar a margem de erro dessas estimativas com base no <em>modelo de aleatorização</em>. Sob esse modelo, os valores de variáveis de interesse observados para unidades da população são considerados fixos embora desconhecidos, exceto para as unidades que forem selecionadas para a amostra. Toda a incerteza (fonte de variação estocástica) é introduzida pelo processo de seleção da amostra, usando um mecanismo probabilístico bem especificado. Fica entendido, então, que o termo <em>Amostragem</em> será doravante usado com o significado implícito de <em>Amostragem Probabilística</em>, exceto quando se explicitar outro significado num contexto ou exemplo específico.</p>
-<p>Amostras que não satisfazem as condições 1 a 3 mencionadas acima podem não permitir generalizar a inferência para a população como um todo. Exemplos de métodos de amostragem que não satisfazem as condições indicadas incluem: amostras de conveniência, amostras de voluntários, amostras intencionais (de &quot;corte&quot;), amostras por quotas. Muitas pesquisas são realizadas usando amostras extraídas segundo métodos como esses, que não estão amparados pelos resultados teóricos que sustentam a <em>Amostragem Probabilística</em>. Uma dificuldade central para tais pesquisas é que não estão disponíveis métodos adequados para estimação pontual ou para a estimação da precisão quando as amostras não são probabilísticas. Algumas dessas pesquisas se valem dos métodos da <em>Amostragem Probabilística</em> para justificar a apresentação de 'margens de erro' de suas estimativas, mas essa prática não tem sustentação na teoria vigente, pois tais amostras não satisfazem as condições aqui explicitadas. Um exemplo conhecido é o das pesquisas de intenções de voto realizadas no Brasil a cada nova eleição que, frequentemente, não utilizam métodos de <em>Amostragem Probabilística</em>.</p>
+<p>Amostras que não satisfazem as condições 1 a 3 mencionadas acima podem não permitir generalizar a inferência para a população como um todo. Exemplos de métodos de amostragem que não satisfazem as condições indicadas incluem: amostras de conveniência, amostras de voluntários, amostras intencionais (de “corte”), amostras por quotas. Muitas pesquisas são realizadas usando amostras extraídas segundo métodos como esses, que não estão amparados pelos resultados teóricos que sustentam a <em>Amostragem Probabilística</em>. Uma dificuldade central para tais pesquisas é que não estão disponíveis métodos adequados para estimação pontual ou para a estimação da precisão quando as amostras não são probabilísticas. Algumas dessas pesquisas se valem dos métodos da <em>Amostragem Probabilística</em> para justificar a apresentação de ‘margens de erro’ de suas estimativas, mas essa prática não tem sustentação na teoria vigente, pois tais amostras não satisfazem as condições aqui explicitadas. Um exemplo conhecido é o das pesquisas de intenções de voto realizadas no Brasil a cada nova eleição que, frequentemente, não utilizam métodos de <em>Amostragem Probabilística</em>.</p>
 <p>Há outras abordagens sólidas para fundamentar a realização de pesquisas por amostragem. Destaca-se, em particular, a abordagem dos <em>Modelos de Superpopulação</em> e da <em>Amostragem Baseada em Modelos</em>, muito bem descrita em livros tais como <span class="citation">Valliant et al. (2000)</span> ou <span class="citation">Chambers e Clark (2012)</span>. Nestes textos uma perspectiva clássica da inferência é adotada. Há também abordagens equivalentes que adotam uma perspectiva Bayesiana para a inferência. Nos dois casos, a inferência é governada não por um <em>mecanismo de aleatorização</em> introduzido pelo pesquisador para a extração da amostra, mas por modelos que especificam distribuições e estruturas de dependência para as observações da população (os chamados <em>Modelos de Superpopulação</em>). A liberdade do pesquisador quanto aos métodos para extração de amostras é maior, mas também é maior a dependência dos resultados da sua inferência quanto à validade e adequação das hipóteses feitas quanto aos <em>Modelos de Superpopulação</em> especificados.</p>
 <p>Apesar da relevância do tema para um pesquisador interessado nos fundamentos da <em>Amostragem</em>, neste livro adotamos uma perspectiva mais restritiva: adotamos a abordagem da <em>Amostragem Probabilística</em> e não tratamos das suas alternativas mais bem fundamentadas acima mencionadas. Esta limitação tem explicação na origem de nossa prática profissional que é lastreada, em grande parte, pelas aplicações no IBGE e em suas pesquisas. Mundo afora, as instituições produtoras de estatísticas oficiais adotam esta abordagem como padrão e são ainda raras as instâncias em que pesquisas são planejadas e realizadas com suporte em outras abordagens como as citadas acima.</p>
 </div>
-<div id="planejamento-e-execução-de-pesquisas-por-amostragem" class="section level2">
+<div id="planejamento-e-execução-de-pesquisas-por-amostragem" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Planejamento e execução de pesquisas por amostragem</h2>
 <p>Pesquisas por amostragem, para serem bem feitas, requerem cuidadoso planejamento, dedicada execução e rigorosa avaliação. Os métodos e processos de trabalho necessários para o sucesso da pesquisa já são bem conhecidos e descritos na literatura especializada - ver, por exemplo, o excelente livro de <span class="citation">Backstrom e Hursh-César (1981)</span> ou o mais moderno de <span class="citation">Groves et al. (2009)</span>.</p>
 <p>Para uma visão de conjunto, o <em>Modelo Genérico do Processo de Produção Estatística - MGPPE</em> ou <em>Generic Statistical Business Process Model - GSBPM</em>, definido pela <em>United Nations Economic Commission for Europe</em> - UNECE, é um modelo que descreve de forma abrangente as atividades do processo de produção estatística. Este modelo tem sido utilizado como quadro de referência para nortear a modernização e a melhoria da qualidade da produção estatística em muitos institutos nacionais de estatística, entre eles o IBGE. Uma representação esquemática dessa abordagem é apresentada na Figura <a href="conceitos.html#fig:modpesq">2.1</a>, adaptada do <em>Generic Statistical Business Process Model: GSBPM: version 5.0</em> (<span class="citation">GSBPM (2013)</span>, página 9).</p>
 <center>
-<div class="figure"><span id="fig:modpesq"></span>
+<div class="figure"><span style="display:block;" id="fig:modpesq"></span>
 <img src="Figuras/ProcessodePesquisaModelo.PNG" alt="Modelo Genérico do Processo de Produção Estatística, adaptado" width="100%" />
 <p class="caption">
 Figura 2.1: Modelo Genérico do Processo de Produção Estatística, adaptado
@@ -507,16 +594,17 @@ Figura 2.1: Modelo Genérico do Processo de Produção Estatística, adaptado
 </div>
 </center>
 <p>Conforme indicado neste modelo, o processo de produção de uma pesquisa por amostragem engloba atividades de supervisão e controle em todas as etapas. Como pode ser observado, a gestão da qualidade é transversal ao processo de produção, perpassando todas as etapas definidas no modelo. A seguir, é apresentada uma breve descrição de etapas fundamentais identificadas no processo de produção de uma pesquisa por amostragem.</p>
-<div id="especificação-das-necessidades-da-pesquisa" class="section level3">
+<div id="especificação-das-necessidades-da-pesquisa" class="section level3" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Especificação das necessidades da pesquisa</h3>
 <p>Esta etapa envolve os subprocessos que definem os objetivos, os conceitos e a preparação de um plano de ação para a realização da pesquisa.</p>
 <p>Quando surge a necessidade de fazer uma pesquisa sobre um certo tema e há uma decisão de alocar recursos para a concretização da pesquisa, deve-se identificar e especificar com clareza e precisão os objetivos específicos da pesquisa. Tal especificação deve incluir a definição da população alvo e de pesquisa, que resultados a pesquisa deve fornecer ou que perguntas principais a pesquisa tem que ajudar a responder, em que prazos e com que recursos poderá ser efetivada. Juntamente com a definição dos recursos, deverá ser especificada a margem de erro tolerável nos principais resultados da pesquisa. O Exemplo <a href="#exm:pnadc">2.1</a> acima contém vários dos elementos aqui mencionados em relação à PNAD Contínua do IBGE.</p>
 <p>O papel do estatístico ou amostrista nesta etapa é o de orientar a tomada de decisões quanto aos objetivos da pesquisa, esclarecendo os interessados quanto às limitações dos métodos estatísticos disponíveis, trabalhando para garantir a especificação de objetivos viáveis e compatíveis entre si e, também, coerentes com os recursos disponíveis. Cabe também ao estatístico estabelecer projetos ou contratos que garantam a disponibilidade dos recursos necessários para a realização bem sucedida da pesquisa, nos termos dos objetivos especificados.</p>
 <p>Nesta etapa, o estatístico deve deixar claro que os resultados de uma pesquisa por amostragem só são aplicáveis à <em>população de pesquisa</em> quando a amostragem puder levar em conta todas as unidades pertencentes a essa população, e que quaisquer interesses quanto a resultados e margem de erro de estimativas da pesquisa, se não especificadas a priori, correm o risco de, mais tarde, não poderem ser contemplados. A explicitação de objetivos e recursos é uma das etapas cruciais que devem anteceder a elaboração do <em>plano amostral</em>, que vai ser objeto do trabalho do estatístico ou amostrista encarregado de planejar a pesquisa.</p>
 </div>
-<div id="planejamento-da-pesquisa" class="section level3">
+<div id="planejamento-da-pesquisa" class="section level3" number="2.4.2">
 <h3><span class="header-section-number">2.4.2</span> Planejamento da pesquisa</h3>
-<p>Esta etapa envolve a definição das variáveis, a obtenção e avaliação do cadastro, o planejamento da amostra, a metodologia de coleta, a definição do processamento e análise e o fluxo de produção da pesquisa. A questão do tipo de informação a ser coletada deve ser considerada num estágio inicial do planejamento da pesquisa. Somente os dados relevantes para os propósitos da pesquisa devem ser levantados. Se muitas perguntas forem propostas, os informantes perderão o interesse em respondê-las. Por outro lado, deve ser assegurado que nenhum item importante seja esquecido.</p>
+<p>Esta etapa envolve a definição das variáveis, a obtenção e avaliação do cadastro, o planejamento da amostra, a metodologia de coleta, a definição do processamento e análise e o fluxo de produção da pesquisa.
+A questão do tipo de informação a ser coletada deve ser considerada num estágio inicial do planejamento da pesquisa. Somente os dados relevantes para os propósitos da pesquisa devem ser levantados. Se muitas perguntas forem propostas, os informantes perderão o interesse em respondê-las. Por outro lado, deve ser assegurado que nenhum item importante seja esquecido.</p>
 <p>Uma regra prática consiste em preparar os leiautes das tabelas que a pesquisa deverá produzir e só depois preparar os instrumentos de coleta dos dados (questionários). Isto ajuda a eliminar informações irrelevantes bem como garantir a inclusão de todos os itens importantes. Uma consideração importante é a possibilidade prática de obtenção da informação: os informantes escolhidos podem não ser capazes de responder a todas as perguntas formuladas. É interessante que essa possibilidade seja, pelo menos, minimizada na fase de planejamento da pesquisa.</p>
 <p>O <em>cadastro</em> ou <em>marco de referência</em> é o instrumento principal que será usado para localizar e identificar as unidades da população de pesquisa. É o cadastro que serve como base para a amostragem de unidades da população, para apoiar a coleta dos dados e também para auxiliar e controlar o processamento dos dados coletados pela pesquisa. Portanto, para poder acessar e cobrir a população de pesquisa definida, é necessário contar com listas das suas unidades, com listas de grupos de unidades populacionais, ou mesmo com mapas ou quaisquer outros materiais que sirvam de guia e permitam localizar e identificar as unidades da população a ser coberta.</p>
 <p>Tais listas, mapas ou combinações destes que constituem o cadastro devem ser examinados para que seja assegurado que estejam livres de defeitos e, caso estejam desatualizados, deve-se considerar a possibilidade de proceder sua atualização. Em qualquer caso, é importante conhecer a origem do cadastro utilizado. A especificação e composição do cadastro são partes importantes das fases de planejamento do processo de produção de uma pesquisa e a atualidade e qualidade do cadastro têm grande influência nos resultados da pesquisa. Um bom <em>plano amostral</em> depende criticamente da qualidade do cadastro disponível e de seu conhecimento pelos responsáveis pela elaboração do plano.</p>
@@ -524,21 +612,21 @@ Figura 2.1: Modelo Genérico do Processo de Produção Estatística, adaptado
 <p>Os métodos a serem usados para a coleta das informações dependem de muitos fatores, e devem ser decididos tendo em mente os custos envolvidos, os tipos de unidades informantes, a precisão desejada das medidas e observações, bem como as condições particulares para execução da pesquisa em questão. Tais métodos são geralmente especificados durante a fase de planejamento da pesquisa, pois os métodos de coleta de dados influenciarão fortemente na elaboração do questionário da pesquisa e também podem afetar as opções disponíveis para o planejamento da amostra.</p>
 <p>Há diferentes métodos de coleta, que podem ou não ser apoiados por computador e podem ou não necessitar da participação de entrevistadores ou observadores. Os principais métodos de coleta são: <em>Computer-Assisted Personal Interviewing</em> - CAPI, <em>Computer-Assisted Self Interviewing</em> - CASI, <em>Computer-Assisted Telephone Interviewing</em> - CATI, <em>Mail Assisted Self Interviewing</em> - MASI, <em>Paper-and-Pencil Interviewing</em> - PAPI e métodos de observação direta, em que não ocorre uma entrevista. Um exemplo de aplicação deste último método ocorre na coleta de dados de preços em pontos de venda, onde o responsável pela coleta de dados faz isso diretamente e não requer contato com uma unidade informante para a obtenção das informações de interesse. Na <em>Pesquisa Nacional de Saúde do Escolar</em> - PeNSE, realizada pelo IBGE, é utilizado o método CASI, onde cada um dos estudantes selecionados para a amostra recebe um <em>tablet</em> com o questionário e o responde sem interferência de um entrevistador. Em tempos mais recentes, também começaram a tornar-se disponíveis opções tais como <em>web-scraping</em>, que consiste na utilização de métodos automatizados de acesso a páginas da internet e de extração de dados ou informações dessas páginas, sem intervenção humana no processo.</p>
 </div>
-<div id="elaboração-dos-instrumentos-de-coleta-e-dos-sistemas" class="section level3">
+<div id="elaboração-dos-instrumentos-de-coleta-e-dos-sistemas" class="section level3" number="2.4.3">
 <h3><span class="header-section-number">2.4.3</span> Elaboração dos instrumentos de coleta e dos sistemas</h3>
 <p>Esta etapa envolve os subprocessos que definem os instrumentos de coleta, os sistemas de processamento, de disseminação e de produção da pesquisa.</p>
 <p>Os instrumentos de coleta (questionários e outros formulários) são parte importante de uma pesquisa por amostragem. Após decidir que dados devem ser coletados, a questão de como formular e apresentar as perguntas exige grande habilidade e prática. As perguntas devem ser claras, inambíguas e diretas. Perguntas vagas tendem a ter respostas vagas. A ordenação das perguntas deve ser estudada com cuidado. Um pré-teste dos instrumentos de coleta é sempre uma ajuda efetiva na preparação de um bom material.</p>
 <p>Um protocolo de esforço de coleta deve ser especificado. Este protocolo deve incluir, por exemplo, instruções sobre o número mínimo de tentativas de contato que devem ser feitas para cada unidade da amostra selecionada, antes de dar uma unidade como perdida. Os procedimentos para lidar com recusas ou perdas de unidades da amostra selecionada também devem ser definidos previamente. Os motivos das perdas devem sempre ser registrados e o tratamento para as perdas e para a não resposta devem ser especificados.</p>
 <p>Nesta etapa estão ainda incluídos a elaboração e os testes dos sistemas de apuração e de disseminação da pesquisa.</p>
 </div>
-<div id="coleta-dos-dados" class="section level3">
+<div id="coleta-dos-dados" class="section level3" number="2.4.4">
 <h3><span class="header-section-number">2.4.4</span> Coleta dos dados</h3>
 <p>Esta etapa inclui a implementação da pesquisa e a coleta dos dados, na qual se destacam as seguintes atividades: a preparação do cadastro, a seleção da amostra, o recrutamento e treinamento de equipes de coleta e supervisão de campo e a realização e o acompanhamento da coleta.</p>
 <p>Para os propósitos da seleção da amostra, a população deve poder ser subdividida no que se pode chamar de <em>unidades de amostragem</em>. É importante que tal divisão seja feita de forma que nenhuma unidade da população pertença a mais de uma unidade de amostragem ou fique de fora do conjunto de todas as unidades de amostragem. Um exemplo pode ser dado com as populações humanas, que podem ser vistas como formadas por agregações tais como setores censitários e domicílios ou por pessoas.</p>
 <p>A seleção da amostra se dá de acordo com o plano (desenho) amostral especificado a partir do cadastro a ser usado e varia de uma amostra aleatória simples (ou sistemática), podendo ser estratificada, ao uso de amostragem com probabilidades proporcionais ao tamanho. Outras alternativas de planos amostrais contemplam a amostragem de conglomerados( agrupamentos de unidades populacionais) ou em múltiplos estágios, motivada pela necessidade de eficiência prática e econômica. Os principais métodos de amostragem são abordados nos capítulos subsequentes.</p>
 <p>O processo de coleta de dados envolve as estratégias de contato e de monitoramento. O sucesso de qualquer pesquisa que adote o método de entrevista direta depende fortemente da capacidade dos entrevistadores de obter as respostas desejadas. Por isso, sua seleção e treinamento é muito importante. Instruções detalhadas devem ser fornecidas no treinamento sobre os métodos de mensuração e coleta. A observação por supervisores durante os trabalhos de entrevista é fundamental para manter os padrões e para estudar a obediência às regras e o tato dos entrevistadores ao fazer as entrevistas. É fundamental que todos os entrevistadores entendam os conceitos da pesquisa de maneira correta e uniforme.</p>
 </div>
-<div id="processamento-da-pesquisa" class="section level3">
+<div id="processamento-da-pesquisa" class="section level3" number="2.4.5">
 <h3><span class="header-section-number">2.4.5</span> Processamento da pesquisa</h3>
 <p>Esta etapa envolve os subprocessos que definem a integração/organização dos dados, classificação e codificação, crítica e tratamentos dos dados, derivação de variáveis, cálculo dos pesos ou fatores de expansão da amostra, cálculo dos resultados agregados (estimação das quantidades de interesse) e preparação dos arquivos de dados.</p>
 <p>Ao final da fase de coleta de dados, as informações estão prontas para entrar na fase do processamento, quando os registros de dados são verificados, criticados e preparados para a análise. A maneira como as etapas a seguir são encadeadas e executadas depende de como a coleta de dados é organizada e do(s) modo(s) usado(s) para coletar as informações.</p>
@@ -548,26 +636,26 @@ Figura 2.1: Modelo Genérico do Processo de Produção Estatística, adaptado
 <p>Os métodos de estimação são usados para generalizar a informação recolhida de uma amostra para a população da qual foi extraída. A forma de selecionar a amostra determina como serão produzidas tais estimativas da população. De fato, o plano amostral determina os chamados <em>pesos amostrais</em> (fatores de expansão) <em>básicos</em> que serão usados para produzir estimativas. O <em>peso amostral</em> de uma unidade observada indica o número de unidades da população que são representadas por esta unidade da amostra. Um <em>peso amostral básico</em> é calculado como o inverso da probabilidade de incluir a unidade na amostra.</p>
 <p>Os procedimentos de estimação das quantidades de interesse envolvem especificar: o cálculo dos pesos ou fatores de expansão; os estimadores para as quantidades de interesse; e o cálculo das medidas de precisão das estimativas.</p>
 </div>
-<div id="análise-dos-dados-da-pesquisa" class="section level3">
+<div id="análise-dos-dados-da-pesquisa" class="section level3" number="2.4.6">
 <h3><span class="header-section-number">2.4.6</span> Análise dos dados da pesquisa</h3>
 <p>Esta etapa envolve a análise e interpretação dos dados. Usualmente, a apresentação de resultados é acompanhada de um exercício analítico inicial dos dados produzidos. A análise de dados é o processo pelo qual se dá ordem, estrutura, interpretação e significado aos dados.</p>
 <p>A análise permite diferentes abordagens e requer cuidado na interpretação, destacando-se que devem ser observadas as seguintes características: que seja apresentada de maneira simples, objetiva e compreensível, com significado claro; e que busque assegurar que as informações produzidas e analisadas sejam úteis para satisfazer aos objetivos enunciados da pesquisa. Uma boa forma de avaliar isso é verificar se os comentários da análise fornecem respostas às principais perguntas formuladas para justificar a realização da pesquisa.</p>
 <p>A informação nunca é completamente útil se não for acompanhada de análise. Neste caso, o foco das atenções deve ser dado sobre as questões de coerência e interpretabilidade e em dar significado aos resultados em sua apresentação. A interpretabilidade das estatísticas também faz parte da noção de qualidade dos dados produzidos. Estatísticas definidas de maneira hermética ou complexa, cuja interpretação seja difícil, raramente conseguem estabelecer uma percepção de boa qualidade.</p>
 <p>Esta etapa também envolve a garantia de que os dados (e metadados) a serem disseminados não violem a confidencialidade de informações individualizadas, prevenindo a divulgação de informações que revelem direta ou indiretamente a identidade do informante (indivíduo, empresa ou instituição) com a associação de dados confidenciais. Devem ser usadas técnicas para limitação da revelação da identidade nas diversas formas de acesso aos dados.</p>
 </div>
-<div id="disseminação-dos-resultados-da-pesquisa" class="section level3">
+<div id="disseminação-dos-resultados-da-pesquisa" class="section level3" number="2.4.7">
 <h3><span class="header-section-number">2.4.7</span> Disseminação dos resultados da pesquisa</h3>
 <p>Esta etapa envolve a produção dos resultados, a aplicação de métodos para assegurar a confidencialidade das informações individualizadas, a promoção dos produtos de disseminação e o atendimento aos usuários. Também envolve a preparação do material de divulgação - tabelas, textos, apresentações, publicações, arquivos de microdados e sua documentação (metadados), elaboração de releases e carga em sítios da internet. É das etapas menos discutidas do processo de pesquisa nos textos sobre métodos, mas isto não significa que é pouco importante. Na verdade, pode-se afirmar que sem adequada disseminação se perde muito do valor de uma pesquisa, já que os seus resultados ficarão subaproveitados.</p>
 </div>
-<div id="arquivamento-das-informações-da-pesquisa" class="section level3">
+<div id="arquivamento-das-informações-da-pesquisa" class="section level3" number="2.4.8">
 <h3><span class="header-section-number">2.4.8</span> Arquivamento das informações da pesquisa</h3>
 <p>Esta etapa envolve os subprocessos que definem as regras de arquivamento, o gerenciamento do repositório, a preservação dos dados, metadados e paradados e o plano de descarte de material.</p>
 <p>A busca e recuperação da informação apontam para a criação de metadados (que descreve os dados de forma estruturada) e a preservação das informações, permitindo que sejam acessíveis e com a autenticidade resguardada. Neste sentido as regras de arquivamento e o gerenciamento do repositório têm um papel relevante na estruturação das informações de forma a localizá-las e torná-las de fácil recuperação e uso.</p>
 </div>
-<div id="avaliação-da-pesquisa" class="section level3">
+<div id="avaliação-da-pesquisa" class="section level3" number="2.4.9">
 <h3><span class="header-section-number">2.4.9</span> Avaliação da pesquisa</h3>
 <p>Esta etapa encerra a execução de uma pesquisa e o produto final deve ser um conjunto de tabulações e relatórios de avaliação da pesquisa e de seus resultados. A avaliação e o monitoramento da qualidade das estimativas deve estar presente desde a concepção da pesquisa, a operacionalização dos processos, até a elaboração e disseminação do produto final, visando a compreensão das informações pelos usuários.</p>
-<p>Cabe registrar a ideia de que qualidade é 'multidimensional' e que há vários aspectos da produção dos dados que se deve considerar para avaliar a qualidade dos resultados.</p>
+<p>Cabe registrar a ideia de que qualidade é ‘multidimensional’ e que há vários aspectos da produção dos dados que se deve considerar para avaliar a qualidade dos resultados.</p>
 <p>Começamos por distinguir dois níveis onde a discussão de qualidade é importante. Num primeiro nível, trata-se de qualidade do processo de produção das estatísticas, que está relacionada ao desempenho da organização produtora, à sua capacidade de adotar métodos e processos de trabalho eficientes e seguros, bem como de responder às demandas que lhe são apresentadas. Um segundo nível se refere à qualidade dos dados e resultados que fazem parte da produção das estatísticas. Neste momento, a qualidade que importa é a de cada resultado (produto) frente a um conjunto de usos previstos ou antecipados que o resultado terá.</p>
 <p>Cabe mencionar algumas das dimensões da qualidade associadas à qualidade do produto: relevância, exatidão e confiabilidade, oportunidade e pontualidade, facilidade de acesso e uso, interpretabilidade, coerência, dentre outras.</p>
 <p>A questão da relevância é colocada quando se avalia se o produto (resultado, informação estatística, estimativa, dado) satisfaz algum uso (ou conjunto de usos) declarado legítimo e importante pelos diversos atores interessados na produção das estatísticas.</p>
@@ -577,7 +665,7 @@ Figura 2.1: Modelo Genérico do Processo de Produção Estatística, adaptado
 <p>Embora sem esquecer os demais aspectos de uma pesquisa por amostragem, enfatizamos neste livro as técnicas e métodos para: seleção da amostra; estimação dos parâmetros desejados; e avaliação dos erros de amostragem. O tratamento de erros ditos <em>não amostrais</em> não é objeto de atenção aqui. Aos leitores interessados, recomendamos a leitura do excelente livro de <span class="citation">Biemer e Lyberg (2003)</span>.</p>
 </div>
 </div>
-<div id="cadastros" class="section level2">
+<div id="cadastros" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Cadastros</h2>
 <p>O <em>Cadastro</em> ou <em>Sistema de Referência</em> da pesquisa é o conjunto de meios e instrumentos que fornece o acesso à população de pesquisa, constituindo uma lista identificadora das unidades que formam a população ou de grupos destas unidades e contendo informações auxiliares úteis para planejar e selecionar a amostra, monitorar a coleta de informações e empregar na estimação dos parâmetros.</p>
 <p>A especificação do cadastro é uma das partes mais importantes da fase de planejamento do processo de produção da pesquisa. Nesta fase devem ser definidas as <em>unidades de referência</em> e o escopo da <em>população de pesquisa</em>, as <em>unidades informantes</em> e o processo que será usado para o acesso a estas unidades. O período de referência e as condições de seleção e atribuição das unidades do cadastro também precisam ser especificados. O cadastro deve conter os atributos das unidades demandadas pelas fases de amostragem, coleta e processamento dos dados.</p>
@@ -587,7 +675,7 @@ Figura 2.1: Modelo Genérico do Processo de Produção Estatística, adaptado
 <p>Uma pesquisa pode ter mais de um cadastro. Em pesquisas com seleção da amostra em múltiplos estágios, geralmente há um cadastro para cada estágio. Por exemplo, na Pesquisa Nacional por Amostra de Domicílios Contínua - PNAD Contínua, o cadastro do primeiro estágio é constituído pelos setores, enquanto o cadastro de segundo estágio é formado pelos domicílios enumerados em cada setor selecionado no primeiro estágio.</p>
 <p>Os registros administrativos também são fontes importantes, pois registram as unidades estatísticas e uma ampla gama de suas variáveis é usada para a criação do cadastro. Sua atualidade e qualidade têm grande influência na qualidade da pesquisa e nos produtos estatísticos.</p>
 <p>Um bom cadastro deve conter informação suficiente sobre cada unidade da população para identificá-la com certeza (identificação) e para permitir localizá-la (localização); ser completo e sem redundâncias (duplicatas), preciso e atual (qualidade); estar disponível em um lugar central, com acesso fácil e rápido (disponibilidade); estar arranjado numa forma adequada à amostragem; e conter informação auxiliar sobre cada unidade que permita elaborar um planejamento amostral e estratégias de estimação eficientes.</p>
-<div id="cadIBGE" class="section level3">
+<div id="cadIBGE" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Cadastros importantes no IBGE</h3>
 <p>O <em>Cadastro Central de Empresas - CEMPRE</em> é formado por empresas e outras organizações e suas respectivas unidades locais formalmente constituídas, registradas no CNPJ - Cadastro Nacional da Pessoa Jurídica. Sua atualização ocorre anualmente, a partir das pesquisas econômicas anuais do IBGE, nas áreas de Construção, Indústria, Comércio e Serviços, e de registros administrativos tais como a Relação Anual de Informações Sociais - RAIS e o Cadastro Geral de Empregados e Desempregados - CAGED, ambos do Ministério do Trabalho.</p>
 <p>As informações disponíveis referem-se às empresas e às unidades locais que no ano de referência estavam ativas no Cadastro. Estão disponíveis as variáveis identificadoras de empresas e de suas unidades locais, o pessoal ocupado total, o pessoal assalariado, os salários e outras remunerações pagas e o salário médio mensal, além da Classificação Nacional de Atividades Econômicas - CNAE e da localização de cada unidade.</p>
@@ -599,7 +687,7 @@ Figura 2.1: Modelo Genérico do Processo de Produção Estatística, adaptado
 <p>A malha digital de setores censitários do Brasil é um conjunto de arquivos contendo os polígonos definidores de estados, municípios, distritos, subdistritos, bairros e setores censitários. Está disponível juntamente com os dados agregados do Censo Demográfico 2010, por setor censitário.</p>
 <p>A Figura <a href="conceitos.html#fig:cadset">2.2</a> apresenta uma ilustração da subdivisão em setores censitários do IBGE para Copacabana no município do Rio de Janeiro, conforme a malha setorial vigente para o Censo Demográfico 2010.</p>
 <center>
-<div class="figure"><span id="fig:cadset"></span>
+<div class="figure"><span style="display:block;" id="fig:cadset"></span>
 <img src="Figuras/SetorCopacabana.PNG" alt="Cadastro de setores do IBGE - Copacabana - RJ" width="100%" />
 <p class="caption">
 Figura 2.2: Cadastro de setores do IBGE - Copacabana - RJ
@@ -609,13 +697,13 @@ Figura 2.2: Cadastro de setores do IBGE - Copacabana - RJ
 <p>O <em>Cadastro Nacional de Endereços para Fins Estatísticos - CNEFE</em> é uma lista com cerca de 78 milhões de endereços urbanos e rurais, associados às unidades (domicílios e unidades não residenciais) registradas pelos recenseadores durante a coleta das informações do Censo Demográfico 2010, e aos setores censitários. Foi compilado para apoiar a realização das pesquisas domiciliares do IBGE.</p>
 <p>As Figuras <a href="conceitos.html#fig:cnefe1">2.3</a> e <a href="conceitos.html#fig:cnefe2">2.4</a> ilustram informações disponíveis no CNEFE para um determinado setor censitário. Ver detalhes no link <a href="https://censo2010.ibge.gov.br/cnefe/Exibe_Tabela.html?ag=330455705100417" class="uri">https://censo2010.ibge.gov.br/cnefe/Exibe_Tabela.html?ag=330455705100417</a>.</p>
 <center>
-<div class="figure"><span id="fig:cnefe1"></span>
+<div class="figure"><span style="display:block;" id="fig:cnefe1"></span>
 <img src="Figuras/Dadossetor.PNG" alt="Informações do CNEFE para um setor de Copacabana - RJ" width="100%" />
 <p class="caption">
 Figura 2.3: Informações do CNEFE para um setor de Copacabana - RJ
 </p>
 </div>
-<div class="figure"><span id="fig:cnefe2"></span>
+<div class="figure"><span style="display:block;" id="fig:cnefe2"></span>
 <img src="Figuras/CNEFE.PNG" alt="Ilustração de dados do CNEFE" width="100%" />
 <p class="caption">
 Figura 2.4: Ilustração de dados do CNEFE
@@ -630,20 +718,20 @@ Figura 2.4: Ilustração de dados do CNEFE
 <p><strong>Cadastro Nacional de Endereços para Fins Estatísticos - CNEFE</strong></p>
 <p><a href="https://www.ibge.gov.br/estatisticas-novoportal/downloads-estatisticas.html" class="uri">https://www.ibge.gov.br/estatisticas-novoportal/downloads-estatisticas.html</a> »» Censos »» Censo_Demográfico_2010 »» Cadastro_Nacional_de_Enderecos_Fins_Estatisticos</p>
 </div>
-<div id="defeitos-de-cadastros" class="section level3">
+<div id="defeitos-de-cadastros" class="section level3" number="2.5.2">
 <h3><span class="header-section-number">2.5.2</span> Defeitos de cadastros</h3>
 <p>Para determinadas populações, a lista de elementos pode estar disponível, mas pode apresentar alguns defeitos: falta de unidades (omissão ou falha de cobertura), presença de unidades estranhas à população alvo (unidades inelegíveis ou fora do escopo da pesquisa), duplicação de unidades, informações desatualizadas, informações faltando ou incorretas (por exemplo, unidades com os dados de contato incorreto ou incompleto).</p>
 <p>As inadequações do cadastro podem levar a problemas operacionais na coleta e no processamento dos dados da pesquisa, aumento dos erros alheios à amostragem e interpretações enganosas dos resultados da pesquisa.</p>
 <p>Diante das inadequações do cadastro, dentre as soluções possíveis destacam-se: o descarte do cadastro e a criação ou uso de outro cadastro; o ajuste/correção do cadastro mediante atualização ou ligação com outros; o uso do cadastro existente e adoção de precauções contra seus defeitos; e uso de cadastros múltiplos. Um tratamento detalhado das providências disponíveis está fora do escopo deste livro, mas como já indicado, recomendamos dar grande atenção à questão da seleção e preparação do cadastro que vai apoiar as atividades de pesquisa por amostragem, dado seu papel central na obtenção de resultados de boa qualidade.</p>
 </div>
-<div id="regras-de-associação-das-unidades-da-população-à-unidade-cadastral" class="section level3">
+<div id="regras-de-associação-das-unidades-da-população-à-unidade-cadastral" class="section level3" number="2.5.3">
 <h3><span class="header-section-number">2.5.3</span> Regras de associação das unidades da população à unidade cadastral</h3>
 <p>O cadastro deve ser estruturado de tal forma que seja possível determinar como as unidades listadas no cadastro estão associadas às <em>unidades de referência</em> na população de pesquisa a ser amostrada. Na sequência, apresentamos as várias formas de associação entre <em>unidades do cadastro</em> e <em>unidades de referência</em> da população de pesquisa. Cada uma das situações leva à adoção de métodos de amostragem que considerem as diferentes formas de associação entre cadastro e população.</p>
 <p><strong>Regra de associação um para um</strong></p>
 <p>Nesta situação cada unidade <span class="math inline">\(C_i\)</span> do cadastro corresponde a uma e somente uma unidade de referência <span class="math inline">\(U_i\)</span> da população de pesquisa, conforme ilustração na Figura <a href="conceitos.html#fig:umparaum">2.5</a>.</p>
 <center>
-<div class="figure"><span id="fig:umparaum"></span>
-<img src="Figuras/Associa1-1.PNG" alt="Ilustração da regra de associação um para um" width="70%" />
+<div class="figure"><span style="display:block;" id="fig:umparaum"></span>
+<img src="Figuras/Associa1-1.png" alt="Ilustração da regra de associação um para um" width="70%" />
 <p class="caption">
 Figura 2.5: Ilustração da regra de associação um para um
 </p>
@@ -655,8 +743,8 @@ Figura 2.5: Ilustração da regra de associação um para um
 <p><strong>Regra de associação um para vários</strong></p>
 <p>Nesta situação, cada unidade de referência da população de pesquisa corresponde a uma ou mais unidades do cadastro, conforme ilustração na Figura <a href="conceitos.html#fig:umparavar">2.6</a>. Consideramos aqui apenas os casos em que cada unidade elementar no cadastro tenha vínculo com no máximo uma unidade elementar na população.</p>
 <center>
-<div class="figure"><span id="fig:umparavar"></span>
-<img src="Figuras/Associa1-varios.PNG" alt="Ilustração da regra de associação um para vários" width="70%" />
+<div class="figure"><span style="display:block;" id="fig:umparavar"></span>
+<img src="Figuras/Associa1-varios.png" alt="Ilustração da regra de associação um para vários" width="70%" />
 <p class="caption">
 Figura 2.6: Ilustração da regra de associação um para vários
 </p>
@@ -668,14 +756,14 @@ Figura 2.6: Ilustração da regra de associação um para vários
 <p><strong>Regra de associação de vários para um</strong></p>
 <p>Nesta situação, uma ou mais unidades de referência da população de pesquisa são vinculadas a cada unidade elementar do cadastro, conforme ilustrações nas Figuras <a href="conceitos.html#fig:varparaum1">2.7</a> e <a href="conceitos.html#fig:varparaum2">2.8</a>. A unidade de amostragem é um <em>conglomerado</em> de unidades da população. Neste caso, se adotam os planos amostrais conglomerados, onde a seleção é de uma amostra de unidades conglomeradas do cadastro. Os vínculos são geralmente conhecidos só para os conglomerados da amostra. O cadastro é mais barato de construir e manter, porém a amostragem é na maioria das vezes menos eficiente do que se poderia fazer tendo cadastros do tipo um para um.</p>
 <center>
-<div class="figure"><span id="fig:varparaum1"></span>
-<img src="Figuras/Associavarios-1a.PNG" alt="Ilustração da regra de associação vários para um" width="70%" />
+<div class="figure"><span style="display:block;" id="fig:varparaum1"></span>
+<img src="Figuras/Associavarios-1a.png" alt="Ilustração da regra de associação vários para um" width="70%" />
 <p class="caption">
 Figura 2.7: Ilustração da regra de associação vários para um
 </p>
 </div>
-<div class="figure"><span id="fig:varparaum2"></span>
-<img src="Figuras/Associavarios-1b.PNG" alt="Ilustração da regra de associação vários para um" width="70%" />
+<div class="figure"><span style="display:block;" id="fig:varparaum2"></span>
+<img src="Figuras/Associavarios-1b.png" alt="Ilustração da regra de associação vários para um" width="70%" />
 <p class="caption">
 Figura 2.8: Ilustração da regra de associação vários para um
 </p>
@@ -684,8 +772,8 @@ Figura 2.8: Ilustração da regra de associação vários para um
 <p><strong>Regras de Associação - Hierarquia com vários níveis</strong></p>
 <p>Neste caso se adotam os planos de amostragem conglomerada em múltiplos estágios (ou etapas). Envolve uma hierarquia de diferentes tipos de unidades (unidades primárias de amostragem, unidades secundárias, terciárias, etc.). É necessário um bom cadastro em cada estágio para a seleção das unidades do estágio seguinte. Os cadastros para as unidades dos primeiros estágios são geralmente mais estáveis e fáceis de construir e manter que aqueles para os estágios subsequentes. A Figura <a href="conceitos.html#fig:hierarquia">2.9</a> apresenta uma ilustração dessa situação.</p>
 <center>
-<div class="figure"><span id="fig:hierarquia"></span>
-<img src="Figuras/Associavariosniveis.PNG" alt="Ilustração de regras de associação - hierarquia para vários níveis" width="70%" />
+<div class="figure"><span style="display:block;" id="fig:hierarquia"></span>
+<img src="Figuras/Associavariosniveis.png" alt="Ilustração de regras de associação - hierarquia para vários níveis" width="70%" />
 <p class="caption">
 Figura 2.9: Ilustração de regras de associação - hierarquia para vários níveis
 </p>
@@ -693,7 +781,7 @@ Figura 2.9: Ilustração de regras de associação - hierarquia para vários ní
 </center>
 </div>
 </div>
-<div id="exerc2" class="section level2">
+<div id="exerc2" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Exercícios</h2>
 <p><strong>Exercício 2.1 </strong> Toda pesquisa deve procurar registrar com clareza seus conceitos básicos. Dessa clareza depende a capacidade dos usuários de interpretar os resultados e avaliar sua qualidade e adequação. Para perceber a importância dessa questão, nada melhor do que praticar e se colocar “na pele” de um usuário que procura identificar, na documentação disponível de uma dada pesquisa, seus principais conceitos e definições.<br />
 Visite a página do CETIC.br na internet (<a href="https://cetic.br/" class="uri">https://cetic.br/</a>) e identifique a publicação de resultados da Pesquisa TIC Domicílios 2017. Nesta publicação, localize a seção do ‘relatório metodológico’ e usando somente essa documentação, procure responder às perguntas abaixo.</p>
@@ -753,7 +841,6 @@ Visite a página do CETIC.br na internet (<a href="https://cetic.br/" class="uri
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -772,6 +859,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -792,6 +880,10 @@ gitbook.start({
 "text": null
 },
 "download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -804,7 +896,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

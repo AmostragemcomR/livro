@@ -271,14 +271,14 @@ library(tidyverse)
 ```
 
 ```
-## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --
+## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
 ```
 
 ```
-## v ggplot2 3.3.2     v purrr   0.3.4
-## v tibble  3.0.4     v dplyr   1.0.2
-## v tidyr   1.1.2     v stringr 1.4.0
-## v readr   1.4.0     v forcats 0.5.0
+## v ggplot2 3.3.5     v purrr   0.3.4
+## v tibble  3.1.4     v dplyr   1.0.7
+## v tidyr   1.1.4     v stringr 1.4.0
+## v readr   2.1.1     v forcats 0.5.1
 ```
 
 ```
@@ -379,10 +379,6 @@ table(munic_amo$Regiao)
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 5 x 2
 ##   Regiao         N_d
 ##   <fct>        <int>
@@ -400,10 +396,6 @@ table(munic_amo$Regiao)
     summarise(ybar_d = mean(Pop),
               t_d = sum(Pop)) %>%
     select(Regiao, ybar_d, t_d) )
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -461,10 +453,6 @@ resumo_regiao <- left_join(N_d, ybar_d, by=c("Regiao"))
     group_by(Regiao) %>%    
     summarise(Total_reg_pop = sum(Pop)) %>%
     select(Regiao, Total_reg_pop))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -681,6 +669,8 @@ d) Use as 500 estimativas pontuais obtidas nos itens b e c para avaliar a adequa
 <table>
 <caption>(#tab:tabdom2)Distância, em quilômetros, percorrida para chegar ao trabalho pelos 24 entrevistados</caption>
 </table>
+----------
+                                                             
 ------- ------- ------- ------ ------ ------- ------- -------
     8,5    10,2	   25,1    5,0    6,3     7,9    15,8     2,1
   
@@ -721,11 +711,10 @@ d)  Estime a razão (número de professores)/(número de estudantes) para cada t
 <table>
 <caption>(#tab:tabdom4)Distribuição de frequências do número de dentes cariados por criança</caption>
 </table>
---------------------------- -- -- -- -- -- -- -- -- -- -- ---
+---------------
 Número de dentes cariados    0  1  2  3  4  5  6  7  8  9  10
-
+--------------------------- -- -- -- -- -- -- -- -- -- -- ---
 Número de crianças           8  4  2  2  1  1  0  0  0  1   1
-
 ----------
 </center>
 Outro dentista, o Dr. B, examinou todas as 200 crianças e apenas verificou que 60 delas tinham, pelo menos, um dente com cárie.
@@ -767,7 +756,6 @@ Ganso              18
 Marreco            19
 
 **Total**     **100**
-
 ----------
 </center>
 a)  Estime o total de cada espécie de ave do plantel.

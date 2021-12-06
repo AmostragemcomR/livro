@@ -1554,12 +1554,13 @@
       <else-if variable="URL">
         <group>
           <text value="Disponível em:" suffix=" "/>
-          <text variable="URL"/> <text value= " (Acesso: set. 2020.)"/>
-          <group prefix=" [" suffix="]">
-            <text term="accessed" text-case="capitalize-first" suffix=" "/>
-            <date variable="accessed">
-              <date-part name="month" suffix=" "/>
+            <text variable="URL" suffix=" "/> 
+            <text variable="note" suffix=" "/>
+              <group prefix=" [" suffix="]">
+               <text term="accessed" text-case="capitalize-first" suffix=" "/>
+                 <date variable="accessed">
               <date-part name="day" suffix=", "/>
+              <date-part name="month" suffix=" "/>
               <date-part name="year"/>
             </date>
           </group>

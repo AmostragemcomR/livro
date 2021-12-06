@@ -1102,8 +1102,11 @@ Totais 410 459 674 551 325 528 303 358 342 205  4.155
 **(#exr:exrsis6)**  (Adaptado de @Scheaffer1990, Exercício 7.6) O departamento de controle de qualidade de uma indústria alimentícia utiliza amostragem sistemática para estimar a média da quantidade de determinado alimento colocada em cada lata na linha de produção. A Tabela \@ref(tab:tabsis6) relaciona a amostra selecionada de 1 em cada 50 latas num dia, quando a produção diária foi de 1.820 latas.
 
 <center>
-<table><caption>(#tab:tabsis6)Quantidade de alimento, em onças, por lata na AS</caption></table>
-
+<table>
+<caption>(#tab:tabsis6)Quantidade de alimento, em onças, por lata na AS</caption>
+</table>
+---------------
+     
 ----- ----- ----- ----- ----- -----
 12,00 11,97 12,01 12,03 12,01 11,80 
 
@@ -1117,7 +1120,7 @@ Totais 410 459 674 551 325 528 303 358 342 205  4.155
 
 12,05 11,87 11,91 11,93 11,94 11,89
 
-----------
+---------------
 </center>
 
   a)  Estime a média da quantidade de alimento por lata.

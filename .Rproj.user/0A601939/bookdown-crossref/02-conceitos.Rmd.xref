@@ -1,0 +1,29 @@
+h1:conceitos Conceitos e Cadastros
+h2:fontes-de-dados-e-tipos-de-pesquisas Fontes de dados e tipos de pesquisas
+h2:alguns-conceitos-fundamentais Alguns conceitos fundamentais
+h2:abordalt Abordagens alternativas para pesquisas por amostragem
+h2:planejamento-e-execução-de-pesquisas-por-amostragem Planejamento e execução de pesquisas por amostragem
+fig:modpesq Modelo Genérico do Processo de Produção Estatística, adaptado
+h3:especificação-das-necessidades-da-pesquisa Especificação das necessidades da pesquisa
+h3:planejamento-da-pesquisa Planejamento da pesquisa
+h3:elaboração-dos-instrumentos-de-coleta-e-dos-sistemas Elaboração dos instrumentos de coleta e dos sistemas
+h3:coleta-dos-dados Coleta dos dados
+h3:processamento-da-pesquisa Processamento da pesquisa
+h3:análise-dos-dados-da-pesquisa Análise dos dados da pesquisa
+h3:disseminação-dos-resultados-da-pesquisa Disseminação dos resultados da pesquisa
+h3:arquivamento-das-informações-da-pesquisa Arquivamento das informações da pesquisa
+h3:avaliação-da-pesquisa Avaliação da pesquisa
+h2:cadastros Cadastros
+h3:cadIBGE Cadastros importantes no IBGE
+fig:cadset Cadastro de setores do IBGE - Copacabana - RJ
+fig:cnefe1 Informações do CNEFE para um setor de Copacabana - RJ
+fig:cnefe2 Ilustração de dados do CNEFE
+h3:defeitos-de-cadastros Defeitos de cadastros
+h3:regras-de-associação-das-unidades-da-população-à-unidade-cadastral Regras de associação das unidades da população à unidade cadastral
+fig:umparaum Ilustração da regra de associação um para um
+fig:umparavar Ilustração da regra de associação um para vários
+fig:varparaum1 Ilustração da regra de associação vários para um
+fig:varparaum2 Ilustração da regra de associação vários para um
+fig:hierarquia Ilustração de regras de associação - hierarquia para vários níveis
+h2:exerc2 Exercícios
+

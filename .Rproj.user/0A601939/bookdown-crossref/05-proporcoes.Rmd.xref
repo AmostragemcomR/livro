@@ -1,0 +1,63 @@
+h1:proporc Estimação de Proporções
+h2:parâmetros-populacionais Parâmetros populacionais
+eq:eqpro1
+eq:eqpro2
+onde  representa o número de unidades populacionais que possuem o atributo de interesse.eq:eqpro3
+eq:eqpro4
+eq:eqpro5
+h2:estimação-sob-amostragem-aleatória-simples-com-reposição Estimação sob amostragem aleatória simples com reposição
+eq:eqpro6
+O total de unidades na população com o atributo de interesse, , é estimado usando:eq:eqpro7
+Como indicado no capítulo anterior, este estimador é não viciado sob AASC para qualquer variável , logo é ENV também quando  é do tipo indicadora, como aqui definido.eq:eqpro8
+eq:eqpro9
+eq:eqpro10
+eq:eqpro11
+eq:eqpro12
+O total de unidades na população que possuem o atributo de interesse e respectivo estimador são obtidos por:h2:estimação-sob-amostragem-aleatória-simples-sem-reposição Estimação sob amostragem aleatória simples sem reposição
+eq:eqpro13
+eq:eqpro14
+eq:eqpro15
+eq:eqpro16
+eq:eqpro17
+eq:eqpro18
+h2:distribuição-amostral-exata-de-estimadores-de-proporção-sob-aasc-e-aas Distribuição amostral exata de estimadores de proporção sob AASC e AAS
+eq:eqpro19
+eq:eqpro20
+eq:eqpro21
+eq:eqpro22
+eq:eqpro23
+eq:eqpro24
+eq:eqpro25
+h2:intervalos-de-confiança-para-proporções-na-amostragem-aleatória-simples Intervalos de confiança para proporções na amostragem aleatória simples
+eq:eqpro26
+No caso da , o sistema a ser resolvido é baseado na distribuição Hipergeométrica como se segue:eq:eqpro27
+h2:intervalos-de-confiança-utilizando-a-aproximação-normal Intervalos de confiança utilizando a aproximação Normal
+eq:eqpro28
+fig:figprop1 Aproximação Normal da distribuição do estimador de $p$ no caso de *AASC*
+fig:figprop2 Aproximação Normal da distribuição do estimador de $p$ no caso de *AAS*
+eq:eqpro29
+Caso se deseje considerar o fator de correção para populacões finitas, quando a fração amostral não possa ser considerada pequena e a seleção for sem reposição, a expressão do intervalo de confiança passa a ser:eq:eqpro30
+eq:eqpro31
+Ou considerando a correção para população finita:eq:eqpro32
+eq:eqpro33
+eq:eqpro34
+h2:cálculo-do-tamanho-da-amostra Cálculo do tamanho da amostra
+eq:eqpro35
+Para a seleção sem reposição, o tamanho da amostra é calculado como:eq:eqpro36
+eq:eqpro37
+E depois fazer:eq:eqpro38
+fig:figprop3 Variação de $p(1-p)$ em função dos valores de $p$
+eq:eqpro39
+No caso de uma  basta fazer:eq:eqpro40
+h3:cálculo-do-n-utilizando-outras-formas-de-representar-o-erro-amostral Cálculo do  utilizando outras formas de representar o erro amostral
+eq:eqpro41
+no caso da seleção com reposição.eq:eqpro42
+eq:eqpro43
+h2:estimação-de-proporções-para-variáveis-com-mais-de-duas-categorias Estimação de proporções para variáveis com mais de duas categorias
+eq:eqpro44
+0nde  é o número de unidades na categoria  e  é o tamanho total da população.eq:eqpro45
+eq:eqpro46
+Um estimador para a proporção de unidades populacionais pertencentes à categoria  é dado por:eq:eqpro47
+O problema foi reduzido ao caso de estimar proporções em variáveis com duas categorias.Pode-se obter, também, estimativas de precisão utilizando as mesmas ferramentas já apresentadas neste capítulo.eq:eqpro48
+h2:exerc5 Exercícios
+

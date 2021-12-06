@@ -1,0 +1,43 @@
+h1:estrat Amostragem Estratificada
+h2:o-método-geral O método geral
+h2:amostragem-estratificada-simples Amostragem estratificada simples
+h3:método-de-seleção Método de seleção
+eq:eqest1
+eq:eqest2
+h3:parâmetros-populacionais Parâmetros populacionais
+eq:eqest3
+eq:eqest4
+eq:eqest5
+onde:h3:estimação-do-total-e-da-média-populacional Estimação do total e da média populacional
+eq:eqest6
+eq:eqest7
+é o estimador da média .eq:eqest8
+eq:eqest9
+eq:eqest10
+eq:eqest11
+h3:intervalos-de-confiança Intervalos de confiança
+eq:eqest12
+h2:alocação-da-amostra-nos-estratos Alocação da amostra nos estratos
+h3:alocação-proporcional Alocação proporcional
+eq:eqest13
+.eq:eqest14
+eq:eqest15
+h3:alocação-ótima Alocação ótima
+eq:eqest16
+é adequada para descrever os custos de pesquisa num cenário onde AES vai ser empregada.eq:eqest17
+eq:eqest18
+h3:tamanho-da-amostra-estratificada-simples Tamanho da amostra estratificada simples
+eq:eqest19
+eq:eqest20
+eq:eqest21
+O segundo termo à direita corresponde à .h3:comparação-de-alternativas-de-alocação-da-amostra Comparação de alternativas de alocação da amostra
+h3:alocação-potência Alocação potência
+eq:eqest22
+onde  é o total de alguma variável de tamanho das unidades do estrato , e  é uma potência a ser escolhida pelo responsável pelo planejamento da pesquisa. As quantidades  representam os  da variável de interesse dentro de cada um dos estratos definidos. Em muitas aplicações práticas, os estratos são construídos tentando fazer com que estes coeficientes de variação fiquem aproximadamente iguais ao longo dos vários estratos definidos. Nesse caso, a alocação potência se resume à forma simplificada:eq:eqest23
+eq:eqest24
+h3:alguns-problemas-com-alocação-ótima Alguns problemas com alocação ótima
+h2:definição-dos-limites-dos-estratos Definição dos limites dos estratos
+h2:número-de-estratos-na-amostragem-estratificada-simples Número de estratos na amostragem estratificada simples
+fig:precisaovsestratos Ganhos de precisão *versus* número de estratos
+h2:exerc11 Exercícios
+

@@ -1,0 +1,23 @@
+h1:razao Estimação de Razões e Funções de Totais
+h2:razões-populacionais-como-parâmetros-de-interesse Razões populacionais como parâmetros de interesse
+eq:eqraz1
+h2:razão-de-médias-versus-média-de-razões Razão de médias  média de razões
+h2:outras-funções-de-totais Outras funções de totais
+eq:eqraz2
+h2:estimadores-de-razões-de-totais Estimadores de razões de totais
+eq:eqraz3
+h2:estoft Estimadores para outras funções de totais
+Quando o parâmetro de interesse é uma função de totais populacionais , o método mais simples para estimar esse parâmetro é aplicar a mesma função a estimadores não viciados dos totais, isto é, usar o estimador:eq:eqraz5
+eq:eqraz6
+eq:eqraz10
+eq:eqraz11
+onde a aproximação da última linha advém da exclusão de todos os termos de ordem igual ou superior a 2.eq:eqraz12
+h2:vicioraz Análise do vício do estimador da razão
+eq:eqraz13
+h2:erro-quadrático-médio-de-widehatr Erro quadrático médio de 
+eq:eqraz16
+eq:eqraz17
+eq:eqraz18
+eq:eqraz19
+h2:exerc6 Exercícios
+

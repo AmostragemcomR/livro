@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title></title>
+  <title>Capítulo 5 Estimação de Proporções | _main</title>
   <meta name="description" content="Este é o livro de Amostragem elaborado pelos autores." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="" />
+  <meta property="og:title" content="Capítulo 5 Estimação de Proporções | _main" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="AmostragemcomR/livro" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="Capítulo 5 Estimação de Proporções | _main" />
   
   <meta name="twitter:description" content="Este é o livro de Amostragem elaborado pelos autores." />
   
@@ -31,7 +31,9 @@
   
 <link rel="prev" href="aas.html"/>
 <link rel="next" href="razao.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -47,49 +49,98 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 </head>
@@ -113,15 +164,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="lista-de-figuras.html"><a href="lista-de-figuras.html"><i class="fa fa-check"></i>Lista de Figuras</a></li>
 <li class="chapter" data-level="" data-path="arquivos-de-dados-usados-no-livro.html"><a href="arquivos-de-dados-usados-no-livro.html"><i class="fa fa-check"></i>Arquivos de dados usados no livro</a></li>
 <li class="chapter" data-level="" data-path="errata.html"><a href="errata.html"><i class="fa fa-check"></i>Errata</a></li>
-<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1" data-path="introduc.html"><a href="introduc.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="introduc.html"><a href="introduc.html#motivação"><i class="fa fa-check"></i><b>1.1</b> Motivação</a></li>
 <li class="chapter" data-level="1.2" data-path="introduc.html"><a href="introduc.html#objetivos-do-livro"><i class="fa fa-check"></i><b>1.2</b> Objetivos do livro</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="conceitos.html"><a href="conceitos.html"><i class="fa fa-check"></i><b>2</b> Conceitos e Cadastros</a><ul>
+<li class="chapter" data-level="2" data-path="conceitos.html"><a href="conceitos.html"><i class="fa fa-check"></i><b>2</b> Conceitos e Cadastros</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="conceitos.html"><a href="conceitos.html#fontes-de-dados-e-tipos-de-pesquisas"><i class="fa fa-check"></i><b>2.1</b> Fontes de dados e tipos de pesquisas</a></li>
 <li class="chapter" data-level="2.2" data-path="conceitos.html"><a href="conceitos.html#alguns-conceitos-fundamentais"><i class="fa fa-check"></i><b>2.2</b> Alguns conceitos fundamentais</a></li>
 <li class="chapter" data-level="2.3" data-path="conceitos.html"><a href="conceitos.html#abordalt"><i class="fa fa-check"></i><b>2.3</b> Abordagens alternativas para pesquisas por amostragem</a></li>
-<li class="chapter" data-level="2.4" data-path="conceitos.html"><a href="conceitos.html#planejamento-e-execução-de-pesquisas-por-amostragem"><i class="fa fa-check"></i><b>2.4</b> Planejamento e execução de pesquisas por amostragem</a><ul>
+<li class="chapter" data-level="2.4" data-path="conceitos.html"><a href="conceitos.html#planejamento-e-execução-de-pesquisas-por-amostragem"><i class="fa fa-check"></i><b>2.4</b> Planejamento e execução de pesquisas por amostragem</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="conceitos.html"><a href="conceitos.html#especificação-das-necessidades-da-pesquisa"><i class="fa fa-check"></i><b>2.4.1</b> Especificação das necessidades da pesquisa</a></li>
 <li class="chapter" data-level="2.4.2" data-path="conceitos.html"><a href="conceitos.html#planejamento-da-pesquisa"><i class="fa fa-check"></i><b>2.4.2</b> Planejamento da pesquisa</a></li>
 <li class="chapter" data-level="2.4.3" data-path="conceitos.html"><a href="conceitos.html#elaboração-dos-instrumentos-de-coleta-e-dos-sistemas"><i class="fa fa-check"></i><b>2.4.3</b> Elaboração dos instrumentos de coleta e dos sistemas</a></li>
@@ -132,33 +186,39 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.4.8" data-path="conceitos.html"><a href="conceitos.html#arquivamento-das-informações-da-pesquisa"><i class="fa fa-check"></i><b>2.4.8</b> Arquivamento das informações da pesquisa</a></li>
 <li class="chapter" data-level="2.4.9" data-path="conceitos.html"><a href="conceitos.html#avaliação-da-pesquisa"><i class="fa fa-check"></i><b>2.4.9</b> Avaliação da pesquisa</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="conceitos.html"><a href="conceitos.html#cadastros"><i class="fa fa-check"></i><b>2.5</b> Cadastros</a><ul>
+<li class="chapter" data-level="2.5" data-path="conceitos.html"><a href="conceitos.html#cadastros"><i class="fa fa-check"></i><b>2.5</b> Cadastros</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="conceitos.html"><a href="conceitos.html#cadIBGE"><i class="fa fa-check"></i><b>2.5.1</b> Cadastros importantes no IBGE</a></li>
 <li class="chapter" data-level="2.5.2" data-path="conceitos.html"><a href="conceitos.html#defeitos-de-cadastros"><i class="fa fa-check"></i><b>2.5.2</b> Defeitos de cadastros</a></li>
 <li class="chapter" data-level="2.5.3" data-path="conceitos.html"><a href="conceitos.html#regras-de-associação-das-unidades-da-população-à-unidade-cadastral"><i class="fa fa-check"></i><b>2.5.3</b> Regras de associação das unidades da população à unidade cadastral</a></li>
 </ul></li>
 <li class="chapter" data-level="2.6" data-path="conceitos.html"><a href="conceitos.html#exerc2"><i class="fa fa-check"></i><b>2.6</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="visger.html"><a href="visger.html"><i class="fa fa-check"></i><b>3</b> Visão Geral da Amostragem e Estimação</a><ul>
+<li class="chapter" data-level="3" data-path="visger.html"><a href="visger.html"><i class="fa fa-check"></i><b>3</b> Visão Geral da Amostragem e Estimação</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="visger.html"><a href="visger.html#definições-e-notação-para-população-de-pesquisa-e-parâmetros-selecionados"><i class="fa fa-check"></i><b>3.1</b> Definições e notação para população de pesquisa e parâmetros selecionados</a></li>
 <li class="chapter" data-level="3.2" data-path="visger.html"><a href="visger.html#amostra"><i class="fa fa-check"></i><b>3.2</b> Amostra</a></li>
 <li class="chapter" data-level="3.3" data-path="visger.html"><a href="visger.html#amostragem-probabilística"><i class="fa fa-check"></i><b>3.3</b> Amostragem probabilística</a></li>
 <li class="chapter" data-level="3.4" data-path="visger.html"><a href="visger.html#estatísticas-estimadores-e-estimativas"><i class="fa fa-check"></i><b>3.4</b> Estatísticas, estimadores e estimativas</a></li>
 <li class="chapter" data-level="3.5" data-path="visger.html"><a href="visger.html#a-distribuição-de-aleatorização"><i class="fa fa-check"></i><b>3.5</b> A distribuição de aleatorização</a></li>
 <li class="chapter" data-level="3.6" data-path="visger.html"><a href="visger.html#estimadores-não-viciados-para-o-total-populacional"><i class="fa fa-check"></i><b>3.6</b> Estimadores não viciados para o total populacional</a></li>
-<li class="chapter" data-level="3.7" data-path="visger.html"><a href="visger.html#teoria-básica"><i class="fa fa-check"></i><b>3.7</b> Teoria básica</a><ul>
+<li class="chapter" data-level="3.7" data-path="visger.html"><a href="visger.html#teoria-básica"><i class="fa fa-check"></i><b>3.7</b> Teoria básica</a>
+<ul>
 <li class="chapter" data-level="3.7.1" data-path="visger.html"><a href="visger.html#estimador-linear-de-total"><i class="fa fa-check"></i><b>3.7.1</b> Estimador linear de total</a></li>
 <li class="chapter" data-level="3.7.2" data-path="visger.html"><a href="visger.html#propHT"><i class="fa fa-check"></i><b>3.7.2</b> Propriedades do estimador de Horvitz-Thompson</a></li>
 <li class="chapter" data-level="3.7.3" data-path="visger.html"><a href="visger.html#estimação-da-média-populacional"><i class="fa fa-check"></i><b>3.7.3</b> Estimação da média populacional</a></li>
 </ul></li>
 <li class="chapter" data-level="3.8" data-path="visger.html"><a href="visger.html#exerc3"><i class="fa fa-check"></i><b>3.8</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="aas.html"><a href="aas.html"><i class="fa fa-check"></i><b>4</b> Amostragem Aleatória Simples</a><ul>
+<li class="chapter" data-level="4" data-path="aas.html"><a href="aas.html"><i class="fa fa-check"></i><b>4</b> Amostragem Aleatória Simples</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="aas.html"><a href="aas.html#planos-amostrais-e-algoritmos-de-seleção"><i class="fa fa-check"></i><b>4.1</b> Planos amostrais e algoritmos de seleção</a></li>
-<li class="chapter" data-level="4.2" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-com-reposição"><i class="fa fa-check"></i><b>4.2</b> Amostragem aleatória simples com reposição</a><ul>
+<li class="chapter" data-level="4.2" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-com-reposição"><i class="fa fa-check"></i><b>4.2</b> Amostragem aleatória simples com reposição</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="aas.html"><a href="aas.html#estimação-do-total-e-média-populacionais-sob-aasc"><i class="fa fa-check"></i><b>4.2.1</b> Estimação do total e média populacionais sob AASC</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-sem-reposição"><i class="fa fa-check"></i><b>4.3</b> Amostragem aleatória simples sem reposição</a><ul>
+<li class="chapter" data-level="4.3" data-path="aas.html"><a href="aas.html#amostragem-aleatória-simples-sem-reposição"><i class="fa fa-check"></i><b>4.3</b> Amostragem aleatória simples sem reposição</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="aas.html"><a href="aas.html#algoritmo-convencional-para-selecionar-uma-aas"><i class="fa fa-check"></i><b>4.3.1</b> Algoritmo “convencional” para selecionar uma AAS</a></li>
 <li class="chapter" data-level="4.3.2" data-path="aas.html"><a href="aas.html#Hajek"><i class="fa fa-check"></i><b>4.3.2</b> Algoritmo de Hàjek para selecionar AAS</a></li>
 <li class="chapter" data-level="4.3.3" data-path="aas.html"><a href="aas.html#algoritmo-de-fan-muller-e-rezucha-para-selecionar-aas"><i class="fa fa-check"></i><b>4.3.3</b> Algoritmo de Fan, Muller e Rezucha para selecionar AAS</a></li>
@@ -167,26 +227,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.3.6" data-path="aas.html"><a href="aas.html#distribuição-da-média-amostral"><i class="fa fa-check"></i><b>4.3.6</b> Distribuição da média amostral</a></li>
 <li class="chapter" data-level="4.3.7" data-path="aas.html"><a href="aas.html#comparação-dos-planos-de-amostragem-aleatória-simples-com-e-sem-reposição"><i class="fa fa-check"></i><b>4.3.7</b> Comparação dos planos de amostragem aleatória simples com e sem reposição</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="aas.html"><a href="aas.html#determinação-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>4.4</b> Determinação do tamanho da amostra</a><ul>
+<li class="chapter" data-level="4.4" data-path="aas.html"><a href="aas.html#determinação-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>4.4</b> Determinação do tamanho da amostra</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="aas.html"><a href="aas.html#tamanho-amostral-para-custo-fixado"><i class="fa fa-check"></i><b>4.4.1</b> Tamanho amostral para custo fixado</a></li>
 <li class="chapter" data-level="4.4.2" data-path="aas.html"><a href="aas.html#tamanho-amostral-para-precisão-fixada"><i class="fa fa-check"></i><b>4.4.2</b> Tamanho amostral para precisão fixada</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="aas.html"><a href="aas.html#exerc4"><i class="fa fa-check"></i><b>4.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proporc.html"><a href="proporc.html"><i class="fa fa-check"></i><b>5</b> Estimação de Proporções</a><ul>
+<li class="chapter" data-level="5" data-path="proporc.html"><a href="proporc.html"><i class="fa fa-check"></i><b>5</b> Estimação de Proporções</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="proporc.html"><a href="proporc.html#parâmetros-populacionais"><i class="fa fa-check"></i><b>5.1</b> Parâmetros populacionais</a></li>
 <li class="chapter" data-level="5.2" data-path="proporc.html"><a href="proporc.html#estimação-sob-amostragem-aleatória-simples-com-reposição"><i class="fa fa-check"></i><b>5.2</b> Estimação sob amostragem aleatória simples com reposição</a></li>
 <li class="chapter" data-level="5.3" data-path="proporc.html"><a href="proporc.html#estimação-sob-amostragem-aleatória-simples-sem-reposição"><i class="fa fa-check"></i><b>5.3</b> Estimação sob amostragem aleatória simples sem reposição</a></li>
 <li class="chapter" data-level="5.4" data-path="proporc.html"><a href="proporc.html#distribuição-amostral-exata-de-estimadores-de-proporção-sob-aasc-e-aas"><i class="fa fa-check"></i><b>5.4</b> Distribuição amostral exata de estimadores de proporção sob AASC e AAS</a></li>
 <li class="chapter" data-level="5.5" data-path="proporc.html"><a href="proporc.html#intervalos-de-confiança-para-proporções-na-amostragem-aleatória-simples"><i class="fa fa-check"></i><b>5.5</b> Intervalos de confiança para proporções na amostragem aleatória simples</a></li>
 <li class="chapter" data-level="5.6" data-path="proporc.html"><a href="proporc.html#intervalos-de-confiança-utilizando-a-aproximação-normal"><i class="fa fa-check"></i><b>5.6</b> Intervalos de confiança utilizando a aproximação Normal</a></li>
-<li class="chapter" data-level="5.7" data-path="proporc.html"><a href="proporc.html#cálculo-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>5.7</b> Cálculo do tamanho da amostra</a><ul>
+<li class="chapter" data-level="5.7" data-path="proporc.html"><a href="proporc.html#cálculo-do-tamanho-da-amostra"><i class="fa fa-check"></i><b>5.7</b> Cálculo do tamanho da amostra</a>
+<ul>
 <li class="chapter" data-level="5.7.1" data-path="proporc.html"><a href="proporc.html#cálculo-do-n-utilizando-outras-formas-de-representar-o-erro-amostral"><i class="fa fa-check"></i><b>5.7.1</b> Cálculo do <span class="math inline">\(n\)</span> utilizando outras formas de representar o erro amostral</a></li>
 </ul></li>
 <li class="chapter" data-level="5.8" data-path="proporc.html"><a href="proporc.html#estimação-de-proporções-para-variáveis-com-mais-de-duas-categorias"><i class="fa fa-check"></i><b>5.8</b> Estimação de proporções para variáveis com mais de duas categorias</a></li>
 <li class="chapter" data-level="5.9" data-path="proporc.html"><a href="proporc.html#exerc5"><i class="fa fa-check"></i><b>5.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="razao.html"><a href="razao.html"><i class="fa fa-check"></i><b>6</b> Estimação de Razões e Funções de Totais</a><ul>
+<li class="chapter" data-level="6" data-path="razao.html"><a href="razao.html"><i class="fa fa-check"></i><b>6</b> Estimação de Razões e Funções de Totais</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="razao.html"><a href="razao.html#razões-populacionais-como-parâmetros-de-interesse"><i class="fa fa-check"></i><b>6.1</b> Razões populacionais como parâmetros de interesse</a></li>
 <li class="chapter" data-level="6.2" data-path="razao.html"><a href="razao.html#razão-de-médias-versus-média-de-razões"><i class="fa fa-check"></i><b>6.2</b> Razão de médias <em>versus</em> média de razões</a></li>
 <li class="chapter" data-level="6.3" data-path="razao.html"><a href="razao.html#outras-funções-de-totais"><i class="fa fa-check"></i><b>6.3</b> Outras funções de totais</a></li>
@@ -196,7 +260,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.7" data-path="razao.html"><a href="razao.html#erro-quadrático-médio-de-widehatr"><i class="fa fa-check"></i><b>6.7</b> Erro quadrático médio de <span class="math inline">\(\widehat{R}\)</span></a></li>
 <li class="chapter" data-level="6.8" data-path="razao.html"><a href="razao.html#exerc6"><i class="fa fa-check"></i><b>6.8</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="domin.html"><a href="domin.html"><i class="fa fa-check"></i><b>7</b> Estimação para Domínios de Estudo</a><ul>
+<li class="chapter" data-level="7" data-path="domin.html"><a href="domin.html"><i class="fa fa-check"></i><b>7</b> Estimação para Domínios de Estudo</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="domin.html"><a href="domin.html#domin1"><i class="fa fa-check"></i><b>7.1</b> Domínios de estudo</a></li>
 <li class="chapter" data-level="7.2" data-path="domin.html"><a href="domin.html#domin2"><i class="fa fa-check"></i><b>7.2</b> Parâmetros de interesse para domínios</a></li>
 <li class="chapter" data-level="7.3" data-path="domin.html"><a href="domin.html#estimação-de-parâmetros-para-domínios-sob-aas"><i class="fa fa-check"></i><b>7.3</b> Estimação de parâmetros para domínios sob AAS</a></li>
@@ -207,7 +272,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.8" data-path="domin.html"><a href="domin.html#estimação-de-proporções-dentro-do-domínio"><i class="fa fa-check"></i><b>7.8</b> Estimação de proporções dentro do domínio</a></li>
 <li class="chapter" data-level="7.9" data-path="domin.html"><a href="domin.html#exerc7"><i class="fa fa-check"></i><b>7.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="AS.html"><a href="AS.html"><i class="fa fa-check"></i><b>8</b> Amostragem Sistemática Simples</a><ul>
+<li class="chapter" data-level="8" data-path="AS.html"><a href="AS.html"><i class="fa fa-check"></i><b>8</b> Amostragem Sistemática Simples</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="AS.html"><a href="AS.html#ideia-básica"><i class="fa fa-check"></i><b>8.1</b> Ideia básica</a></li>
 <li class="chapter" data-level="8.2" data-path="AS.html"><a href="AS.html#método-de-seleção-da-amostra"><i class="fa fa-check"></i><b>8.2</b> Método de seleção da amostra</a></li>
 <li class="chapter" data-level="8.3" data-path="AS.html"><a href="AS.html#composição-das-amostras-sistemáticas-simples"><i class="fa fa-check"></i><b>8.3</b> Composição das amostras sistemáticas simples</a></li>
@@ -221,15 +287,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.11" data-path="AS.html"><a href="AS.html#alternativas-para-seleção-com-amostragem-sistemática-simples"><i class="fa fa-check"></i><b>8.11</b> Alternativas para seleção com amostragem sistemática simples</a></li>
 <li class="chapter" data-level="8.12" data-path="AS.html"><a href="AS.html#exerc8"><i class="fa fa-check"></i><b>8.12</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="binom.html"><a href="binom.html"><i class="fa fa-check"></i><b>9</b> Outros Métodos de Amostragem com Equiprobabilidade</a><ul>
-<li class="chapter" data-level="9.1" data-path="binom.html"><a href="binom.html#binom2"><i class="fa fa-check"></i><b>9.1</b> Amostragem binomial ou de Bernoulli</a><ul>
+<li class="chapter" data-level="9" data-path="binom.html"><a href="binom.html"><i class="fa fa-check"></i><b>9</b> Outros Métodos de Amostragem com Equiprobabilidade</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="binom.html"><a href="binom.html#binom2"><i class="fa fa-check"></i><b>9.1</b> Amostragem binomial ou de Bernoulli</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="binom.html"><a href="binom.html#binom3"><i class="fa fa-check"></i><b>9.1.1</b> Método de seleção da amostra</a></li>
 <li class="chapter" data-level="9.1.2" data-path="binom.html"><a href="binom.html#probabilidades-de-inclusão-na-amostragem-binomial"><i class="fa fa-check"></i><b>9.1.2</b> Probabilidades de inclusão na amostragem binomial</a></li>
 <li class="chapter" data-level="9.1.3" data-path="binom.html"><a href="binom.html#estAB"><i class="fa fa-check"></i><b>9.1.3</b> Estimação do total sob amostragem binomial</a></li>
 <li class="chapter" data-level="9.1.4" data-path="binom.html"><a href="binom.html#estimação-da-média-sob-amostragem-binomial"><i class="fa fa-check"></i><b>9.1.4</b> Estimação da média sob amostragem binomial</a></li>
 <li class="chapter" data-level="9.1.5" data-path="binom.html"><a href="binom.html#exemplos-de-aplicação-da-amostragem-binomial"><i class="fa fa-check"></i><b>9.1.5</b> Exemplos de aplicação da amostragem binomial</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="binom.html"><a href="binom.html#inversa"><i class="fa fa-check"></i><b>9.2</b> Amostragem inversa simples</a><ul>
+<li class="chapter" data-level="9.2" data-path="binom.html"><a href="binom.html#inversa"><i class="fa fa-check"></i><b>9.2</b> Amostragem inversa simples</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="binom.html"><a href="binom.html#método-de-seleção-da-amostra-inversa-simples"><i class="fa fa-check"></i><b>9.2.1</b> Método de seleção da amostra inversa simples</a></li>
 <li class="chapter" data-level="9.2.2" data-path="binom.html"><a href="binom.html#amostragem-inversa-simples-para-varredura-por-amostragem"><i class="fa fa-check"></i><b>9.2.2</b> Amostragem inversa simples para varredura por amostragem</a></li>
 <li class="chapter" data-level="9.2.3" data-path="binom.html"><a href="binom.html#estimação-de-horvitz-thompson-na-amostragem-inversa-simples"><i class="fa fa-check"></i><b>9.2.3</b> Estimação de Horvitz-Thompson na amostragem inversa simples</a></li>
@@ -238,35 +307,44 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="binom.html"><a href="binom.html#exerc9"><i class="fa fa-check"></i><b>9.3</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="ppt.html"><a href="ppt.html"><i class="fa fa-check"></i><b>10</b> Amostragem com Probabilidades Proporcionais ao Tamanho</a><ul>
+<li class="chapter" data-level="10" data-path="ppt.html"><a href="ppt.html"><i class="fa fa-check"></i><b>10</b> Amostragem com Probabilidades Proporcionais ao Tamanho</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="ppt.html"><a href="ppt.html#motivação-1"><i class="fa fa-check"></i><b>10.1</b> Motivação</a></li>
 <li class="chapter" data-level="10.2" data-path="ppt.html"><a href="ppt.html#estimação-do-total-populacional"><i class="fa fa-check"></i><b>10.2</b> Estimação do total populacional</a></li>
-<li class="chapter" data-level="10.3" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-com-reposição"><i class="fa fa-check"></i><b>10.3</b> Amostragem PPT com reposição</a><ul>
+<li class="chapter" data-level="10.3" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-com-reposição"><i class="fa fa-check"></i><b>10.3</b> Amostragem PPT com reposição</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="ppt.html"><a href="ppt.html#estimação-do-total-sob-amostragem-ppt-com-reposição"><i class="fa fa-check"></i><b>10.3.1</b> Estimação do total sob amostragem PPT com reposição</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-poisson"><i class="fa fa-check"></i><b>10.4</b> Amostragem PPT de Poisson</a><ul>
+<li class="chapter" data-level="10.4" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-poisson"><i class="fa fa-check"></i><b>10.4</b> Amostragem PPT de Poisson</a>
+<ul>
 <li class="chapter" data-level="10.4.1" data-path="ppt.html"><a href="ppt.html#estimação-do-total-sob-amostragem-de-poisson"><i class="fa fa-check"></i><b>10.4.1</b> Estimação do total sob amostragem de Poisson</a></li>
 </ul></li>
-<li class="chapter" data-level="10.5" data-path="ppt.html"><a href="ppt.html#ASP"><i class="fa fa-check"></i><b>10.5</b> Amostragem sequencial de Poisson</a><ul>
+<li class="chapter" data-level="10.5" data-path="ppt.html"><a href="ppt.html#ASP"><i class="fa fa-check"></i><b>10.5</b> Amostragem sequencial de Poisson</a>
+<ul>
 <li class="chapter" data-level="10.5.1" data-path="ppt.html"><a href="ppt.html#estimação-com-amostragem-sequencial-de-poisson"><i class="fa fa-check"></i><b>10.5.1</b> Estimação com amostragem sequencial de Poisson</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="ppt.html"><a href="ppt.html#amostragem-sistemática-com-ppt"><i class="fa fa-check"></i><b>10.6</b> Amostragem sistemática com PPT</a><ul>
+<li class="chapter" data-level="10.6" data-path="ppt.html"><a href="ppt.html#amostragem-sistemática-com-ppt"><i class="fa fa-check"></i><b>10.6</b> Amostragem sistemática com PPT</a>
+<ul>
 <li class="chapter" data-level="10.6.1" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-sistemática-com-ordenação"><i class="fa fa-check"></i><b>10.6.1</b> Amostragem PPT sistemática com ordenação</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-pareto"><i class="fa fa-check"></i><b>10.7</b> Amostragem PPT de Pareto</a><ul>
+<li class="chapter" data-level="10.7" data-path="ppt.html"><a href="ppt.html#amostragem-ppt-de-pareto"><i class="fa fa-check"></i><b>10.7</b> Amostragem PPT de Pareto</a>
+<ul>
 <li class="chapter" data-level="10.7.1" data-path="ppt.html"><a href="ppt.html#estimação-do-total-sob-amostragem-ppt-de-pareto"><i class="fa fa-check"></i><b>10.7.1</b> Estimação do total sob amostragem PPT de Pareto</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="ppt.html"><a href="ppt.html#exerc10"><i class="fa fa-check"></i><b>10.8</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="estrat.html"><a href="estrat.html"><i class="fa fa-check"></i><b>11</b> Amostragem Estratificada</a><ul>
+<li class="chapter" data-level="11" data-path="estrat.html"><a href="estrat.html"><i class="fa fa-check"></i><b>11</b> Amostragem Estratificada</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="estrat.html"><a href="estrat.html#o-método-geral"><i class="fa fa-check"></i><b>11.1</b> O método geral</a></li>
-<li class="chapter" data-level="11.2" data-path="estrat.html"><a href="estrat.html#amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.2</b> Amostragem estratificada simples</a><ul>
+<li class="chapter" data-level="11.2" data-path="estrat.html"><a href="estrat.html#amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.2</b> Amostragem estratificada simples</a>
+<ul>
 <li class="chapter" data-level="11.2.1" data-path="estrat.html"><a href="estrat.html#método-de-seleção"><i class="fa fa-check"></i><b>11.2.1</b> Método de seleção</a></li>
 <li class="chapter" data-level="11.2.2" data-path="estrat.html"><a href="estrat.html#parâmetros-populacionais-1"><i class="fa fa-check"></i><b>11.2.2</b> Parâmetros populacionais</a></li>
 <li class="chapter" data-level="11.2.3" data-path="estrat.html"><a href="estrat.html#estimação-do-total-e-da-média-populacional"><i class="fa fa-check"></i><b>11.2.3</b> Estimação do total e da média populacional</a></li>
 <li class="chapter" data-level="11.2.4" data-path="estrat.html"><a href="estrat.html#intervalos-de-confiança"><i class="fa fa-check"></i><b>11.2.4</b> Intervalos de confiança</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="estrat.html"><a href="estrat.html#alocação-da-amostra-nos-estratos"><i class="fa fa-check"></i><b>11.3</b> Alocação da amostra nos estratos</a><ul>
+<li class="chapter" data-level="11.3" data-path="estrat.html"><a href="estrat.html#alocação-da-amostra-nos-estratos"><i class="fa fa-check"></i><b>11.3</b> Alocação da amostra nos estratos</a>
+<ul>
 <li class="chapter" data-level="11.3.1" data-path="estrat.html"><a href="estrat.html#alocação-proporcional"><i class="fa fa-check"></i><b>11.3.1</b> Alocação proporcional</a></li>
 <li class="chapter" data-level="11.3.2" data-path="estrat.html"><a href="estrat.html#alocação-ótima"><i class="fa fa-check"></i><b>11.3.2</b> Alocação ótima</a></li>
 <li class="chapter" data-level="11.3.3" data-path="estrat.html"><a href="estrat.html#tamanho-da-amostra-estratificada-simples"><i class="fa fa-check"></i><b>11.3.3</b> Tamanho da amostra estratificada simples</a></li>
@@ -278,20 +356,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.5" data-path="estrat.html"><a href="estrat.html#número-de-estratos-na-amostragem-estratificada-simples"><i class="fa fa-check"></i><b>11.5</b> Número de estratos na amostragem estratificada simples</a></li>
 <li class="chapter" data-level="11.6" data-path="estrat.html"><a href="estrat.html#exerc11"><i class="fa fa-check"></i><b>11.6</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="cong.html"><a href="cong.html"><i class="fa fa-check"></i><b>12</b> Amostragem Conglomerada</a><ul>
+<li class="chapter" data-level="12" data-path="cong.html"><a href="cong.html"><i class="fa fa-check"></i><b>12</b> Amostragem Conglomerada</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="cong.html"><a href="cong.html#conceituação-básica"><i class="fa fa-check"></i><b>12.1</b> Conceituação básica</a></li>
 <li class="chapter" data-level="12.2" data-path="cong.html"><a href="cong.html#amostragem-de-áreas"><i class="fa fa-check"></i><b>12.2</b> Amostragem de áreas</a></li>
 <li class="chapter" data-level="12.3" data-path="cong.html"><a href="cong.html#definições-básicas-e-notação"><i class="fa fa-check"></i><b>12.3</b> Definições básicas e notação</a></li>
 <li class="chapter" data-level="12.4" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-um-estágio"><i class="fa fa-check"></i><b>12.4</b> Amostragem conglomerada em um estágio</a></li>
 <li class="chapter" data-level="12.5" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-vários-estágios"><i class="fa fa-check"></i><b>12.5</b> Amostragem conglomerada em vários estágios</a></li>
 <li class="chapter" data-level="12.6" data-path="cong.html"><a href="cong.html#notação-na-amostragem-conglomerada-em-um-estágio"><i class="fa fa-check"></i><b>12.6</b> Notação na amostragem conglomerada em um estágio</a></li>
-<li class="chapter" data-level="12.7" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-um-estágio-simples"><i class="fa fa-check"></i><b>12.7</b> Amostragem conglomerada em um estágio simples</a><ul>
+<li class="chapter" data-level="12.7" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-um-estágio-simples"><i class="fa fa-check"></i><b>12.7</b> Amostragem conglomerada em um estágio simples</a>
+<ul>
 <li class="chapter" data-level="12.7.1" data-path="cong.html"><a href="cong.html#estimação-do-total-sob-ac1s"><i class="fa fa-check"></i><b>12.7.1</b> Estimação do total sob AC1S</a></li>
 <li class="chapter" data-level="12.7.2" data-path="cong.html"><a href="cong.html#estimação-da-média-sob-ac1s"><i class="fa fa-check"></i><b>12.7.2</b> Estimação da média sob AC1S</a></li>
 </ul></li>
 <li class="chapter" data-level="12.8" data-path="cong.html"><a href="cong.html#efeito-do-plano-amostral"><i class="fa fa-check"></i><b>12.8</b> Efeito do plano amostral</a></li>
 <li class="chapter" data-level="12.9" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-com-ppt-em-um-estágio"><i class="fa fa-check"></i><b>12.9</b> Amostragem conglomerada com PPT em um estágio</a></li>
-<li class="chapter" data-level="12.10" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-dois-estágios"><i class="fa fa-check"></i><b>12.10</b> Amostragem conglomerada em dois estágios</a><ul>
+<li class="chapter" data-level="12.10" data-path="cong.html"><a href="cong.html#amostragem-conglomerada-em-dois-estágios"><i class="fa fa-check"></i><b>12.10</b> Amostragem conglomerada em dois estágios</a>
+<ul>
 <li class="chapter" data-level="12.10.1" data-path="cong.html"><a href="cong.html#ac2-com-aas-nos-2-estágios"><i class="fa fa-check"></i><b>12.10.1</b> AC2 com AAS nos 2 estágios</a></li>
 <li class="chapter" data-level="12.10.2" data-path="cong.html"><a href="cong.html#ac2-com-ppt-com-reposição-no-primeiro-estágio-e-aas-no-segundo-estágio"><i class="fa fa-check"></i><b>12.10.2</b> AC2 com PPT com reposição no primeiro estágio e AAS no segundo estágio</a></li>
 <li class="chapter" data-level="12.10.3" data-path="cong.html"><a href="cong.html#ac2-com-ppt-de-poisson-sequencial-no-primeiro-estágio-e-aas-no-segundo-estágio"><i class="fa fa-check"></i><b>12.10.3</b> AC2 com PPT de Poisson sequencial no primeiro estágio e AAS no segundo estágio</a></li>
@@ -300,19 +381,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12.11" data-path="cong.html"><a href="cong.html#ideias-básicas-na-escolha-de-unidades-compostas"><i class="fa fa-check"></i><b>12.11</b> Ideias básicas na escolha de unidades compostas</a></li>
 <li class="chapter" data-level="12.12" data-path="cong.html"><a href="cong.html#exerc12"><i class="fa fa-check"></i><b>12.12</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="calib.html"><a href="calib.html"><i class="fa fa-check"></i><b>13</b> Estimadores de Calibração</a><ul>
+<li class="chapter" data-level="13" data-path="calib.html"><a href="calib.html"><i class="fa fa-check"></i><b>13</b> Estimadores de Calibração</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="calib.html"><a href="calib.html#motiva13"><i class="fa fa-check"></i><b>13.1</b> Motivação</a></li>
 <li class="chapter" data-level="13.2" data-path="calib.html"><a href="calib.html#problema"><i class="fa fa-check"></i><b>13.2</b> O problema</a></li>
 <li class="chapter" data-level="13.3" data-path="calib.html"><a href="calib.html#estreg"><i class="fa fa-check"></i><b>13.3</b> Estimadores de regressão como estimadores de calibração</a></li>
-<li class="chapter" data-level="13.4" data-path="calib.html"><a href="calib.html#propriedades-dos-estimadores-de-calibração"><i class="fa fa-check"></i><b>13.4</b> Propriedades dos estimadores de calibração</a><ul>
+<li class="chapter" data-level="13.4" data-path="calib.html"><a href="calib.html#propriedades-dos-estimadores-de-calibração"><i class="fa fa-check"></i><b>13.4</b> Propriedades dos estimadores de calibração</a>
+<ul>
 <li class="chapter" data-level="13.4.1" data-path="calib.html"><a href="calib.html#propriedades-dos-estimadores-para-grandes-amostras"><i class="fa fa-check"></i><b>13.4.1</b> Propriedades dos estimadores para grandes amostras</a></li>
 </ul></li>
-<li class="chapter" data-level="13.5" data-path="calib.html"><a href="calib.html#razCS"><i class="fa fa-check"></i><b>13.5</b> Estimadores de razão como casos particulares da calibração</a><ul>
+<li class="chapter" data-level="13.5" data-path="calib.html"><a href="calib.html#razCS"><i class="fa fa-check"></i><b>13.5</b> Estimadores de razão como casos particulares da calibração</a>
+<ul>
 <li class="chapter" data-level="13.5.1" data-path="calib.html"><a href="calib.html#estimador-de-razão-combinada-sob-aes"><i class="fa fa-check"></i><b>13.5.1</b> Estimador de razão combinada sob AES</a></li>
 <li class="chapter" data-level="13.5.2" data-path="calib.html"><a href="calib.html#estimador-de-razão-separada-sob-aes"><i class="fa fa-check"></i><b>13.5.2</b> Estimador de razão separada sob AES</a></li>
 <li class="chapter" data-level="13.5.3" data-path="calib.html"><a href="calib.html#comparação-dos-estimadores-de-razão-combinada-e-separada"><i class="fa fa-check"></i><b>13.5.3</b> Comparação dos estimadores de razão combinada e separada</a></li>
 </ul></li>
-<li class="chapter" data-level="13.6" data-path="calib.html"><a href="calib.html#alguns-problemas-práticos-com-calibração"><i class="fa fa-check"></i><b>13.6</b> Alguns problemas práticos com calibração</a><ul>
+<li class="chapter" data-level="13.6" data-path="calib.html"><a href="calib.html#alguns-problemas-práticos-com-calibração"><i class="fa fa-check"></i><b>13.6</b> Alguns problemas práticos com calibração</a>
+<ul>
 <li class="chapter" data-level="13.6.1" data-path="calib.html"><a href="calib.html#tamanhos-de-amostra-pequenos"><i class="fa fa-check"></i><b>13.6.1</b> Tamanhos de amostra pequenos</a></li>
 <li class="chapter" data-level="13.6.2" data-path="calib.html"><a href="calib.html#pesos-negativos-ou-extremos"><i class="fa fa-check"></i><b>13.6.2</b> Pesos negativos ou extremos</a></li>
 <li class="chapter" data-level="13.6.3" data-path="calib.html"><a href="calib.html#grande-número-de-variáveis-de-pesquisa-ou-de-grupos-de-modelagem"><i class="fa fa-check"></i><b>13.6.3</b> Grande número de variáveis de pesquisa ou de grupos de modelagem</a></li>
@@ -344,10 +429,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="proporc" class="section level1">
+<div id="proporc" class="section level1" number="5">
 <h1><span class="header-section-number">Capítulo 5</span> Estimação de Proporções</h1>
 <div style="text-align: justify">
-<div id="parâmetros-populacionais" class="section level2">
+<div id="parâmetros-populacionais" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Parâmetros populacionais</h2>
 <p>Um caso especial de parâmetro de interesse para muitos estudos ou pesquisas ocorre quando a variável <span class="math inline">\(y\)</span> indica se uma determinada unidade populacional tem ou não uma determinada característica ou atributo, ou pertence a um determinado grupo especificado de unidades da população. São exemplos desse tipo as investigações sobre:</p>
 <ul>
@@ -368,8 +453,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>O total populacional da variável <span class="math inline">\(y\)</span> coincide com a contagem do número de unidades populacionais que possuem o atributo de interesse, ou que pertencem ao subconjunto <span class="math inline">\(A\)</span>, e pode ser representado como:</p>
 <p><span class="math display" id="eq:eqpro2">\[
 Y = \displaystyle \sum_{i \in U} y_i = N_A  \tag{5.2}
-\]</span> onde <span class="math inline">\(N_A\)</span> representa o número de unidades populacionais que possuem o atributo de interesse.</p>
-<p>Um exemplo clássico do uso de variáveis indicadoras ocorre quando se quer tabular frequências de respostas a uma pergunta categórica numa pesquisa ou censo. Considere uma pergunta cujas respostas podem ser um dos valores inteiros de <span class="math inline">\(1\)</span> a <span class="math inline">\(C\)</span>, onde <span class="math inline">\(C\)</span> representa o número de categorias de resposta da pergunta. Por exemplo, para a pergunta 'Qual é o sexo do morador', há duas categorias de resposta <span class="math inline">\((C= 2)\)</span>: 1 (=Feminino) e 2 (=Masculino). Logo, para contar o número de pessoas por sexo na população, seria necessário criar duas variáveis indicadoras: <span class="math inline">\(y_{1i} = I[Sexo(i) = 1]\)</span> e <span class="math inline">\(y_{2i} = I[Sexo(i) = 2]\)</span>. Estas contagens poderiam ser representadas por <span class="math inline">\(N_1\)</span>, para as pessoas do sexo Feminino, e <span class="math inline">\(N_2\)</span>, para as pessoas do sexo Masculino, que seriam obtidos como dois totais populacionais:</p>
+\]</span>
+onde <span class="math inline">\(N_A\)</span> representa o número de unidades populacionais que possuem o atributo de interesse.</p>
+<p>Um exemplo clássico do uso de variáveis indicadoras ocorre quando se quer tabular frequências de respostas a uma pergunta categórica numa pesquisa ou censo. Considere uma pergunta cujas respostas podem ser um dos valores inteiros de <span class="math inline">\(1\)</span> a <span class="math inline">\(C\)</span>, onde <span class="math inline">\(C\)</span> representa o número de categorias de resposta da pergunta. Por exemplo, para a pergunta ‘Qual é o sexo do morador’, há duas categorias de resposta <span class="math inline">\((C= 2)\)</span>: 1 (=Feminino) e 2 (=Masculino). Logo, para contar o número de pessoas por sexo na população, seria necessário criar duas variáveis indicadoras: <span class="math inline">\(y_{1i} = I[Sexo(i) = 1]\)</span> e <span class="math inline">\(y_{2i} = I[Sexo(i) = 2]\)</span>. Estas contagens poderiam ser representadas por <span class="math inline">\(N_1\)</span>, para as pessoas do sexo Feminino, e <span class="math inline">\(N_2\)</span>, para as pessoas do sexo Masculino, que seriam obtidos como dois totais populacionais:</p>
 <p><span class="math display">\[
 \displaystyle Y_1 = \sum_{i \in U} y_{1i} = N_1 \\ Y_2 = \sum_{i \in U} y_{2i} = N_2
 \]</span></p>
@@ -388,51 +474,60 @@ S^2_y = \displaystyle \frac {1}{N-1} \left( \sum_{i \in U} y^2_i - N \overline{Y
 <p><span class="math display" id="eq:eqpro5">\[
 CV_y = \frac {\sqrt {\sigma^2_y}} {\overline Y} = \sqrt {{p(1-p) / p^2}} = \sqrt {(1-p)/p}\quad  \tag{5.5} 
 \]</span></p>
-<p><strong>Exemplo 5.1 </strong> Seja uma escola de ensino fundamental onde se deseja estudar a composição dos estudantes por sexo. Vamos supor que a escola tenha um total de 1.000 estudantes, dos quais 480 são do sexo feminino. Pode-se definir a variável <span class="math inline">\(y\)</span> de interesse como: <span class="math display">\[
+<p><strong>Exemplo 5.1 </strong> Seja uma escola de ensino fundamental onde se deseja estudar a composição dos estudantes por sexo. Vamos supor que a escola tenha um total de 1.000 estudantes, dos quais 480 são do sexo feminino. Pode-se definir a variável <span class="math inline">\(y\)</span> de interesse como:
+<span class="math display">\[
 \displaystyle y_i =  \begin{cases} 1, \,\, \text {se o estudante for do sexo feminino} \\ 0, \,\, \text {caso contrário} \end{cases}
 \]</span></p>
-<p>O total de meninas da escola será o total da variável <span class="math inline">\(y\)</span>, dado por: <span class="math display">\[
+<p>O total de meninas da escola será o total da variável <span class="math inline">\(y\)</span>, dado por:
+<span class="math display">\[
  Y = N_A = \displaystyle \sum_{i \in U} y_i = 1+1+0+1+...+0+1+1 = 480 
-\]</span> A <em>média</em> da variável <span class="math inline">\(y\)</span>, que neste caso é também a <em>proporção</em> de meninas entre os estudantes da escola, é igual a: <span class="math display">\[
+\]</span>
+A <em>média</em> da variável <span class="math inline">\(y\)</span>, que neste caso é também a <em>proporção</em> de meninas entre os estudantes da escola, é igual a:
+<span class="math display">\[
 \overline Y = \frac Y N = \frac {N_A}{N} = p = \frac {480} {1.000}=0,48 \text { ou }  48\%
 \]</span></p>
-<p>A <em>variância</em> da variável <span class="math inline">\(y\)</span>, medida por <span class="math inline">\(S^2_y\)</span> é igual a: <span class="math display">\[
+<p>A <em>variância</em> da variável <span class="math inline">\(y\)</span>, medida por <span class="math inline">\(S^2_y\)</span> é igual a:
+<span class="math display">\[
 S^2_y = \frac N {N-1}p(1-p) = \frac{1.000}{999} \times 0,48 \times 0,52 \doteq 0,24985
 \]</span></p>
-<p>e quando medida por <span class="math inline">\(\sigma^2_y\)</span> fica igual a <span class="math display">\[
+<p>e quando medida por <span class="math inline">\(\sigma^2_y\)</span> fica igual a
+<span class="math display">\[
 \sigma^2_y = p(1-p) = 0,48 \times 0,52 = 0,2496
 \]</span></p>
-<p>Finalmente, o <em>coeficiente de variação</em> de <span class="math inline">\(y\)</span> é igual a: <span class="math display">\[
+<p>Finalmente, o <em>coeficiente de variação</em> de <span class="math inline">\(y\)</span> é igual a:
+<span class="math display">\[
 CV_y = \sqrt {\frac {1-p}{p}} = \sqrt \frac{0,52}{0,48} \doteq 1,041
 \]</span></p>
 <p>Podemos obter os resultados acima utilizando um <em>script</em> escrito em R.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Alunos da escola</span>
-N=<span class="dv">1000</span>
-<span class="co"># Meninas</span>
-Na=<span class="dv">480</span>
-<span class="co"># Proporção de meninas</span>
-(<span class="dt">p=</span>Na<span class="op">/</span>N)</code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="proporc.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alunos da escola</span></span>
+<span id="cb43-2"><a href="proporc.html#cb43-2" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span><span class="dv">1000</span></span>
+<span id="cb43-3"><a href="proporc.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Meninas</span></span>
+<span id="cb43-4"><a href="proporc.html#cb43-4" aria-hidden="true" tabindex="-1"></a>Na<span class="ot">=</span><span class="dv">480</span></span>
+<span id="cb43-5"><a href="proporc.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Proporção de meninas</span></span>
+<span id="cb43-6"><a href="proporc.html#cb43-6" aria-hidden="true" tabindex="-1"></a>(<span class="at">p=</span>Na<span class="sc">/</span>N)</span></code></pre></div>
 <pre><code>## [1] 0.48</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Variância</span>
-(<span class="dt">S2y=</span>N<span class="op">/</span>(N<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p))</code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="proporc.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variância</span></span>
+<span id="cb45-2"><a href="proporc.html#cb45-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">S2y=</span>N<span class="sc">/</span>(N<span class="dv">-1</span>)<span class="sc">*</span>p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))</span></code></pre></div>
 <pre><code>## [1] 0.2498498</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dt">Sigma2y=</span>p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p))</code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="proporc.html#cb47-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">Sigma2y=</span>p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p))</span></code></pre></div>
 <pre><code>## [1] 0.2496</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Coeficiente de variação</span>
-(<span class="dt">CVy=</span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span>p))</code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="proporc.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coeficiente de variação</span></span>
+<span id="cb49-2"><a href="proporc.html#cb49-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">CVy=</span><span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">/</span>p))</span></code></pre></div>
 <pre><code>## [1] 1.040833</code></pre>
 <p>Nas duas seções seguintes tratamos do problema da estimação desses parâmetros populacionais a partir dos dados de amostras aleatórias simples retiradas da população de interesse com e sem reposição, respectivamente.</p>
 </div>
-<div id="estimação-sob-amostragem-aleatória-simples-com-reposição" class="section level2">
+<div id="estimação-sob-amostragem-aleatória-simples-com-reposição" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Estimação sob amostragem aleatória simples com reposição</h2>
 <p>Seja <span class="math inline">\(s\)</span> uma <em>AASC</em> de tamanho <span class="math inline">\(n\)</span> selecionada de uma população composta de <span class="math inline">\(N\)</span> unidades, onde se observa uma variável indicadora <span class="math inline">\(y\)</span> como definida na seção anterior. Pode-se obter estimadores para os parâmetros populacionais de <span class="math inline">\(y\)</span> adaptando os estimadores gerais de total e média apresentados no capítulo anterior.</p>
 <p>O total de unidades da amostra com o atributo de interesse, <span class="math inline">\(n_A\)</span>, será dado pela soma amostral:</p>
 <p><span class="math display" id="eq:eqpro6">\[
 t_y = \displaystyle \sum_{i \in\ s} y_i = n_A \,\, \tag{5.6} 
-\]</span> O total de unidades na população com o atributo de interesse, <span class="math inline">\(N_A\)</span>, é estimado usando:</p>
+\]</span>
+O total de unidades na população com o atributo de interesse, <span class="math inline">\(N_A\)</span>, é estimado usando:</p>
 <p><span class="math display" id="eq:eqpro7">\[
 \widehat Y_{AASC} = N \times t_y / n = N \times n_A / n = \widehat N_A \tag{5.7}
-\]</span> Como indicado no capítulo anterior, este estimador é não viciado sob AASC para qualquer variável <span class="math inline">\(y\)</span>, logo é ENV também quando <span class="math inline">\(y\)</span> é do tipo indicadora, como aqui definido.</p>
+\]</span>
+Como indicado no capítulo anterior, este estimador é não viciado sob AASC para qualquer variável <span class="math inline">\(y\)</span>, logo é ENV também quando <span class="math inline">\(y\)</span> é do tipo indicadora, como aqui definido.</p>
 <p>A <em>proporção amostral</em> de unidades que possuem o atributo de interesse é dada pela <em>média amostral</em>:</p>
 <p><span class="math display" id="eq:eqpro8">\[
 \displaystyle \overline y = \frac {1}{n} \sum_{i \in s} y_i = \frac {n_A}{n} =  \widehat p \,\, \tag{5.8} 
@@ -452,10 +547,13 @@ t_y = \displaystyle \sum_{i \in\ s} y_i = n_A \,\, \tag{5.6}
 <p>Sob AASC, a <em>variância amostral </em><span class="math inline">\(\widehat S^2_y\)</span> é um estimador não viciado para a <em>variância populacional</em> <span class="math inline">\(\sigma^2_y\)</span>. Assim se obtém um estimador não viciado para a variância do estimador <span class="math inline">\(\widehat p\)</span> como:</p>
 <p><span class="math display" id="eq:eqpro12">\[
 \displaystyle \widehat {V}_{AASC} (\widehat p) = \frac {\widehat p (1 - \widehat p)}{n-1} \,\, \tag{5.12} 
-\]</span> O total de unidades na população que possuem o atributo de interesse e respectivo estimador são obtidos por: <span class="math display">\[
+\]</span>
+O total de unidades na população que possuem o atributo de interesse e respectivo estimador são obtidos por:
+<span class="math display">\[
 N_A= Np\:\:\text{e}\:\: \widehat N_A=N\widehat p 
 \]</span></p>
-<p>A variância da estimativa de <span class="math inline">\(N_A\)</span> e seu estimador são dadas por: <span class="math display">\[
+<p>A variância da estimativa de <span class="math inline">\(N_A\)</span> e seu estimador são dadas por:
+<span class="math display">\[
 V_{AASC}(\widehat N_A)=N^2\frac {p(1-p)} {n}\:\:\text{e}\:\:\widehat V_{AASC}(\widehat N_A)=N^2\frac {\widehat p(1- \widehat p)} {n-1}
 \]</span></p>
 <p>A Tabela <a href="proporc.html#tab:tabprop1">5.1</a> reúne os resultados principais da estimação de contagens e proporções sob <em>AASC</em>.</p>
@@ -465,9 +563,9 @@ V_{AASC}(\widehat N_A)=N^2\frac {p(1-p)} {n}\:\:\text{e}\:\:\widehat V_{AASC}(\w
 <span id="tab:tabprop1">Tabela 5.1: </span>Estimadores do total (contagem), proporção e respectivas variâncias sob AASC
 </caption>
 </table>
-<table style="width:60%;">
+<table style="width:61%;">
 <colgroup>
-<col width="59%" />
+<col width="61%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -494,7 +592,7 @@ V_{AASC}(\widehat N_A)=N^2\frac {p(1-p)} {n}\:\:\text{e}\:\:\widehat V_{AASC}(\w
 </table>
 </center>
 </div>
-<div id="estimação-sob-amostragem-aleatória-simples-sem-reposição" class="section level2">
+<div id="estimação-sob-amostragem-aleatória-simples-sem-reposição" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Estimação sob amostragem aleatória simples sem reposição</h2>
 <p>No caso de uma amostra <span class="math inline">\(s\)</span> obtida por seleção do tipo <em>AAS</em>, as expressões da soma amostral <span class="math inline">\(t_y\)</span>, da proporção amostral <span class="math inline">\(\widehat p\)</span> e da variância amostral <span class="math inline">\(\widehat S^2_y\)</span> têm a mesma forma já apresentada acima para amostras obtidas por <em>AASC</em>. Em consequência, também são idênticos os estimadores para o total populacional <span class="math inline">\(N_A\)</span> e a proporção populacional <span class="math inline">\(p\)</span>. Entretanto, uma diferença é que no caso da <em>AAS</em> a variância amostral <span class="math inline">\(\widehat S^2_y\)</span> é um estimador não viciado para <span class="math inline">\(S^2_y\)</span> e não para <span class="math inline">\(\sigma^2_y\)</span>. Também são diferentes as expressões para as variâncias dos estimadores amostrais e seus correspondentes estimadores não viciados.</p>
 <p>Foi visto no Capítulo <a href="aas.html#aas">4</a> que as variâncias dos estimadores do total e da média são dadas pelas expressões:</p>
@@ -526,9 +624,9 @@ V_{AAS} (\widehat p) = \left( \frac 1 n - \frac {1}{N} \right) \frac{N}{N-1} p(1
 <span id="tab:tabprop2">Tabela 5.2: </span>Estimadores do total (contagem), proporção e respectivas variâncias sob AAS
 </caption>
 </table>
-<table style="width:64%;">
+<table style="width:65%;">
 <colgroup>
-<col width="63%" />
+<col width="65%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -555,18 +653,20 @@ V_{AAS} (\widehat p) = \left( \frac 1 n - \frac {1}{N} \right) \frac{N}{N-1} p(1
 </table>
 </center>
 </div>
-<div id="distribuição-amostral-exata-de-estimadores-de-proporção-sob-aasc-e-aas" class="section level2">
+<div id="distribuição-amostral-exata-de-estimadores-de-proporção-sob-aasc-e-aas" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Distribuição amostral exata de estimadores de proporção sob AASC e AAS</h2>
 <p>Na <em>AASC</em>, as unidades amostrais são selecionadas com igual probabilidade e com reposição a cada sorteio. Então as variáveis aleatórias <span class="math inline">\(Y_k\)</span>, que correspondem aos valores observados na amostra a cada sorteio <span class="math inline">\(k\)</span>, <span class="math inline">\(k=1, \dots, n\)</span>, são independentes e identicamente distribuídas com probabilidades definidas por:</p>
 <p><span class="math display" id="eq:eqpro19">\[ \hspace{-1.0cm}
 \begin{align} \displaystyle P(Y_k = 1) = P(y_{i_k} \text{ ter o atributo de interesse}) = \frac {N_A} {N} = p \\ P(Y_k = 0) = P(y_{i_k} \text{ não ter o atributo de interesse}) = 1 - \frac {N_A} {N} = 1-p \end{align}\,\, \tag{5.19} 
 \]</span></p>
-<p>Dessa maneira fica configurada uma distribuição de <span class="math inline">\(\text {Bernoulli}(p)\)</span> para cada uma dessas variáveis: <span class="math display">\[
+<p>Dessa maneira fica configurada uma distribuição de <span class="math inline">\(\text {Bernoulli}(p)\)</span> para cada uma dessas variáveis:
+<span class="math display">\[
 \begin{array}{c | c c} 
  {v} &amp; \ 1 &amp; 0 \\
 \hline \text{$P(Y_k = v)$} &amp; p &amp; 1-p  \\
 \end{array}
-\]</span> Ainda sob <em>AASC</em>, a soma amostral <span class="math inline">\(t_y = n_A\)</span>, que representa o número de unidades na amostra com o atributo de interesse, é então dada pela soma de <span class="math inline">\(n\)</span> variáveis aleatórias IID com distribuição <span class="math inline">\(\text {Bernoulli}(p)\)</span>. Portanto, sob <em>AASC</em> a variável aleatória <span class="math inline">\(t_y = n_A\)</span> segue uma distribuição <span class="math inline">\(\text {Binomial}(n,p)\)</span>. Imediatamente tem-se que:</p>
+\]</span>
+Ainda sob <em>AASC</em>, a soma amostral <span class="math inline">\(t_y = n_A\)</span>, que representa o número de unidades na amostra com o atributo de interesse, é então dada pela soma de <span class="math inline">\(n\)</span> variáveis aleatórias IID com distribuição <span class="math inline">\(\text {Bernoulli}(p)\)</span>. Portanto, sob <em>AASC</em> a variável aleatória <span class="math inline">\(t_y = n_A\)</span> segue uma distribuição <span class="math inline">\(\text {Binomial}(n,p)\)</span>. Imediatamente tem-se que:</p>
 <p><span class="math display" id="eq:eqpro20">\[
 E_{AASC}(n_A) = n p {\quad \text e \quad} V_{AASC}(n_A) = n p (1-p) \,\, \tag{5.20} 
 \]</span></p>
@@ -579,7 +679,8 @@ E_{AASC}(n_A) = n p {\quad \text e \quad} V_{AASC}(n_A) = n p (1-p) \,\, \tag{5.
 \displaystyle P \left(\widehat p = \frac v n \right) = P(n_A = v) = \binom{n} {v} p^v (1-p)^{n-v} ,\quad \forall\, v=0, 1, 2, ..., n  \tag{5.22} 
 \]</span></p>
 <p>Esta distribuição corresponde apenas a uma transformação escalar da distribuição <span class="math inline">\(\text {Binomial}(n,p)\)</span>, onde a contagem de sucessos <span class="math inline">\((n_A)\)</span> é dividida pelo número de sorteios <span class="math inline">\((n)\)</span>.</p>
-<p>Sob <em>AAS</em>, a distribuição da contagem de sucessos <span class="math inline">\((n_A)\)</span> tem uma distribuição de probabilidades <span class="math inline">\(\text {Hipergeométrica}(N, N_A, n)\)</span>. Isso ocorre porque, sob <em>AAS</em>, os <span class="math inline">\(n\)</span> sorteios são feitos da população sem reposição e, portanto, a cada nova unidade sorteada, o número de unidades remanescentes na população com o atributo de interesse varia, dependendo do número dessas unidades já selecionadas.</p>
+<p>Sob <em>AAS</em>, a distribuição da contagem de sucessos <span class="math inline">\((n_A)\)</span> tem uma distribuição de probabilidades
+<span class="math inline">\(\text {Hipergeométrica}(N, N_A, n)\)</span>. Isso ocorre porque, sob <em>AAS</em>, os <span class="math inline">\(n\)</span> sorteios são feitos da população sem reposição e, portanto, a cada nova unidade sorteada, o número de unidades remanescentes na população com o atributo de interesse varia, dependendo do número dessas unidades já selecionadas.</p>
 <p>O número total de amostras aleatórias simples sem reposição de tamanho <span class="math inline">\(n\)</span> que podem ser selecionadas de uma população com <span class="math inline">\(N\)</span> unidades é dado por <span class="math inline">\(\binom{N}{n}\)</span>; o número dessas amostras com exatamente <span class="math inline">\(v\)</span> unidades com a característica em estudo e <span class="math inline">\(n-v\)</span> unidades sem essa característica pode ser calculado por <span class="math inline">\(\binom{N_A}{v}\binom{N-N_A}{n-v}\)</span>. Sendo assim, a distribuição de probabilidades da variável aleatória <span class="math inline">\(t_y = n_A\)</span> é dada por:</p>
 <p><span class="math display" id="eq:eqpro23">\[
 \displaystyle P \left(n_A = v \right) = \frac {\binom{N_A} {v} \binom{N-N_A} {n-v}}{\binom{N} {n}} , \quad \forall\, v=0, 1, 2, ..., min(n;N_A) \,\, \tag{5.23} 
@@ -594,7 +695,7 @@ E_{AASC}(n_A) = n p {\quad \text e \quad} V_{AASC}(n_A) = n p (1-p) \,\, \tag{5.
 \displaystyle E_{AAS}(\widehat p)=p \quad\text e\quad V_{AAS}(\widehat p)=\left(\frac1n-\frac1N\right)S^2_y\,\, \tag{5.25}
 \]</span></p>
 </div>
-<div id="intervalos-de-confiança-para-proporções-na-amostragem-aleatória-simples" class="section level2">
+<div id="intervalos-de-confiança-para-proporções-na-amostragem-aleatória-simples" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> Intervalos de confiança para proporções na amostragem aleatória simples</h2>
 <p>Foi visto que na <em>Amostragem Aleatória Simples</em>, tanto com ou sem reposição, são conhecidas as distribuições exatas para o estimador <span class="math inline">\(\widehat p\)</span>. Portanto, é possível obter os limites inferior e superior para intervalos de confiança para a proporção <span class="math inline">\(p\)</span>, com um nível de significância <span class="math inline">\(\alpha\)</span> fixado. Para isso, no caso de <em>AASC</em>, é necessário resolver o sistema de equações determinando os valores de <span class="math inline">\(\widehat p_I\)</span> e <span class="math inline">\(\widehat p_S\)</span> que satisfaçam:</p>
 <p><span class="math display" id="eq:eqpro26">\[
@@ -603,7 +704,8 @@ E_{AASC}(n_A) = n p {\quad \text e \quad} V_{AASC}(n_A) = n p (1-p) \,\, \tag{5.
 \\\\ 
 \displaystyle \sum _{v=n_A}^n \binom {n}{v} \widehat p_I^v (1 - \widehat p_I)^{n-v} = \alpha / 2 \tag{5.26} 
 \end{cases}
-\]</span> No caso da <em>AAS</em>, o sistema a ser resolvido é baseado na distribuição Hipergeométrica como se segue:</p>
+\]</span>
+No caso da <em>AAS</em>, o sistema a ser resolvido é baseado na distribuição Hipergeométrica como se segue:</p>
 <p><span class="math display" id="eq:eqpro27">\[
 \begin{cases} 
 \displaystyle \sum_ {v=0}^{n_A}\frac {\binom{N\widehat p_S}{v} \binom{N-N\widehat p_S} {n-v}}{\binom{N}{n}} = \alpha / 2
@@ -613,103 +715,108 @@ E_{AASC}(n_A) = n p {\quad \text e \quad} V_{AASC}(n_A) = n p (1-p) \,\, \tag{5.
 \]</span></p>
 <p>Em ambos os casos <span class="math inline">\(1 - \alpha\)</span> é o <em>nível de confiança</em> desejado. Por exemplo, para intervalos de 95% de confiança, deve-se usar <span class="math inline">\(\alpha= 0,05\)</span>.</p>
 <p>A solução desses sistemas costumava ser trabalhosa, exigindo aplicação de métodos iterativos que consumiam quantidade razoavelmente grande de recursos computacionais. Atualmente, com o avanço dos métodos computacionais, esse problema pode facilmente ser resolvido, por exemplo, com o uso do R. Uma maneira é utilizar as funções <em>qbinom</em> e <em>qhyper</em> que podem calcular os quantis das distribuições Binomial e Hipergeométrica para <span class="math inline">\(\alpha /2\)</span> e <span class="math inline">\(1 -\alpha /2\)</span>.</p>
-<p>Além disso, há outros programas prontos facilmente utilizávies como, por exemplo, as funções <em>binconf</em> e <em>confCI</em> incluídas, respectivamente, nos pacotes <em>Hmisc</em> e <em>prevalence</em> do R. Essas funções estimam intervalos de confiança para vários métodos além do mostrado acima, como o da aproximação Normal, apresentado na próxima seção, além de outras abordagens. Há, também, no pacote <em>survey</em> uma função específica, <em>svyciprop</em>, para calcular intervalos de confiança para proporções. Uma característica interessante do pacote <em>survey</em> é que é possível determinar a utilização do fator de correção para populações finitas, quando a seleção é sem reposição.</p>
+<p>Além disso, há outros programas prontos facilmente utilizávies como, por exemplo, as funções <em>binconf</em> e <em>confCI</em> incluídas, respectivamente, nos pacotes <em>Hmisc</em> e <em>prevalence</em> do R. Essas funções estimam intervalos de confiança para vários métodos além do mostrado acima, como o da aproximação Normal, apresentado na próxima seção, além de outras abordagens.
+Há, também, no pacote <em>survey</em> uma função específica, <em>svyciprop</em>, para calcular intervalos de confiança para proporções. Uma característica interessante do pacote <em>survey</em> é que é possível determinar a utilização do fator de correção para populações finitas, quando a seleção é sem reposição.</p>
 <p><strong>Exemplo 5.2 </strong> Voltando ao exemplo da escola com <span class="math inline">\(N=1.000\)</span> alunos, suponha que foi selecionada uma amostra aleatória simples de tamanho <span class="math inline">\(n=125\)</span> e foi investigado o sexo de cada um desses alunos, sendo que 60 são do sexo feminino. Construir um intervalo de aproximadamente 95% de confiança para a proporção de alunos do sexo feminino, utilizando os vários métodos da linguagem R sugeridos acima.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">     <span class="co"># Carregando pacotes necessários</span>
-<span class="kw">suppressMessages</span>(<span class="kw">require</span>(Hmisc,     <span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))
-<span class="kw">suppressMessages</span>(<span class="kw">require</span>(survey,    <span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))
-<span class="kw">suppressMessages</span>(<span class="kw">require</span>(prevalence,<span class="dt">quietly=</span><span class="ot">TRUE</span>,<span class="dt">warn.conflicts=</span><span class="ot">FALSE</span>,<span class="dt">character.only=</span><span class="ot">FALSE</span>))
-
-     <span class="co"># Definição do arquivo da amostra para a função svyciprop</span>
-s=<span class="kw">as.data.frame</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">60</span>),<span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">125</span><span class="op">-</span><span class="dv">60</span>)))
-<span class="kw">names</span>(s)=<span class="kw">c</span>(<span class="st">&quot;y&quot;</span>)
-s<span class="op">$</span>N=<span class="dv">1000</span>                <span class="co"># tamanho da população (número de alunos da escola)</span>
-s<span class="op">$</span>n=<span class="kw">dim</span>(s)[<span class="dv">1</span>]           <span class="co"># tamanho da amostra</span>
-s<span class="op">$</span>x=<span class="kw">sum</span>(s<span class="op">$</span>y)            <span class="co"># mulheres na amostra</span>
-s<span class="op">$</span>peso=s<span class="op">$</span>N<span class="op">/</span>s<span class="op">$</span>n          <span class="co"># pesos amostrais (inverso da fração amostral)</span>
-     <span class="co"># Parâmetros de entrada para outras funções</span>
-N=s<span class="op">$</span>N[<span class="dv">1</span>]
-n=s<span class="op">$</span>n[<span class="dv">1</span>]
-x=s<span class="op">$</span>x[<span class="dv">1</span>]
-p=x<span class="op">/</span>n
-alfa =<span class="st"> </span><span class="fl">0.05</span>             <span class="co"># nível de significância</span>
-    <span class="co"># Caso a amostra tenha sido selecionada com reposição</span>
-    <span class="co"># Usando a função qbinom</span>
-c=<span class="kw">c</span>(p,<span class="kw">qbinom</span>(alfa<span class="op">/</span><span class="dv">2</span>,n,p)<span class="op">/</span>n,<span class="kw">qbinom</span>(<span class="dv">1</span><span class="op">-</span>alfa<span class="op">/</span><span class="dv">2</span>,n,p)<span class="op">/</span>n)
-<span class="kw">names</span>(c)=<span class="kw">c</span>(<span class="st">&quot;p&quot;</span>,<span class="st">&quot;li&quot;</span>,<span class="st">&quot;ls&quot;</span>)
-<span class="co"># Intervalo de confiança</span>
-c</code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="proporc.html#cb51-1" aria-hidden="true" tabindex="-1"></a>     <span class="co"># Carregando pacotes necessários</span></span>
+<span id="cb51-2"><a href="proporc.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">require</span>(Hmisc,     <span class="at">quietly=</span><span class="cn">TRUE</span>,<span class="at">warn.conflicts=</span><span class="cn">FALSE</span>,<span class="at">character.only=</span><span class="cn">FALSE</span>))</span></code></pre></div>
+<pre><code>## Warning: package &#39;Hmisc&#39; was built under R version 4.1.2</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.1.2</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="proporc.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">require</span>(survey,    <span class="at">quietly=</span><span class="cn">TRUE</span>,<span class="at">warn.conflicts=</span><span class="cn">FALSE</span>,<span class="at">character.only=</span><span class="cn">FALSE</span>))</span>
+<span id="cb54-2"><a href="proporc.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">require</span>(prevalence,<span class="at">quietly=</span><span class="cn">TRUE</span>,<span class="at">warn.conflicts=</span><span class="cn">FALSE</span>,<span class="at">character.only=</span><span class="cn">FALSE</span>))</span></code></pre></div>
+<pre><code>## Warning: package &#39;prevalence&#39; was built under R version 4.1.2</code></pre>
+<pre><code>## Warning: package &#39;rjags&#39; was built under R version 4.1.2</code></pre>
+<pre><code>## Warning: package &#39;coda&#39; was built under R version 4.1.2</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="proporc.html#cb58-1" aria-hidden="true" tabindex="-1"></a>     <span class="co"># Definição do arquivo da amostra para a função svyciprop</span></span>
+<span id="cb58-2"><a href="proporc.html#cb58-2" aria-hidden="true" tabindex="-1"></a>s<span class="ot">=</span><span class="fu">as.data.frame</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">60</span>),<span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">125-60</span>)))</span>
+<span id="cb58-3"><a href="proporc.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(s)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;y&quot;</span>)</span>
+<span id="cb58-4"><a href="proporc.html#cb58-4" aria-hidden="true" tabindex="-1"></a>s<span class="sc">$</span>N<span class="ot">=</span><span class="dv">1000</span>                <span class="co"># tamanho da população (número de alunos da escola)</span></span>
+<span id="cb58-5"><a href="proporc.html#cb58-5" aria-hidden="true" tabindex="-1"></a>s<span class="sc">$</span>n<span class="ot">=</span><span class="fu">dim</span>(s)[<span class="dv">1</span>]           <span class="co"># tamanho da amostra</span></span>
+<span id="cb58-6"><a href="proporc.html#cb58-6" aria-hidden="true" tabindex="-1"></a>s<span class="sc">$</span>x<span class="ot">=</span><span class="fu">sum</span>(s<span class="sc">$</span>y)            <span class="co"># mulheres na amostra</span></span>
+<span id="cb58-7"><a href="proporc.html#cb58-7" aria-hidden="true" tabindex="-1"></a>s<span class="sc">$</span>peso<span class="ot">=</span>s<span class="sc">$</span>N<span class="sc">/</span>s<span class="sc">$</span>n          <span class="co"># pesos amostrais (inverso da fração amostral)</span></span>
+<span id="cb58-8"><a href="proporc.html#cb58-8" aria-hidden="true" tabindex="-1"></a>     <span class="co"># Parâmetros de entrada para outras funções</span></span>
+<span id="cb58-9"><a href="proporc.html#cb58-9" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span>s<span class="sc">$</span>N[<span class="dv">1</span>]</span>
+<span id="cb58-10"><a href="proporc.html#cb58-10" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span>s<span class="sc">$</span>n[<span class="dv">1</span>]</span>
+<span id="cb58-11"><a href="proporc.html#cb58-11" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span>s<span class="sc">$</span>x[<span class="dv">1</span>]</span>
+<span id="cb58-12"><a href="proporc.html#cb58-12" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span>x<span class="sc">/</span>n</span>
+<span id="cb58-13"><a href="proporc.html#cb58-13" aria-hidden="true" tabindex="-1"></a>alfa <span class="ot">=</span> <span class="fl">0.05</span>             <span class="co"># nível de significância</span></span>
+<span id="cb58-14"><a href="proporc.html#cb58-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Caso a amostra tenha sido selecionada com reposição</span></span>
+<span id="cb58-15"><a href="proporc.html#cb58-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Usando a função qbinom</span></span>
+<span id="cb58-16"><a href="proporc.html#cb58-16" aria-hidden="true" tabindex="-1"></a>c<span class="ot">=</span><span class="fu">c</span>(p,<span class="fu">qbinom</span>(alfa<span class="sc">/</span><span class="dv">2</span>,n,p)<span class="sc">/</span>n,<span class="fu">qbinom</span>(<span class="dv">1</span><span class="sc">-</span>alfa<span class="sc">/</span><span class="dv">2</span>,n,p)<span class="sc">/</span>n)</span>
+<span id="cb58-17"><a href="proporc.html#cb58-17" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(c)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>,<span class="st">&quot;li&quot;</span>,<span class="st">&quot;ls&quot;</span>)</span>
+<span id="cb58-18"><a href="proporc.html#cb58-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo de confiança</span></span>
+<span id="cb58-19"><a href="proporc.html#cb58-19" aria-hidden="true" tabindex="-1"></a>c</span></code></pre></div>
 <pre><code>##     p    li    ls 
 ## 0.480 0.392 0.568</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Usando a função binconf</span>
-<span class="kw">binconf</span>(x,n,<span class="dt">method=</span><span class="st">&quot;all&quot;</span>,<span class="dt">alpha=</span>alfa)</code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="proporc.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando a função binconf</span></span>
+<span id="cb60-2"><a href="proporc.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">binconf</span>(x,n,<span class="at">method=</span><span class="st">&quot;all&quot;</span>,<span class="at">alpha=</span>alfa)</span></code></pre></div>
 <pre><code>##            PointEst     Lower     Upper
 ## Exact          0.48 0.3898361 0.5711333
 ## Wilson         0.48 0.3943277 0.5668649
 ## Asymptotic     0.48 0.3924179 0.5675821</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">    <span class="co"># Usando a função propCI</span>
-<span class="kw">propCI</span>(x,n,<span class="dt">method=</span><span class="st">&quot;all&quot;</span>,<span class="dt">level=</span><span class="dv">1</span><span class="op">-</span>alfa)</code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="proporc.html#cb62-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Usando a função propCI</span></span>
+<span id="cb62-2"><a href="proporc.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">propCI</span>(x,n,<span class="at">method=</span><span class="st">&quot;all&quot;</span>,<span class="at">level=</span><span class="dv">1</span><span class="sc">-</span>alfa)</span></code></pre></div>
 <pre><code>##    x   n    p        method level     lower     upper
 ## 1 60 125 0.48 agresti.coull  0.95 0.3943257 0.5668669
 ## 2 60 125 0.48         exact  0.95 0.3898361 0.5711333
 ## 3 60 125 0.48      jeffreys  0.95 0.3937144 0.5671999
 ## 4 60 125 0.48          wald  0.95 0.3924179 0.5675821
 ## 5 60 125 0.48        wilson  0.95 0.3943277 0.5668649</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">    <span class="co"># Usando a função svyciprop </span>
-desaasc=<span class="kw">svydesign</span>(<span class="dt">ids=</span><span class="op">~</span><span class="dv">1</span>,<span class="dt">data=</span>s,<span class="dt">weights=</span><span class="op">~</span>peso, <span class="dt">fpc=</span><span class="ot">NULL</span>) <span class="co"># plano amostral de AASC (sem FPC)</span>
-<span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaasc,<span class="dt">method=</span><span class="st">&quot;logit&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="proporc.html#cb64-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Usando a função svyciprop </span></span>
+<span id="cb64-2"><a href="proporc.html#cb64-2" aria-hidden="true" tabindex="-1"></a>desaasc<span class="ot">=</span><span class="fu">svydesign</span>(<span class="at">ids=</span><span class="sc">~</span><span class="dv">1</span>,<span class="at">data=</span>s,<span class="at">weights=</span><span class="sc">~</span>peso, <span class="at">fpc=</span><span class="cn">NULL</span>) <span class="co"># plano amostral de AASC (sem FPC)</span></span>
+<span id="cb64-3"><a href="proporc.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaasc,<span class="at">method=</span><span class="st">&quot;logit&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.393  0.57</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaasc,<span class="dt">method=</span><span class="st">&quot;likelihood&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="proporc.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaasc,<span class="at">method=</span><span class="st">&quot;likelihood&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.392  0.57</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaasc,<span class="dt">method=</span><span class="st">&quot;asin&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="proporc.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaasc,<span class="at">method=</span><span class="st">&quot;asin&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.392  0.57</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaasc,<span class="dt">method=</span><span class="st">&quot;beta&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="proporc.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaasc,<span class="at">method=</span><span class="st">&quot;beta&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.389  0.57</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaasc,<span class="dt">method=</span><span class="st">&quot;mean&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="proporc.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaasc,<span class="at">method=</span><span class="st">&quot;mean&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.391  0.57</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaasc,<span class="dt">method=</span><span class="st">&quot;xlogit&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="proporc.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaasc,<span class="at">method=</span><span class="st">&quot;xlogit&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.393  0.57</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">    <span class="co"># Caso a amostra tenha sido selecionada sem reposição</span>
-    <span class="co"># Usando a função qhyper</span>
-li=<span class="kw">qhyper</span>(alfa<span class="op">/</span><span class="dv">2</span>,N<span class="op">*</span>p,N<span class="op">-</span>N<span class="op">*</span>p,n)<span class="op">/</span>n
-ls=<span class="kw">qhyper</span>(<span class="dv">1</span><span class="op">-</span>alfa<span class="op">/</span><span class="dv">2</span>,N<span class="op">*</span>p,N<span class="op">-</span>N<span class="op">*</span>p,n)<span class="op">/</span>n
-<span class="kw">c</span>(p,li,ls)</code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="proporc.html#cb76-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Caso a amostra tenha sido selecionada sem reposição</span></span>
+<span id="cb76-2"><a href="proporc.html#cb76-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Usando a função qhyper</span></span>
+<span id="cb76-3"><a href="proporc.html#cb76-3" aria-hidden="true" tabindex="-1"></a>li<span class="ot">=</span><span class="fu">qhyper</span>(alfa<span class="sc">/</span><span class="dv">2</span>,N<span class="sc">*</span>p,N<span class="sc">-</span>N<span class="sc">*</span>p,n)<span class="sc">/</span>n</span>
+<span id="cb76-4"><a href="proporc.html#cb76-4" aria-hidden="true" tabindex="-1"></a>ls<span class="ot">=</span><span class="fu">qhyper</span>(<span class="dv">1</span><span class="sc">-</span>alfa<span class="sc">/</span><span class="dv">2</span>,N<span class="sc">*</span>p,N<span class="sc">-</span>N<span class="sc">*</span>p,n)<span class="sc">/</span>n</span>
+<span id="cb76-5"><a href="proporc.html#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(p,li,ls)</span></code></pre></div>
 <pre><code>## [1] 0.48 0.40 0.56</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">    <span class="co"># Usando a função svyciprop </span>
-desaas=<span class="kw">svydesign</span>(<span class="dt">ids=</span><span class="op">~</span><span class="dv">1</span>,<span class="dt">data=</span>s,<span class="dt">weights=</span><span class="op">~</span>peso,<span class="dt">fpc=</span><span class="op">~</span>N) <span class="co"># plano amostral de AAS (com FPC)</span>
-<span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaas,<span class="dt">method=</span><span class="st">&quot;logit&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="proporc.html#cb78-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Usando a função svyciprop </span></span>
+<span id="cb78-2"><a href="proporc.html#cb78-2" aria-hidden="true" tabindex="-1"></a>desaas<span class="ot">=</span><span class="fu">svydesign</span>(<span class="at">ids=</span><span class="sc">~</span><span class="dv">1</span>,<span class="at">data=</span>s,<span class="at">weights=</span><span class="sc">~</span>peso,<span class="at">fpc=</span><span class="sc">~</span>N) <span class="co"># plano amostral de AAS (com FPC)</span></span>
+<span id="cb78-3"><a href="proporc.html#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaas,<span class="at">method=</span><span class="st">&quot;logit&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.398  0.56</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaas,<span class="dt">method=</span><span class="st">&quot;likelihood&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="proporc.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaas,<span class="at">method=</span><span class="st">&quot;likelihood&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.398  0.56</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaas,<span class="dt">method=</span><span class="st">&quot;asin&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="proporc.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaas,<span class="at">method=</span><span class="st">&quot;asin&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.398  0.56</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaas,<span class="dt">method=</span><span class="st">&quot;beta&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="proporc.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaas,<span class="at">method=</span><span class="st">&quot;beta&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.395  0.57</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaas,<span class="dt">method=</span><span class="st">&quot;mean&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="proporc.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaas,<span class="at">method=</span><span class="st">&quot;mean&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.397  0.56</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">svyciprop</span>(<span class="op">~</span><span class="kw">I</span>(y<span class="op">==</span><span class="dv">1</span>),desaas,<span class="dt">method=</span><span class="st">&quot;xlogit&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="proporc.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svyciprop</span>(<span class="sc">~</span><span class="fu">I</span>(y<span class="sc">==</span><span class="dv">1</span>),desaas,<span class="at">method=</span><span class="st">&quot;xlogit&quot;</span>)</span></code></pre></div>
 <pre><code>##                  2.5% 97.5%
 ## I(y == 1) 0.480 0.398  0.56</code></pre>
 <p>Na função <em>binconf</em> o método denominado <em>Exact</em> utiliza uma aproximação da Binomial pela distribuição <em>F</em>; o método denominado <em>Wilson</em> é baseado nos <em>scores</em> do teste binomial e é o método definido como <em>default</em> por ser considerado o melhor; já o método denominado <em>Asymptotic</em> é o da aproximação pela distribuição Normal.</p>
 <p>Na função <em>propCI</em> são apresentados outros dois métodos: O método <em>Agresti-Coull</em> que é um ajuste da aproximação Normal e o método <em>Jeffreys</em> que é um método Bayesiano. O método <em>Asymptotic</em> é chamado de <em>Wald</em>.</p>
 <p>Para as duas funções acima não se considera se a amostra foi selecionada com ou sem reposição, o que é perfeitamente aceitável para amostras grandes retiradas de populações também grandes.</p>
 <p>Para a função <em>svyciprop</em>, do pacote <em>survey</em>, é possível definir se a amostra foi selecionada sem ou com reposição, bastando fornecer, ou não, o tamanho, <span class="math inline">\(N\)</span>, da população para o cálculo do fator de correção para população finita. Nessa função é possível escolher entre 6 possíveis métodos para o cálculo do intervalo de confiança.</p>
-<p>Para detalhes sobre estas e demais funções do R, ver <span class="citation">R Core Team (2018)</span>. Para um pacote específico, pode-se obter uma referência mais completa digitando, no próprio R, o comando <em>citation('nome do pacote')</em>.</p>
+<p>Para detalhes sobre estas e demais funções do R, ver <span class="citation">R Core Team (2018)</span>. Para um pacote específico, pode-se obter uma referência mais completa digitando, no próprio R, o comando <em>citation(‘nome do pacote’)</em>.</p>
 <p>Pode-se observar que, nos exemplos acima, onde o tamanho da amostra é grande, os resultados de todos os métodos utilizados, em termos práticos, são bastante parecidos. Fica como exercício para o leitor verificar o que acontece quando for utilizada uma amostra de tamanho pequeno (menor que 30, por exemplo).</p>
 <p>Na maioria dos casos práticos, opta-se pelo uso da aproximação pela distribuição Normal de probabilidades, pela facilidade de seu uso tanto para <em>AAS</em> como <em>AASC</em>. Isso pode ser feito sempre que as condições do problema assim o permitirem, como se discute na próxima seção.</p>
 </div>
-<div id="intervalos-de-confiança-utilizando-a-aproximação-normal" class="section level2">
+<div id="intervalos-de-confiança-utilizando-a-aproximação-normal" class="section level2" number="5.6">
 <h2><span class="header-section-number">5.6</span> Intervalos de confiança utilizando a aproximação Normal</h2>
 <p>Como já foi visto no capítulo anterior, a distribuição do estimador da proporção, <span class="math inline">\(\widehat p\)</span>, pode ser aproximada pela distribuição Normal de probabilidade. Esta aproximação pode ser utilizada mesmo no caso da <em>AAS</em> onde os <span class="math inline">\(y_i\)</span> observados na amostra não são independentes, desde que se tenha valores de <span class="math inline">\(N\)</span> e <span class="math inline">\(n\)</span> suficientemente grandes e valor da fração amostral, <span class="math inline">\(f=\frac n N\)</span>, pequeno.</p>
 <p>Sob estas condições pode-se considerar que:</p>
@@ -718,7 +825,7 @@ desaas=<span class="kw">svydesign</span>(<span class="dt">ids=</span><span class
 \]</span></p>
 A Figura <a href="proporc.html#fig:figprop1">5.1</a> mostra o histograma construído a partir dos valores estimados da proporção <span class="math inline">\(p\)</span> de unidades com uma determinada característica de interesse, a partir de 1.000 amostras aleatórias simples de tamanho <span class="math inline">\(n=100\)</span>, selecionadas com reposição, de uma população de tamanho <span class="math inline">\(N=5.000\)</span>, onde exatamente metade das unidades tem a característica de interesse <span class="math inline">\((p=1/2)\)</span>. Para construir o histograma, os 1.000 valores de <span class="math inline">\(\widehat p\)</span> foram normalizados utilizando-se a Expressão <a href="proporc.html#eq:eqpro28">(5.28)</a>. Finalmente o histograma foi sobreposto pelo gráfico da distribuição <span class="math inline">\(N(0;1)\)</span>, mostrando que esta se assemelha à distribuição do estimador <span class="math inline">\(\widehat p\)</span>.
 <center>
-<div class="figure"><span id="fig:figprop1"></span>
+<div class="figure"><span style="display:block;" id="fig:figprop1"></span>
 <img src="05-proporcoes_files/figure-html/figprop1-1.png" alt="Aproximação Normal da distribuição do estimador de $p$ no caso de *AASC*" width="672" />
 <p class="caption">
 Figura 5.1: Aproximação Normal da distribuição do estimador de <span class="math inline">\(p\)</span> no caso de <em>AASC</em>
@@ -727,7 +834,7 @@ Figura 5.1: Aproximação Normal da distribuição do estimador de <span class="
 </center>
 <p>A Figura <a href="proporc.html#fig:figprop2">5.2</a> mostra o gráfico para um exercício similar ao anterior onde as amostras foram selecionadas sem reposição.</p>
 <center>
-<div class="figure"><span id="fig:figprop2"></span>
+<div class="figure"><span style="display:block;" id="fig:figprop2"></span>
 <img src="05-proporcoes_files/figure-html/figprop2-1.png" alt="Aproximação Normal da distribuição do estimador de $p$ no caso de *AAS*" width="672" />
 <p class="caption">
 Figura 5.2: Aproximação Normal da distribuição do estimador de <span class="math inline">\(p\)</span> no caso de <em>AAS</em>
@@ -742,12 +849,12 @@ Figura 5.2: Aproximação Normal da distribuição do estimador de <span class="
 <span id="tab:tabprop3">Tabela 5.3: </span>Valores mínimos de <span class="math inline">\(n_A\)</span> para uso da aproximação Normal
 </caption>
 </table>
-<table style="width:47%;">
+<table style="width:49%;">
 <colgroup>
 <col width="19%" />
 <col width="9%" />
 <col width="16%" />
-<col width="1%" />
+<col width="2%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -807,14 +914,16 @@ Figura 5.2: Aproximação Normal da distribuição do estimador de <span class="
 <p>Nas condições estabelecidas para a validade da aproximação Normal, tem-se que <span class="math inline">\(S^2_y \doteq \sigma^2_y=p(1-p)\)</span>, portanto, <span class="math inline">\(\displaystyle V_{AAS}(\widehat p) \doteq V_{AASC}(\widehat p)\)</span>. Então, para os dois tipos de seleção, pode-se considerar o intervalo de confiança para a proporção como:</p>
 <p><span class="math display" id="eq:eqpro29">\[ 
 \displaystyle IC(p;{1-\alpha})=\left[\widehat p-z_{\alpha/ 2}\sqrt { \frac{p(1-p)}n}\,;\,\widehat p+z_{\alpha/2}\sqrt {\frac{p(1-p)}n}\,\, \right]\,\,\tag{5.29} 
-\]</span> Caso se deseje considerar o fator de correção para populacões finitas, quando a fração amostral não possa ser considerada pequena e a seleção for sem reposição, a expressão do intervalo de confiança passa a ser:</p>
+\]</span>
+Caso se deseje considerar o fator de correção para populacões finitas, quando a fração amostral não possa ser considerada pequena e a seleção for sem reposição, a expressão do intervalo de confiança passa a ser:</p>
 <p><span class="math display" id="eq:eqpro30">\[
 \displaystyle IC(p;{1-\alpha})=\left[\widehat p \mp z_{\alpha/ 2}\sqrt { \left(\frac{N-n}{N-1} \right)\frac{p(1-p)}{n}}\ \right]\,\,\tag{5.30} 
 \]</span></p>
 <p>Em <span class="citation">Cochran (1977)</span> é apresentada uma <em>correção de continuidade</em> acrescentando a fração <span class="math inline">\(1/2n\)</span> à margem de erro do intervalo de confiança pelo fato de se fazer uma aproximação de uma distribuição discreta (Binomial ou Hipergeométrica) pela distribuição Normal, que é contínua. Desse modo a expressão do intervalo de confiança passa a ser:</p>
 <p><span class="math display" id="eq:eqpro31">\[
 \displaystyle IC(p;{1-\alpha})=\left[\widehat p \mp \left(z_{\alpha/ 2}\sqrt {\frac{p(1-p)}n}+\frac1{2n} \right) \right] \tag{5.31}
-\]</span> Ou considerando a correção para população finita:</p>
+\]</span>
+Ou considerando a correção para população finita:</p>
 <p><span class="math display" id="eq:eqpro32">\[
 \displaystyle IC(p;{1-\alpha})=\left[\widehat p \mp \left(z_{\alpha/ 2}\sqrt { \left(\frac {N-n}{N-1} \right) \frac{p(1-p)}{n}}+\frac 1 {2n} \right) \right]\tag{5.32} 
 \]</span></p>
@@ -833,87 +942,90 @@ Figura 5.2: Aproximação Normal da distribuição do estimador de <span class="
 <li>Estime a proporção e o número de indecisos e os correspondentes IC de 95%.</li>
 </ol>
 <p>Para responder essas questões, pede-se utilizar o R.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Opção para controlar impressão de valores grandes e evitar uso de notação científica</span>
-<span class="kw">options</span>(<span class="dt">scipen=</span><span class="dv">8</span>)
-<span class="co"># Tamanho populacional</span>
-(N &lt;-<span class="st"> </span><span class="dv">4000000</span>)</code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="proporc.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opção para controlar impressão de valores grandes e evitar uso de notação científica</span></span>
+<span id="cb90-2"><a href="proporc.html#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">8</span>)</span>
+<span id="cb90-3"><a href="proporc.html#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tamanho populacional</span></span>
+<span id="cb90-4"><a href="proporc.html#cb90-4" aria-hidden="true" tabindex="-1"></a>(N <span class="ot">&lt;-</span> <span class="dv">4000000</span>)</span></code></pre></div>
 <pre><code>## [1] 4000000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Tamanho amostral</span>
-(n &lt;-<span class="st"> </span><span class="dv">2000</span>)</code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="proporc.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tamanho amostral</span></span>
+<span id="cb92-2"><a href="proporc.html#cb92-2" aria-hidden="true" tabindex="-1"></a>(n <span class="ot">&lt;-</span> <span class="dv">2000</span>)</span></code></pre></div>
 <pre><code>## [1] 2000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Eleitores dos candidatos na amostra</span>
-(n_A &lt;-<span class="st"> </span><span class="dv">900</span>) <span class="co"># Candidato A</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="proporc.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eleitores dos candidatos na amostra</span></span>
+<span id="cb94-2"><a href="proporc.html#cb94-2" aria-hidden="true" tabindex="-1"></a>(n_A <span class="ot">&lt;-</span> <span class="dv">900</span>) <span class="co"># Candidato A</span></span></code></pre></div>
 <pre><code>## [1] 900</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_B &lt;-<span class="st"> </span><span class="dv">800</span>) <span class="co"># Candidato B</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="proporc.html#cb96-1" aria-hidden="true" tabindex="-1"></a>(n_B <span class="ot">&lt;-</span> <span class="dv">800</span>) <span class="co"># Candidato B</span></span></code></pre></div>
 <pre><code>## [1] 800</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(n_I &lt;-<span class="st"> </span><span class="dv">300</span>) <span class="co"># Indecisos</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="proporc.html#cb98-1" aria-hidden="true" tabindex="-1"></a>(n_I <span class="ot">&lt;-</span> <span class="dv">300</span>) <span class="co"># Indecisos</span></span></code></pre></div>
 <pre><code>## [1] 300</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimativa da proporção e de número de eleitores de A</span>
-(p_A &lt;-<span class="st"> </span>(n_A <span class="op">/</span><span class="st"> </span>n))</code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="proporc.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimativa da proporção e de número de eleitores de A</span></span>
+<span id="cb100-2"><a href="proporc.html#cb100-2" aria-hidden="true" tabindex="-1"></a>(p_A <span class="ot">&lt;-</span> (n_A <span class="sc">/</span> n))</span></code></pre></div>
 <pre><code>## [1] 0.45</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(N_A &lt;-<span class="st"> </span>N<span class="op">*</span>p_A)</code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="proporc.html#cb102-1" aria-hidden="true" tabindex="-1"></a>(N_A <span class="ot">&lt;-</span> N<span class="sc">*</span>p_A)</span></code></pre></div>
 <pre><code>## [1] 1800000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimativa da proporção e do número de eleitores de B</span>
-(p_B &lt;-<span class="st"> </span>(n_B <span class="op">/</span><span class="st"> </span>n))</code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="proporc.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimativa da proporção e do número de eleitores de B</span></span>
+<span id="cb104-2"><a href="proporc.html#cb104-2" aria-hidden="true" tabindex="-1"></a>(p_B <span class="ot">&lt;-</span> (n_B <span class="sc">/</span> n))</span></code></pre></div>
 <pre><code>## [1] 0.4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(N_B &lt;-<span class="st"> </span>N<span class="op">*</span>p_B)</code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="proporc.html#cb106-1" aria-hidden="true" tabindex="-1"></a>(N_B <span class="ot">&lt;-</span> N<span class="sc">*</span>p_B)</span></code></pre></div>
 <pre><code>## [1] 1600000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimativa da proporção e número de eleitores Indecisos</span>
-(p_I &lt;-<span class="st"> </span>(n_I <span class="op">/</span><span class="st"> </span>n))</code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="proporc.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimativa da proporção e número de eleitores Indecisos</span></span>
+<span id="cb108-2"><a href="proporc.html#cb108-2" aria-hidden="true" tabindex="-1"></a>(p_I <span class="ot">&lt;-</span> (n_I <span class="sc">/</span> n))</span></code></pre></div>
 <pre><code>## [1] 0.15</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(N_I &lt;-<span class="st"> </span>N<span class="op">*</span>p_I)</code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="proporc.html#cb110-1" aria-hidden="true" tabindex="-1"></a>(N_I <span class="ot">&lt;-</span> N<span class="sc">*</span>p_I)</span></code></pre></div>
 <pre><code>## [1] 600000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Intervalos de confiança, com aproximação Normal, para o candidato A</span>
-(me_P_A &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span><span class="kw">sqrt</span>(p_A<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p_A)<span class="op">/</span>n))</code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="proporc.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalos de confiança, com aproximação Normal, para o candidato A</span></span>
+<span id="cb112-2"><a href="proporc.html#cb112-2" aria-hidden="true" tabindex="-1"></a>(me_P_A <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)<span class="sc">*</span><span class="fu">sqrt</span>(p_A<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_A)<span class="sc">/</span>n))</span></code></pre></div>
 <pre><code>## [1] 0.02180322</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LIC_P_A &lt;-<span class="st"> </span>p_A <span class="op">-</span><span class="st"> </span>me_P_A)</code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="proporc.html#cb114-1" aria-hidden="true" tabindex="-1"></a>(LIC_P_A <span class="ot">&lt;-</span> p_A <span class="sc">-</span> me_P_A)</span></code></pre></div>
 <pre><code>## [1] 0.4281968</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LSC_P_A &lt;-<span class="st"> </span>p_A <span class="op">+</span><span class="st"> </span>me_P_A)</code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="proporc.html#cb116-1" aria-hidden="true" tabindex="-1"></a>(LSC_P_A <span class="ot">&lt;-</span> p_A <span class="sc">+</span> me_P_A)</span></code></pre></div>
 <pre><code>## [1] 0.4718032</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LIC_N_A &lt;-<span class="st"> </span>N<span class="op">*</span>LIC_P_A)</code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="proporc.html#cb118-1" aria-hidden="true" tabindex="-1"></a>(LIC_N_A <span class="ot">&lt;-</span> N<span class="sc">*</span>LIC_P_A)</span></code></pre></div>
 <pre><code>## [1] 1712787</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LSC_N_A &lt;-<span class="st"> </span>N<span class="op">*</span>LSC_P_A)</code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="proporc.html#cb120-1" aria-hidden="true" tabindex="-1"></a>(LSC_N_A <span class="ot">&lt;-</span> N<span class="sc">*</span>LSC_P_A)</span></code></pre></div>
 <pre><code>## [1] 1887213</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Intervalos de confiança, com aproximação Normal, para o candidato B</span>
-(me_P_B &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span><span class="kw">sqrt</span>(p_B<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p_B)<span class="op">/</span>n))</code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="proporc.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalos de confiança, com aproximação Normal, para o candidato B</span></span>
+<span id="cb122-2"><a href="proporc.html#cb122-2" aria-hidden="true" tabindex="-1"></a>(me_P_B <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)<span class="sc">*</span><span class="fu">sqrt</span>(p_B<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_B)<span class="sc">/</span>n))</span></code></pre></div>
 <pre><code>## [1] 0.02147033</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LIC_P_B &lt;-<span class="st"> </span>p_B <span class="op">-</span><span class="st"> </span>me_P_B)</code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="proporc.html#cb124-1" aria-hidden="true" tabindex="-1"></a>(LIC_P_B <span class="ot">&lt;-</span> p_B <span class="sc">-</span> me_P_B)</span></code></pre></div>
 <pre><code>## [1] 0.3785297</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LSC_P_B &lt;-<span class="st"> </span>p_B <span class="op">+</span><span class="st"> </span>me_P_B)</code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="proporc.html#cb126-1" aria-hidden="true" tabindex="-1"></a>(LSC_P_B <span class="ot">&lt;-</span> p_B <span class="sc">+</span> me_P_B)</span></code></pre></div>
 <pre><code>## [1] 0.4214703</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LIC_N_B &lt;-<span class="st"> </span>N<span class="op">*</span>LIC_P_B)</code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="proporc.html#cb128-1" aria-hidden="true" tabindex="-1"></a>(LIC_N_B <span class="ot">&lt;-</span> N<span class="sc">*</span>LIC_P_B)</span></code></pre></div>
 <pre><code>## [1] 1514119</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LSC_N_B &lt;-<span class="st"> </span>N<span class="op">*</span>LSC_P_B)</code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="proporc.html#cb130-1" aria-hidden="true" tabindex="-1"></a>(LSC_N_B <span class="ot">&lt;-</span> N<span class="sc">*</span>LSC_P_B)</span></code></pre></div>
 <pre><code>## [1] 1685881</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Intervalos de confiança, com aproximação Normal, para os indecisos</span>
-(me_P_I &lt;-<span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span><span class="kw">sqrt</span>(p_I<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p_I)<span class="op">/</span>n))</code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="proporc.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalos de confiança, com aproximação Normal, para os indecisos</span></span>
+<span id="cb132-2"><a href="proporc.html#cb132-2" aria-hidden="true" tabindex="-1"></a>(me_P_I <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)<span class="sc">*</span><span class="fu">sqrt</span>(p_I<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p_I)<span class="sc">/</span>n))</span></code></pre></div>
 <pre><code>## [1] 0.01564906</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LIC_P_I &lt;-<span class="st"> </span>p_I <span class="op">-</span><span class="st"> </span>me_P_I)</code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="proporc.html#cb134-1" aria-hidden="true" tabindex="-1"></a>(LIC_P_I <span class="ot">&lt;-</span> p_I <span class="sc">-</span> me_P_I)</span></code></pre></div>
 <pre><code>## [1] 0.1343509</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LSC_P_I &lt;-<span class="st"> </span>p_I <span class="op">+</span><span class="st"> </span>me_P_I)</code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="proporc.html#cb136-1" aria-hidden="true" tabindex="-1"></a>(LSC_P_I <span class="ot">&lt;-</span> p_I <span class="sc">+</span> me_P_I)</span></code></pre></div>
 <pre><code>## [1] 0.1656491</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LIC_N_I &lt;-<span class="st"> </span>N<span class="op">*</span>LIC_P_I)</code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="proporc.html#cb138-1" aria-hidden="true" tabindex="-1"></a>(LIC_N_I <span class="ot">&lt;-</span> N<span class="sc">*</span>LIC_P_I)</span></code></pre></div>
 <pre><code>## [1] 537403.8</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(LSC_N_I &lt;-<span class="st"> </span>N<span class="op">*</span>LSC_P_I)</code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="proporc.html#cb140-1" aria-hidden="true" tabindex="-1"></a>(LSC_N_I <span class="ot">&lt;-</span> N<span class="sc">*</span>LSC_P_I)</span></code></pre></div>
 <pre><code>## [1] 662596.2</code></pre>
 </div>
-<div id="cálculo-do-tamanho-da-amostra" class="section level2">
+<div id="cálculo-do-tamanho-da-amostra" class="section level2" number="5.7">
 <h2><span class="header-section-number">5.7</span> Cálculo do tamanho da amostra</h2>
 <p>O tamanho de uma amostra aleatória simples a ser selecionada, como já foi visto no capítulo anterior, é calculado a partir da definição do erro amostral ou margem de erro admissível para o caso, do nível de confiança desejado e se a seleção for com ou sem reposição.</p>
 <p>No caso de seleção com reposição, considerando uma margem de erro máxima admissível <span class="math inline">\(D\)</span> com um nível de confiança <span class="math inline">\(1-\alpha\)</span>, basta utilizar a expressão da margem de erro:</p>
 <p><span class="math display" id="eq:eqpro35">\[
 D \le z_{\alpha/2}\sqrt { \frac{p(1-p)}{n}} \implies n \ge \frac{z^2_{\alpha/2}{p(1-p)}}{D^2} \tag{5.35} 
-\]</span> Para a seleção sem reposição, o tamanho da amostra é calculado como:</p>
+\]</span>
+Para a seleção sem reposição, o tamanho da amostra é calculado como:</p>
 <p><span class="math display">\[ \hspace{-2,0cm}
 D \le z_{\alpha/2}\sqrt{\left(\frac {N-n}{N-1}\right)\frac{p(1-p)}n} \implies  n \ge \frac{z^2_{\alpha/2}p(1-p)} {D^2 \frac {N-1}N + \frac 1 N {z^2_{\alpha /2}p(1-p)}} 
-\]</span> Considerando <span class="math inline">\(\displaystyle\frac{N-1}{N}\doteq 1\)</span>, tem-se que:</p>
+\]</span>
+Considerando <span class="math inline">\(\displaystyle\frac{N-1}{N}\doteq 1\)</span>, tem-se que:</p>
 <p><span class="math display" id="eq:eqpro36">\[ \hspace{-2,0cm}
 D \le z_{\alpha/2}\sqrt{\left(\frac {N-n}{N-1}\right)\frac{p(1-p)}n} \implies  n \ge  \frac {Np(1-p)}{ND^2 /{z^2_{\alpha /2}} + p(1-p)} \tag{5.36} 
 \]</span></p>
 <p>Uma maneira prática de calcular o tamanho da amostra para uma <em>AAS</em> em dois passos é calcular primeiro:</p>
 <p><span class="math display" id="eq:eqpro37">\[
 n_0=\frac{z^2_{\alpha/2}p(1-p)}{D^2}\tag{5.37} 
-\]</span> E depois fazer:</p>
+\]</span>
+E depois fazer:</p>
 <p><span class="math display" id="eq:eqpro38">\[
 n \ge \frac {n_0}{1+n_0 /N}\tag{5.38} 
 \]</span></p>
@@ -923,7 +1035,7 @@ n \ge \frac {n_0}{1+n_0 /N}\tag{5.38}
 <p>O tamanho da amostra também depende da variância da variável utilizada para seu cálculo, através do produto <span class="math inline">\(p(1-p)\)</span>. Como <span class="math inline">\(p\)</span> é a proporção que se deseja estimar, se fosse conhecida não haveria a necessidade de uma amostra. Geralmente, como no caso de se pesquisar variáveis contínuas, utilizam-se pesquisas anteriores ou variáveis correlacionadas com a atual variável de interesse, ou mesmo uma pesquisa piloto com um tamanho arbitrário de amostra, para se ter uma estimativa inicial do fenômeno a ser medido e poder calcular o tamanho de amostra realmente necessário. Quando se utiliza uma pesquisa piloto, existem métodos para utilizar os resultados relativos às unidades já pesquisadas e selecionar outras unidades para complementar o tamanho da amostra.</p>
 <p>No caso da estimação de proporções, o valor de <span class="math inline">\(p(1-p)\)</span> é limitado variando de 0 a 0,25, sendo esse valor máximo atingido quando <span class="math inline">\(p= 0,5\)</span>. O gráfico da Figura <a href="proporc.html#fig:figprop3">5.3</a> mostra como variam os valores de <span class="math inline">\(p(1-p)\)</span> conforme a variação dos valores de <span class="math inline">\(p\)</span>.</p>
 <center>
-<div class="figure"><span id="fig:figprop3"></span>
+<div class="figure"><span style="display:block;" id="fig:figprop3"></span>
 <img src="05-proporcoes_files/figure-html/figprop3-1.png" alt="Variação de $p(1-p)$ em função dos valores de $p$" width="672" />
 <p class="caption">
 Figura 5.3: Variação de <span class="math inline">\(p(1-p)\)</span> em função dos valores de <span class="math inline">\(p\)</span>
@@ -933,12 +1045,15 @@ Figura 5.3: Variação de <span class="math inline">\(p(1-p)\)</span> em funçã
 <p>Como o valor máximo de <span class="math inline">\(S_y^2\doteq \sigma _y^2=p(1-p)\)</span>, que é a maior variabilidade da variável de interesse, é atingido quando <span class="math inline">\(p=0,5\)</span>, caso não exista nenhuma informação sobre o a proporção a ser estimada, uma maneira de determinar um tamanho de amostra conservador é supor exatamente que <span class="math inline">\(p=0,5\)</span>. Assim pode-se simplificar a fórmula de cálculo de <span class="math inline">\(n\)</span> para uma <em>AASC</em>:</p>
 <p><span class="math display" id="eq:eqpro39">\[ 
 n \ge \frac {z^2_{\alpha /2}}{4D^2}\tag{5.39} 
-\]</span> No caso de uma <em>AAS</em> basta fazer:</p>
+\]</span>
+No caso de uma <em>AAS</em> basta fazer:</p>
 <p><span class="math display" id="eq:eqpro40">\[
 n_0 = \frac {z^2_{\alpha /2}}{4D^2} \:\:\:\:\text{e}\:\:\:\:n \ge \frac {n_0}{1+n_0/N}\tag{5.40} 
 \]</span></p>
 <p>Geralmente os resultados das fórmulas para cálculo do tamanho da amostra não são valores inteiros. Em todos esses casos o valor de <span class="math inline">\(n\)</span> calculado deverá ser arredondado para o valor inteiro imediatamente superior, preservando assim a precisão desejada.</p>
-<p><strong>Exemplo 5.4 </strong> Uma empresa precisa selecionar uma amostra de uma população composta de 30.000 domicílios para estimar a proporção de domicílios que consomem suprimentos para animais domésticos. O diretor da empresa pergunta ao estatístico qual o tamanho de amostra que deve utilizar na pesquisa e diz que lhe foi sugerida a seguinte fórmula para determinar o tamanho da amostra: <span class="math display">\[n\ge\frac {Np(1-p)}{ND^2 /{z^2_{\alpha /2}} + p(1-p)}\]</span></p>
+<p><strong>Exemplo 5.4 </strong> Uma empresa precisa selecionar uma amostra de uma população composta de 30.000 domicílios para estimar a proporção de domicílios que consomem suprimentos para animais domésticos.
+O diretor da empresa pergunta ao estatístico qual o tamanho de amostra que deve utilizar na pesquisa e diz que lhe foi sugerida a seguinte fórmula para determinar o tamanho da amostra:
+<span class="math display">\[n\ge\frac {Np(1-p)}{ND^2 /{z^2_{\alpha /2}} + p(1-p)}\]</span></p>
 <ol style="list-style-type: lower-alpha">
 <li>A fórmula acima está correta? Sob que hipóteses ou condições? Se não, qual seria a fórmula correta?</li>
 <li>Que tamanho deveria ter a amostra para estimar a proporção de domicílios que consomem suprimentos para animais domésticos, tal que a estimativa não se afaste do verdadeiro valor da proporção mais do que 1% com 95% de confiança?</li>
@@ -946,57 +1061,58 @@ n_0 = \frac {z^2_{\alpha /2}}{4D^2} \:\:\:\:\text{e}\:\:\:\:n \ge \frac {n_0}{1+
 </ol>
 <p>A resposta para o item a é que a fórmula está correta, pois, sendo a população bastante grande, <span class="math inline">\(N=30.000\)</span>, pode-se desprezar o fator de correção <span class="math inline">\((N-1)/N\)</span> como mostrado na Expressão <a href="proporc.html#eq:eqpro36">(5.36)</a>.</p>
 <p>Para os demais itens pode-se recorrer ao R.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Opção para controlar impressão de valores grandes e evitar uso de notação científica</span>
-<span class="kw">options</span>(<span class="dt">scipen=</span><span class="dv">8</span>)
-<span class="co"># Item b</span>
-<span class="co"># Especifica margem de erro</span>
-(D &lt;-<span class="st"> </span><span class="fl">0.01</span>)</code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="proporc.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opção para controlar impressão de valores grandes e evitar uso de notação científica</span></span>
+<span id="cb142-2"><a href="proporc.html#cb142-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">8</span>)</span>
+<span id="cb142-3"><a href="proporc.html#cb142-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Item b</span></span>
+<span id="cb142-4"><a href="proporc.html#cb142-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Especifica margem de erro</span></span>
+<span id="cb142-5"><a href="proporc.html#cb142-5" aria-hidden="true" tabindex="-1"></a>(D <span class="ot">&lt;-</span> <span class="fl">0.01</span>)</span></code></pre></div>
 <pre><code>## [1] 0.01</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Tamanho da população</span>
-(N &lt;-<span class="st"> </span><span class="dv">30000</span>)</code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="proporc.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tamanho da população</span></span>
+<span id="cb144-2"><a href="proporc.html#cb144-2" aria-hidden="true" tabindex="-1"></a>(N <span class="ot">&lt;-</span> <span class="dv">30000</span>)</span></code></pre></div>
 <pre><code>## [1] 30000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Valor da Normal para o nível de significância desejado</span>
-(<span class="dt">z2alfa=</span><span class="kw">qnorm</span>(<span class="fl">0.975</span>))</code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="proporc.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor da Normal para o nível de significância desejado</span></span>
+<span id="cb146-2"><a href="proporc.html#cb146-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">z2alfa=</span><span class="fu">qnorm</span>(<span class="fl">0.975</span>))</span></code></pre></div>
 <pre><code>## [1] 1.959964</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Item b</span>
-<span class="co"># Usando fórmula &#39;exata&#39; e proporção que maximiza variância, já que </span>
-<span class="co"># não há informação sobre o valor de p</span>
-(p &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="proporc.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Item b</span></span>
+<span id="cb148-2"><a href="proporc.html#cb148-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando fórmula &#39;exata&#39; e proporção que maximiza variância, já que </span></span>
+<span id="cb148-3"><a href="proporc.html#cb148-3" aria-hidden="true" tabindex="-1"></a><span class="co"># não há informação sobre o valor de p</span></span>
+<span id="cb148-4"><a href="proporc.html#cb148-4" aria-hidden="true" tabindex="-1"></a>(p <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(q &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span>p)</code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="proporc.html#cb150-1" aria-hidden="true" tabindex="-1"></a>(q <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span>p)</span></code></pre></div>
 <pre><code>## [1] 0.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculando o tamanho da amostra, arredondando o valor de n para cima</span>
-(n &lt;-<span class="st"> </span><span class="kw">ceiling</span>(N <span class="op">*</span><span class="st"> </span>p <span class="op">*</span><span class="st"> </span>q<span class="op">/</span>(N<span class="op">*</span>D<span class="op">^</span><span class="dv">2</span><span class="op">/</span>z2alfa<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st">  </span>p <span class="op">*</span><span class="st"> </span>q)))</code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="proporc.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando o tamanho da amostra, arredondando o valor de n para cima</span></span>
+<span id="cb152-2"><a href="proporc.html#cb152-2" aria-hidden="true" tabindex="-1"></a>(n <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(N <span class="sc">*</span> p <span class="sc">*</span> q<span class="sc">/</span>(N<span class="sc">*</span>D<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>z2alfa<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span>  p <span class="sc">*</span> q)))</span></code></pre></div>
 <pre><code>## [1] 7275</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Item c - nste caso há a indicação de um intervalo que deve conter o valor da proporção</span>
-<span class="co">#a ser estimada. Deve-se, então, calcular os tamanhos de amostra para os limites do</span>
-<span class="co">#intervalo e optar pelo maior tamanho de amostra obtido, pois esse valor satisfaz a</span>
-<span class="co">#condição de maior exigência</span>
-<span class="co"># Usando fórmula &#39;exata&#39; e proporção no limite inferior </span>
-(p &lt;-<span class="st"> </span><span class="fl">0.1</span>)</code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="proporc.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Item c - nste caso há a indicação de um intervalo que deve conter o valor da proporção</span></span>
+<span id="cb154-2"><a href="proporc.html#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="co">#a ser estimada. Deve-se, então, calcular os tamanhos de amostra para os limites do</span></span>
+<span id="cb154-3"><a href="proporc.html#cb154-3" aria-hidden="true" tabindex="-1"></a><span class="co">#intervalo e optar pelo maior tamanho de amostra obtido, pois esse valor satisfaz a</span></span>
+<span id="cb154-4"><a href="proporc.html#cb154-4" aria-hidden="true" tabindex="-1"></a><span class="co">#condição de maior exigência</span></span>
+<span id="cb154-5"><a href="proporc.html#cb154-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando fórmula &#39;exata&#39; e proporção no limite inferior </span></span>
+<span id="cb154-6"><a href="proporc.html#cb154-6" aria-hidden="true" tabindex="-1"></a>(p <span class="ot">&lt;-</span> <span class="fl">0.1</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(q &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span>p)</code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="proporc.html#cb156-1" aria-hidden="true" tabindex="-1"></a>(q <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span>p)</span></code></pre></div>
 <pre><code>## [1] 0.9</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculando o tamanho da amostra, arredondando o valor de n para cima</span>
-(n &lt;-<span class="st"> </span><span class="kw">ceiling</span>(N <span class="op">*</span><span class="st"> </span>p <span class="op">*</span><span class="st"> </span>q<span class="op">/</span>(N<span class="op">*</span>D<span class="op">^</span><span class="dv">2</span><span class="op">/</span>z2alfa<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st">  </span>p <span class="op">*</span><span class="st"> </span>q)))</code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="proporc.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando o tamanho da amostra, arredondando o valor de n para cima</span></span>
+<span id="cb158-2"><a href="proporc.html#cb158-2" aria-hidden="true" tabindex="-1"></a>(n <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(N <span class="sc">*</span> p <span class="sc">*</span> q<span class="sc">/</span>(N<span class="sc">*</span>D<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>z2alfa<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span>  p <span class="sc">*</span> q)))</span></code></pre></div>
 <pre><code>## [1] 3101</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Usando fórmula &#39;exata&#39; e proporção no limite superior </span>
-(p &lt;-<span class="st"> </span><span class="fl">0.3</span>)</code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="proporc.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando fórmula &#39;exata&#39; e proporção no limite superior </span></span>
+<span id="cb160-2"><a href="proporc.html#cb160-2" aria-hidden="true" tabindex="-1"></a>(p <span class="ot">&lt;-</span> <span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(q &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">-</span>p)</code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="proporc.html#cb162-1" aria-hidden="true" tabindex="-1"></a>(q <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span>p)</span></code></pre></div>
 <pre><code>## [1] 0.7</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculando o tamanho da amostra,arredondando o valor de n para cima</span>
-(n &lt;-<span class="st"> </span><span class="kw">ceiling</span>(N <span class="op">*</span><span class="st"> </span>p <span class="op">*</span><span class="st"> </span>q<span class="op">/</span>(N<span class="op">*</span>D<span class="op">^</span><span class="dv">2</span><span class="op">/</span>z2alfa<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st">  </span>p <span class="op">*</span><span class="st"> </span>q)))</code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="proporc.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando o tamanho da amostra,arredondando o valor de n para cima</span></span>
+<span id="cb164-2"><a href="proporc.html#cb164-2" aria-hidden="true" tabindex="-1"></a>(n <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(N <span class="sc">*</span> p <span class="sc">*</span> q<span class="sc">/</span>(N<span class="sc">*</span>D<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>z2alfa<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span>  p <span class="sc">*</span> q)))</span></code></pre></div>
 <pre><code>## [1] 6358</code></pre>
 <p>No caso de não existir nenhuma indicação sobre o valor de <span class="math inline">\(p\)</span>, como no item b do exemplo, deve-se tomar <span class="math inline">\(n=7.275\)</span>, supondo <span class="math inline">\(p=0,5\)</span>. Já no item c, deve-se optar pelo maior tamanho de amostra necessário para suprir as exigências de precisão. Neste caso, como a informação é que <span class="math inline">\(p\)</span> deve estar no intervalo [0,10; 0,30] deve-se selecionar uma amostra de <span class="math inline">\(n=6.358\)</span> domicílios.</p>
 <p>Sugere-se que o leitor refaça o exercício com uma margem de erro diferente, <span class="math inline">\(D=0,03\)</span>, por exemplo, e observe o que acontece com os valores de <span class="math inline">\(n\)</span> calculados.</p>
-<div id="cálculo-do-n-utilizando-outras-formas-de-representar-o-erro-amostral" class="section level3">
+<div id="cálculo-do-n-utilizando-outras-formas-de-representar-o-erro-amostral" class="section level3" number="5.7.1">
 <h3><span class="header-section-number">5.7.1</span> Cálculo do <span class="math inline">\(n\)</span> utilizando outras formas de representar o erro amostral</h3>
 <p>As fómulas apresentadas para o cálculo do tamanho da amostra utilizaram a margem de erro <span class="math inline">\(D\)</span> como parâmetro de entrada, porém o erro amostral pode ser representado de outras maneiras. Pode-se defini-lo como o <em>coeficiente de variação</em>, como a <em>variância</em> ou como o <em>erro relativo</em> do estimador a ser calculado.</p>
 <p>Para calcular um tamanho de amostra de maneira que o coeficiente de variação máximo esperado para o estimador <span class="math inline">\(\widehat p\)</span> seja um valor fixado <span class="math inline">\(c\)</span>, pode-se utilizar a fórmula:</p>
 <p><span class="math display" id="eq:eqpro41">\[
 n \ge \frac {1-p} {c^2p}\tag{5.41} 
-\]</span> no caso da seleção com reposição.</p>
+\]</span>
+no caso da seleção com reposição.</p>
 <p>Para chegar a esse resultado, basta ver que <span class="math inline">\(CV_{AASC}(\widehat p)= \displaystyle\frac {\sqrt {V_{AASC}(\widehat p)}}p\)</span> e substituir na fórmula apresentada para o cálculo de <span class="math inline">\(n\)</span> a partir da margem de erro fixada.</p>
 <p>Para a seleção sem reposição pode-se fazer:</p>
 <p><span class="math display" id="eq:eqpro42">\[
@@ -1010,7 +1126,7 @@ n \ge \frac {p(1-p)} {v}  { \quad\text { ou } \quad} n \ge \frac {z^2_{\alpha/2}
 <p>As expressões para a seleção sem reposição são derivadas como no caso em que foi fixado o valor máximo esperado para <span class="math inline">\(CV(\widehat p\)</span>).</p>
 </div>
 </div>
-<div id="estimação-de-proporções-para-variáveis-com-mais-de-duas-categorias" class="section level2">
+<div id="estimação-de-proporções-para-variáveis-com-mais-de-duas-categorias" class="section level2" number="5.8">
 <h2><span class="header-section-number">5.8</span> Estimação de proporções para variáveis com mais de duas categorias</h2>
 <p>Até o momento foi tratado o caso em que temos uma variável indicadora com duas categorias, definindo se uma determinada unidade na população (ou na amostra) tem ou não determinada característica de interesse. Muitas vezes temos a necessidade de definir mais de duas categorias como, por exemplo:</p>
 <ul>
@@ -1026,11 +1142,11 @@ n \ge \frac {p(1-p)} {v}  { \quad\text { ou } \quad} n \ge \frac {z^2_{\alpha/2}
 <span id="tab:tabprop4">Tabela 5.4: </span>Distribuição dos alunos por etapa de ensino
 </caption>
 </table>
-<table style="width:60%;">
+<table style="width:61%;">
 <colgroup>
 <col width="23%" />
 <col width="18%" />
-<col width="18%" />
+<col width="19%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1097,7 +1213,8 @@ n \ge \frac {p(1-p)} {v}  { \quad\text { ou } \quad} n \ge \frac {z^2_{\alpha/2}
 <p>A proporção de unidades da população pertencentes à categoria <span class="math inline">\(c\in (1, 2,.., M)\)</span>, é dada por:</p>
 <p><span class="math display" id="eq:eqpro44">\[
 p_c=\frac {N_c} {N} \tag{5.44} 
-\]</span> 0nde <span class="math inline">\(N_c\)</span> é o número de unidades na categoria <span class="math inline">\(c\)</span> e <span class="math inline">\(N\)</span> é o tamanho total da população.</p>
+\]</span>
+0nde <span class="math inline">\(N_c\)</span> é o número de unidades na categoria <span class="math inline">\(c\)</span> e <span class="math inline">\(N\)</span> é o tamanho total da população.</p>
 <p>Seja uma amostra aleatória simples (com ou sem reposição) de tamanho <span class="math inline">\(n\)</span> e seja a variável indicadora <span class="math inline">\(y_i\)</span> definida como:</p>
 <p><span class="math display" id="eq:eqpro45">\[
 \displaystyle y_i= \begin{cases} 1, \text { se a unidade} \textit{ i } \text{pertence à categoria $c$} \\ 0, \text { se a unidade}\textit{ i } \text{ pertence a outra categoria} \end{cases}
@@ -1106,10 +1223,13 @@ p_c=\frac {N_c} {N} \tag{5.44}
 <p>Com tal definição pode-se ver que o número de unidades da categoria <span class="math inline">\(c\)</span> na amostra será dado por:</p>
 <p><span class="math display" id="eq:eqpro46">\[
 \displaystyle n_c=\sum_{i=1}^{n} y_i\tag{5.46}
-\]</span> Um estimador para a proporção de unidades populacionais pertencentes à categoria <span class="math inline">\(c\)</span> é dado por:</p>
+\]</span>
+Um estimador para a proporção de unidades populacionais pertencentes à categoria <span class="math inline">\(c\)</span> é dado por:</p>
 <p><span class="math display" id="eq:eqpro47">\[
 \displaystyle \widehat p_c=\frac {1}{n} \sum_{i=1}^{n} y_i =\frac {n_c} {n}\tag{5.47}
-\]</span> O problema foi reduzido ao caso de estimar proporções em variáveis com duas categorias. Pode-se obter, também, estimativas de precisão utilizando as mesmas ferramentas já apresentadas neste capítulo.</p>
+\]</span>
+O problema foi reduzido ao caso de estimar proporções em variáveis com duas categorias.
+Pode-se obter, também, estimativas de precisão utilizando as mesmas ferramentas já apresentadas neste capítulo.</p>
 <p>Muitas vezes pode-se estar interessado em estimar proporções para agrupamentos das categorias originais.</p>
 <p>Voltando ao exemplo da escola do ensino fundamental, pode ser de interesse estudar a proporção de seus alunos que estão matriculados no primeiro segmento do ensino fundamental. Nesse caso, seriam contabilizados como pertencentes à categoria <span class="math inline">\(c\)</span> de interesse todos os alunos do 1º até o 5º ano, para os quais <span class="math inline">\(y_c=1\)</span>, sendo <span class="math inline">\(y_c=0\)</span> para os demais alunos da escola.</p>
 <p>Outro caso de interesse ocorre quando, na aplicação de um questionário, por exemplo, aparecem respondentes que se recusaram a responder ou, mesmo, disseram que não sabiam a resposta. Num caso como esse, pode-se estar interessado em estimar a proporção das pessoas que responderam determinada alternativa, entre as pessoas que efetivamente responderam a pesquisa escolhendo uma das alternativas válidas. Um exemplo prático seria uma pesquisa sobre a intenção de voto numa eleição com apenas dois candidatos. Nesse caso, o entrevistado poderia responder que votará no canditato A, no candidato B, que votará nulo ou em branco, onde apenas as duas primeiras alternativas seriam consideradas como votos válidos.</p>
@@ -1119,7 +1239,7 @@ p_c=\frac {N_c} {N} \tag{5.44}
 \]</span></p>
 <p>Vale notar que em <a href="proporc.html#eq:eqpro48">(5.48)</a> tanto o numerador como o denominador do estimador da proporção são variáveis aleatórias, pois a população (eleitores que efetivamente vão votar num dos candidatos) é desconhecida.</p>
 </div>
-<div id="exerc5" class="section level2">
+<div id="exerc5" class="section level2" number="5.9">
 <h2><span class="header-section-number">5.9</span> Exercícios</h2>
 <p><strong>Exercício 5.1 </strong> Uma pesquisa foi feita para estimar a proporção de domicílios de uma pequena vila que têm, pelo menos, um morador com 65 anos ou mais. A vila tem 651 domicílios dos quais foram pesquisados 60 e em 11 deles havia moradores com 65 anos ou mais.</p>
 <ol style="list-style-type: lower-alpha">
@@ -1146,7 +1266,7 @@ p_c=\frac {N_c} {N} \tag{5.44}
 <li>Estime a proporção de unidades onde <span class="math inline">\(y\)</span> é menor que 10.</li>
 <li>Construa um intervalo de 95% de confiança para a proporção de unidades onde <span class="math inline">\(y\)</span> é menor que 10.</li>
 </ol>
-<p><strong>Exercício 5.5 </strong> Considere a população de <span class="math inline">\(N=338\)</span> fazendas produtoras de cana-de-açúcar fornecida no arquivo 'fazendas_dat.rds'. Selecione uma AAS de <span class="math inline">\(n=50\)</span> fazendas e use esta amostra para obter a estimativa pontual, o erro padrão, o CV e o intervalo de confiança de 95%, para cada um dos seguintes parâmetros populacionais:</p>
+<p><strong>Exercício 5.5 </strong> Considere a população de <span class="math inline">\(N=338\)</span> fazendas produtoras de cana-de-açúcar fornecida no arquivo ‘fazendas_dat.rds’. Selecione uma AAS de <span class="math inline">\(n=50\)</span> fazendas e use esta amostra para obter a estimativa pontual, o erro padrão, o CV e o intervalo de confiança de 95%, para cada um dos seguintes parâmetros populacionais:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Proporção de fazendas na região 1.</li>
 <li>Proporção de fazendas com Area maior que 100.</li>
@@ -1224,7 +1344,6 @@ p_c=\frac {N_c} {N} \tag{5.44}
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1243,6 +1362,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -1263,6 +1383,10 @@ gitbook.start({
 "text": null
 },
 "download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -1275,7 +1399,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

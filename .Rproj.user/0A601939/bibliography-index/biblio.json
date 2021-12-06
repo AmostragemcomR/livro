@@ -1,0 +1,2834 @@
+{
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Backstrom",
+                    "given": "C. H."
+                },
+                {
+                    "family": "Hursh-César",
+                    "given": "G."
+                }
+            ],
+            "id": "Backstrom1981",
+            "issued": {
+                "date-parts": [
+                    [
+                        1981
+                    ]
+                ]
+            },
+            "page": "436",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "New York, USA",
+            "title": "Survey Research, second edition",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bolfarine",
+                    "given": "H."
+                },
+                {
+                    "family": "Bussab",
+                    "given": "W. O."
+                }
+            ],
+            "id": "Bolfarine2005",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "274",
+            "publisher": "Editora Edgard Blücher",
+            "publisher-place": "São Paulo, Brasil",
+            "title": "Elementos de Amostragem",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Chambers",
+                    "given": "R. L."
+                },
+                {
+                    "family": "Clark",
+                    "given": "R. G."
+                }
+            ],
+            "id": "Chambers2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "265",
+            "publisher": "Oxford University Press",
+            "publisher-place": "New York, USA",
+            "title": "An Introduction to Model-Based Survey Sampling with Applications",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cochran",
+                    "given": "W. G."
+                }
+            ],
+            "edition": "3rd",
+            "id": "Cochran1977",
+            "issued": {
+                "date-parts": [
+                    [
+                        1977
+                    ]
+                ]
+            },
+            "page": "428",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "New York, USA",
+            "title": "Sampling Techniques",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Waal",
+                    "given": "T."
+                },
+                {
+                    "family": "Pannekoek",
+                    "given": "J."
+                },
+                {
+                    "family": "Scholtus",
+                    "given": "S."
+                }
+            ],
+            "id": "DeWaal2011",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "439",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "Hoboken, NJ",
+            "title": "Handbook of statistical data editing and imputation",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Donoho",
+                    "given": "D."
+                }
+            ],
+            "container-title": "Journal of Computational and Graphical Statistics",
+            "id": "Donoho2017",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "745-766",
+            "title": "50 Years of Data Science",
+            "type": "article-journal",
+            "volume": "26"
+        },
+        {
+            "author": [
+                {
+                    "family": "Groves",
+                    "given": "R. M."
+                },
+                {
+                    "family": "Fowler",
+                    "given": "F. J."
+                },
+                {
+                    "family": "Couper",
+                    "given": "M. P."
+                },
+                {
+                    "family": "Lepkowski",
+                    "given": "J. M."
+                },
+                {
+                    "family": "Singer",
+                    "given": "E."
+                },
+                {
+                    "family": "Tourangeau",
+                    "given": "R."
+                }
+            ],
+            "id": "Groves2009",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "461",
+            "publisher": "John Wiley & Sons Inc",
+            "publisher-place": "Hoboken, NJ",
+            "title": "Survey Methodology, 2nd edition",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Groves",
+                    "given": "R. M."
+                }
+            ],
+            "container-title": "Public Opinion Quarterly",
+            "id": "Groves2011",
+            "issue": "5 SPEC. ISSUE",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "861-871",
+            "title": "Three eras of survey research",
+            "type": "article-journal",
+            "volume": "75"
+        },
+        {
+            "author": [
+                {
+                    "family": "IBGE"
+                }
+            ],
+            "id": "IBGE2003",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "page": "158",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Pesquisa da Economia Informal Urbana",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "IBGE"
+                }
+            ],
+            "id": "IBGE2004",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "page": "1-116",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Pesquisa Nacional por Amostra de Domicílios 2004",
+            "type": "book",
+            "volume": "25"
+        },
+        {
+            "URL": "ftp://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Notas_metodologicas/notas_metodologicas.pdf",
+            "author": [
+                {
+                    "family": "IBGE"
+                }
+            ],
+            "id": "IBGE2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "note": "Acesso: Setembro de 2021",
+            "page": "47",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Pesquisa Nacional por Amostra de Domicílios Contínua - Notas Metodológicas - volume 1",
+            "type": "report"
+        },
+        {
+            "URL": "http://biblioteca.ibge.gov.br/visualizacao/livros/liv95987.pdf",
+            "author": [
+                {
+                    "family": "IBGE"
+                }
+            ],
+            "id": "IBGE2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "711",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Metodologia do Censo Demográfico 2010, 2a edição",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lohr",
+                    "given": "S."
+                }
+            ],
+            "edition": "2nd",
+            "id": "Lohr2010",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "596",
+            "publisher": "Brooks/Cole",
+            "publisher-place": "Boston",
+            "title": "Sampling Design and Analysis",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Magalhães",
+                    "given": "M. N."
+                },
+                {
+                    "family": "Lima",
+                    "given": "A. C. P."
+                }
+            ],
+            "edition": "6a. edição",
+            "id": "Magalhaes2004",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "page": "392",
+            "publisher": "EDUSP",
+            "publisher-place": "São Paulo, Brasil",
+            "title": "Noções de Probabilidade e Estatística",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Magalhães",
+                    "given": "M. N."
+                }
+            ],
+            "edition": "Segunda ed",
+            "id": "Magalhaes2006",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "page": "411",
+            "publisher": "EDUSP",
+            "publisher-place": "São Paulo, Brasil",
+            "title": "Probabilidade e Variáveis Aleatórias",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Särndal",
+                    "given": "C. E."
+                },
+                {
+                    "family": "Swensson",
+                    "given": "B."
+                },
+                {
+                    "family": "Wretman",
+                    "given": "J. H."
+                }
+            ],
+            "id": "Sarndal1992",
+            "issued": {
+                "date-parts": [
+                    [
+                        1992
+                    ]
+                ]
+            },
+            "publisher": "Springer-Verlag",
+            "publisher-place": "New York, USA",
+            "title": "Model Assisted Survey Sampling",
+            "type": "book"
+        },
+        {
+            "URL": "https://www150.statcan.gc.ca/n1/pub/71-543-g/71-543-g2020001-eng.htm",
+            "author": [
+                {
+                    "literal": "Statistics Canada"
+                }
+            ],
+            "id": "StatisticsCanada2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "publisher-place": "Ottawa, Canada",
+            "title": "Guide to the Labour Force Survey",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Thompson",
+                    "given": "S. K."
+                }
+            ],
+            "id": "Thompson2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "343",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "New York, USA",
+            "title": "Sampling, third edition",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Valliant",
+                    "given": "R."
+                },
+                {
+                    "family": "Dorfman",
+                    "given": "A. H."
+                },
+                {
+                    "family": "Royall",
+                    "given": "R. M."
+                }
+            ],
+            "id": "Valliant2000",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "page": "504",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "New York, USA",
+            "title": "Finite Population Sampling and Inference: A Prediction Approach",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wild",
+                    "given": "C. J."
+                },
+                {
+                    "family": "Seber",
+                    "given": "G. A. F."
+                }
+            ],
+            "id": "Wild2004",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "page": "411",
+            "publisher": "LTC - Livros Técnicos e Científicos Editora S.A.",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Encontros com o acaso: um primeiro curso de análise de dados e inferência",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "R-base",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Y."
+                }
+            ],
+            "id": "R-bookdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "R package version 0.7, (Acesso: Dezembro de 2021)",
+            "title": "Bookdown: Authoring books and technical documents with r markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=knitr",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Y."
+                }
+            ],
+            "id": "R-knitr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "title": "Knitr: A general-purpose package for dynamic report generation in r",
+            "title-short": "Knitr",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Corporation",
+                    "given": "Microsoft"
+                }
+            ],
+            "id": "R-RevoUtils",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "R package version 11.0.0",
+            "title": "RevoUtils: Microsoft r utility package",
+            "title-short": "RevoUtils",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Corporation",
+                    "given": "Microsoft"
+                }
+            ],
+            "id": "R-RevoUtilsMath",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "R package version 11.0.0",
+            "title": "RevoUtilsMath: Microsoft r services math utilities package",
+            "title-short": "RevoUtilsMath",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=rmarkdown",
+            "author": [
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Xie",
+                    "given": "Y."
+                },
+                {
+                    "family": "McPherson",
+                    "given": "J."
+                },
+                {
+                    "family": "Luraschi",
+                    "given": "J."
+                },
+                {
+                    "family": "Ushey",
+                    "given": "K."
+                },
+                {
+                    "family": "A.",
+                    "given": "Atkins."
+                },
+                {
+                    "family": "Wickham",
+                    "given": "H."
+                },
+                {
+                    "family": "Cheng",
+                    "given": "J."
+                },
+                {
+                    "family": "Chang",
+                    "given": "W."
+                }
+            ],
+            "id": "R-rmarkdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "R package version 1.9, (Acesso: Dezembro de 2021)",
+            "title": "Rmarkdown: Dynamic documents for r",
+            "title-short": "Rmarkdown",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ekman",
+                    "given": "G."
+                }
+            ],
+            "container-title": "The Annals of Mathematical Statistics",
+            "id": "Ekman1959",
+            "issued": {
+                "date-parts": [
+                    [
+                        1959
+                    ]
+                ]
+            },
+            "page": "219-229",
+            "title": "An Approximation Useful in Univariate Stratification.",
+            "type": "article-journal",
+            "volume": "30"
+        },
+        {
+            "author": [
+                {
+                    "family": "Horvitz",
+                    "given": "D. G."
+                },
+                {
+                    "family": "Thompson",
+                    "given": "D. J."
+                }
+            ],
+            "container-title": "Journal of the American Statistical Association",
+            "id": "Horvitz1952",
+            "issued": {
+                "date-parts": [
+                    [
+                        1952
+                    ]
+                ]
+            },
+            "page": "663-685",
+            "title": "A generalization of sampling without replacement from a finite universe",
+            "type": "article-journal",
+            "volume": "47"
+        },
+        {
+            "author": [
+                {
+                    "family": "Little",
+                    "given": "R. J. A."
+                },
+                {
+                    "family": "Rubin",
+                    "given": "D. B."
+                }
+            ],
+            "id": "Little2002",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "278",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "New York, USA",
+            "title": "Statistical analysis with missing data, 2nd edition",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rubin",
+                    "given": "D. B."
+                }
+            ],
+            "id": "Rubin1987",
+            "issued": {
+                "date-parts": [
+                    [
+                        1987
+                    ]
+                ]
+            },
+            "page": "258",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "New York, USA",
+            "title": "Multiple imputation for nonresponse in surveys",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Schafer",
+                    "given": "J. L."
+                }
+            ],
+            "id": "Schafer1997",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "page": "430",
+            "publisher": "Chapman & Hall / CRC",
+            "publisher-place": "Boca Raton, USA",
+            "title": "Analysis of Incomplete Multivariate Data",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Biemer",
+                    "given": "P."
+                },
+                {
+                    "family": "Lyberg",
+                    "given": "L."
+                }
+            ],
+            "id": "Biemer2003",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "page": "402",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "Hoboken, NJ",
+            "title": "Introduction to survey quality",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Yates",
+                    "given": "F."
+                },
+                {
+                    "family": "Grundy",
+                    "given": "P. M."
+                }
+            ],
+            "container-title": "Journal of the Royal Statistical Society. Series B (Methodological)",
+            "id": "Yates1953",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1953
+                    ]
+                ]
+            },
+            "page": "253-261",
+            "publisher": "[Royal Statistical Society, Wiley]",
+            "title": "Selection without replacement from within strata with probability proportional to size",
+            "type": "article-journal",
+            "volume": "15"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sen",
+                    "given": "A. R."
+                }
+            ],
+            "container-title": "Journal of the Indian Society of Agricultural Statistics",
+            "id": "Sen1953",
+            "issued": {
+                "date-parts": [
+                    [
+                        1953
+                    ]
+                ]
+            },
+            "page": "119-127",
+            "title": "On the estimate of the variance in sampling with varying probabilities",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "author": [
+                {
+                    "family": "Fuller",
+                    "given": "W. A."
+                }
+            ],
+            "id": "Fuller2009",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "454",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "Hoboken, NJ",
+            "title": "Sampling Statistics",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hàjek",
+                    "given": "J."
+                }
+            ],
+            "container-title": "Publ. Math. Inst. Hung. Acad. Sci.",
+            "id": "Hajek1960",
+            "issued": {
+                "date-parts": [
+                    [
+                        1960
+                    ]
+                ]
+            },
+            "page": "361-374",
+            "title": "Limiting distributions in simple random sampling from a finite population",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "author": [
+                {
+                    "family": "Fan",
+                    "given": "C. T."
+                },
+                {
+                    "family": "Muller",
+                    "given": "M. E."
+                },
+                {
+                    "family": "Rezucha",
+                    "given": "I."
+                }
+            ],
+            "container-title": "Journal of the American Statistical Association",
+            "id": "Fan1962",
+            "issue": "298",
+            "issued": {
+                "date-parts": [
+                    [
+                        1962
+                    ]
+                ]
+            },
+            "page": "387-402",
+            "title": "Development of Sampling Plans by Using Sequential (Item by Item) Selection Techniques and Digital Computers",
+            "type": "article-journal",
+            "volume": "57"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rosén",
+                    "given": "B."
+                }
+            ],
+            "id": "Rosen2000",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "page": "10",
+            "publisher": "Statistics Sweden",
+            "title": "A User’s Guide to Pareto \\pi-ps Sampling",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ohlsson",
+                    "given": "E."
+                }
+            ],
+            "container-title": "Journal of Official Statistics",
+            "id": "Ohlsson1998",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "page": "149-162",
+            "title": "Sequential Poisson Sampling",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
+            "ISBN": "0-471-10949-5",
+            "author": [
+                {
+                    "family": "Kish",
+                    "given": "L."
+                }
+            ],
+            "id": "Kish1965",
+            "issued": {
+                "date-parts": [
+                    [
+                        1965
+                    ]
+                ]
+            },
+            "page": "643",
+            "publisher": "John Wiley & Sons",
+            "title": "Survey Sampling",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Raj",
+                    "given": "D."
+                }
+            ],
+            "container-title": "Journal of the American Statistical Association",
+            "id": "Raj1956",
+            "issue": "274",
+            "issued": {
+                "date-parts": [
+                    [
+                        1956
+                    ]
+                ]
+            },
+            "page": "269-284",
+            "title": "Some Estimators in Sampling with Varying Probabilities without Replacement",
+            "type": "article-journal",
+            "volume": "51"
+        },
+        {
+            "author": [
+                {
+                    "family": "Haldane",
+                    "given": "J. B. S."
+                }
+            ],
+            "container-title": "Biometrika",
+            "id": "Haldane1945",
+            "issued": {
+                "date-parts": [
+                    [
+                        1945
+                    ]
+                ]
+            },
+            "page": "222-225",
+            "title": "On a method of estimating frequencies",
+            "type": "article-journal",
+            "volume": "33"
+        },
+        {
+            "author": [
+                {
+                    "family": "Murthy",
+                    "given": "M. N."
+                }
+            ],
+            "container-title": "Sankhya: The Indian Journal of Statistics",
+            "id": "Murthy1957",
+            "issue": "3/4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1957
+                    ]
+                ]
+            },
+            "page": "379-390",
+            "title": "Ordered and Unordered Estimators in Sampling without Replacement",
+            "type": "article-journal",
+            "volume": "18"
+        },
+        {
+            "author": [
+                {
+                    "family": "Murthy",
+                    "given": "M. N."
+                }
+            ],
+            "id": "Murthy1967",
+            "issued": {
+                "date-parts": [
+                    [
+                        1967
+                    ]
+                ]
+            },
+            "publisher": "Statistical Publishing Society, Calcutta, India",
+            "title": "Sampling Theory and Methods",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Salehi",
+                    "given": "M. M."
+                },
+                {
+                    "family": "Seber",
+                    "given": "G. A. F."
+                }
+            ],
+            "container-title": "The Australian and New Zealand Journal of Statistics",
+            "id": "SalehiSeber2001",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "page": "281-286",
+            "title": "A New Proof of Murthy’s Estimator which Applies to Sequential Sampling",
+            "type": "article-journal",
+            "volume": "43"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bernier",
+                    "given": "N."
+                },
+                {
+                    "family": "Lavallée",
+                    "given": "P."
+                }
+            ],
+            "id": "Bernier1994",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994
+                    ]
+                ]
+            },
+            "keyword": "AG08,Calibration estimation,Jackknife,Software,Variance estimation,Weighting",
+            "page": "11",
+            "publisher": "Statistics Canada, Social Survey Methods Division",
+            "publisher-place": "Ottawa, Canada",
+            "title": "The SAS macro: CALJACK",
+            "type": ""
+        },
+        {
+            "ISBN": "0282-423X",
+            "URL": "https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/reduction-of-nonresponse-bias-through-regression-estimation.pdf",
+            "author": [
+                {
+                    "family": "Bethlehem",
+                    "given": "J."
+                }
+            ],
+            "chapter-number": "251",
+            "container-title": "Journal of Official Statistics",
+            "id": "Bethlehem1988",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1988
+                    ]
+                ]
+            },
+            "keyword": "Non-response,Poststratification,Regression estimation",
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "251-260",
+            "title": "Reduction of nonresponse bias through regression estimation",
+            "type": "article-journal",
+            "volume": "4"
+        },
+        {
+            "ISBN": "0282-423X",
+            "URL": "https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/linear-weighting-of-sample-survey-data.pdf",
+            "author": [
+                {
+                    "family": "Bethlehem",
+                    "given": "J."
+                },
+                {
+                    "family": "Keller",
+                    "given": "W. J."
+                }
+            ],
+            "chapter-number": "141",
+            "container-title": "Journal of Official Statistics",
+            "id": "Bethlehem1987",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1987
+                    ]
+                ]
+            },
+            "keyword": "AV13,Poststratification,Regression estimation,Weighting",
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "141-153",
+            "title": "Linear weighting of sample survey data",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Deville",
+                    "given": "J. C."
+                },
+                {
+                    "family": "Särndal",
+                    "given": "C. E."
+                }
+            ],
+            "chapter-number": "376",
+            "container-title": "Journal of the American Statistical Association",
+            "id": "Deville1992",
+            "issued": {
+                "date-parts": [
+                    [
+                        1992
+                    ]
+                ]
+            },
+            "page": "376-382",
+            "title": "Calibration estimators in survey sampling",
+            "type": "article-journal",
+            "volume": "87"
+        },
+        {
+            "author": [
+                {
+                    "family": "Gambino",
+                    "given": "J."
+                }
+            ],
+            "container-title": "52nd session of the international statistical institute",
+            "editor": [
+                {
+                    "family": "Institute",
+                    "given": "International Statistical"
+                }
+            ],
+            "id": "Gambino1999",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "page": "187-188",
+            "publisher": "International Statistical Institute",
+            "publisher-place": "Helsinki, Finland",
+            "title": "Discussion of \"Issues in weighting household and business surveys\"",
+            "type": "paper-conference",
+            "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hedlin",
+                    "given": "D."
+                },
+                {
+                    "family": "Falvey",
+                    "given": "H."
+                },
+                {
+                    "family": "Chambers",
+                    "given": "R. L."
+                },
+                {
+                    "family": "Kokic",
+                    "given": "P."
+                }
+            ],
+            "chapter-number": "527",
+            "container-title": "Journal of Official Statistics",
+            "id": "Hedlin2001",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "keyword": "AG06,Business surveys,Calibration estimation,Diagnostics,Model fitting,Model-assisted inference,Outliers,Regression estimation,Robust estimation",
+            "page": "527-544",
+            "title": "Does the model matter for GREG estimation? A business survey example",
+            "type": "article-journal",
+            "volume": "17"
+        },
+        {
+            "ISBN": "978-0-470-28430-8",
+            "author": [
+                {
+                    "family": "Lumley",
+                    "given": "T."
+                }
+            ],
+            "id": "Lumley2010",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "keyword": "Livro A07",
+            "page": "276",
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "Hoboken",
+            "title": "Complex Surveys: A Guide to Analysis Using R",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lundström",
+                    "given": "S."
+                }
+            ],
+            "id": "Lundstrom1997",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "page": "185",
+            "publisher": "Stockholm University",
+            "publisher-place": "Stockholm, Sweden",
+            "title": "Calibration as a standard method for treatment of nonresponse",
+            "type": "book"
+        },
+        {
+            "ISBN": "13 978-0-470-01133-1",
+            "author": [
+                {
+                    "family": "Särndal",
+                    "given": "C. E."
+                },
+                {
+                    "family": "Lundström",
+                    "given": "S."
+                }
+            ],
+            "editor": [
+                {
+                    "family": "Groves",
+                    "given": "Robert M"
+                },
+                {
+                    "family": "Kalton",
+                    "given": "Graham"
+                },
+                {
+                    "family": "Rao",
+                    "given": "Jon N K"
+                },
+                {
+                    "family": "Schwarz",
+                    "given": "Norbert"
+                },
+                {
+                    "family": "Skinner",
+                    "given": "Christopher John"
+                }
+            ],
+            "id": "Sarndal2005",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "publisher": "John Wiley & Sons Ltd.",
+            "publisher-place": "Chichester, UK",
+            "title": "Estimation in surveys with nonresponse",
+            "type": "book"
+        },
+        {
+            "ISBN": "85-240-37148",
+            "URL": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv66414.pdf",
+            "author": [
+                {
+                    "family": "Silva",
+                    "given": "P. L. N."
+                }
+            ],
+            "id": "Silva2004",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "35",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Calibration Estimation: When and Why, How Much and How",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Silva",
+                    "given": "P. L. N."
+                },
+                {
+                    "family": "Skinner",
+                    "given": "C. J."
+                }
+            ],
+            "chapter-number": "23",
+            "container-title": "Survey Methodology",
+            "id": "Silva1997",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "keyword": "AS22,Auxiliary information,Calibration estimation,Model choice,Regression estimation,Ridge regression,Sample surveys",
+            "page": "23-32",
+            "title": "Variable selection for regression estimation in finite populations",
+            "type": "article-journal",
+            "volume": "23"
+        },
+        {
+            "URL": "http://eprints.soton.ac.uk/34683/1/013s.pdf",
+            "author": [
+                {
+                    "family": "Skinner",
+                    "given": "C. J."
+                }
+            ],
+            "container-title": "Research in Official Statistics",
+            "id": "Skinner1999",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "keyword": "AY13,Calibration estimation,Coverage errors,Measurement error,Non-response,Non-response adjustment",
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "33-43",
+            "title": "Calibration Weighting And Non-Sampling Errors",
+            "type": "article-journal",
+            "volume": "2"
+        },
+        {
+            "author": [
+                {
+                    "family": "Tille",
+                    "given": "Y."
+                }
+            ],
+            "container-title": "Survey Methodology",
+            "id": "Tille2016",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "283-295",
+            "title": "Unequal probability inverse sampling",
+            "type": "article-journal",
+            "volume": "42"
+        },
+        {
+            "author": [
+                {
+                    "family": "Jordão",
+                    "given": "P. H. R."
+                },
+                {
+                    "family": "Veloso",
+                    "given": "L. J. P."
+                }
+            ],
+            "id": "Jordao2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "53",
+            "publisher": "Escola Nacional de Ciencias Estatisticas- ENCE",
+            "title": "Estimadores de Murthy e Horvitz-Thompson e suas aplicações em amostragem inversa simples",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Brito",
+                    "given": "J. A. M."
+                }
+            ],
+            "container-title": "37° simpósio brasileiro de pesquisa operacional",
+            "id": "Brito2005",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "1851-1860",
+            "title": "Uma formulação de programação inteira para o problema de alocação ótima em amostras estratificadas",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Brito",
+                    "given": "J. A. M."
+                },
+                {
+                    "family": "Silva",
+                    "given": "P. L. N."
+                },
+                {
+                    "family": "Semaan",
+                    "given": "G. S."
+                },
+                {
+                    "family": "Maculan",
+                    "given": "N."
+                }
+            ],
+            "container-title": "Survey Methodology",
+            "id": "Brito2015",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "427-442",
+            "title": "Integer programming formulations applied to optimal allocation in stratified sampling",
+            "type": "article-journal",
+            "volume": "41"
+        },
+        {
+            "author": [
+                {
+                    "family": "Chambers",
+                    "given": "R. L."
+                }
+            ],
+            "container-title": "Conference on statistical science honouring the bicentennial of stefano franscini’s birth",
+            "editor": [
+                {
+                    "family": "Malaguerra",
+                    "given": "C."
+                },
+                {
+                    "family": "Morgenthaler",
+                    "given": "S."
+                },
+                {
+                    "family": "Ronchetti",
+                    "given": "E."
+                }
+            ],
+            "id": "Chambers1997",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "page": "23",
+            "publisher": "Springer Basel AG",
+            "publisher-place": "Ascona, Switzerland",
+            "title": "Weighting and Calibration in Sample Survey Estimation",
+            "type": "chapter"
+        },
+        {
+            "author": [
+                {
+                    "family": "Clark",
+                    "given": "R.t G."
+                }
+            ],
+            "genre": "PhD thesis",
+            "id": "Clark2002",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "397",
+            "publisher": "University of Woolongong",
+            "title": "Sample design and estimation for household surveys",
+            "type": "thesis"
+        },
+        {
+            "author": [
+                {
+                    "family": "Silva",
+                    "given": "P. L. N."
+                }
+            ],
+            "genre": "PhD thesis",
+            "id": "Silva1996",
+            "issued": {
+                "date-parts": [
+                    [
+                        1996
+                    ]
+                ]
+            },
+            "page": "246",
+            "publisher": "University of Southampton",
+            "title": "Utilizing auxiliary information in sample survey estimation and analysis",
+            "type": "thesis"
+        },
+        {
+            "URL": "https://books.google.com.br/books?id=uSSfPgAACAAJ",
+            "author": [
+                {
+                    "family": "Vanderhoeft",
+                    "given": "C."
+                }
+            ],
+            "collection-title": "Statistics belgium working paper",
+            "id": "Vanderhoeft2000",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "publisher": "Inst. National de Statistique",
+            "title": "Generalised calibration at statistics belgium: SPSS module g-CALIB-s and current practices",
+            "title-short": "Generalised calibration at statistics belgium",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sautory",
+                    "given": "O."
+                }
+            ],
+            "container-title": "Symposium 2003: Challenges in survey taking for the next decade",
+            "editor": [
+                {
+                    "family": "Canada",
+                    "given": "Statistics"
+                }
+            ],
+            "id": "Sautory2003",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "publisher": "Statistics Canada",
+            "publisher-place": "Ottawa, Canada",
+            "title": "CALMAR 2: A new version of the CALMAR calibration adjustment program",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Huang",
+                    "given": "E. T."
+                },
+                {
+                    "family": "Fuller",
+                    "given": "W. A."
+                }
+            ],
+            "container-title": "Proceedings of the social statistics section, american statistical association",
+            "id": "Huang1978",
+            "issued": {
+                "date-parts": [
+                    [
+                        1978
+                    ]
+                ]
+            },
+            "page": "300-304",
+            "publisher": "American Statistical Association",
+            "title": "Nonnegative regression estimation for sample survey data",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Särndal",
+                    "given": "C. E."
+                },
+                {
+                    "family": "Lundström",
+                    "given": "S."
+                }
+            ],
+            "container-title": "Journal of Official Statistics",
+            "id": "Lundstrom1999",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "page": "305-327",
+            "title": "Calibration as a standard method for treatment of nonresponse",
+            "type": "article-journal",
+            "volume": "15"
+        },
+        {
+            "author": [
+                {
+                    "family": "Särndal",
+                    "given": "C. E."
+                },
+                {
+                    "family": "Swensson",
+                    "given": "B."
+                },
+                {
+                    "family": "Wretman",
+                    "given": "J. H."
+                }
+            ],
+            "container-title": "Biometrika",
+            "id": "Sarndal1989",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1989
+                    ]
+                ]
+            },
+            "page": "527-537",
+            "title": "The Weighted Residual Technique for Estimating the Variance of the General Regression Estimator of the Finite Population Total ",
+            "type": "article-journal",
+            "volume": "76"
+        },
+        {
+            "author": [
+                {
+                    "family": "Estevao",
+                    "given": "V. M."
+                },
+                {
+                    "family": "Hidiroglou",
+                    "given": "M. A."
+                }
+            ],
+            "container-title": "Journal of Official Statistics",
+            "id": "Estevao1995",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "page": "181-204",
+            "title": "Methodological principles for a generalized estimation system at Statistics Canada",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "author": [
+                {
+                    "family": "Nieuwenbroek",
+                    "given": "N."
+                },
+                {
+                    "family": "Boonstra",
+                    "given": "H. J."
+                }
+            ],
+            "container-title": "The Survey Statistician",
+            "id": "Nieuwenbroek2002",
+            "issue": "46",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "6-11",
+            "title": "Bascula 4.0 for Weighting Sample Survey Data with Estimation of Variances",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bankier",
+                    "given": "M. D."
+                }
+            ],
+            "container-title": "Proceedings of the section on survey research methods",
+            "id": "Bankier1989",
+            "issued": {
+                "date-parts": [
+                    [
+                        1989
+                    ]
+                ]
+            },
+            "page": "730-735",
+            "publisher": "American Statistical Association",
+            "title": "Generalized least squares estimation under poststratification",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bankier",
+                    "given": "M. D."
+                },
+                {
+                    "family": "Rathwel",
+                    "given": "S."
+                },
+                {
+                    "family": "Majkowski",
+                    "given": "M."
+                }
+            ],
+            "id": "Bankier1992",
+            "issued": {
+                "date-parts": [
+                    [
+                        1992
+                    ]
+                ]
+            },
+            "page": "62",
+            "publisher": "Statistics Canada",
+            "publisher-place": "Ottawa",
+            "title": "Two step generalized least squares estimation in the 1991 Canadian Census",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Särndal",
+                    "given": "C. E."
+                },
+                {
+                    "family": "Lundström",
+                    "given": "S."
+                }
+            ],
+            "container-title": "Journal of Official Statistics",
+            "id": "Sarndal2008",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "page": "167-191",
+            "title": "Assessing auxiliary vectors for control of nonresponse bias in the calibration estimator",
+            "type": "article-journal",
+            "volume": "24"
+        },
+        {
+            "URL": "https://statswiki.unece.org/display/GSBPM/GSBPM+v5.0",
+            "author": [
+                {
+                    "family": "GSBPM"
+                }
+            ],
+            "id": "GSBPM2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "30",
+            "publisher": "United Nations Economic Commission for Europe - UNECE",
+            "title": "Generic Statistical Business Process Model: GSBPM: version 5.0",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Holmes",
+                    "given": "D. J."
+                },
+                {
+                    "family": "Skinner",
+                    "given": "C. J."
+                }
+            ],
+            "id": "Holmes2000",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "page": "1-40",
+            "publisher": "University of Southampton",
+            "publisher-place": "Southampton, UK",
+            "title": "Variance Estimation for Labour Force Survey Estimates of Level and Change",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rao",
+                    "given": "J. N. K."
+                },
+                {
+                    "family": "Singh",
+                    "given": "A. C."
+                }
+            ],
+            "container-title": "Pakistan Journal of Statistics",
+            "id": "Rao2009",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "371-384",
+            "title": "Range restricted weight calibration for survey data using ridge regression",
+            "type": "article-journal",
+            "volume": "25"
+        },
+        {
+            "author": [
+                {
+                    "family": "ONS"
+                }
+            ],
+            "id": "ONS2001",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "page": "1-55",
+            "publisher": "Office for National Statistics",
+            "publisher-place": "London",
+            "title": "Labour Force Survey - User Guide - Volume 1: Background and Methodology",
+            "type": "report"
+        },
+        {
+            "URL": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv86747.pdf",
+            "author": [
+                {
+                    "family": "Freitas",
+                    "given": "M. P. S."
+                },
+                {
+                    "family": "Antonaci",
+                    "given": "G."
+                }
+            ],
+            "id": "Freitas2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "43",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Sistema Integrado de Pesquisa Domiciliares: Amostra Mestra 2010 e Amostra da PNAD Contínua",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "IBGE"
+                }
+            ],
+            "id": "IBGE2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "178",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Quadro geográfico de referência para produção, análise e disseminação de estatísticas",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Särndal",
+                    "given": "C. E."
+                },
+                {
+                    "family": "Lundström",
+                    "given": "S."
+                }
+            ],
+            "container-title": "Survey Methodology",
+            "id": "Sarndal2010",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "131-144",
+            "title": "Design for estimation: Identifying auxiliary vectors to reduce nonresponse bias",
+            "type": "article-journal",
+            "volume": "36"
+        },
+        {
+            "author": [
+                {
+                    "family": "Scheaffer",
+                    "given": "R. L."
+                },
+                {
+                    "family": "Mendenhall",
+                    "given": "W."
+                },
+                {
+                    "family": "Ott",
+                    "given": "R. L."
+                }
+            ],
+            "id": "Scheaffer1990",
+            "issued": {
+                "date-parts": [
+                    [
+                        1990
+                    ]
+                ]
+            },
+            "publisher": "PWS-KENT Publishing Company",
+            "publisher-place": "Boston, MA, USA",
+            "title": "Elementary survey sampling, 4th edition",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Scheaffer",
+                    "given": "R. L."
+                },
+                {
+                    "family": "Mendenhall",
+                    "given": "W."
+                },
+                {
+                    "family": "Ott",
+                    "given": "R. L."
+                },
+                {
+                    "family": "Gerow",
+                    "given": "K. G."
+                }
+            ],
+            "id": "Scheaffer2011",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "publisher": "Cengage Learning",
+            "publisher-place": "Boston, MA, USA",
+            "title": "Elementary survey sampling, 7th edition",
+            "type": "book"
+        },
+        {
+            "URL": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv5295.pdf",
+            "author": [
+                {
+                    "family": "IBGE"
+                }
+            ],
+            "id": "Censo2003",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "568",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Metodologia do Censo Demográfico 2000",
+            "type": "book"
+        },
+        {
+            "URL": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv101284.pdf",
+            "author": [
+                {
+                    "family": "Albieri",
+                    "given": "S."
+                }
+            ],
+            "container-title": "40 anos da unidade de métodos estatísticos do IBGE: Alguns passos",
+            "editor": [
+                {
+                    "family": "Albieri",
+                    "given": "S."
+                },
+                {
+                    "family": "Dias",
+                    "given": "A. J. R."
+                }
+            ],
+            "id": "Albieri2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "92-97",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Evolução dos aspectos metodológicos na investigação por amostragem dos Censos Demográficos",
+            "type": "chapter"
+        },
+        {
+            "URL": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv94403.pdf",
+            "author": [
+                {
+                    "family": "Albieri",
+                    "given": "S."
+                },
+                {
+                    "family": "Bianchini",
+                    "given": "Z. M."
+                }
+            ],
+            "id": "Albieri2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "50",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Principais Aspectos de Amostragem das Pesquisas Domiciliares do IBGE",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Brewer",
+                    "given": "K. R. W."
+                },
+                {
+                    "family": "Hanif",
+                    "given": "M."
+                }
+            ],
+            "id": "Brewer1983",
+            "issued": {
+                "date-parts": [
+                    [
+                        1983
+                    ]
+                ]
+            },
+            "page": "164",
+            "publisher": "Springer-Verlag",
+            "publisher-place": "New York, USA",
+            "title": "Sampling With Unequal Probabilities",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Baillargeon",
+                    "given": "S."
+                },
+                {
+                    "family": "Rivest",
+                    "given": "L. P."
+                }
+            ],
+            "container-title": "Proceedings of the International Statistical Institute",
+            "id": "Baillargeon2011",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "title": "A General Algorithm for Univariate Stratification",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Brito",
+                    "given": "J. A. M."
+                },
+                {
+                    "family": "Maculan",
+                    "given": "N."
+                },
+                {
+                    "family": "Lila",
+                    "given": "M. F."
+                },
+                {
+                    "family": "Montenegro",
+                    "given": "F. T."
+                }
+            ],
+            "container-title": "Optimization Letters",
+            "id": "Brito2010",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "185-195",
+            "title": "An exact algorithm for the stratification problem with proportional allocation",
+            "type": "article-journal",
+            "volume": "4"
+        },
+        {
+            "author": [
+                {
+                    "family": "Dalenius",
+                    "given": "T."
+                },
+                {
+                    "family": "Hodges",
+                    "given": "J. L."
+                }
+            ],
+            "container-title": "Journal of the American Statistical Association",
+            "id": "Dalenius1959",
+            "issue": "285",
+            "issued": {
+                "date-parts": [
+                    [
+                        1959
+                    ]
+                ]
+            },
+            "page": "88-101",
+            "title": "Minimum Variance Stratification",
+            "type": "article-journal",
+            "volume": "54"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ekman",
+                    "given": "G."
+                }
+            ],
+            "container-title": "The Annals of Mathematical Statistics",
+            "id": "Ekman1959",
+            "issued": {
+                "date-parts": [
+                    [
+                        1959
+                    ]
+                ]
+            },
+            "page": "219-229",
+            "title": "An Approximation Useful in Univariate Stratification",
+            "type": "article-journal",
+            "volume": "30"
+        },
+        {
+            "author": [
+                {
+                    "family": "Glasser",
+                    "given": "G. J."
+                }
+            ],
+            "container-title": "International Statistical Review",
+            "id": "Glasser1962",
+            "issued": {
+                "date-parts": [
+                    [
+                        1962
+                    ]
+                ]
+            },
+            "page": "28-32",
+            "title": "On the complete coverage of large units in a statistical study",
+            "type": "article-journal",
+            "volume": "30"
+        },
+        {
+            "author": [
+                {
+                    "family": "Gunning",
+                    "given": "P."
+                },
+                {
+                    "family": "Horgan",
+                    "given": "J. M."
+                }
+            ],
+            "container-title": "Survey Methodology",
+            "id": "Gunning2004",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "page": "159-166",
+            "title": "A new algorithm for the construction of stratum boundaries",
+            "type": "article-journal",
+            "volume": "30"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hedlin",
+                    "given": "D."
+                }
+            ],
+            "container-title": "Journal of Official Statistics",
+            "id": "Hedlin2000",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "page": "15-29",
+            "title": "A procedure for stratification based on an extended Ekman rule",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hidiroglou",
+                    "given": "M. A."
+                }
+            ],
+            "container-title": "The American Statistician",
+            "id": "Hidiroglou1986",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1986
+                    ]
+                ]
+            },
+            "page": "27-31",
+            "title": "The construction of a self-representing stratum of large units in survey design",
+            "type": "article-journal",
+            "volume": "40"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lavallée",
+                    "given": "P."
+                },
+                {
+                    "family": "Hidiroglou",
+                    "given": "M. A."
+                }
+            ],
+            "container-title": "Survey Methodology",
+            "id": "Lavalle1988",
+            "issued": {
+                "date-parts": [
+                    [
+                        1988
+                    ]
+                ]
+            },
+            "page": "33-43",
+            "title": "On the stratification of skewed populations",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rivest",
+                    "given": "L. P."
+                }
+            ],
+            "container-title": "Survey Methodology",
+            "id": "Rivest2002",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "191-198",
+            "title": "A generalization of the Lavallée-Hidiroglou algorithm for stratification in business surveys",
+            "type": "article-journal",
+            "volume": "28"
+        },
+        {
+            "author": [
+                {
+                    "family": "Vasconcellos",
+                    "given": "M. T. L."
+                },
+                {
+                    "family": "Silva",
+                    "given": "P. L. N."
+                },
+                {
+                    "family": "Szwarcwald",
+                    "given": "C. L."
+                }
+            ],
+            "chapter-number": "S89",
+            "container-title": "Cadernos de Saúde Pública",
+            "id": "Vasconcellos2005",
+            "issue": "S",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "S89-S99",
+            "title": "Sampling design for the World Health Survey in Brazil",
+            "type": "article-journal",
+            "volume": "21"
+        },
+        {
+            "author": [
+                {
+                    "family": "Mohammadi",
+                    "given": "M."
+                },
+                {
+                    "family": "Salehi",
+                    "given": "M. M."
+                }
+            ],
+            "container-title": "Bulletin of the Iranian Mathematical Society",
+            "id": "Mohammadi2012",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "333-347",
+            "title": "Horvitz-Thompson estimator of population mean under inverse sampling designs",
+            "type": "article-journal",
+            "volume": "38"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hansen",
+                    "given": "M. H."
+                },
+                {
+                    "family": "Hurwitz",
+                    "given": "W. N."
+                }
+            ],
+            "container-title": "Annals of Mathematical Statistics",
+            "id": "Hansen1943",
+            "issued": {
+                "date-parts": [
+                    [
+                        1943
+                    ]
+                ]
+            },
+            "page": "333-362",
+            "title": "On the theory of sampling from finite populations",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bussab",
+                    "given": "W. O."
+                },
+                {
+                    "family": "Andrade",
+                    "given": "D. F."
+                },
+                {
+                    "family": "Silva",
+                    "given": "P. L. N."
+                },
+                {
+                    "family": "Freitas",
+                    "given": "M. P. S."
+                }
+            ],
+            "id": "Bussab1999",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "page": "18",
+            "publisher": "MEC/INEP",
+            "title": "Plano Amostral SAEB-99 - Definição do Plano Amostral",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Berger",
+                    "given": "Y. G."
+                }
+            ],
+            "id": "Berger2003",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "page": "1-13",
+            "publisher": "University of Southampton",
+            "publisher-place": "Southampton, UK",
+            "title": "A Modified Hájek Variance Estimator for Systematic Sampling",
+            "type": "report"
+        },
+        {
+            "URL": "https://www.ibge.gov.br/home/estatistica/indicadores/sipd/SIPD{\\_}amostra{\\_}mestra{\\_}2010{\\_}e{\\_}amostra{\\_}PNAD{\\_}cont.pdf",
+            "author": [
+                {
+                    "family": "Freitas",
+                    "given": "M. P. S."
+                },
+                {
+                    "family": "Antonaci",
+                    "given": "G."
+                }
+            ],
+            "id": "Freitas2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "43",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Sistema Integrado de Pesquisa Domiciliares Amostra Mestra 2010 e Amostra da PNAD Contínua",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Aires",
+                    "given": "N."
+                },
+                {
+                    "family": "Rosén",
+                    "given": "B."
+                }
+            ],
+            "container-title": "Journal of Statistical Planning and Inference",
+            "id": "Aires2005",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "543-567",
+            "title": "On inclusion probabilities and relative estimator bias for Pareto \\pips sampling",
+            "type": "article-journal",
+            "volume": "128"
+        },
+        {
+            "URL": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv7052.pdf",
+            "author": [
+                {
+                    "family": "IBGE"
+                }
+            ],
+            "edition": "2a edição",
+            "id": "IBGE2000",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "55",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Pesquisa Anual de Comércio - Série Relatórios Metodológicos",
+            "type": "book",
+            "volume": "12"
+        },
+        {
+            "author": [
+                {
+                    "family": "Horsfield",
+                    "given": "G."
+                }
+            ],
+            "id": "Horsfield2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "1-5",
+            "publisher": "UK Office for National Statistics",
+            "title": "International Passenger Survey methodological information",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Neyman",
+                    "given": "J."
+                }
+            ],
+            "container-title": "Journal of the Royal Statistical Society",
+            "id": "Neyman1934",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1934
+                    ]
+                ]
+            },
+            "page": "558-625",
+            "title": "On the two different aspects of the representative method: The method of stratified sampling and the method of purposive selection",
+            "title-short": "On the two different aspects of the representative method",
+            "type": "article-journal",
+            "volume": "97"
+        },
+        {
+            "author": [
+                {
+                    "family": "Brito",
+                    "given": "J. A. M."
+                },
+                {
+                    "family": "Veiga",
+                    "given": "T. M."
+                },
+                {
+                    "family": "Silva",
+                    "given": "P. L. N."
+                }
+            ],
+            "container-title": "Survey Methodology",
+            "id": "Brito2019",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "295-315",
+            "title": "An optimisation algorithm applied to the one-dimensional stratification problem",
+            "type": "article-journal",
+            "volume": "45"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bankier",
+                    "given": "M. D."
+                }
+            ],
+            "container-title": "American Statistician",
+            "id": "Bankier1988",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1988
+                    ]
+                ]
+            },
+            "page": "174-177",
+            "title": "Power allocations: Determining sample sizes for subnational areas",
+            "type": "article-journal",
+            "volume": "42"
+        },
+        {
+            "URL": "http://biblioteca.ibge.gov.br/visualizacao/livros/liv66426.pdf",
+            "author": [
+                {
+                    "family": "Silva",
+                    "given": "P. L. Nascimento"
+                },
+                {
+                    "family": "Moura",
+                    "given": "F. A. S."
+                }
+            ],
+            "id": "Silva1990",
+            "issued": {
+                "date-parts": [
+                    [
+                        1990
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "115",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Efeito de conglomeração da malha setorial do Censo Demográfico de 1980",
+            "type": "book",
+            "volume": "32"
+        },
+        {
+            "URL": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv97870.pdf",
+            "author": [
+                {
+                    "family": "IBGE"
+                }
+            ],
+            "id": "IBGE2016b",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "(Acesso: Setembro de 2020)",
+            "page": "132",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Pesquisa Nacional de Saúde do Escolar - PeNSE : 2015",
+            "type": "book"
+        },
+        {
+            "URL": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv101708_notas_tecnicas.pdf",
+            "author": [
+                {
+                    "family": "IBGE"
+                }
+            ],
+            "id": "IBGE2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "page": "124",
+            "publisher": "Instituto Brasileiro de Geografia e Estatística - IBGE",
+            "publisher-place": "Rio de Janeiro, Brasil",
+            "title": "Pesquisa Nacional por Amostra de Domicílios Contínua - Notas técnicas - Versão 1.7",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "R2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "(Acesso: Dezembro de 2021)",
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "book.bib"
+    ]
+}
