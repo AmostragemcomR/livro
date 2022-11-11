@@ -23,33 +23,37 @@ link-citations: no
 github-repo: AmostragemcomR/livro
 description: "Este é o livro de Amostragem elaborado pelos autores."
 ---
-# Capa{-}
 
-# Informações editoriais {-}
+# Capa {.unnumbered}
+
+# Informações editoriais {.unnumbered}
+
 <div style="font-style:normal">
-<left>
-    **Publicação** <br> 15 de outubro de 2020    
-    <p>**Última atualização** <br> 06 de dezembro de 2021
-    
+
+<left> **Publicação** <br> 15 de outubro de 2020\
+<p>**Última atualização** <br> 11 de novembro de 2022
+
 Permitida a reprodução total ou parcial com a devida citação de fonte.
 
-**Comunicação com os autores**   
-Pedro Luis do Nascimento Silva - pedronsilva@gmail.com <br> Antonio José Ribeiro Dias - vermelho2@gmail.com
+**Comunicação com os autores**\
+Pedro Luis do Nascimento Silva - [pedronsilva\@gmail.com](mailto:pedronsilva@gmail.com){.email} <br> Antonio José Ribeiro Dias - [vermelho2\@gmail.com](mailto:vermelho2@gmail.com){.email}
 
-**Revisão**    
+**Revisão**\
 Sonia Albieri
 
-**Capa**    
+**Capa**\
 Ubiratã Oliveira dos Santos
 
-<span style="font-size:22px">**Ficha catalográfica**</span>
-</left>
+[**Ficha catalográfica**]{style="font-size:22px"} </left>
 
 ![](Figuras/Ficha_Catal.jpg)
+
 </center>
 
-# Bem-vindo {-}
+# Bem-vindo {.unnumbered}
+
 <div style="text-align: justify">
+
 Este é um livro escrito para apoiar a aprendizagem de **Amostragem**. Nosso objetivo principal é orientar um leitor no caminho para aprender os conceitos, as principais ideias e a usar as ferramentas de amostragem para resolver problemas.
 
 Nossa escolha de temas a incluir no livro foi guiada, em grande parte, por nossa experiência com a coleção de pesquisas por amostragem do IBGE, onde trabalhamos por vários anos, e nossa atuação como professores na graduação e na pós graduação da ENCE. Também reflete nossa perspectiva quanto ao melhor caminho para aprender a trabalhar com **Amostragem**.
@@ -60,19 +64,19 @@ Em contraste, escolhemos enfatizar a apresentação de exemplos e de ferramentas
 
 O livro está organizado em treze capítulos, nominados a seguir:
 
-1) Introdução
-2) Conceitos e Cadastros 
-3) Visão Geral da Amostragem e Estimação 
-4) Amostragem Aleatória Simples  
-5) Estimação de Proporções  
-6) Estimação de Razões e Funções de Totais 
-7) Estimação para Domínios de Estudo 
-8) Amostragem Sistemática Simples 
-9) Outros Métodos de Amostragem com Equiprobabilidade 
-10) Amostragem com Probabilidades Proporcionais ao Tamanho  
-11) Amostragem Estratificada 
-12) Amostragem Conglomerada 
-13) Estimadores de Calibração 
+1)  Introdução
+2)  Conceitos e Cadastros
+3)  Visão Geral da Amostragem e Estimação
+4)  Amostragem Aleatória Simples\
+5)  Estimação de Proporções\
+6)  Estimação de Razões e Funções de Totais
+7)  Estimação para Domínios de Estudo
+8)  Amostragem Sistemática Simples
+9)  Outros Métodos de Amostragem com Equiprobabilidade
+10) Amostragem com Probabilidades Proporcionais ao Tamanho\
+11) Amostragem Estratificada
+12) Amostragem Conglomerada
+13) Estimadores de Calibração
 
 Cada um dos capítulos é autocontido e vários deles podem ser omitidos num primeiro curso. Com exceção do Capítulo \@ref(calib), o material do livro pode ser coberto num curso com cerca de 45 horas de duração, como ministrado várias vezes na pós-graduação da ENCE. Caso necessário, algum(ns) dos Capítulos \@ref(proporc), \@ref(razao) ou \@ref(domin) pode(m) ser suprimidos ou separados para estudo individual. Os Capítulos \@ref(AS) e \@ref(binom) podem ser omitidos sem prejuízo da sequência. O conteúdo central do livro é formado por todos os capítulos não citados neste parágrafo. Tal conteúdo formaria, a nosso ver, o mínimo para cobertura num primeiro curso, no nível de graduação, sobre **Amostragem**.
 

@@ -365,28 +365,31 @@ suppressMessages(require(Hmisc,     quietly=TRUE,warn.conflicts=FALSE,character.
 ```
 
 ```
-## Warning: package 'Hmisc' was built under R version 4.1.2
+## Warning: package 'Hmisc' was built under R version 4.1.3
 ```
 
 ```
-## Warning: package 'ggplot2' was built under R version 4.1.2
+## Warning: package 'survival' was built under R version 4.1.3
+```
+
+```
+## Warning: package 'ggplot2' was built under R version 4.1.3
 ```
 
 ```r
 suppressMessages(require(survey,    quietly=TRUE,warn.conflicts=FALSE,character.only=FALSE))
+```
+
+```
+## Warning: package 'Matrix' was built under R version 4.1.3
+```
+
+```r
 suppressMessages(require(prevalence,quietly=TRUE,warn.conflicts=FALSE,character.only=FALSE))
 ```
 
 ```
-## Warning: package 'prevalence' was built under R version 4.1.2
-```
-
-```
-## Warning: package 'rjags' was built under R version 4.1.2
-```
-
-```
-## Warning: package 'coda' was built under R version 4.1.2
+## Warning: package 'prevalence' was built under R version 4.1.3
 ```
 
 ```r
