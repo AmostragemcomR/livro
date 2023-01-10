@@ -3,7 +3,7 @@
     "path": "C:/Users/Vermelho/OneDrive/GitHub/amostragem/02-conceitos.Rmd",
     "project_path": "02-conceitos.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "1174132040",
     "contents": "",
     "dirty": false,
     "created": 1673370182553.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "181,61",
-        "scrollLine": "173"
+        "cursorPosition": "374,40",
+        "scrollLine": "354"
     },
     "folds": "",
-    "lastKnownWriteTime": 1673364398,
+    "lastKnownWriteTime": 1673371366,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1673364398,
+    "last_content_update": 1673371366137,
     "read_only": false,
     "read_only_alternatives": []
 }
