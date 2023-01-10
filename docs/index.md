@@ -31,7 +31,7 @@ description: "Este é o livro de Amostragem elaborado pelos autores."
 <div style="font-style:normal">
 
 <left> **Publicação** <br> 15 de outubro de 2020\
-<p>**Última atualização** <br> 11 de novembro de 2022
+<p>**Última atualização** <br> 10 de janeiro de 2023
 
 Permitida a reprodução total ou parcial com a devida citação de fonte.
 
